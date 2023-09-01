@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import {Button} from '@nextui-org/react'
 
 export default function Home() {
   return (
@@ -36,6 +37,9 @@ export default function Home() {
                 Learn more about Create T3 App, the libraries it uses, and how
                 to deploy it.
               </div>
+              <div>
+              <Button>Click me</Button>
+             </div>
             </Link>
           </div>
         </div>
