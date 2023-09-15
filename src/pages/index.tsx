@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { Button } from '@nextui-org/react'
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <Button>Click me</Button>
       </main>
     </>
   );
