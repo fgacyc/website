@@ -4,9 +4,22 @@
 
 @font-face {
   font-family: SF Pro Display;
-  src: url("/fonts/SF_Pro_Display/SF-Pro-Display-Regular.otf");
+  src: url("/fonts/SF-Pro-Display-Regular.otf");
+}
+
+@font-face {
+  font-family: Microsoft Yahei;
+  src: url("/fonts/Microsoft-Yahei.ttf");
+}
+
+:root {
+  color: #000000;
 }
 
 .sf-pro-display {
   font-family: SF Pro Display, sans-serif;
+}
+
+.microsoft-yahei {
+  font-family: Microsoft Yahei, sans-serif;
 }
