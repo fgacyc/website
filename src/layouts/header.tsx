@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 export default function Header() {
   const router = useRouter();
 
-  const getLogoMainMenuBtn = () => {
+  const getHeaderMainMenuCSS = () => {
     if (router.pathname === '/about-us') {
       return {
         logo: (
@@ -32,7 +32,7 @@ export default function Header() {
     }
   }
 
-  const { logo, main_menu_btn_color } = getLogoMainMenuBtn();
+  const { logo, main_menu_btn_color } = getHeaderMainMenuCSS();
 
   return (
     <>
