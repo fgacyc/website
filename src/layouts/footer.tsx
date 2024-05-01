@@ -117,7 +117,7 @@ export default function Footer() {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-center">
             <div className="mb-6 md:mb-0 pt-2">
-              <a href="/" className="mb-10 flex items-center">{logo}</a>
+              <a href="/" className="mb-9 flex items-center">{logo}</a>
               <p className={`mb-6 ${text_color}`}>Wisma FGA, Taman Goodwood,<br />58200 Kuala Lumpur, Wilayah Persekutuan<br />Kuala Lumpur.</p>
               <p className={`${text_color}`}>03-7981 4755</p>
             </div>
