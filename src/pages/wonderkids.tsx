@@ -64,6 +64,22 @@ export default function Wonderkids() {
         </div>
 
       </section>
+      <section>
+        <div className={`max-w-screen-lg mx-auto`}>
+          <h2 className={`text-9xl font-bold not-italic`}>Age Groups</h2>
+
+          <div className="carousel w-full overflow-hidden">
+            <div className="carousel-inner flex overflow-x-auto transition-transform duration-500">
+              <div className="carousel-item flex-none mr-4 w-6/12 max-w-[640px]:w-full">
+                Hello World
+              </div>
+              <div className="carousel-item flex-none mr-4 w-6/12 max-w-[640px]:w-full">
+                It's me
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     </>
