@@ -1,8 +1,71 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Header from "src/layouts/header";
-import wonderkidsBg from "src/assets/WK-BG.png";
-import wonderkidLogo from "src/assets/WK-Logo.png"
+import wonderkidsBg from "src/assets/wonderkids/BG.png";
+import wonderkidLogo from "src/assets/wonderkids/Logo.png";
+import cradleLandImg from "src/assets/wonderkids/agegroups/cradle-land.png";
+import shiningStarImg from "src/assets/wonderkids/agegroups/shining-star.png";
+import superTrooperImg from "src/assets/wonderkids/agegroups/super-trooper.png";
+import wowLifeImg from "src/assets/wonderkids/agegroups/wow-life.png";
+import warriorImg from "src/assets/wonderkids/agegroups/warrior.png";
 
 export default function Wonderkids() {
+  const ageGroupData = [
+    {
+      name: "Cradle Land",
+      ages: "0 - 18mo",
+      saturday: "7.30PM - 8PM",
+      sunday: "2.30PM - 3PM",
+      img: `${cradleLandImg.src}`,
+      css: `bg-[#E05532] text-white`,
+    },
+    {
+      name: "Shining Star",
+      ages: "19mo - 3",
+      saturday: "7.30PM - 8.45PM",
+      sunday: "2.30PM - 3.45PM",
+      img: `${shiningStarImg.src}`,
+      css: `bg-[#7E32E0] text-white`,
+    },
+    {
+      name: "Super Trooper",
+      ages: "4 - 6",
+      saturday: "5PM - 6.45PM",
+      sunday: "2.30PM - 4.30PM",
+      img: `${superTrooperImg.src}`,
+      css: `bg-[#32E0A1] text-white`,
+    },
+    {
+      name: "Wow Life",
+      ages: "7 - 9",
+      saturday: "5PM - 6.45PM",
+      sunday: "2.30PM - 4.30PM",
+      img: `${wowLifeImg.src}`,
+      css: `bg-[#E0AF32] text-white`,
+    },
+    {
+      name: "Wow Life",
+      ages: "10 - 12",
+      saturday: "5PM - 6.45PM",
+      sunday: "2.30PM - 4.30PM",
+      img: `${warriorImg.src}`,
+      css: `bg-[#3297E0] text-white`,
+    },
+  ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    //slidesToShow: 1,
+    className: 'wk-age-groups',
+    // arrows: true
+  };
 
   return (
     <>
@@ -65,23 +128,31 @@ export default function Wonderkids() {
 
       </section>
       <section>
-        <div className={`max-w-screen-lg mx-auto`}>
-          <h2 className={`text-9xl font-bold not-italic`}>Age Groups</h2>
-
-          <div className="carousel w-full overflow-hidden">
-            <div className="carousel-inner flex overflow-x-auto transition-transform duration-500">
-              <div className="carousel-item flex-none mr-4 w-6/12 max-w-[640px]:w-full">
-                Hello World
-              </div>
-              <div className="carousel-item flex-none mr-4 w-6/12 max-w-[640px]:w-full">
-                It's me
-              </div>
-            </div>
+        <div className={`w-full max-w-[961.7px] mx-auto`}>
+          <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Age Groups</h2>
+          <div className={`mt-12 w-full`}>
+            <Slider {...settings}>
+              {ageGroupData.map((age_group) => (
+                <div key={age_group.name} className={`${age_group.css} w-[347px] h-[616px] rounded-[70px]`}>
+                  <div className={`flex justify-center items-center pt-[30px] pb-[30px]`}>
+                    <img src={age_group.img} alt="" />
+                  </div>
+                  <div className={`flex flex-col justtify-center items-center`}>
+                    <div className={`w-[263px]`}>
+                      <p className={`font-bold text-3xl`}>{age_group.name}</p>
+                      <p className={`font-semibold text-2xl`}>{age_group.ages}</p>
+                      <br/>
+                      <p className={`text-xl`}>Saturday {age_group.saturday}</p>
+                      <p className={`text-xl`}>Sunday {age_group.sunday}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>
     </main>
-
     </>
   )
 }
