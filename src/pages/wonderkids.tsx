@@ -61,10 +61,27 @@ export default function Wonderkids() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
-    //slidesToShow: 1,
     className: 'wk-age-groups',
+    slidesToShow: 2,
+    slidesToScroll: 1,
     // arrows: true
+    responsive: [
+      // {
+      //   breakpoint: 600,
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll: 2,
+      //     initialSlide: 2
+      //   }
+      // },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -130,10 +147,10 @@ export default function Wonderkids() {
       <section>
         <div className={`w-full max-w-[961.7px] mx-auto`}>
           <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Age Groups</h2>
-          <div className={`mt-12 w-full`}>
+          <div className={`mt-12 w-full px-[30px]`}>
             <Slider {...settings}>
               {ageGroupData.map((age_group) => (
-                <div key={age_group.name} className={`${age_group.css} w-[347px] h-[616px] rounded-[70px]`}>
+                <div key={age_group.name} className={`${age_group.css} h-[616px] rounded-[70px]`}>
                   <div className={`flex justify-center items-center pt-[30px] pb-[30px]`}>
                     <img src={age_group.img} alt="" />
                   </div>
