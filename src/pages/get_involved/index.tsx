@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
 import FormCombobox from "~/components/FormCombobox";
 import FormInput from "~/components/FormInput";
-import CompletedForm from "~/components/completed_form";
+import CompletedForm from "~/components/CompletedForm";
 
 // todo: make it as component
 const Banner = () => {
@@ -553,6 +553,7 @@ const Explore = () => {
       {teamDescCards.map((teamDescCard, index) => (
         <Fragment key={index}>
           <div className="mx-10 mt-20 justify-between sm:mx-[90px] md:mt-32 lg:flex">
+            {/* todo: card */}
             <div className="lg:w-1/2"></div>
             <TeamDescCard
               {...teamDescCard}
@@ -899,6 +900,7 @@ const GetInvolved = () => {
     <>
       <Banner />
       <Explore />
+      {/* todo: make it a component */}
       {isSubmitted ? (
         <div className="flex h-screen flex-col items-center justify-center">
           <CompletedForm
@@ -921,7 +923,7 @@ const GetInvolved = () => {
           </div>
           <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
           <FormInput
-            width="w-4/5"
+            className="w-4/5"
             label="Your name"
             type="text"
             name="name"
@@ -935,7 +937,7 @@ const GetInvolved = () => {
           />
 
           <FormInput
-            width="w-4/5"
+            className="w-4/5"
             label="Phone Number"
             type="tel"
             name="phone_number"
@@ -951,7 +953,7 @@ const GetInvolved = () => {
           />
 
           <FormInput
-            width="w-4/5"
+            className="w-4/5"
             label="Email Address"
             type="email"
             name="email"
