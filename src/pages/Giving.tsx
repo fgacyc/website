@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import GivingAccordion from "src/components/GivingAccordion";
 import { Button, ButtonGroup } from "@nextui-org/button";
@@ -52,7 +51,7 @@ export default function AboutUs() {
         </div>
 
         <div className="relative w-screen font-bold text-white">
-          <div className="absolute left-20 top-10 ml-5 w-full sm:top-40 md:left-10 lg:left-40 lg:top-80 lg:text-7xl">
+          <div className="absolute left-20 top-10 ml-5 w-full sm:top-40 md:left-10 lg:left-40 lg:top-80 lg:text-9xl">
             <div className="grid grid-cols-6" style={{ height: "30rem" }}>
               <h1 className="col-span-2">
                 Ways <br></br> We <br />
@@ -63,16 +62,16 @@ export default function AboutUs() {
               <GivingAccordion colSpan={4} />
             </div>
 
-            <div className="col-start absolute top-40  col-span-1 mt-10">
+            <div className="col-start absolute top-60  col-span-1 mt-20">
               <Button
                 color="success"
                 size="lg"
-                className="text-bold bg-[#00EDC2] px-5 py-2 text-lg text-black
+                className="w-150 bg-[#00EDC2] px-12 py-2 text-lg font-bold text-black
 
                 "
               >
                 Give Now
-                <ArrowLongRightIcon className="size-5 w-12" />
+                <ArrowLongRightIcon className="size-8 w-15" />
               </Button>
             </div>
           </div>
@@ -87,8 +86,8 @@ export default function AboutUs() {
           />
         </div>
 
-        <div className="min-w-screen relative mt-5 w-screen  flex-row items-center justify-center overflow-hidden text-center">
-          <h1 className="lg:text-1xl my-5 justify-center text-sm font-bold sm:text-4xl">
+        <div className="min-w-screen relative mt-10 w-screen  flex-row items-center justify-center overflow-hidden text-center">
+          <h1 className="lg:text-1xl my-10 justify-center text-sm font-bold sm:text-4xl">
             {" "}
             Why Should I tithe?{" "}
           </h1>
