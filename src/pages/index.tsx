@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import AboutUs from "src/pages/AboutUs";
+import Giving from "src/pages/Giving";
+
 export default function Home() {
   return (
     <>
@@ -11,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <AboutUs />
+        {/* <AboutUs /> */}
+        <Giving />
       </main>
     </>
   );

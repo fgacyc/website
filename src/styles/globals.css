@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.w-full {
+    width: 100%;
+}
+
+.accordionStyle {
+    width:200%;
+    max-width: 200%;
+}
+
+.maxWidthMiddle {
+    max-width: 200rem;
+    max-height: 50rem;
+}
+
+.wayWeGiveStyle {
+    max-height: 200px;
+}
