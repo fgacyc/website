@@ -123,7 +123,7 @@ export default function Footer() {
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div className="md:ml-6">
-                <h2 className={`mb-6 text-4xl font-bold ${text_color}`}>Explore</h2>
+                <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Explore</h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">About Us</a>
@@ -149,7 +149,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="">
-                <h2 className={`mb-6 text-4xl font-bold ${text_color}`}>Resources</h2>
+                <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Resources</h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">Stream</a>
@@ -160,7 +160,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="w-fit">
-                <h2 className={`mb-6 text-4xl font-bold ${text_color}`}>Follow us</h2>
+                <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Follow us</h2>
                 <div className="flex items-center sm:justify-between sm:mt-0">
                   <a href="https://www.facebook.com/FGACYC" target='_blank'>
                     {fb_icon}
