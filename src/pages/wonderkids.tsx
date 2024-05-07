@@ -13,6 +13,11 @@ import superTrooperImg from "src/assets/wonderkids/agegroups/super-trooper.png";
 import wowLifeImg from "src/assets/wonderkids/agegroups/wow-life.png";
 import warriorImg from "src/assets/wonderkids/agegroups/warrior.png";
 import resCardVector from "src/assets/wonderkids/resource_card_vector.svg";
+import photo1 from "src/assets/wonderkids/photo_1.png";
+import photo2 from "src/assets/wonderkids/photo_2.png";
+import photo3 from "src/assets/wonderkids/photo_3.png";
+import photo4 from "src/assets/wonderkids/photo_4.png";
+import photo5 from "src/assets/wonderkids/photo_5.png";
 
 export default function Wonderkids() {
   const ageGroupData = [
@@ -175,13 +180,13 @@ export default function Wonderkids() {
         <div className={`w-full max-w-[954px] mx-auto`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Resources</h2>
           <div className={`mt-12`}>
-            <div className={`inline-block w-fit mr-10`}>
-              <div className={`flex justify-center p-4 max-w-[402px] max-h-[402px] bg-[#FFFFFF] bg-opacity-10 rounded-3xl`}>
-                <div className={`w-[367px] h-[367px] p-10`} style={{backgroundImage: `url(${resCardVector.src})`}}>
-                  <b className={`font-bold text-[33px]`}>Verse Cards</b>
-                  <p className={`text-[25px] mb-12 font-semibold`}>Scripture memorization cards for your kids</p>
-                  <button className={`items-center bg-[#00EDC2] max-w-[300px] w-full rounded-full px-4 py-2 font-bold download-arrow`}>
-                    Download 
+            <div className={`min-[840px]:mr-10 min-[832px]:mr-8 min-[824px]:mr-6 min-[816px]:mr-4 min-[808px]:mr-2 min-[808px]:inline-block max-[807px]:flex max-[807px]:justify-center`}>
+              <div className={`max-w-[402px] max-h-[402px] flex justify-center p-4 bg-[#FFFFFF] bg-opacity-10 rounded-3xl`}>
+                <div className={`w-[90vw] h-[90vw] min-[380px]:w-[367px] min-[380px]:h-[367px] p-5 bg-cover`} style={{backgroundImage: `url(${resCardVector.src})`}}>
+                  <b className={`font-bold text-[28px]`}>Verse Cards</b>
+                  <p className={`text-[20px] mb-12 font-semibold`}>Scripture memorization cards for your kids</p>
+                  <button className={`items-center bg-[#00EDC2] max-w-[300px] max-[320px]:w-full w-[257px] rounded-full px-4 py-2 font-bold download-arrow`}>
+                    Download&nbsp; 
                     <svg className={`inline-block`} width="22" height="12" viewBox="0 0 44 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M43.0607 13.0607C43.6464 12.4749 43.6464 11.5251 43.0607 10.9393L33.5147 1.3934C32.9289 0.807611 31.9792 0.807611 31.3934 1.3934C30.8076 1.97919 30.8076 2.92893 31.3934 3.51472L39.8787 12L31.3934 20.4853C30.8076 21.0711 30.8076 22.0208 31.3934 22.6066C31.9792 23.1924 32.9289 23.1924 33.5147 22.6066L43.0607 13.0607ZM0 13.5H42V10.5H0V13.5Z" fill="black"/>
                     </svg>
@@ -189,13 +194,13 @@ export default function Wonderkids() {
                 </div>
               </div>
             </div>
-            <div className={`inline-block w-fit`}>
-              <div className={`flex justify-center p-4 max-w-[402px] max-h-[402px] bg-[#FFFFFF] bg-opacity-10 rounded-3xl`}>
-                <div className={`w-[367px] h-[367px] p-10`} style={{backgroundImage: `url(${resCardVector.src})`}}>
-                  <b className={`font-bold text-[33px]`}>Verse Cards</b>
-                  <p className={`text-[25px] mb-12 font-semibold`}>Scripture memorization cards for your kids</p>
-                  <button className={`items-center bg-[#00EDC2] max-w-[300px] w-full rounded-full px-4 py-2 font-bold download-arrow`}>
-                    Download 
+            <div className={`min-[808px]:inline-block max-[807px]:flex max-[807px]:justify-center max-[807px]:mt-6`}>
+              <div className={`max-w-[402px] max-h-[402px] flex justify-center p-4 bg-[#FFFFFF] bg-opacity-10 rounded-3xl`}>
+                <div className={`w-[90vw] h-[90vw] min-[380px]:w-[367px] min-[380px]:h-[367px] p-5 bg-cover`} style={{backgroundImage: `url(${resCardVector.src})`}}>
+                  <b className={`font-bold text-[28px]`}>Zoom Connect Group</b>
+                  <p className={`text-[20px] mb-12 font-semibold`}>Let your kids join our weekly zoom CG.</p>
+                  <button className={`items-center bg-[#00EDC2] max-w-[300px] max-[320px]:w-full w-[199px] rounded-full px-4 py-2 font-bold download-arrow`}>
+                    Join&nbsp;
                     <svg className={`inline-block`} width="22" height="12" viewBox="0 0 44 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M43.0607 13.0607C43.6464 12.4749 43.6464 11.5251 43.0607 10.9393L33.5147 1.3934C32.9289 0.807611 31.9792 0.807611 31.3934 1.3934C30.8076 1.97919 30.8076 2.92893 31.3934 3.51472L39.8787 12L31.3934 20.4853C30.8076 21.0711 30.8076 22.0208 31.3934 22.6066C31.9792 23.1924 32.9289 23.1924 33.5147 22.6066L43.0607 13.0607ZM0 13.5H42V10.5H0V13.5Z" fill="black"/>
                     </svg>
@@ -206,6 +211,19 @@ export default function Wonderkids() {
           </div>
         </div>
       </section>
+
+      {/* <section className={`bg-black`}>
+        <div className={`max-w-[954px] mx-auto`}>
+          <div className="py-5 sm:py-8">
+            <div className="columns-1 gap-10 sm:columns-2 md:columns-3 [&amp;>img:not(:first-child)]:mt-8">
+              <img src={`${photo1.src}`} className={`max-w-[30rem]`}/>
+              <img src={`${photo2.src}`} className={`max-w-[30rem] ml-[125px]`}/>
+              <img src={`${photo3.src}`} className={`max-w-[30rem] ml-[165px]`}/>
+              <img src={`${photo4.src}`} className={``}/>
+            </div>
+          </div>
+        </div>
+      </section> */}
     </main>
     </>
   )
