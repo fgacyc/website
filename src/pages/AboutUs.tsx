@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import ExperienceGallery from "~/components/ExperienceImages";
 
 export default function AboutUs() {
   const hallowTxtStyle =
@@ -104,39 +105,7 @@ export default function AboutUs() {
           <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
         </div>
 
-        <div className="gird-cols-1 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-          <Image
-            src="/encountering-jesus.png"
-            width={800}
-            height={600}
-            layout=""
-            className="mb-5"
-          />
-
-          <Image
-            src="/experiencing-family.png"
-            width={800}
-            height={600}
-            layout=""
-            className="mb-5"
-          />
-
-          <Image
-            src="/promoting-discipleship.png"
-            width={800}
-            height={600}
-            layout=""
-            className="mb-5"
-          />
-
-          <Image
-            src="/growing-spiritually.png"
-            width={800}
-            height={600}
-            layout=""
-            className="mb-5"
-          />
-        </div>
+        <ExperienceGallery />
 
         <div className="text-1xl relative my-10  flex h-full w-full w-screen flex-col items-center justify-center font-extrabold">
           <hr className="border-dotted"></hr>
