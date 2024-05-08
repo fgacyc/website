@@ -9,7 +9,7 @@ interface LocationProps {
 
 const Location = ({ name, addr, services }: LocationProps) => {
   const [show, setShow] = useState(true);
-  let click = function () {
+  const click = function () {
     console.log(show);
     setShow(!show);
   };

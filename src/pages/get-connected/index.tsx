@@ -21,9 +21,10 @@ export default function GetConnected() {
                 Get Connected
               </h3>
               <h6 className="w-[35vw] text-[8px] sm:text-[10px] md:mt-1 md:w-[192px] lg:w-[35vw] lg:text-lg lg:leading-5 xl:text-xl">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation."
+                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation.&quot;
               </h6>
             </div>
           </div>

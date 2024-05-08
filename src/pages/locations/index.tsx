@@ -22,10 +22,11 @@ export default function Locations() {
             ></Image>
             <div className="absolute inset-0 left-[9%] mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8.4vw] lg:mt-[6vw]">
               <h3 className="w-[30vw] text-2xl font-bold leading-6 sm:text-5xl md:w-[300px] md:text-6xl lg:w-[470px] lg:text-8xl xl:w-[45vw] xl:text-9xl">
-                We can't wait to meet you
+                We can&apos;t wait to meet you
               </h3>
               <h6 className="mt-2 text-[8px] sm:text-[10px] md:mt-4 lg:mt-5 lg:text-xl">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.&quot;
               </h6>
             </div>
           </div>
@@ -77,7 +78,7 @@ export default function Locations() {
             </div>
             <div>
               <div className="w-2/5 text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
-                We're expecting you!
+                We&apos;re expecting you!
               </div>
               <div className="mt-3 text-[8px] sm:text-[10px] lg:mt-7 lg:text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -99,12 +100,13 @@ export default function Locations() {
               <div className="absolute left-[74px] top-[55px] h-[137px] w-[55px] rounded-br-[28px] border-b-4 border-r-4 border-solid border-[#00edc2] sm:left-[172px] sm:top-[108px] sm:h-[290px] sm:w-[96px] sm:rounded-br-[44px] sm:border-b-[8px] sm:border-r-[8px] lg:left-[23vw] lg:top-[15.5vw] lg:h-[38.3vw] lg:w-[13vw] lg:rounded-br-[85px] lg:border-b-[16px] lg:border-r-[16px] xl:rounded-br-[90px] xl:border-b-[18px] xl:border-r-[18px] 2xl:rounded-br-[110px] 2xl:border-b-[20px] 2xl:border-r-[20px]"></div>
 
               <div className="me-4 ms-36 mt-12 w-auto text-[8px] sm:me-16 sm:ms-[300px] sm:mt-28 sm:text-[10px] lg:ms-[40vw] lg:mt-[14vw] lg:text-xl xl:mt-52">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation." Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation.
+                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation.&quot; Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation.
                 <br />
                 <br />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
