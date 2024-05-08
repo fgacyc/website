@@ -8,11 +8,11 @@ export default function Locations() {
       <div className="overflow-x-hidden">
         <div>
           {/* First section - black bg */}
-          <div className="h-52 bg-[#1d2129] sm:h-[40vw]"></div>
+          <div className="h-[40vw] bg-[#1d2129]"></div>
           {/* <div className="h-52 bg-[#1d2129] sm:h-[320px] md:h-[350px] xl:h-[625px]"></div> */}
 
           {/* absolute-positioned banner */}
-          <div className="absolute inset-0 mx-10 mt-[90px] flex flex-col items-center sm:mx-[6%] sm:mt-[10%]">
+          <div className="absolute inset-0 mx-[8%] mt-[10%] flex flex-col items-center sm:mx-[6%]">
             <Image
               alt=""
               src={"/images/locations/banner.png"}
@@ -20,11 +20,11 @@ export default function Locations() {
               height={622}
               className="rounded-lg"
             ></Image>
-            <div className="absolute inset-0 left-6 mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8vw] lg:mt-[6vw]">
-              <h3 className="w-1/2 text-2xl font-bold leading-6 sm:text-5xl md:w-[300px] md:text-6xl lg:w-[470px] lg:text-8xl xl:w-[37vw] xl:text-9xl">
+            <div className="absolute inset-0 left-[9%] mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8.4vw] lg:mt-[6vw]">
+              <h3 className="w-[30vw] text-2xl font-bold leading-6 sm:text-5xl md:w-[300px] md:text-6xl lg:w-[470px] lg:text-8xl xl:w-[45vw] xl:text-9xl">
                 We can't wait to meet you
               </h3>
-              <h6 className="text-[8px] sm:mt-2 sm:text-[10px] md:mt-4 lg:mt-5 lg:text-xl">
+              <h6 className="mt-2 text-[8px] sm:text-[10px] md:mt-4 lg:mt-5 lg:text-xl">
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
               </h6>
             </div>
@@ -32,7 +32,7 @@ export default function Locations() {
 
           {/* Locations */}
           <div className="mb-20 lg:mb-72">
-            <div className="ms-10 mt-16 sm:ms-36 sm:mt-36 lg:ms-[20vw] lg:mt-40">
+            <div className="ms-10 mt-[18vw] sm:ms-36 sm:mt-36 lg:ms-[20vw] lg:mt-40 xl:mt-60">
               <div className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
                 Locations
               </div>
@@ -62,17 +62,17 @@ export default function Locations() {
           </div>
 
           {/* Our Pastor */}
-          <div className="relative bg-[#1d2129] pb-9 ps-10 pt-12 text-white sm:pb-64 lg:ps-[20vw] lg:pt-36">
+          <div className="relative bg-[#1d2129] pb-9 ps-10 pt-12 text-white sm:pb-64 lg:ps-[20vw] lg:pt-36 xl:pb-[30vw]">
             <div className="absolute -top-14 right-5 w-[45%] lg:right-20 lg:top-[-222px]">
               <div className="relative flex w-full justify-end">
                 <Image
                   src={"/images/locations/CG.png"}
-                  width={627}
-                  height={418}
+                  width={627 * 2}
+                  height={418 * 2}
                   alt={""}
-                  className="z-10 rounded-bl-[22px] lg:rounded-bl-[70px]"
+                  className="z-10 rounded-bl-[22px] lg:rounded-bl-[50px]"
                 />
-                <div className="absolute -left-2 top-2 z-0 h-full w-full rounded-bl-[30px] border-3 border-solid border-[#00edc2] md:rounded-bl-[6vw] lg:-left-7 lg:top-6 lg:rounded-bl-[100px] lg:border-[12px]"></div>
+                <div className="absolute -left-2 top-2 z-0 h-full w-full rounded-bl-[30px] border-3 border-solid border-[#00edc2] md:rounded-bl-[6vw] lg:-left-7 lg:top-6 lg:rounded-bl-[80px] lg:border-[12px] xl:rounded-bl-[90px]"></div>
               </div>
             </div>
             <div>
@@ -120,11 +120,11 @@ export default function Locations() {
               <div className="w-[43%] text-3xl font-bold sm:text-5xl md:text-6xl lg:w-[400px] lg:text-8xl xl:text-9xl">
                 What about my kids?
               </div>
-              <div className="mt-[7px] w-3/5 text-[8px] sm:text-[10px] md:text-xl lg:mt-7 lg:w-[400px]">
+              <div className="mt-[7px] w-3/5 text-[8px] sm:text-[10px] md:text-xl lg:mt-7 lg:w-[35vw]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </div>
               <div className="mt-4 lg:mt-[52px]">
-                <button className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-5 lg:border-b-4 lg:text-xl xl:text-[33px]">
+                <button className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-5 lg:border-b-4 lg:text-xl xl:pb-2 xl:text-[33px]">
                   Learn More
                   <div className="w-5 lg:w-7 xl:w-auto">
                     <Image
@@ -139,7 +139,7 @@ export default function Locations() {
               </div>
             </div>
 
-            <div className="absolute right-0 z-10 w-[150px] sm:w-[295px] lg:w-[450px]">
+            <div className="absolute right-0 z-10 w-[150px] sm:w-[295px] lg:w-[450px] xl:w-[618px]">
               <Image
                 src={"/images/locations/WK.png"}
                 width={617}
@@ -148,7 +148,7 @@ export default function Locations() {
                 className="rounded-bl-[22px] lg:rounded-bl-[70px]"
               />
             </div>
-            <div className="absolute right-[6px] top-[5px] z-0 h-[130px] w-[150px] rounded-bl-[25px] border-3 border-solid border-[#00edc2] sm:right-[12px] sm:top-[12px] sm:h-[255px] sm:w-[295px] sm:rounded-bl-[30px] sm:border-[6px] lg:right-[24px] lg:top-[24px] lg:h-[389px] lg:w-[450px] lg:rounded-bl-[84px] lg:border-[12px] xl:right-[24px] xl:top-[33px] xl:h-[539px] xl:rounded-bl-[100px] xl:border-[12px]"></div>
+            <div className="absolute right-[6px] top-[5px] z-0 h-[130px] w-[150px] rounded-bl-[25px] border-3 border-solid border-[#00edc2] sm:right-[12px] sm:top-[12px] sm:h-[255px] sm:w-[295px] sm:rounded-bl-[30px] sm:border-[6px] lg:right-[24px] lg:top-[24px] lg:h-[389px] lg:w-[450px] lg:rounded-bl-[84px] lg:border-[12px] xl:right-[24px] xl:top-[24px] xl:h-[534px] xl:w-[617px] xl:rounded-bl-[90px] xl:border-[12px]"></div>
           </div>
         </div>
       </div>

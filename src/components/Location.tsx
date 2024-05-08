@@ -16,7 +16,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
   return (
     <div onClick={click}>
       <button
-        className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-5 lg:border-b-4 lg:text-xl xl:text-[33px]"
+        className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-3 lg:border-b-4 lg:text-xl xl:mt-5 xl:pb-2 xl:text-[33px]"
         onClick={click}
       >
         FGA CYC {name}
@@ -30,8 +30,13 @@ const Location = ({ name, addr, services }: LocationProps) => {
           />
         </div>
       </button>
-      <div className={(show ? "hidden" : "") + " mt-4 flex"}>
-        <div className="w-[90px] text-xl font-bold xl:w-[367px]">{addr}</div>
+      <div
+        className={
+          (show ? "hidden" : "") +
+          " mt-3 flex text-[8px] font-bold sm:text-[10px] md:text-xs lg:text-sm xl:mt-4 xl:text-xl"
+        }
+      >
+        <div className="w-[25vw] xl:w-[367px]">{addr}</div>
         <div className={show ? "hidden" : ""}>
           {services.map((s) => {
             return (
