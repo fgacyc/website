@@ -12,7 +12,7 @@ export default function Locations() {
           {/* <div className="h-52 bg-[#1d2129] sm:h-[320px] md:h-[350px] xl:h-[625px]"></div> */}
 
           {/* absolute-positioned banner */}
-          <div className="absolute inset-0 mx-[8%] mt-[10%] flex flex-col items-center sm:mx-[6%]">
+          <div className="absolute top-0 mx-[8%] mt-[10%] flex flex-col items-center sm:mx-[6%]">
             <Image
               alt=""
               src={"/images/locations/banner.png"}
@@ -20,8 +20,8 @@ export default function Locations() {
               height={622}
               className="rounded-lg"
             ></Image>
-            <div className="absolute inset-0 left-[9%] mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8.4vw] lg:mt-[6vw]">
-              <h3 className="w-[30vw] text-2xl font-bold leading-6 sm:text-5xl md:w-[300px] md:text-6xl lg:w-[470px] lg:text-8xl xl:w-[45vw] xl:text-9xl">
+            <div className="absolute left-[9%] mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8.4vw] lg:mt-[6vw]">
+              <h3 className="w-[30vw] text-2xl font-bold leading-6 sm:w-[230px] sm:text-5xl md:w-[300px] md:text-6xl lg:w-[470px] lg:text-8xl xl:w-[45vw] xl:text-9xl">
                 We can&apos;t wait to meet you
               </h3>
               <h6 className="mt-2 text-[8px] sm:text-[10px] md:mt-4 lg:mt-5 lg:text-xl">

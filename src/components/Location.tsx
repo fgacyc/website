@@ -37,7 +37,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
         }
       >
         <div className="w-[25vw] xl:w-[367px]">{addr}</div>
-        <div className={show ? "hidden" : ""}>
+        <div className={(show ? "hidden " : "") + " ms-2"}>
           {services.map((s) => {
             return (
               <>
