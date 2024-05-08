@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import ExperienceGallery from "~/components/ExperienceImages";
 
@@ -40,6 +39,7 @@ export default function AboutUs() {
           </div>
           <Image
             src="/About-us-top-bg.png"
+            alt="aboutUs"
             width={100}
             height={800}
             layout="responsive"
@@ -95,19 +95,20 @@ export default function AboutUs() {
           </div>
           <Image
             src="/About-us-middle-bg.png"
+            alt="about-middle-bg"
             width={100}
             height={600}
             layout="responsive"
           />
         </div>
 
-        <div className="text-1xl relative my-10  flex h-full w-full w-screen flex-col items-center justify-center font-extrabold">
+        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
           <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
         </div>
 
         <ExperienceGallery />
 
-        <div className="text-1xl relative my-10  flex h-full w-full w-screen flex-col items-center justify-center font-extrabold">
+        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
           <hr className="border-dotted"></hr>
 
           <h1 className="text-2xl sm:text-7xl"> ( The FOOTER ) </h1>

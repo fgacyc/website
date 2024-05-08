@@ -1,17 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import GivingAccordion from "src/components/GivingAccordion";
-import { Button, ButtonGroup } from "@nextui-org/button";
+import { Button } from "@nextui-org/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function AboutUs() {
-  const hallowTxtStyle =
-    "-1px -1px 0 #f8fafc, 1px -1px 0 #f8fafc, -1px 1px 0 #f8fafc, 1px 1px 0 #f8fafc";
-  const coreValueTxtStyle =
-    "text-sm sm:text-2xl lg:text-4xl -translate-y-4 sm:-translate-y-4 ";
-  const coreValueNumStyle =
-    "text-[#241F20] text-2xl sm:text-4xl lg:text-8xl -translate-y-3 sm:-translate-y-4 lg:-translate-y-7 border-t-8 border-white-500";
-
   return (
     <>
       <Head>
@@ -71,7 +64,7 @@ export default function AboutUs() {
                 "
               >
                 Give Now
-                <ArrowLongRightIcon className="size-8 w-15" />
+                <ArrowLongRightIcon className="w-15 size-8" />
               </Button>
             </div>
           </div>
@@ -128,7 +121,7 @@ export default function AboutUs() {
             <h1 className="  inline-block text-7xl font-bold">
               {" "}
               Let&apos;s Talk{" "}
-              <ArrowLongRightIcon className="size-20 inline-block w-10" />{" "}
+              <ArrowLongRightIcon className="inline-block size-20 w-10" />{" "}
             </h1>
           </Button>
         </div>

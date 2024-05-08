@@ -1,15 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function ExperienceImages() {
-  const hallowTxtStyle =
-    "-1px -1px 0 #f8fafc, 1px -1px 0 #f8fafc, -1px 1px 0 #f8fafc, 1px 1px 0 #f8fafc";
-  const coreValueTxtStyle =
-    "text-sm sm:text-2xl lg:text-4xl -translate-y-4 sm:-translate-y-4 ";
-  const coreValueNumStyle =
-    "text-[#241F20] text-2xl sm:text-4xl lg:text-8xl -translate-y-3 sm:-translate-y-4 lg:-translate-y-7 border-t-8 border-white-500";
-
   return (
     <>
       <Head>
@@ -21,6 +13,7 @@ export default function ExperienceImages() {
         <div className="gird-cols-1 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           <Image
             src="/encountering-jesus.png"
+            alt="encounter-jesus"
             width={800}
             height={600}
             layout=""
@@ -29,6 +22,7 @@ export default function ExperienceImages() {
 
           <Image
             src="/experiencing-family.png"
+            alt="experiencing-family"
             width={800}
             height={600}
             layout=""
@@ -37,6 +31,7 @@ export default function ExperienceImages() {
 
           <Image
             src="/promoting-discipleship.png"
+            alt="promoting-discipleship"
             width={800}
             height={600}
             layout=""
@@ -45,6 +40,7 @@ export default function ExperienceImages() {
 
           <Image
             src="/growing-spiritually.png"
+            alt="growing-spiritually"
             width={800}
             height={600}
             layout=""
