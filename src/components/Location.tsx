@@ -16,18 +16,20 @@ const Location = ({ name, addr, services }: LocationProps) => {
   return (
     <div onClick={click}>
       <button
-        className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-3 lg:border-b-4 lg:text-xl xl:mt-5 xl:pb-2 xl:text-[33px]"
+        className="border-b-solid mt-1 flex w-full items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-3 lg:border-b-4 lg:text-xl xl:mt-5 xl:pb-2 xl:text-[33px]"
         onClick={click}
       >
-        FGA CYC {name}
-        <div className="w-5 lg:w-7 xl:w-auto">
-          <Image
-            src={"/icons/right_arrow.svg"}
-            width={42}
-            height={42}
-            alt="right arrow icon"
-            className="ml-3"
-          />
+        <div className="grid grid-cols-2 justify-items-start">
+          <div>FGA CYC {name}</div>
+          <div className="w-5 justify-self-end lg:w-7 xl:w-auto">
+            <Image
+              src={"/icons/right_arrow.svg"}
+              width={42}
+              height={42}
+              alt="right arrow icon"
+              className="ml-3"
+            />
+          </div>
         </div>
       </button>
       <div
