@@ -20,8 +20,8 @@ export default function MobileAppDownload() {
                 height={490}
               ></Image>
             </div>
-            <div className="ms-6 flex lg:ms-[80px]">
-              <div className="mt-[6px] w-1/2 sm:mt-2 md:mt-3 lg:mt-[21px] lg:w-[203px]">
+            <div className="ms-6 flex lg:ms-16 xl:ms-[80px]">
+              <div className="mt-[6px] w-1/2 sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px]">
                 <Image
                   alt=""
                   src={"/images/mobile-app-download/app-store.png"}
