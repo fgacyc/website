@@ -158,7 +158,7 @@ export default function Wonderkids() {
 
       </section>
       <section className={`bg-[#fab800]`}>
-        <div className={`w-full max-w-[961.7px] mx-auto`}>
+        <div className={`w-full max-w-[961.7px] mx-auto pt-24`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Age Groups</h2>
           <div className={`mt-12 w-full px-[30px]`}>
             <Slider {...settings}>
@@ -184,7 +184,7 @@ export default function Wonderkids() {
       </section>
 
       <section className={`bg-[#fab800]`}>
-        <div className={`w-full max-w-[954px] mx-auto`}>
+        <div className={`w-full max-w-[954px] mx-auto pt-24`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Resources</h2>
           <div className={`mt-12`}>
             <div className={`min-[840px]:mr-10 min-[832px]:mr-8 min-[824px]:mr-6 min-[816px]:mr-4 min-[808px]:mr-2 min-[808px]:inline-block max-[807px]:flex max-[807px]:justify-center`}>
@@ -220,7 +220,7 @@ export default function Wonderkids() {
       </section>
 
       <section className={`bg-[#fab800]`}>
-        <div className={`max-w-[954px] mx-auto`}>
+        <div className={`max-w-[954px] mx-auto pt-24`}>
           <div className="py-5 sm:py-8 gap-2 flex flex-wrap">
             <div className="w-auto gap-2 max-w-[655px] flex flex-wrap">
               <img src={photo1.src} alt="" className="w-full md:w-auto" />
@@ -243,7 +243,7 @@ export default function Wonderkids() {
       </section>
 
       <section className={`bg-[#fab800]`}>
-        <div className={`max-w-[955px] mx-auto`}>
+        <div className={`max-w-[955px] mx-auto pt-24 pb-24`}>
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-4/12">
               <div className="text-8xl lg:text-9xl font-bold text-white max-lg:text-center">FAQ</div>
