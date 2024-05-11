@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import WkFAQAccordion from "src/components/WkFAQAccordion";
 import Header from "src/layouts/header";
 import wonderkidsBg from "src/assets/wonderkids/BG.png";
 import wonderkidLogo from "src/assets/wonderkids/Logo.png";
@@ -237,6 +238,17 @@ export default function Wonderkids() {
               <img src={photo9.src} alt="" className="w-full md:w-auto" />
               <img src={photo10.src} alt="" className="w-full md:w-auto" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`bg-[#fab800]`}>
+        <div className={`max-w-[955px] mx-auto`}>
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-4/12">
+              <div className="text-8xl lg:text-9xl font-bold text-white max-lg:text-center">FAQ</div>
+            </div>
+            <div className="w-full lg:w-9/12"><WkFAQAccordion /></div>
           </div>
         </div>
       </section>
