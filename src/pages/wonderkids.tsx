@@ -18,6 +18,12 @@ import photo2 from "src/assets/wonderkids/photo_2.png";
 import photo3 from "src/assets/wonderkids/photo_3.png";
 import photo4 from "src/assets/wonderkids/photo_4.png";
 import photo5 from "src/assets/wonderkids/photo_5.png";
+import photo6 from "src/assets/wonderkids/photo_6.png";
+import photo7 from "src/assets/wonderkids/photo_7.png";
+import photo8 from "src/assets/wonderkids/photo_8.png";
+import photo9 from "src/assets/wonderkids/photo_9.png";
+import photo10 from "src/assets/wonderkids/photo_10.png";
+
 
 export default function Wonderkids() {
   const ageGroupData = [
@@ -150,7 +156,7 @@ export default function Wonderkids() {
         </div>
 
       </section>
-      <section>
+      <section className={`bg-[#fab800]`}>
         <div className={`w-full max-w-[961.7px] mx-auto`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Age Groups</h2>
           <div className={`mt-12 w-full px-[30px]`}>
@@ -176,7 +182,7 @@ export default function Wonderkids() {
         </div>
       </section>
 
-      <section className={`bg-yellow-800`}>
+      <section className={`bg-[#fab800]`}>
         <div className={`w-full max-w-[954px] mx-auto`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Resources</h2>
           <div className={`mt-12`}>
@@ -212,18 +218,28 @@ export default function Wonderkids() {
         </div>
       </section>
 
-      {/* <section className={`bg-black`}>
+      <section className={`bg-[#fab800]`}>
         <div className={`max-w-[954px] mx-auto`}>
-          <div className="py-5 sm:py-8">
-            <div className="columns-1 gap-10 sm:columns-2 md:columns-3 [&amp;>img:not(:first-child)]:mt-8">
-              <img src={`${photo1.src}`} className={`max-w-[30rem]`}/>
-              <img src={`${photo2.src}`} className={`max-w-[30rem] ml-[125px]`}/>
-              <img src={`${photo3.src}`} className={`max-w-[30rem] ml-[165px]`}/>
-              <img src={`${photo4.src}`} className={``}/>
+          <div className="py-5 sm:py-8 gap-2 flex flex-wrap">
+            <div className="w-auto gap-2 max-w-[655px] flex flex-wrap">
+              <img src={photo1.src} alt="" className="w-full md:w-auto" />
+              <img src={photo2.src} alt="" className="w-full md:w-auto" />
+              <img src={photo4.src} alt="" className="w-full md:w-auto" />
+            </div>
+            <div className="w-auto gap-2 justify-center lg:max-w-[281px] flex flex-wrap sm:flex-nowrap lg:flex-wrap">
+              <img src={photo3.src} alt="" className="w-full md:w-auto" />
+              <img src={photo5.src} alt="" className="w-full md:w-auto sm:object-cover lg:object-none" />
+            </div>
+            <div className="w-auto gap-2 flex flex-wrap">
+              <img src={photo7.src} alt="" className="w-full md:w-auto" />
+              <img src={photo6.src} alt="" className="w-full md:w-auto" />
+              <img src={photo8.src} alt="" className="w-full md:w-auto" />
+              <img src={photo9.src} alt="" className="w-full md:w-auto" />
+              <img src={photo10.src} alt="" className="w-full md:w-auto" />
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </main>
     </>
   )
