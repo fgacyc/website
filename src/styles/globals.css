@@ -23,9 +23,8 @@
 
 #accordion1, #accordion2, #accordion3 {
     box-shadow: none;
-    
 }
 
-/* #baptiseAccordion {
-    width: 50rem;
-} */
+#baptiseBtn {
+    width: 25rem;
+}

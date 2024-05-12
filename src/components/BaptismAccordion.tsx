@@ -11,11 +11,11 @@ export default function BaptismAccordion() {
   const [bgColor3, setBgcolor3] = useState<string | undefined>();
 
   const openAccordionClass =
-    " p-6 text-2xl font-bold text-black bg-[#1FC4CF] rounded-lg";
+    " p-3 lg:p-6 lg:text-2xl text-xl font-bold text-black bg-[#1FC4CF] rounded-lg";
   const closeAccordionClass =
-    " p-6 text-2xl text-black bg-[#979797] rounded-lg font-bold";
+    " p-3 lg:p-6 lg:text-2xl text-xl text-black bg-[#979797] rounded-lg font-bold";
 
-  const accordionTextClass = "py-5 px-10 text-lg	font-semibold ";
+  const accordionTextClass = "py-5 px-10 lg:text-lg text-sm	font-semibold ";
   const openAndCloseIcon1 = (isOpen: boolean | undefined) => {
     if (isOpen) {
       setBgcolor1(openAccordionClass);
@@ -48,9 +48,9 @@ export default function BaptismAccordion() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="overflow-hidden">
+      <main className="">
         <Accordion
-          className="shadow-none"
+          className=""
           isCompact={true}
           id="baptiseAccordion"
           variant="splitted"

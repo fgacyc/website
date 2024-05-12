@@ -76,31 +76,27 @@ export default function Baptism() {
         <br />
         <br />
         <br />
-        <div className="min-w-screen  flex h-screen w-full items-center justify-center">
-          <div className="w-10/12 leading-10">
+        <div className="min-w-screen relative flex max-h-[900px] w-full items-center justify-center lg:h-screen">
+          <div className="w-full leading-10 lg:w-10/12">
             <BaptismAccordion />
           </div>
         </div>
         <div className="flex justify-center ">
           <Button
             color="success"
+            id="baptiseBtn"
             onClick={() => {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-              document
-                .getElementById("sectionRef")
-                ?.scrollIntoView({ behavior: "smooth", block: "center" });
-
               setOpenForm(true);
 
               setTimeout(() => {
                 document
                   .getElementById("sectionRef")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }, 200);
+              }, 100);
             }}
-            className="mt-5 w-full bg-[#1FC4CF] py-5 text-lg font-bold text-white lg:w-72 lg:text-lg"
+            className="mt-5 w-[200px] rounded-full bg-[#1FC4CF] px-5 py-3 text-lg font-bold text-white lg:w-72 lg:text-lg"
           >
-            I want to be baptised
+            I want to be baptised &nbsp;
             <ArrowLongRightIcon className="size-10 w-24 " />
           </Button>
         </div>
@@ -111,7 +107,10 @@ export default function Baptism() {
         <br />
 
         {openForm ? (
-          <div id="sectionRef">
+          <div
+            id="sectionRef"
+            className="bg-[url('/images/baptise-form-bg.png')] bg-cover pt-5 xl:px-20 xl:py-10"
+          >
             {" "}
             <Form />{" "}
           </div>
@@ -121,6 +120,14 @@ export default function Baptism() {
 
         {/* <Form /> */}
       </main>
+
+      <footer>
+        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
+          <hr className="border-dotted"></hr>
+
+          <h1 className="text-2xl sm:text-7xl"> ( The FOOTER ) </h1>
+        </div>
+      </footer>
     </>
   );
 }
