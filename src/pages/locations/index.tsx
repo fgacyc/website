@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { locations } from "./data";
+import { locations } from "../../data/locations";
 import Location from "~/components/Location";
 
 export default function Locations() {
