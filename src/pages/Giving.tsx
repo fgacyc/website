@@ -38,36 +38,7 @@ export default function AboutUs() {
             </h1>
           </div>
           <div className="flex-none"></div>
-          {/* <Image
-            src="/About-us-top-bg.png"
-            alt="top-bg"
-            width={100}
-            height={500}
-            layout="responsive"
-            className=""
-          /> */}
         </div>
-
-        {/* <div className=" font-bold text-white">
-          <div className="grid h-screen w-screen grid-cols-1 place-items-center  bg-[url('/images/About-us-middle-bg.png')] lg:grid-cols-6 lg:place-content-center lg:place-items-baseline ">
-            <div className="lg:col-span-1 lg:col-start-2">
-              <div className="text-4xl lg:text-9xl">
-                Ways <br></br> We <br />
-                Give
-                <br />
-              </div>
-              <Button
-                color="success"
-                className="text-md mt-2 bg-[#00EDC2] px-12 py-5 font-bold text-black lg:w-72 lg:text-lg"
-              >
-                Give Now
-                <ArrowLongRightIcon className="w-15 size-8" />
-              </Button>
-            </div>
-            <div className=" mt-5 w-32 lg:col-span-1 lg:mx-10 lg:w-80">
-              <GivingAccordion />
-            </div>
-          </div> */}
 
         <div className=" font-bold text-white">
           <div className=" h-screen w-screen bg-[url('/images/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex ">
