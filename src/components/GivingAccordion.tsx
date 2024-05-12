@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react"; // Import useState hook
 import Link from "next/link";
 // import Image from "next/image";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { XMarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
@@ -79,7 +79,13 @@ export default function GivingAccordion() {
           >
             <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
               <div className="">
-                <Image src="/images/bank-qr.png" width={100} height={600} />
+                <Image
+                  src="/images/bank-qr.png"
+                  alt="bank-qr"
+                  width={100}
+                  height={600}
+                  priority={true}
+                />
                 <h1 className="text-2xl font-normal">
                   Full Gospel Assembly
                   <br /> 2920 0020 960
@@ -90,9 +96,11 @@ export default function GivingAccordion() {
               {/* <div> */}
               <Image
                 src="/images/tng.png"
+                alt="bank-qr"
                 width={60}
                 height={250}
                 className="my-2 ml-5"
+                priority={true}
               />
               {/* </div> */}
             </div>

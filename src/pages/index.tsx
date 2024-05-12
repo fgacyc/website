@@ -1,6 +1,7 @@
 import Head from "next/head";
-// import AboutUs from "src/pages/AboutUs";
+import AboutUs from "src/pages/AboutUs";
 import Giving from "src/pages/Giving";
+import Baptism from "src/pages/Baptism";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       </Head>
       <main>
         {/* <AboutUs /> */}
-        <Giving />
+        {/* <Giving /> */}
+        <Baptism />
       </main>
     </>
   );

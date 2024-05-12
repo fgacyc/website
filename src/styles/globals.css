@@ -20,3 +20,12 @@
 .wayWeGiveStyle {
     max-height: 200px;
 }
+
+#accordion1, #accordion2, #accordion3 {
+    box-shadow: none;
+    
+}
+
+/* #baptiseAccordion {
+    width: 50rem;
+} */
