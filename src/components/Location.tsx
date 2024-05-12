@@ -33,7 +33,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
             }
           >
             <Image
-              src={hide ? "/icons/right_arrow.svg" : "/icons/cross.svg"}
+              src={hide ? "/icons/right_arrow.svg" : "/icons/cross-2.svg"}
               width={1}
               height={1}
               alt="right arrow icon"
