@@ -24,6 +24,7 @@ import photo7 from "src/assets/wonderkids/photo_7.png";
 import photo8 from "src/assets/wonderkids/photo_8.png";
 import photo9 from "src/assets/wonderkids/photo_9.png";
 import photo10 from "src/assets/wonderkids/photo_10.png";
+import rocket from "src/assets/wonderkids/rocket.svg";
 
 
 export default function Wonderkids() {
@@ -99,7 +100,7 @@ export default function Wonderkids() {
 
   return (
     <>
-    <main role="main" className={``}>
+    <main role="main" className={`bg-[#fab800]`}>
       <section className={'bg-cover'} style={{backgroundImage: `url(${wonderkidsBg.src})`}} >
         <Header />
 
@@ -157,7 +158,7 @@ export default function Wonderkids() {
         </div>
 
       </section>
-      <section className={`bg-[#fab800]`}>
+      <section className={``}>
         <div className={`w-full max-w-[961.7px] mx-auto pt-24`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Age Groups</h2>
           <div className={`mt-12 w-full px-[30px]`}>
@@ -183,7 +184,7 @@ export default function Wonderkids() {
         </div>
       </section>
 
-      <section className={`bg-[#fab800]`}>
+      <section className={``}>
         <div className={`w-full max-w-[954px] mx-auto pt-24`}>
           <h2 className={`text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold not-italic`}>Resources</h2>
           <div className={`mt-12`}>
@@ -219,7 +220,7 @@ export default function Wonderkids() {
         </div>
       </section>
 
-      <section className={`bg-[#fab800]`}>
+      <section className={``}>
         <div className={`max-w-[954px] mx-auto pt-24`}>
           <div className="py-5 sm:py-8 gap-2 flex flex-wrap">
             <div className="w-auto gap-2 max-w-[655px] flex flex-wrap">
@@ -242,7 +243,7 @@ export default function Wonderkids() {
         </div>
       </section>
 
-      <section className={`bg-[#fab800]`}>
+      <section className={``}>
         <div className={`max-w-[955px] mx-auto pt-24 pb-24`}>
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-4/12">
