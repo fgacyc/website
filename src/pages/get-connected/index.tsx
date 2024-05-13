@@ -28,7 +28,7 @@ export default function GetConnected() {
               </h6>
             </div>
           </div>
-          <div className="mt-[13vw]">
+          <div className="mb-[16.45vw] mt-[13vw]">
             <div>
               <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7">
                 <h3 className="w-[55vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
@@ -67,6 +67,31 @@ export default function GetConnected() {
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center bg-[#d9d9d9] pb-[8.89vw] pt-[8.89vw] text-black">
+            <div>
+              <div className="sf-pro-display flex flex-col items-center text-[8.33vw] font-bold">
+                Need help?
+              </div>
+              <div className="mt-[1.18vw] flex flex-col items-center text-[8px] sm:text-[10px] lg:text-lg xl:text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </div>
+              <div className="mt-[1.94vw] flex flex-col items-center">
+                <button className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4">
+                  Let's Talk
+                  <div className="w-[1.18vw]"></div>
+                  <div className="w-[2.92vw]">
+                    <Image
+                      src={"/icons/right_arrow.svg"}
+                      width={42}
+                      height={42}
+                      alt="right arrow icon"
+                      className=""
+                    />
+                  </div>
+                </button>
               </div>
             </div>
           </div>
