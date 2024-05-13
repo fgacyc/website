@@ -32,7 +32,7 @@ export default function GetConnected() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    let api = "find_cg";
+    const api = "find_cg";
     const res = await fetch("/api/" + api, {
       method: "POST",
       // headers: {
@@ -148,7 +148,7 @@ export default function GetConnected() {
                 </div>
               ) : (
                 <form
-                  onSubmit={handleSubmit}
+                  onSubmit={() => handleSubmit}
                   className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 >
                   <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
@@ -260,7 +260,7 @@ export default function GetConnected() {
                   onClick={() => setIsNeedHelp(true)}
                   className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4"
                 >
-                  Let's Talk
+                  Let&#39;s Talk
                   <div className="w-[1.18vw]"></div>
                   <div className="w-[2.92vw]">
                     <Image
