@@ -1,7 +1,4 @@
 import Head from "next/head";
-import { useState } from "react"; // Import useState hook
-import Link from "next/link";
-// import Image from "next/image";
 import Image from "next/image";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { XMarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/solid";
@@ -55,6 +52,7 @@ export default function GivingAccordion() {
               {/* TnG  */}
               <Image
                 src="/images/tng.png"
+                alt="tng"
                 width={60}
                 height={250}
                 className="my-2 ml-5"

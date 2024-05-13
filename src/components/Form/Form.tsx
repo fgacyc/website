@@ -7,15 +7,6 @@ import { Button } from "@nextui-org/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function Form() {
-  // todo: add actual pastoral options
-  const pastoral_options = [
-    { value: "ps._melvin_zone", label: "Ps. Melvin Zone" },
-    { value: "ps._daniel_zone", label: "Ps. Daniel Zone" },
-    { value: "json_zone", label: "Json Zone" },
-    { value: "xxxx1", label: "xxxx1" },
-    { value: "xxxx2", label: "xxxx2" },
-  ];
-
   const pastoral_status = [
     { value: "new_believer", label: "New Believer" },
     { value: "member", label: "Member" },

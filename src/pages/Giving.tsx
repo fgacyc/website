@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import GivingAccordion from "src/components/GivingAccordion";
 import { Button } from "@nextui-org/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";

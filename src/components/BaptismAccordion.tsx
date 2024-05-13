@@ -1,7 +1,6 @@
 import Head from "next/head";
 // import Image from "next/image";
 import { useState } from "react";
-import { Image } from "@nextui-org/image";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
