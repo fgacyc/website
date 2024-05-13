@@ -5,6 +5,7 @@ interface CompletedFormProps {
   tick_bg: string; // bg-white || bg-[#FFFFFF]
   tick_color: string; // #000000
   button_color: string; // bg-white || bg-[#FFFFFF]
+  button_text: string;
   text: string;
   desc: string;
   onClick?: () => void;
@@ -15,6 +16,7 @@ const CompletedForm = ({
   tick_bg,
   tick_color,
   button_color,
+  button_text,
   text,
   desc,
   onClick,
@@ -47,7 +49,7 @@ const CompletedForm = ({
         onClick={onClick}
         className={`sf-pro-display-black rounded-[35px] ${button_color} px-20 py-6 text-[25px] text-white`}
       >
-        Yay!
+        {button_text}
       </button>
     </div>
   );

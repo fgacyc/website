@@ -296,6 +296,7 @@ const Form = () => {
             tick_color="#00EDC2"
             button_color="bg-black"
             text="COMPLETED!"
+            button_text="Yay!"
             desc="We have received your submission, and we will be in touch soon!"
             onClick={() => setIsSubmitted(false)}
           />
