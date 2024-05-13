@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -117,7 +118,7 @@ export default function Wonderkids() {
           <img src={`${wonderkidLogo.src}`} alt="" className={``}/>
           <p className={`max-w-[450px] mt-14 font-normal font-hairline text-base leading-6 tracking-tight`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div className="flex items-center gap-3 mt-10">
-            <a href="https://www.facebook.com/FGACYC" target='_blank'>
+            <Link href="https://www.facebook.com/FGACYC" target='_blank'>
               <svg width="15" height="29" viewBox="0 0 15 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_234_162)">
                 <path d="M14.0185 16.3115L14.7942 11.0656H9.93404V7.65574C9.93404 6.22131 10.6148 4.81967 12.7916 4.81967H15V0.352459C15 0.352459 12.9894 0 11.0739 0C7.0686 0 4.44855 2.51639 4.44855 7.06557V11.0656H0V16.3115H4.44855V29H9.92612V16.3115H14.0106H14.0185Z" fill="black"/>
@@ -128,8 +129,8 @@ export default function Wonderkids() {
                 </clipPath>
                 </defs>
               </svg>
-            </a>
-            <a href="https://instagram.com/fgacyc" target='_blank' className='ms-5'>
+            </Link>
+            <Link href="https://instagram.com/fgacyc" target='_blank' className='ms-5'>
               <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_234_164)">
                 <path d="M22.1801 5.18066C21.2375 5.18066 20.4834 5.94296 20.4834 6.87739C20.4834 7.81181 21.2457 8.57411 22.1801 8.57411C23.1145 8.57411 23.8768 7.81181 23.8768 6.87739C23.8768 5.94296 23.1145 5.18066 22.1801 5.18066Z" fill="black"/>
@@ -142,8 +143,8 @@ export default function Wonderkids() {
                 </clipPath>
                 </defs>
               </svg>
-            </a>
-            <a href="https://www.youtube.com/user/fgacyc" target='_blank' className='ms-5'>
+            </Link>
+            <Link href="https://www.youtube.com/user/fgacyc" target='_blank' className='ms-5'>
             <svg width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_234_168)">
               <path d="M29 6.58284C29 2.94517 26.1524 0 22.6353 0H6.36467C2.84757 0 0 2.94517 0 6.58284V14.4172C0 18.0548 2.84757 21 6.36467 21H22.6353C26.1524 21 29 18.0548 29 14.4172V6.58284ZM19.4328 11.0882L12.1324 14.826C11.8501 14.9845 10.874 14.7759 10.874 14.4338V6.76639C10.874 6.42431 11.8501 6.21573 12.1405 6.3826L19.1263 10.3123C19.4167 10.4875 19.7232 10.9213 19.4328 11.0882Z" fill="black"/>
@@ -155,7 +156,7 @@ export default function Wonderkids() {
               </defs>
             </svg>
 
-            </a>
+            </Link>
           </div>
         </div>
 

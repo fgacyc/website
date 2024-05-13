@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Footer() {
   const router = useRouter();
@@ -117,7 +118,7 @@ export default function Footer() {
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-center">
             <div className="mb-6 md:mb-0 pt-2">
-              <a href="/" className="mb-9 flex items-center">{logo}</a>
+              <Link href="/" className="mb-9 flex items-center">{logo}</Link>
               <p className={`mb-6 ${text_color}`}>Wisma FGA, Taman Goodwood,<br />58200 Kuala Lumpur, Wilayah Persekutuan<br />Kuala Lumpur.</p>
               <p className={`${text_color}`}>03-7981 4755</p>
             </div>
@@ -126,25 +127,25 @@ export default function Footer() {
                 <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Explore</h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">About Us</a>
+                    <Link href="#" className="hover:underline">About Us</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Get Connected</a>
+                    <Link href="#" className="hover:underline">Get Connected</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Visit FGA</a>
+                    <Link href="#" className="hover:underline">Visit FGA</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Wonder Kids</a>
+                    <Link href="#" className="hover:underline">Wonder Kids</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Get Involved</a>
+                    <Link href="#" className="hover:underline">Get Involved</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Giving</a>
+                    <Link href="#" className="hover:underline">Giving</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Baptise</a>
+                    <Link href="#" className="hover:underline">Baptise</Link>
                   </li>
                 </ul>
               </div>
@@ -152,25 +153,25 @@ export default function Footer() {
                 <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Resources</h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Stream</a>
+                    <Link href="#" className="hover:underline">Stream</Link>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">Mobile App Development</a>
+                    <Link href="#" className="hover:underline">Mobile App Development</Link>
                   </li>                  
                 </ul>
               </div>
               <div className="w-fit">
                 <h2 className={`mb-6 text-[1.675rem] sm:text-3xl lg:text-4xl font-bold ${text_color}`}>Follow us</h2>
                 <div className="flex items-center sm:justify-between sm:mt-0">
-                  <a href="https://www.facebook.com/FGACYC" target='_blank'>
+                  <Link href="https://www.facebook.com/FGACYC" target='_blank'>
                     {fb_icon}
-                  </a>
-                  <a href="https://instagram.com/fgacyc" target='_blank' className='ms-5'>
+                  </Link>
+                  <Link href="https://instagram.com/fgacyc" target='_blank' className='ms-5'>
                     {ig_icon}
-                  </a>
-                  <a href="https://www.youtube.com/user/fgacyc" target='_blank' className='ms-5'>
+                  </Link>
+                  <Link href="https://www.youtube.com/user/fgacyc" target='_blank' className='ms-5'>
                     {youtube_icon}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

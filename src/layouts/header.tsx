@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -42,19 +43,19 @@ export default function Header() {
     <>
       <nav className="bg-tranparent dark:bg-tranparent">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
             {logo}
-          </a>
+          </Link>
           <div className="block w-auto">
             <ul className="flex flex-row font-medium rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-none">
               <li className="hidden md:block">
-                <a href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">About Us</a>
+                <Link href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">About Us</Link>
               </li>
               <li className="hidden md:block">
-                <a href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">Get Connected</a>
+                <Link href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">Get Connected</Link>
               </li>
               <li className="hidden md:block">
-                <a href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">Visit FGA</a>
+                <Link href="#" className="inline-flex items-center justify-center p-2 text-black text-sm">Visit FGA</Link>
               </li>
               <li className="">
                 <button onClick={toggleMenu} type="button" className={`inline-flex items-center justify-center p-2 text-sm text-black hover:bg-tranparent focus:outline-none dark:text-black dark:hover:bg-tranparent ${main_menu_btn_color}`} aria-controls="headerDropDownMenu" aria-expanded={isMenuOpen}>
@@ -72,15 +73,15 @@ export default function Header() {
                       </svg>
                     </button>
                     <div className="mt-[87px]">
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">About Us</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Get Connected</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Visit FGA</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Wonder Kids</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Get Involved</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Giving</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Baptise</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Stream</a></li>
-                      <li><a href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Mobile App</a></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">About Us</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Get Connected</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Visit FGA</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Wonder Kids</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Get Involved</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Giving</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Baptise</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Stream</Link></li>
+                      <li><Link href="#" className="block px-4 py-2 text-black hover:bg-[#00EDC2] text-right text-3xl lg:text-4xl xl:text-5xl pr-32">Mobile App</Link></li>
                     </div>
                   </ul>
                 )}
