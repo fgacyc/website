@@ -24,7 +24,7 @@ import photo7 from "src/assets/wonderkids/photo_7.png";
 import photo8 from "src/assets/wonderkids/photo_8.png";
 import photo9 from "src/assets/wonderkids/photo_9.png";
 import photo10 from "src/assets/wonderkids/photo_10.png";
-import rocket from "src/assets/wonderkids/rocket.svg";
+//import rocket from "src/assets/wonderkids/rocket.svg";
 
 
 export default function Wonderkids() {
@@ -111,7 +111,7 @@ export default function Wonderkids() {
           </svg>
         </div>
 
-        <img src={`${rocket.src}`} alt="" className={`absolute right-0 z-[1]`}/>
+        
 
         <div className={`md:ml-[114px] lg:ml-[157px] xl:ml-[200px] 2xl:ml-[243px] z-[2] relative`}>
           <img src={`${wonderkidLogo.src}`} alt="" className={``}/>
