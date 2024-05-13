@@ -1,7 +1,68 @@
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
+import { useState } from "react";
+import ArrowButton from "~/components/ArrowButton";
+import CompletedForm from "~/components/CompletedForm";
+import FormCheckList from "~/components/FormCheckList";
+import FormInput from "~/components/FormInput";
 
 export default function GetConnected() {
+  const [isNeedHelp, setIsNeedHelp] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [location, setLocation] = useState("");
+  const [age, setAge] = useState("");
+  const [category, setCategory] = useState("");
+  const [nameError, setNameError] = useState(false);
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
+  const [locationError, setLocationError] = useState(false);
+  const [ageError, setAgeError] = useState(false);
+
+  const categories_list = [
+    { value: "secondary", label: "Secondary Students" },
+    { value: "tertiay", label: "College / University" },
+    { value: "young_adult", label: "Young Adults" },
+    { value: "married", label: "Married" },
+    { value: "family", label: "Family" },
+    { value: "entrepreneur", label: "Entrepreneur" },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    let api = "find_cg";
+    const res = await fetch("/api/" + api, {
+      method: "POST",
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      body: JSON.stringify({
+        name,
+        phone_number: phoneNumber,
+        location,
+        age: parseInt(age),
+        kids: false,
+        categories: [category],
+      }),
+    })
+      .then((r) => {
+        console.log(r);
+        setIsSubmitted(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log({
+      name,
+      phoneNumber,
+      location,
+      age,
+      category,
+    });
+  };
+
   return (
     <>
       <main className="overflow-x-hidden">
@@ -70,6 +131,122 @@ export default function GetConnected() {
               </div>
             </div>
           </div>
+          {isNeedHelp ? (
+            <div className="bg-white bg-[url('/images/get-connected/get-connected-bg.png')] bg-cover pb-[5.83vw] pt-[5.83vw]">
+              {isSubmitted ? (
+                <div className="flex h-screen flex-col items-center justify-center">
+                  <CompletedForm
+                    bg_color="bg-[#00EDC2]"
+                    tick_bg="bg-white"
+                    tick_color="#00EDC2"
+                    button_color="bg-black"
+                    button_text="Keep Exploring"
+                    text="COMPLETED!"
+                    desc="We have received your request."
+                    onClick={() => setIsSubmitted(false)}
+                  />
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                >
+                  <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
+                    Find a Connect Group
+                  </div>
+                  <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
+                  <FormInput
+                    className="w-4/5"
+                    label="Your name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    validate={(inputValue: string) =>
+                      /^[A-Za-z\s]+$/.test(inputValue)
+                    }
+                    placeholder="Full name"
+                    value={name}
+                    onInputChange={(value) => setName(value)}
+                    error={nameError}
+                    setError={setNameError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Phone Number"
+                    type="tel"
+                    name="phone_number"
+                    id="phone_number"
+                    validate={(inputValue: string) =>
+                      /^\+?[0-9]{1,3}-?[0-9]{3,4}-?[0-9]{4,}$/i.test(inputValue)
+                    }
+                    placeholder="+60xx-xxx-xxxx"
+                    value={phoneNumber}
+                    onInputChange={(value) => setPhoneNumber(value)}
+                    error={phoneNumberError}
+                    setError={setPhoneNumberError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Locations"
+                    type="text"
+                    name="location"
+                    id="location"
+                    validate={(inputValue: string) =>
+                      /^[A-Za-z\s]+$/.test(inputValue)
+                    }
+                    placeholder="Your location"
+                    value={location}
+                    onInputChange={(value) => setLocation(value)}
+                    error={locationError}
+                    setError={setLocationError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Age"
+                    type="number"
+                    name="age"
+                    id="age"
+                    placeholder="Your age"
+                    value={age}
+                    onInputChange={(value) => setAge(value)}
+                    error={ageError}
+                    setError={setAgeError}
+                  />
+
+                  <div className="w-4/5">
+                    <fieldset>
+                      <legend className="sf-pro-display text-xl font-semibold leading-6 text-gray-900">
+                        Categories
+                      </legend>
+                      {categories_list.map((elem, index) => (
+                        <FormCheckList
+                          key={index}
+                          id={elem.value}
+                          label={elem.label}
+                          name={elem.value}
+                          value={category}
+                          onInputSelect={(value) => setCategory(value)}
+                        />
+                      ))}
+                    </fieldset>
+                  </div>
+
+                  <ArrowButton
+                    text="Submit your request"
+                    text_color="text-white"
+                    arrow_color="white"
+                    bg_color="bg-black"
+                    className="mt-[111px] w-4/5 text-lg sm:w-auto sm:text-[25px]"
+                  />
+                </form>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
           <div className="flex flex-col items-center bg-[#d9d9d9] pb-[8.89vw] pt-[8.89vw] text-black">
             <div>
               <div className="sf-pro-display flex flex-col items-center text-[8.33vw] font-bold">
@@ -79,7 +256,10 @@ export default function GetConnected() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </div>
               <div className="mt-[1.94vw] flex flex-col items-center">
-                <button className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4">
+                <button
+                  onClick={() => setIsNeedHelp(true)}
+                  className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4"
+                >
                   Let's Talk
                   <div className="w-[1.18vw]"></div>
                   <div className="w-[2.92vw]">
