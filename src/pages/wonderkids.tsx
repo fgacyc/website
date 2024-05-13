@@ -101,7 +101,7 @@ export default function Wonderkids() {
   return (
     <>
     <main role="main" className={`bg-[#fab800]`}>
-      <section className={'bg-cover'} style={{backgroundImage: `url(${wonderkidsBg.src})`}} >
+      <section className={'bg-cover relative z-[0]'} style={{backgroundImage: `url(${wonderkidsBg.src})`}} >
         <Header />
 
         <div className={`max-w-screen-xl mx-auto`}>
@@ -111,7 +111,9 @@ export default function Wonderkids() {
           </svg>
         </div>
 
-        <div className={`md:ml-[114px] lg:ml-[157px] xl:ml-[200px] 2xl:ml-[243px]`}>
+        <img src={`${rocket.src}`} alt="" className={`absolute right-0 z-[1]`}/>
+
+        <div className={`md:ml-[114px] lg:ml-[157px] xl:ml-[200px] 2xl:ml-[243px] z-[2] relative`}>
           <img src={`${wonderkidLogo.src}`} alt="" className={``}/>
           <p className={`max-w-[450px] mt-14 font-normal font-hairline text-base leading-6 tracking-tight`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div className="flex items-center gap-3 mt-10">
