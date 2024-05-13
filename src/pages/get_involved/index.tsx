@@ -274,16 +274,19 @@ const Form = () => {
   const [emailError, setEmailError] = useState(false);
 
   // todo: add validation
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({
-      name,
-      phoneNumber,
-      email,
-      pastoralTeam,
-      ministry,
+    const res = await fetch("/api/get_involved", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        phone_number: phoneNumber,
+        email,
+        pastoral: pastoralTeam,
+        ministry,
+      }),
     });
-    setIsSubmitted(true);
+    res.status === 200 ? setIsSubmitted(true) : alert("Failed to submit");
   };
 
   return (
@@ -302,7 +305,7 @@ const Form = () => {
         </div>
       ) : (
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => void handleSubmit(e)}
           className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#F5F5F8] py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         >
           <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
@@ -386,20 +389,22 @@ const Form = () => {
   );
 };
 
-// todo: add bg
+// todo: fix bg footer
 const GetInvolved = () => {
   return (
-    <>
-      <Banner
-        text="Build our home together"
-        desc='"Lorem ipsum dolor sit amet, consectetur adipiscing elit."'
-        img_url="/images/get_involved.png"
-        img_width={1258}
-        img_height={622}
-      />
+    <div className="bg-[url('/images/bg_white.png')]">
+      <div className="bg-white">
+        <Banner
+          text="Build our home together"
+          desc='"Lorem ipsum dolor sit amet, consectetur adipiscing elit."'
+          img_url="/images/get_involved.png"
+          img_width={1258}
+          img_height={622}
+        />
+      </div>
       <Explore />
       <Form />
-    </>
+    </div>
   );
 };
 

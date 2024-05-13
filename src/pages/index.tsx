@@ -107,6 +107,79 @@ const HomeSection3 = () => {
   );
 };
 
+const HomeSection4 = () => {
+  return (
+    <section className="my-[92px]">
+      <div className="flex flex-col px-[30px] sm:pl-[59px] md:pl-[165px] lg:pl-[243px] xl:flex-row xl:pr-0">
+        <div className="relative ml-[12px] h-[474px] w-[316px] sm:h-[748px] sm:w-[498px]">
+          <div
+            className="absolute bottom-0 right-0 z-0 h-[326px] w-[184px] rounded-br-[60px] border-[12px]
+        border-[#00EDC2] sm:h-[551px] sm:rounded-br-[83px]"
+          ></div>
+          <Image
+            src={"/images/our_pastor.png"}
+            alt={"Our Pastor Image"}
+            width={498}
+            height={748}
+            className="absolute bottom-[12px] right-[12px] z-10"
+          />
+        </div>
+        <div className="xl:px-0">
+          <div className="relative z-20 mt-10 text-7xl font-bold sm:text-9xl xl:ml-[-173px] xl:mt-0">
+            <span className="xl:text-white">Ou</span>
+            <span>r Pastors</span>
+          </div>
+          <div className="mt-[52px] text-xl sm:w-[491px] xl:ml-[49px] xl:w-[425px] 2xl:w-[491px]">
+            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation.&quot;Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation. <br />
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation.
+          </div>
+        </div>
+      </div>
+
+      <hr className="mx-auto mb-[57px] mt-[67px] w-4/5 border-[3px] border-[#919191]" />
+
+      <div className="relative mx-auto h-[575px] w-4/5 xl:h-[360px]">
+        <div className="absolute bottom-[-12px] right-[-12px] z-0 h-[575px] w-[300px] rounded-br-[88px] border-[12px] border-[#00EDC2] md:w-[405px] xl:h-[360px]"></div>
+        <div className="relative z-10 flex h-full w-full flex-col justify-center rounded-br-[70px] bg-[#241F20] pl-[60px] text-white">
+          <div className="mr-[30px] text-7xl font-bold sm:text-9xl">
+            Ways We Give
+          </div>
+          <div className="mr-[30px] mt-[20px] text-xl">
+            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <Link href={"/giving"} className="mt-[33px] w-[194px]">
+            <div className="flex items-center justify-between border-b-[3px] border-[#00EDC2] pb-1.5 text-[33px] font-bold text-[#00EDC2]">
+              Give Now{" "}
+              <svg
+                width="44"
+                height="24"
+                viewBox="0 0 44 24"
+                fill="#00EDC2"
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-3"
+              >
+                <path
+                  d="M43.0607 13.0607C43.6464 12.4749 43.6464 11.5251 43.0607 10.9393L33.5147 1.3934C32.9289 0.807611 31.9792 0.807611 31.3934 1.3934C30.8076 1.97919 30.8076 2.92893 31.3934 3.51472L39.8787 12L31.3934 20.4853C30.8076 21.0711 30.8076 22.0208 31.3934 22.6066C31.9792 23.1924 32.9289 23.1924 33.5147 22.6066L43.0607 13.0607ZM0 13.5H42V10.5H0V13.5Z"
+                  fill="#00EDC2"
+                />
+              </svg>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
     <>
@@ -119,75 +192,7 @@ export default function Home() {
         <HomeSection1 />
         <HomeSection2 />
         <HomeSection3 />
-        <section className="my-[92px]">
-          <div className="flex flex-col px-[30px] sm:pl-[59px] md:pl-[165px] lg:pl-[243px] xl:flex-row xl:pr-0">
-            <div className="relative ml-[12px] h-[474px] w-[316px] sm:h-[748px] sm:w-[498px]">
-              <div
-                className="absolute bottom-0 right-0 z-0 h-[326px] w-[184px] rounded-br-[60px] border-[12px]
-                border-[#00EDC2] sm:h-[551px] sm:rounded-br-[83px]"
-              ></div>
-              <Image
-                src={"/images/our_pastor.png"}
-                alt={"Our Pastor Image"}
-                width={498}
-                height={748}
-                className="absolute bottom-[12px] right-[12px] z-10"
-              />
-            </div>
-            <div className="xl:px-0">
-              <div className="relative z-20 mt-10 text-7xl font-bold sm:text-9xl xl:ml-[-173px] xl:mt-0">
-                <span className="xl:text-white">Ou</span>
-                <span>r Pastors</span>
-              </div>
-              <div className="mt-[52px] text-xl sm:w-[491px] xl:ml-[49px] xl:w-[425px] 2xl:w-[491px]">
-                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation.&quot;Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation. <br />
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation.
-              </div>
-            </div>
-          </div>
-
-          <hr className="mx-auto mb-[57px] mt-[67px] w-4/5 border-[3px] border-[#919191]" />
-
-          <div className="relative mx-auto h-[575px] w-4/5 xl:h-[360px]">
-            <div className="absolute bottom-[-12px] right-[-12px] z-0 h-[575px] w-[300px] rounded-br-[88px] border-[12px] border-[#00EDC2] md:w-[405px] xl:h-[360px]"></div>
-            <div className="relative z-10 flex h-full w-full flex-col justify-center rounded-br-[70px] bg-[#241F20] pl-[60px] text-white">
-              <div className="mr-[30px] text-7xl font-bold sm:text-9xl">
-                Ways We Give
-              </div>
-              <div className="mr-[30px] mt-[20px] text-xl">
-                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </div>
-              <Link href={"/giving"} className="mt-[33px] w-[194px]">
-                <div className="flex items-center justify-between border-b-[3px] border-[#00EDC2] pb-1.5 text-[33px] font-bold text-[#00EDC2]">
-                  Give Now{" "}
-                  <svg
-                    width="44"
-                    height="24"
-                    viewBox="0 0 44 24"
-                    fill="#00EDC2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="ml-3"
-                  >
-                    <path
-                      d="M43.0607 13.0607C43.6464 12.4749 43.6464 11.5251 43.0607 10.9393L33.5147 1.3934C32.9289 0.807611 31.9792 0.807611 31.3934 1.3934C30.8076 1.97919 30.8076 2.92893 31.3934 3.51472L39.8787 12L31.3934 20.4853C30.8076 21.0711 30.8076 22.0208 31.3934 22.6066C31.9792 23.1924 32.9289 23.1924 33.5147 22.6066L43.0607 13.0607ZM0 13.5H42V10.5H0V13.5Z"
-                      fill="#00EDC2"
-                    />
-                  </svg>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <HomeSection4 />
       </main>
     </>
   );
