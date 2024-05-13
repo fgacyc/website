@@ -1,6 +1,5 @@
 import React from "react";
 import Link from 'next/link';
-import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
