@@ -5,11 +5,11 @@ export default function WkFAQAccordion() {
   const openAndCloseIcon = (isOpen: boolean | undefined) => {
     if (isOpen)
       return (
-        <XMarkIcon className="text-bold  size-6  -translate-y-10 text-white" />
+        <XMarkIcon className="text-bold w-10 size-6  -translate-y-10 text-white" />
       );
     else
       return (
-        <ArrowLongRightIcon className="text-bold size-6 -translate-x-10 text-white" />
+        <ArrowLongRightIcon className="text-bold w-10 size-6 -translate-x-10 text-white" />
       );
   };
   
