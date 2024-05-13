@@ -4,7 +4,6 @@
 
 @font-face {
   font-family: SF Pro Display;
-
   src: url("/fonts/SF-Pro-Display-Regular.otf");
 }
 
@@ -56,4 +55,31 @@
 .microsoft-jheng-hei {
   font-family: Microsoft JhengHei, sans-serif;
   line-height: 1.3;
+}
+
+
+.w-full {
+    width: 100%;
+}
+
+.accordionStyle {
+    width:200%;
+    max-width: 200%;
+}
+
+.maxWidthMiddle {
+    max-width: 200rem;
+    max-height: 50rem;
+}
+
+.wayWeGiveStyle {
+    max-height: 200px;
+}
+
+#accordion1, #accordion2, #accordion3 {
+    box-shadow: none;
+}
+
+#baptiseBtn {
+    width: 25rem;
 }
