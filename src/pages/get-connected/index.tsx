@@ -33,7 +33,7 @@ export default function GetConnected() {
     e.preventDefault();
 
     const api = "find_cg";
-    const res = await fetch("/api/" + api, {
+    await fetch("/api/" + api, {
       method: "POST",
       // headers: {
       //   "Content-Type": "application/json",
@@ -148,7 +148,7 @@ export default function GetConnected() {
                 </div>
               ) : (
                 <form
-                  onSubmit={() => handleSubmit}
+                  onSubmit={(e) => void handleSubmit(e)}
                   className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 >
                   <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">

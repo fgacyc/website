@@ -38,7 +38,7 @@ export default function AboutUs() {
             </h1>
           </div>
           <Image
-            src="/About-us-top-bg.png"
+            src="/images/about-us/About-us-top-bg.png"
             alt="aboutUs"
             width={100}
             height={800}
@@ -94,7 +94,7 @@ export default function AboutUs() {
             </div>
           </div>
           <Image
-            src="/About-us-middle-bg.png"
+            src="/images/about-us/About-us-middle-bg.png"
             alt="about-middle-bg"
             width={100}
             height={600}

@@ -13,7 +13,7 @@ export default function AboutUs() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden ">
-        <div className="min-w-screen  relative  flex h-screen w-screen items-center justify-around bg-[url('/images/giving-top-bg.png')] bg-cover">
+        <div className="min-w-screen  relative  flex h-screen w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover">
           <div className="font-bold leading-10">
             <h1 className="mb-5 text-2xl  md:text-3xl lg:text-5xl xl:text-6xl">
               {" "}
@@ -40,7 +40,7 @@ export default function AboutUs() {
         </div>
 
         <div className=" font-bold text-white">
-          <div className=" h-screen w-screen bg-[url('/images/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex ">
+          <div className=" h-screen w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex ">
             <div className="xl:mt-44">
               <div className=" pl-24 xl:mx-24 xl:mt-0 2xl:mx-60 ">
                 <div className=" pt-20 text-5xl sm:max-md:text-lg lg:text-9xl xl:pt-0">

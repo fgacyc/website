@@ -23,7 +23,7 @@ export default function Baptism() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden ">
-        <div className="min-w-screen  flex h-screen w-screen items-center justify-center bg-[url('/images/baptism-top-bg.png')] bg-cover">
+        <div className="min-w-screen  flex h-screen w-screen items-center justify-center bg-[url('/images/baptism/baptism-top-bg.png')] bg-cover">
           <div className=" pr-40 font-bold leading-10">
             <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
@@ -53,7 +53,7 @@ export default function Baptism() {
             </p>
             <p>enim ad minim veniam, quis nostrud exercitation. </p>
             <Image
-              src="/images/baptise-img-1.png"
+              src="/images/baptism/baptise-img-1.png"
               alt="aboutUs"
               width={550}
               height={0}
@@ -63,7 +63,7 @@ export default function Baptism() {
             />
 
             <Image
-              src="/images/baptise-img-2.png"
+              src="/images/baptism/baptise-img-2.png"
               alt="aboutUs"
               width={550}
               height={0}
@@ -109,7 +109,7 @@ export default function Baptism() {
         {openForm ? (
           <div
             id="sectionRef"
-            className="bg-[url('/images/baptise-form-bg.png')] bg-cover pt-5 xl:px-20 xl:py-10"
+            className="bg-[url('/images/baptism/baptise-form-bg.png')] bg-cover pt-5 xl:px-20 xl:py-10"
           >
             {" "}
             <Form />{" "}
