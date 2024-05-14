@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Button } from '@nextui-org/react'
+import { Button } from "@nextui-org/react";
 
 export default function Home() {
   return (
