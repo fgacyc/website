@@ -2,13 +2,15 @@ import { type Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.tsx",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '128': '32rem',
+        '136':'36rem'
+      }
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

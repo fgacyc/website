@@ -5,7 +5,7 @@ import ArrowLink from "~/components/ArrowLink";
 
 const HomeSection1 = () => {
   return (
-    <section className="relative flex h-screen w-full items-center bg-[url(/images/bg_landing_1.png)] bg-cover text-white">
+    <section className="relative flex h-screen w-full items-center bg-[url(/images/landing/bg_landing_1.png)] bg-cover text-white">
       <div className="pl-[30px] sm:pl-[59px] md:pl-[165px] lg:pl-[243px]">
         <div className="text-2xl sm:text-[40px]">/ FGA CYC</div>
         <div className="mt-[25px] text-7xl font-bold sm:mt-[53px] sm:text-9xl">
@@ -72,7 +72,7 @@ const HomeSection2 = () => {
 const HomeSection3 = () => {
   return (
     <section
-      className="flex min-h-screen flex-col justify-center bg-[url(/images/bg_landing_3.png)] 
+      className="flex min-h-screen flex-col justify-center bg-[url(/images/landing/bg_landing_3.png)] 
   bg-cover px-[30px] text-white sm:px-[59px] sm:py-[169px] md:px-[165px] lg:px-[243px]"
     >
       <div className="text-7xl font-bold sm:text-9xl">Our Vision</div>
@@ -86,7 +86,7 @@ const HomeSection3 = () => {
     md:rounded-bl-[70px] lg:h-[401px] lg:w-[602px] lg:rounded-bl-[96px] xl:h-[541px] xl:w-[805px]"
       >
         <Image
-          src="/images/our_vision.png"
+          src="/images/landing/our_vision.png"
           alt="Our Vision Image"
           width={804}
           height={536}
@@ -117,7 +117,7 @@ const HomeSection4 = () => {
         border-[#00EDC2] sm:h-[551px] sm:rounded-br-[83px]"
           ></div>
           <Image
-            src={"/images/our_pastor.png"}
+            src={"/images/landing/our_pastor.png"}
             alt={"Our Pastor Image"}
             width={498}
             height={748}
@@ -188,7 +188,7 @@ export default function Home() {
         <meta name="description" content="FGA CYC Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="sf-pro-display overflow-x-hidden">
+      <main className="sf-pro-display pt-[68px overflow-x-hidden">
         <HomeSection1 />
         <HomeSection2 />
         <HomeSection3 />
