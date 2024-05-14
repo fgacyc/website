@@ -391,6 +391,7 @@ const Form = () => {
 const GetInvolved = () => {
   return (
     <>
+      <div className="pt-[68px]"></div>
       <Banner
         text="Build our home together"
         desc='"Lorem ipsum dolor sit amet, consectetur adipiscing elit."'
