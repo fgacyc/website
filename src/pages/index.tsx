@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="sf-pro-display relative flex h-screen items-center bg-[url(/images/landing/bg_landing_1.png)] bg-cover text-white">
+        <section className="sf-pro-display relative flex h-screen items-center bg-[url(/images/landing/bg_landing_1.png)] bg-cover pt-[68px] text-white">
           <div className="pl-[243px]">
             <div className="text-[40px]">/ FGA CYC</div>
             <div className="mt-[53px] text-9xl font-bold">
