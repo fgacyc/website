@@ -1,0 +1,282 @@
+import { Divider } from "@nextui-org/react";
+import Image from "next/image";
+import { useState } from "react";
+import ArrowButton from "~/components/ArrowButton";
+import CompletedForm from "~/components/CompletedForm";
+import FormCheckList from "~/components/FormCheckList";
+import FormInput from "~/components/FormInput";
+
+export default function GetConnected() {
+  const [isNeedHelp, setIsNeedHelp] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [location, setLocation] = useState("");
+  const [age, setAge] = useState("");
+  const [category, setCategory] = useState("");
+  const [nameError, setNameError] = useState(false);
+  const [phoneNumberError, setPhoneNumberError] = useState(false);
+  const [locationError, setLocationError] = useState(false);
+  const [ageError, setAgeError] = useState(false);
+
+  const categories_list = [
+    { value: "secondary", label: "Secondary Students" },
+    { value: "tertiay", label: "College / University" },
+    { value: "young_adult", label: "Young Adults" },
+    { value: "married", label: "Married" },
+    { value: "family", label: "Family" },
+    { value: "entrepreneur", label: "Entrepreneur" },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const api = "find_cg";
+    await fetch("/api/" + api, {
+      method: "POST",
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      body: JSON.stringify({
+        name,
+        phone_number: phoneNumber,
+        location,
+        age: parseInt(age),
+        kids: false,
+        categories: [category],
+      }),
+    })
+      .then((r) => {
+        console.log(r);
+        setIsSubmitted(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log({
+      name,
+      phoneNumber,
+      location,
+      age,
+      category,
+    });
+  };
+
+  return (
+    <>
+      <main className="overflow-x-hidden">
+        <div className="bg-[#1d2129] text-white">
+          <div className="flex flex-col items-center">
+            <Image
+              alt=""
+              src={"/images/get-connected/banner.png"}
+              width={1200}
+              height={600}
+              // width={100}
+              // height={100}
+              className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
+            ></Image>
+            <div className="absolute inset-0 ms-[15vw] mt-[3vw] sm:mt-[7.9vw]">
+              <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
+                Get Connected
+              </h3>
+              <h6 className="w-[35vw] text-[8px] sm:text-[10px] md:mt-1 md:w-[192px] lg:w-[35vw] lg:text-lg lg:leading-5 xl:text-xl">
+                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation.&quot;
+              </h6>
+            </div>
+          </div>
+          <div className="mb-[16.45vw] mt-[13vw]">
+            <div>
+              <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7">
+                <h3 className="w-[55vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
+                  How to Get Connect?
+                </h3>
+                <h6 className="mt-[2vw] w-[52vw] text-[8px] sm:text-[10px] lg:text-xl">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </h6>
+              </div>
+              <div className="flex w-full flex-col items-center">
+                <Divider className="mb-[6vw] mt-[5vw] w-3/5 bg-white"></Divider>
+              </div>
+              {/* <div className="ms-[20vw] text-white">123123</div> */}
+              <div className="ms-[20vw] flex">
+                <h3 className="w-[34vw] text-3xl font-bold transition delay-150 duration-300 hover:-translate-y-7 sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl">
+                  What is Connect Group?
+                </h3>
+                <div className="ms-[3.6vw] flex items-center">
+                  <div>
+                    <h6 className="mb-[3.33vw] w-[22vw] text-[8px] sm:text-[10px] lg:text-xl">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </h6>
+                    <button className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:text-xl xl:px-10 xl:py-3.5">
+                      Find a ConnectGroup{" "}
+                      <Image
+                        src={"/icons/right_arrow.svg"}
+                        width={42}
+                        height={42}
+                        alt="right arrow icon"
+                        className="ml-1 w-[2.9vw] sm:ml-3"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {isNeedHelp ? (
+            <div className="bg-white bg-[url('/images/get-connected/get-connected-bg.png')] bg-cover pb-[5.83vw] pt-[5.83vw]">
+              {isSubmitted ? (
+                <div className="flex h-screen flex-col items-center justify-center">
+                  <CompletedForm
+                    bg_color="bg-[#00EDC2]"
+                    tick_bg="bg-white"
+                    tick_color="#00EDC2"
+                    button_color="bg-black"
+                    button_text="Keep Exploring"
+                    text="COMPLETED!"
+                    desc="We have received your request."
+                    onClick={() => setIsSubmitted(false)}
+                  />
+                </div>
+              ) : (
+                <form
+                  onSubmit={(e) => void handleSubmit(e)}
+                  className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                >
+                  <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
+                    Find a Connect Group
+                  </div>
+                  <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
+                  <FormInput
+                    className="w-4/5"
+                    label="Your name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    validate={(inputValue: string) =>
+                      /^[A-Za-z\s]+$/.test(inputValue)
+                    }
+                    placeholder="Full name"
+                    value={name}
+                    onInputChange={(value) => setName(value)}
+                    error={nameError}
+                    setError={setNameError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Phone Number"
+                    type="tel"
+                    name="phone_number"
+                    id="phone_number"
+                    validate={(inputValue: string) =>
+                      /^\+?[0-9]{1,3}-?[0-9]{3,4}-?[0-9]{4,}$/i.test(inputValue)
+                    }
+                    placeholder="+60xx-xxx-xxxx"
+                    value={phoneNumber}
+                    onInputChange={(value) => setPhoneNumber(value)}
+                    error={phoneNumberError}
+                    setError={setPhoneNumberError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Locations"
+                    type="text"
+                    name="location"
+                    id="location"
+                    validate={(inputValue: string) =>
+                      /^[A-Za-z\s]+$/.test(inputValue)
+                    }
+                    placeholder="Your location"
+                    value={location}
+                    onInputChange={(value) => setLocation(value)}
+                    error={locationError}
+                    setError={setLocationError}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Age"
+                    type="number"
+                    name="age"
+                    id="age"
+                    placeholder="Your age"
+                    value={age}
+                    onInputChange={(value) => setAge(value)}
+                    error={ageError}
+                    setError={setAgeError}
+                  />
+
+                  <div className="w-4/5">
+                    <fieldset>
+                      <legend className="sf-pro-display text-xl font-semibold leading-6 text-gray-900">
+                        Categories
+                      </legend>
+                      {categories_list.map((elem, index) => (
+                        <FormCheckList
+                          key={index}
+                          id={elem.value}
+                          label={elem.label}
+                          name={elem.value}
+                          value={category}
+                          onInputSelect={(value) => setCategory(value)}
+                        />
+                      ))}
+                    </fieldset>
+                  </div>
+
+                  <ArrowButton
+                    text="Submit your request"
+                    text_color="text-white"
+                    arrow_color="white"
+                    bg_color="bg-black"
+                    className="mt-[111px] w-4/5 text-lg sm:w-auto sm:text-[25px]"
+                  />
+                </form>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="flex flex-col items-center bg-[#d9d9d9] pb-[8.89vw] pt-[8.89vw] text-black">
+            <div>
+              <div className="sf-pro-display flex flex-col items-center text-[8.33vw] font-bold">
+                Need help?
+              </div>
+              <div className="mt-[1.18vw] flex flex-col items-center text-[8px] sm:text-[10px] lg:text-lg xl:text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </div>
+              <div className="mt-[1.94vw] flex flex-col items-center">
+                <button
+                  onClick={() => setIsNeedHelp(true)}
+                  className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4"
+                >
+                  Let&#39;s Talk
+                  <div className="w-[1.18vw]"></div>
+                  <div className="w-[2.92vw]">
+                    <Image
+                      src={"/icons/right_arrow.svg"}
+                      width={42}
+                      height={42}
+                      alt="right arrow icon"
+                      className=""
+                    />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}

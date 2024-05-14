@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 360px) {
-  .wk-age-groups > .slick-list > .slick-track > .slick-slide > div{
+  .wk-age-groups > .slick-list > .slick-track > .slick-slide > div {
     width: 90vw;
   }
   .wk-age-groups > .slick-list > .slick-track > .slick-slide {
@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 361px) and (max-width: 499px) {
-  .wk-age-groups > .slick-list > .slick-track > .slick-slide > div{
+  .wk-age-groups > .slick-list > .slick-track > .slick-slide > div {
     width: 80vw;
   }
   .wk-age-groups > .slick-list > .slick-track > .slick-slide {
@@ -52,4 +52,86 @@
   .wk-age-groups > .slick-next:before {
     content: url("data:image/svg+xml,%3Csvg width='40' viewBox='0 0 40 67' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.57573 2.54127L7.57575 2.54125L7.5709 2.53664C6.8835 1.88285 5.96214 1.40137 4.85483 1.40137C2.67155 1.40137 1.00006 3.08534 1.00006 5.26761C1.00006 6.3137 1.42432 7.28186 2.11946 7.97971L2.12612 7.9864L2.13291 7.99296L28.7389 33.7125L2.13364 59.3791L2.11674 59.3954L2.10062 59.4125C1.42306 60.1305 1.00006 61.1171 1.00006 62.1338C1.00006 64.3161 2.67155 66.0001 4.85483 66.0001C5.94838 66.0001 6.84915 65.558 7.55406 64.8536L36.8566 36.6078C37.665 35.865 38.1709 34.8352 38.1709 33.7008C38.1709 32.5577 37.6873 31.5983 36.9088 30.8167L36.9016 30.8095L36.8943 30.8024L7.57573 2.54127Z' fill='%23FAB800' stroke='%23FAB800' stroke-width='2'/%3E%3C/svg%3E") !important;
   }
+}
+@font-face {
+  font-family: SF Pro Display;
+  src: url("/fonts/SF-Pro-Display-Regular.otf");
+}
+
+@font-face {
+  font-family: SF Pro Display Black;
+
+  src: url("/fonts/SF-Pro-Display-Black.otf");
+}
+
+@font-face {
+  font-family: Microsoft Yahei;
+  src: url("/fonts/Microsoft-Yahei.ttf");
+}
+
+@font-face {
+  font-family: FZ Chao Cu Hei;
+  src: url("/fonts/FZ_Chaocuhei.ttf");
+}
+
+@font-face {
+  font-family: Microsoft JhengHei;
+  src: url("/fonts/Microsoft_JhengHei.ttc");
+}
+
+:root {
+  color: #000000;
+}
+
+.sf-pro-display {
+  font-family: SF Pro Display, sans-serif;
+  line-height: 1;
+}
+
+.sf-pro-display-black {
+  font-family: SF Pro Display Black, sans-serif;
+  line-height: 1;
+}
+
+.microsoft-yahei {
+  font-family: Microsoft Yahei, sans-serif;
+  line-height: 1.8;
+}
+
+.fz-chao-cu-hei {
+  font-family: FZ Chao Cu Hei, sans-serif;
+  line-height: 1.3;
+}
+
+.microsoft-jheng-hei {
+  font-family: Microsoft JhengHei, sans-serif;
+  line-height: 1.3;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.accordionStyle {
+  width: 200%;
+  max-width: 200%;
+}
+
+.maxWidthMiddle {
+  max-width: 200rem;
+  max-height: 50rem;
+}
+
+.wayWeGiveStyle {
+  max-height: 200px;
+}
+
+#accordion1,
+#accordion2,
+#accordion3 {
+  box-shadow: none;
+}
+
+#baptiseBtn {
+  width: 25rem;
 }
