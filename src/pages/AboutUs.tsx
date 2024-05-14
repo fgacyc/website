@@ -19,8 +19,8 @@ export default function AboutUs() {
       </Head>
       <main className="overflow-x-hidden">
         {/* VISION && MISSION */}
-        <div className="min-w-screen  relative flex w-screen items-center justify-center">
-          <div className="absolute left-20 top-10 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60 lg:top-60	">
+        <div className="min-w-screen  relative flex h-screen w-screen items-center justify-center bg-[url('/images/About-us-top-bg.png')] bg-cover">
+          <div className="top-30 absolute left-20 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60 lg:top-60	">
             <h1 className="text-2xl sm:text-4xl lg:text-7xl"> Our Vision </h1>
             <h1 className="sm:text-1xl my-1 text-sm lg:text-2xl">
               {" "}
@@ -37,19 +37,19 @@ export default function AboutUs() {
               100 strong local churches, 100,000 disciples.{" "}
             </h1>
           </div>
-          <Image
+          {/* <Image
             src="/About-us-top-bg.png"
             alt="aboutUs"
             width={100}
             height={800}
             layout="responsive"
             className="min-w-0"
-          />
+          /> */}
         </div>
 
         {/* CORE VALUE */}
-        <div className="relative w-screen font-bold text-white">
-          <div className="absolute left-10 top-10 sm:top-40 md:left-10 lg:left-40 lg:top-80">
+        <div className="relative h-screen w-screen bg-[url('/images/About-us-middle-bg.png')] bg-cover font-bold text-white">
+          <div className="absolute left-10 top-20 sm:top-40 md:left-10 lg:left-40 lg:top-80">
             <span className="text-2xl -tracking-[.25em] sm:text-5xl lg:text-8xl ">
               {" "}
             </span>
@@ -93,16 +93,9 @@ export default function AboutUs() {
               <h1 className={coreValueTxtStyle}> INTEGRITY</h1>
             </div>
           </div>
-          <Image
-            src="/About-us-middle-bg.png"
-            alt="about-middle-bg"
-            width={100}
-            height={600}
-            layout="responsive"
-          />
         </div>
 
-        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
+        <div className="text-1xl relative my-10 flex w-full flex-col items-center justify-center font-extrabold">
           <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
         </div>
 
