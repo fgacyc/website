@@ -12,7 +12,7 @@ export default function ExperienceImages() {
       <main>
         <div className="gird-cols-1 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           <Image
-            src="/encountering-jesus.png"
+            src="/images/experience-gallery/encountering-jesus.png"
             alt="encounter-jesus"
             width={800}
             height={600}
@@ -21,7 +21,7 @@ export default function ExperienceImages() {
           />
 
           <Image
-            src="/experiencing-family.png"
+            src="/images/experience-gallery/experiencing-family.png"
             alt="experiencing-family"
             width={800}
             height={600}
@@ -30,7 +30,7 @@ export default function ExperienceImages() {
           />
 
           <Image
-            src="/promoting-discipleship.png"
+            src="/images/experience-gallery/promoting-discipleship.png"
             alt="promoting-discipleship"
             width={800}
             height={600}
@@ -39,7 +39,7 @@ export default function ExperienceImages() {
           />
 
           <Image
-            src="/growing-spiritually.png"
+            src="/images/experience-gallery/growing-spiritually.png"
             alt="growing-spiritually"
             width={800}
             height={600}

@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="sf-pro-display relative flex h-screen items-center bg-[url(/images/bg_landing_1.png)] bg-cover text-white">
+        <section className="sf-pro-display relative flex h-screen items-center bg-[url(/images/landing/bg_landing_1.png)] bg-cover text-white">
           <div className="pl-[243px]">
             <div className="text-[40px]">/ FGA CYC</div>
             <div className="mt-[53px] text-9xl font-bold">
@@ -58,7 +58,7 @@ export default function Home() {
             className="absolute mt-[192px] h-[123px] rounded-[90px] px-[65px] text-[40px]"
           />
         </section>
-        <section className="sf-pro-display bg-[url(/images/bg_landing_3.png)] bg-cover text-white">
+        <section className="sf-pro-display bg-[url(/images/landing/bg_landing_3.png)] bg-cover text-white">
           <div className="text-9xl font-bold">Our Vision</div>
           <div className="text-[40px] font-bold">
             Antioch Church — <br />
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <div className="relative h-[541px] w-[805px] rounded-bl-[96px] border-[12px] border-[#00EDC2]">
             <Image
-              src="/images/our_vision.png"
+              src="/images/landing/our_vision.png"
               alt="Our Vision Image"
               width={804}
               height={536}

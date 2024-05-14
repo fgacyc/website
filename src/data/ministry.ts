@@ -5,7 +5,7 @@ export const ministry_data = [
       desc: "他们肩负了暖和人心的重任，协助指挥人流和维持聚会的秩序。人流部以友善的接待态度，招待每个来到教会的人，让参加聚会的你感到安全以及受欢迎。",
       ministry: [
         {
-          image: "/images/get_involved/usher.png",
+          image: "/images/get-involved/usher.png",
           titleCn: "招待",
           titleEn: "Usher",
           desc: [
@@ -14,7 +14,7 @@ export const ministry_data = [
           rate: [2, 3],
         },
         {
-          image: "/images/get_involved/security.png",
+          image: "/images/get-involved/security.png",
           titleCn: "保安",
           titleEn: "Security",
           desc: [
@@ -30,7 +30,7 @@ export const ministry_data = [
       desc: "总务部的责任是确保教会每个星期聚会运营高效、顺利，并支持教会和会友们的一切所需。他们负责管理流程、教会的资源和供应链，分析牧养体系的数据，以及促进教会健康的发展。",
       ministry: [
         {
-          image: "/images/get_involved/admin.png",
+          image: "/images/get-involved/admin.png",
           titleCn: "行政",
           titleEn: "Admin",
           desc: [
@@ -39,7 +39,7 @@ export const ministry_data = [
           rate: [3, 2],
         },
         {
-          image: "/images/get_involved/lounge.png",
+          image: "/images/get-involved/lounge.png",
           titleCn: "膳食",
           titleEn: "Lounge",
           desc: [
@@ -48,7 +48,7 @@ export const ministry_data = [
           rate: [2, 3],
         },
         {
-          image: "/images/get_involved/shuttle.png",
+          image: "/images/get-involved/shuttle.png",
           titleCn: "接驳服务",
           titleEn: "Shuttle",
           desc: [
@@ -63,7 +63,7 @@ export const ministry_data = [
       desc: "他们应用计算机科学和通信技术来管理、储存和处理海量信息。技术部由一群科技达人组成，正以无比的热情和执着，用技术的力量促进教会的成长，拓展神的国度。",
       ministry: [
         {
-          image: "/images/get_involved/software_development.png",
+          image: "/images/get-involved/software_development.png",
           titleCn: "软件开发",
           titleEn: "Software Development",
           desc: [
@@ -72,7 +72,7 @@ export const ministry_data = [
           rate: [5, 2],
         },
         {
-          image: "/images/get_involved/project_management.png",
+          image: "/images/get-involved/project_management.png",
           titleCn: "项目管理",
           titleEn: "Project Management",
           desc: [
@@ -89,7 +89,7 @@ export const ministry_data = [
       desc: "现今每个人人手一机，离不开社交媒体平台，而很多的资讯都从社交媒体平台获得。他们的使命就是把神的话语、救恩和正确的价值观在泛滥的资讯中有效地传播出去。",
       ministry: [
         {
-          image: "/images/get_involved/content_creation.png",
+          image: "/images/get-involved/content_creation.png",
           titleCn: "内容创作",
           titleEn: "Content Creation",
           desc: [
@@ -98,7 +98,7 @@ export const ministry_data = [
           rate: [3, 3],
         },
         {
-          image: "/images/get_involved/editorial.png",
+          image: "/images/get-involved/editorial.png",
           titleCn: "文字编辑",
           titleEn: "Editorial",
           desc: [
@@ -113,7 +113,7 @@ export const ministry_data = [
       desc: "设计部主要以 “视觉” 作为沟通和表现的方式，透过多种创意的方式来创造和结合符号、图片和文字，借此作出用来传达想法或讯息的视觉作品。",
       ministry: [
         {
-          image: "/images/get_involved/graphic_design.png",
+          image: "/images/get-involved/graphic_design.png",
           titleCn: "平面设计",
           titleEn: "Graphic Design",
           desc: [
@@ -122,7 +122,7 @@ export const ministry_data = [
           rate: [5, 2],
         },
         {
-          image: "/images/get_involved/multimedia_design.png",
+          image: "/images/get-involved/multimedia_design.png",
           titleCn: "多媒体设计",
           titleEn: "Multimedia Design",
           desc: [
@@ -137,7 +137,7 @@ export const ministry_data = [
       desc: "摄影部负责捕抓神在这个家里所做的每一个奇妙的工作。无论是从最大型的布道会，或者是日常的各种聚会，他们都会准备就绪，把最珍贵的时刻都记录下来。",
       ministry: [
         {
-          image: "/images/get_involved/photography.png",
+          image: "/images/get-involved/photography.png",
           titleCn: "摄影",
           titleEn: "Photography",
           desc: [
@@ -155,7 +155,7 @@ export const ministry_data = [
       desc: "聚会里所看到的和听到的一切都是制作部背后的精心策划和执行。他们以最专业的态度，把每一场聚会制作好，为的就是让每个来到聚会当中的人都可以经历神。",
       ministry: [
         {
-          image: "/images/get_involved/stage_management.png",
+          image: "/images/get-involved/stage_management.png",
           titleCn: "舞台监督",
           titleEn: "Stage Management",
           desc: [
@@ -164,7 +164,7 @@ export const ministry_data = [
           rate: [2, 2],
         },
         {
-          image: "/images/get_involved/multimedia.png",
+          image: "/images/get-involved/multimedia.png",
           titleCn: "多媒体",
           titleEn: "Multimedia",
           desc: [
@@ -173,7 +173,7 @@ export const ministry_data = [
           rate: [3, 2],
         },
         {
-          image: "/images/get_involved/sound.png",
+          image: "/images/get-involved/sound.png",
           titleCn: "音响",
           titleEn: "Sound",
           desc: [
@@ -182,7 +182,7 @@ export const ministry_data = [
           rate: [4, 3],
         },
         {
-          image: "/images/get_involved/lighting.png",
+          image: "/images/get-involved/lighting.png",
           titleCn: "灯光",
           titleEn: "Lighting",
           desc: [
@@ -191,7 +191,7 @@ export const ministry_data = [
           rate: [4, 3],
         },
         {
-          image: "/images/get_involved/translation.png",
+          image: "/images/get-involved/translation.png",
           titleCn: "语言翻译",
           titleEn: "Translation",
           desc: [
@@ -206,7 +206,7 @@ export const ministry_data = [
       desc: "艺术的表达也是对神的一种敬拜方式。艺术部透过舞蹈，戏剧，视觉美观来传递耶稣的好消息。相信创造我们的神也赋予了每一个人发挥创意的能力。",
       ministry: [
         {
-          image: "/images/get_involved/dance.png",
+          image: "/images/get-involved/dance.png",
           titleCn: "舞蹈",
           titleEn: "Dance",
           desc: [
@@ -215,7 +215,7 @@ export const ministry_data = [
           rate: [3, 2],
         },
         {
-          image: "/images/get_involved/fashion_&_image.png",
+          image: "/images/get-involved/fashion_&_image.png",
           titleCn: "形象设计",
           titleEn: "Fashion & Image",
           desc: [
@@ -224,7 +224,7 @@ export const ministry_data = [
           rate: [3, 3],
         },
         {
-          image: "/images/get_involved/drama.png",
+          image: "/images/get-involved/drama.png",
           titleCn: "戏剧",
           titleEn: "Drama",
           desc: [
@@ -239,7 +239,7 @@ export const ministry_data = [
       desc: "以火热渴慕爱神的敬拜把神的爱和同在带到世界每个角落，让更多人在敬拜音乐中认识上帝。兴起敬拜神、敬畏神、热爱神的世代是敬拜部不变的核心价值和异象。",
       ministry: [
         {
-          image: "/images/get_involved/vocal.png",
+          image: "/images/get-involved/vocal.png",
           titleCn: "歌手",
           titleEn: "Vocal",
           desc: [
@@ -248,7 +248,7 @@ export const ministry_data = [
           rate: [4, 3],
         },
         {
-          image: "/images/get_involved/musician.png",
+          image: "/images/get-involved/musician.png",
           titleCn: "乐手",
           titleEn: "Musician",
           desc: [
@@ -265,7 +265,7 @@ export const ministry_data = [
       desc: "只要你喜欢和小朋友做朋友，对兴起下一代有负担，有爱心，有耐心，有责任感，我们都欢迎你加入Wonderkids的团队。让我们一起建造更刚强的下一代。",
       ministry: [
         {
-          image: "/images/get_involved/children_minister.png",
+          image: "/images/get-involved/children_minister.png",
           titleCn: "神奇王国同工",
           titleEn: "Children Minister",
           desc: [
