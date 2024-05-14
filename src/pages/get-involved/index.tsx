@@ -406,6 +406,7 @@ const GetInvolved = () => {
       <Explore />
       <Form />
     </div>
+
   );
 };
 
