@@ -5,8 +5,18 @@ import FormCombobox from "./FormCombobox";
 import FormCheckList from "./FormCheckList";
 import { Button } from "@nextui-org/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import { useRouter } from 'next/router';
 
 export default function Form() {
+  const router = useRouter();
+
+  const handleNavigation = async () => {
+    try {
+      await router.push('/');
+    } catch (error) {
+      console.error('Error navigating:', error);
+    }
+  };
   const pastoral_status = [
     { value: "new_believer", label: "New Believer" },
     { value: "member", label: "Member" },
@@ -36,6 +46,8 @@ export default function Form() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const [name, setName] = useState<string>("");
+  const [chineseName, setChineseName] = useState<string>("");
+
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [pastoralStatus, setPastoralStatus] = useState<string>(
     pastoral_status[0]!.value
@@ -66,6 +78,10 @@ export default function Form() {
     setIsSubmitted(true);
   };
 
+  const setSubmitAndRedirect = async () => {
+    setIsSubmitted(true);
+    await handleNavigation();
+  }
   return (
     <>
       {isSubmitted ? (
@@ -77,7 +93,7 @@ export default function Form() {
             button_color="bg-black"
             text="COMPLETED!"
             desc="We have received your submission, and we will be in touch soon!"
-            onClick={() => setIsSubmitted(false)}
+            onClick={setSubmitAndRedirect}
           />
         </div>
       ) : (
@@ -111,8 +127,8 @@ export default function Form() {
             id="name"
             validate={(inputValue: string) => /^[A-Za-z\s]+$/.test(inputValue)}
             placeholder="Chinese Name"
-            value={name}
-            onInputChange={(value) => setName(value)}
+            value={chineseName}
+            onInputChange={(value) => setChineseName(value)}
             error={nameError}
             setError={setNameError}
           />
