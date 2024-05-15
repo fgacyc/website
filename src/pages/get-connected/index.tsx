@@ -19,7 +19,7 @@ export default function GetConnected() {
   const [category, setCategory] = useState("");
   const [nameError, setNameError] = useState(false);
   const [phoneNumberError, setPhoneNumberError] = useState(false);
-  const [locationError, setLocationError] = useState(false);
+  // const [locationError, setLocationError] = useState(false);
   const [ageError, setAgeError] = useState(false);
 
   const categories_list = [
