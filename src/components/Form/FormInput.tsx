@@ -12,6 +12,7 @@ interface FormInputProps {
   onInputChange: (value: string) => void;
   setError: (value: boolean) => void;
   error: boolean;
+  desc?: string;
 }
 
 const FormInput = ({
@@ -26,6 +27,7 @@ const FormInput = ({
   onInputChange,
   setError,
   error,
+  desc,
 }: FormInputProps) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -54,6 +56,7 @@ const FormInput = ({
           error ? "border-red-500" : "border-[#B2B2B2]"
         } bg-white px-[18px] py-[13px] placeholder-[#B2B2B2] focus:outline-none`}
       />
+      <span className="pl-5 text-sm text-[#B2B2B2]"> {desc} </span>
     </div>
   );
 };

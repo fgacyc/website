@@ -5,16 +5,16 @@ import FormCombobox from "./FormCombobox";
 import FormCheckList from "./FormCheckList";
 import { Button } from "@nextui-org/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 export default function Form() {
   const router = useRouter();
 
   const handleNavigation = async () => {
     try {
-      await router.push('/');
+      await router.push("/");
     } catch (error) {
-      console.error('Error navigating:', error);
+      console.error("Error navigating:", error);
     }
   };
   const pastoral_status = [
@@ -46,6 +46,8 @@ export default function Form() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const [name, setName] = useState<string>("");
+  const [icNo, setIcNo] = useState<string>("");
+
   const [chineseName, setChineseName] = useState<string>("");
 
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -79,9 +81,13 @@ export default function Form() {
   };
 
   const setSubmitAndRedirect = async () => {
-    setIsSubmitted(true);
-    await handleNavigation();
-  }
+    try {
+      setIsSubmitted(true);
+      await handleNavigation();
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <>
       {isSubmitted ? (
@@ -138,7 +144,7 @@ export default function Form() {
               Gender
             </legend>
 
-            <div className="mt-6 space-y-6">
+            <div className="mb-3 mt-6 space-y-6">
               <div className="flex items-center gap-x-3">
                 <input
                   id="male"
@@ -194,6 +200,23 @@ export default function Form() {
             placeholder="DD/MM/YYYY"
             value={dob}
             onInputChange={(value) => setDob(value)}
+            error={dobError}
+            setError={setDobError}
+            desc={"Date, Month, year"}
+          />
+
+          <FormInput
+            className="col-span-2 w-full"
+            label="I.C No"
+            type="text"
+            name="icNo"
+            id="icNo"
+            validate={(inputValue: string) =>
+              /^\d{6}-\d{2}-\d{4}$/.test(inputValue)
+            }
+            placeholder="xxxxxx-xx-xxxx"
+            value={icNo}
+            onInputChange={(value) => setIcNo(value)}
             error={dobError}
             setError={setDobError}
           />
@@ -266,6 +289,10 @@ export default function Form() {
             <legend className="text-xl font-semibold leading-6 text-gray-900">
               Baptism T-Shirt Size
             </legend>
+            <span className="text-xs text-[#B2B2B2] ">
+              {" "}
+              Delivery will be arranged in a follow-up call.{" "}
+            </span>
             {t_shirt_size_list.map((elem, index) => (
               <FormCheckList
                 key={index}
