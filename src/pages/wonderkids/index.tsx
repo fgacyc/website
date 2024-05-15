@@ -279,7 +279,7 @@ export default function Wonderkids() {
             <circle cx="11" cy="2158" r="11" fill="white" />
           </svg>
 
-          <div className={`mx-auto w-full max-w-[961.7px] relative mt-60 z-[2]`}>
+          <div className={`mx-auto w-full max-w-[961.7px] relative mt-60 z-[5]`}>
             <h2
               className={`text-white text-5xl font-bold not-italic sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl`}
             >
@@ -375,7 +375,7 @@ export default function Wonderkids() {
         </section>
 
         <section className={`relative z-[0]`}>
-          <div className={`mx-auto w-full max-w-[954px] pt-24 relative z-[2]`}>
+          <div className={`mx-auto w-full max-w-[954px] pt-24 relative z-[5]`}>
             <h2
               className={`text-white text-5xl font-bold not-italic sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl`}
             >
