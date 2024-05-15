@@ -231,7 +231,7 @@ export default function Footer() {
                 <br />
                 Kuala Lumpur.
               </p>
-              <p className={`${text_color}`}>03-7981 4755</p>
+              <p className={`${text_color}`}><a href="tel:+600379814755">03-7981 4755</a></p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div className="md:ml-6">
@@ -242,37 +242,37 @@ export default function Footer() {
                 </h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/about-us" className="hover:underline">
                       About Us
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/get-connected" className="hover:underline">
                       Get Connected
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/visit-fga" className="hover:underline">
                       Visit FGA
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/wonderkids" className="hover:underline">
                       Wonder Kids
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/get-involved" className="hover:underline">
                       Get Involved
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/giving" className="hover:underline">
                       Giving
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/baptism" className="hover:underline">
                       Baptise
                     </Link>
                   </li>
@@ -286,12 +286,12 @@ export default function Footer() {
                 </h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="https://faithflix.versal.app/" target="_blank" className="hover:underline">
                       Stream
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="#" className="hover:underline">
+                    <Link href="/mobile-app-download" className="hover:underline">
                       Mobile App Development
                     </Link>
                   </li>

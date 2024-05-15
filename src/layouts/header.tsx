@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 export default function Header() {
   const router = useRouter();
   const getHeaderMainMenuCSS = () => {
-    if (router.pathname === "/about-us") {
+    if (router.pathname === "/" || router.pathname === "/about-us"
+      || router.pathname === "/visit-fga") {
       return {
         logo: (
           <svg
@@ -87,7 +88,7 @@ export default function Header() {
           <ul className="flex flex-row rounded-lg bg-transparent font-medium rtl:space-x-reverse dark:border-none dark:bg-transparent md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:dark:bg-transparent">
             <li className="hidden md:block">
               <Link
-                href="#"
+                href="/about-us"
                 className="inline-flex items-center justify-center p-2 text-sm text-black"
               >
                 About Us
@@ -95,7 +96,7 @@ export default function Header() {
             </li>
             <li className="hidden md:block">
               <Link
-                href="#"
+                href="/get-connected"
                 className="inline-flex items-center justify-center p-2 text-sm text-black"
               >
                 Get Connected
@@ -103,7 +104,7 @@ export default function Header() {
             </li>
             <li className="hidden md:block">
               <Link
-                href="#"
+                href="/visit-fga"
                 className="inline-flex items-center justify-center p-2 text-sm text-black"
               >
                 Visit FGA
@@ -168,7 +169,7 @@ export default function Header() {
                   <div className="mt-[87px]">
                     <li>
                       <Link
-                        href="#"
+                        href="/about-us"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         About Us
@@ -176,7 +177,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/get-connected"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Get Connected
@@ -184,7 +185,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/visit-fga"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Visit FGA
@@ -192,7 +193,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/wonderkids"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Wonder Kids
@@ -200,7 +201,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/get-involved"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Get Involved
@@ -208,7 +209,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/giving"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Giving
@@ -216,7 +217,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/baptism"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Baptise
@@ -224,7 +225,8 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="https://faithflix.versal.app/"
+                        target="_blank"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Stream
@@ -232,7 +234,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/mobile-app-download"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Mobile App
