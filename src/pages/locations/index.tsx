@@ -5,7 +5,7 @@ import Location from "~/components/Location";
 export default function Locations() {
   return (
     <>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden pt-[68px]">
         <div>
           {/* First section - black bg */}
           <div className="h-[40vw] bg-[#1d2129]"></div>

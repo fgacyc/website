@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MobileAppDownload() {
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center pt-[68px]">
         <div className="mt-[140px] flex w-[85%] lg:w-[70%]">
           <div className="w-[46%] text-4xl font-bold sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             Looking for your church?

@@ -65,7 +65,7 @@ export default function GetConnected() {
 
   return (
     <>
-      <main className="overflow-x-hidden">
+      <main className="overflow-x-hidden pt-[68px]">
         <div className="bg-[#1d2129] text-white">
           <div className="flex flex-col items-center">
             <Image
