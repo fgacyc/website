@@ -20,10 +20,10 @@ export default function AboutUs() {
       <main className="overflow-x-hidden pt-[68px]">
         {/* VISION && MISSION */}
         <div className="min-w-screen  relative flex h-screen w-screen items-center justify-center bg-[url('/images/about-us/About-us-top-bg.png')] bg-cover">
-          <div className="top-30 absolute left-20 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60 lg:top-60	">
+          <div className="top-30 absolute left-20 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60 lg:top-50	">
             <h1 className="text-2xl sm:text-4xl lg:text-7xl"> Our Vision </h1>
             <h1 className="sm:text-1xl my-1 text-sm lg:text-2xl">
-              Antioch Church <span className="tracking-tighter	">&#x2015;</span>{" "}
+              Antioch Church <span className="tracking-tighter relative top-[5px] lg:top-[10px]">&#x2015;&#x2015;</span>{" "}
             </h1>
             <h1 className="sm:text-1xl mb-5 text-sm lg:text-2xl">
               An apostolic and prophetic cell-based church{" "}
@@ -105,11 +105,6 @@ export default function AboutUs() {
 
         <ExperienceGallery />
 
-        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
-          <hr className="border-dotted"></hr>
-
-          <h1 className="text-2xl sm:text-7xl"> ( The FOOTER ) </h1>
-        </div>
       </main>
     </>
   );

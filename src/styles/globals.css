@@ -135,3 +135,11 @@
 #baptiseBtn {
   width: 25rem;
 }
+
+.h-screen-lg {
+  height: 150vh;
+}
+
+.h-screen-xl {
+  height: 180vh;
+}

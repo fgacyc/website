@@ -9,11 +9,42 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 export default function Baptism() {
   const [openForm, setOpenForm] = useState<boolean>(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const [screenHeightClass, setScreenHeightClass] = useState('h-screen');
+  // const wayWeGiveClassStyle = "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " + screenHeightClass;
+
+
   useEffect(() => {
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
+
+  // useEffect(() => {
+  //   const windowHeight = window.innerHeight;
+  //   const windowWidth = window.innerWidth;
+  //   // console.log("window.innerHeight; ", windowHeight)
+  //   // console.log("window.innerWidth; ", windowHeight)
+
+  //   setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
+  // }, []);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowHeight = window.innerHeight;
+      const windowWidth = window.innerWidth;
+      setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); 
+
   return (
     <>
       {/*  items-center justify-center */}
@@ -23,8 +54,8 @@ export default function Baptism() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden pt-[68px]">
-        <div className="min-w-screen  flex h-screen w-screen items-center justify-center bg-[url('/images/baptism/baptism-top-bg.png')] bg-cover">
-          <div className=" pr-40 font-bold leading-10">
+        <div className={"min-w-screen relative flex w-screen items-center justify-center bg-[url('/images/baptism/baptism-top-bg.png')] bg-cover " + screenHeightClass}>
+          <div className=" sm:pl-20 xl:pr-40 font-bold leading-10">
             <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
               The{" "}
@@ -59,7 +90,7 @@ export default function Baptism() {
               height={0}
               priority={true}
               layout=""
-              className="absolute right-0 top-10 mr-0 w-48 min-w-0 xl:right-20 xl:mr-40 xl:w-136"
+              className="absolute xl:right-10 mr-0 2xl:w-[450px] xl:w[-350px] right-0 top-10 w-[180px]  sm:w-[350px] min-w-0"
             />
 
             <Image
@@ -69,7 +100,7 @@ export default function Baptism() {
               height={0}
               priority={true}
               layout=""
-              className="absolute bottom-10 right-0 w-24 min-w-0 xl:w-36"
+              className="absolute bottom-10 right-0 2xl:w-[150px] xl:w-[100px]  w-[70px] md:w-[150px] min-w-0 xl:w-36"
             />
           </div>
         </div>
@@ -116,18 +147,8 @@ export default function Baptism() {
           </div>
         ) : null}
 
-        {/* <Form /> */}
-
-        {/* <Form /> */}
       </main>
 
-      <footer>
-        <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
-          <hr className="border-dotted"></hr>
-
-          <h1 className="text-2xl sm:text-7xl"> ( The FOOTER ) </h1>
-        </div>
-      </footer>
     </>
   );
 }
