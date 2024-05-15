@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 export default function Header() {
   const router = useRouter();
   const getHeaderMainMenuCSS = () => {
-    if (router.pathname === "/" || router.pathname === "/about-us"
-      || router.pathname === "/visit-fga") {
+    if (router.pathname === "/" || router.pathname === "/get-connected"
+      || router.pathname === "/locations") {
       return {
         logo: (
           <svg
@@ -34,7 +34,7 @@ export default function Header() {
             />
           </svg>
         ),
-        main_menu_btn_color: "text-white",
+        text_color: "text-white",
       };
     } else {
       return {
@@ -64,11 +64,11 @@ export default function Header() {
             />
           </svg>
         ),
-        main_menu_btn_color: "text-black",
+        text_color: "text-black",
       };
     }
   };
-  const { logo, main_menu_btn_color } = getHeaderMainMenuCSS();
+  const { logo, text_color } = getHeaderMainMenuCSS();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -89,7 +89,7 @@ export default function Header() {
             <li className="hidden md:block">
               <Link
                 href="/about-us"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
+                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
               >
                 About Us
               </Link>
@@ -97,15 +97,15 @@ export default function Header() {
             <li className="hidden md:block">
               <Link
                 href="/get-connected"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
+                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
               >
                 Get Connected
               </Link>
             </li>
             <li className="hidden md:block">
               <Link
-                href="/visit-fga"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
+                href="/locations"
+                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
               >
                 Visit FGA
               </Link>
@@ -114,7 +114,7 @@ export default function Header() {
               <button
                 onClick={toggleMenu}
                 type="button"
-                className={`hover:bg-tranparent dark:hover:bg-tranparent inline-flex items-center justify-center p-2 text-sm text-black focus:outline-none dark:text-black ${main_menu_btn_color}`}
+                className={`hover:bg-tranparent dark:hover:bg-tranparent inline-flex items-center justify-center p-2 text-sm text-black focus:outline-none dark:text-black ${text_color}`}
                 aria-controls="headerDropDownMenu"
                 aria-expanded={isMenuOpen}
               >
@@ -185,7 +185,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="/visit-fga"
+                        href="/locations"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Visit FGA

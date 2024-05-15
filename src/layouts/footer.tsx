@@ -6,7 +6,9 @@ export default function Footer() {
 
   const getFooterCSS = () => {
     if (router.pathname === "/" || router.pathname === "/about-us"
-      || router.pathname === "/visit-fga") {
+      || router.pathname === "/get-connected" || router.pathname === "/locations"
+      || router.pathname === "/giving" || router.pathname === "/baptism"
+      || router.pathname === "/mobile-app-download") {
       return {
         logo: (
           <svg
@@ -253,7 +255,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="/visit-fga" className="hover:underline">
+                    <Link href="/locations" className="hover:underline">
                       Visit FGA
                     </Link>
                   </li>
