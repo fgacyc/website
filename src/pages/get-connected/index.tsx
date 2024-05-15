@@ -4,7 +4,9 @@ import { useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
 import CompletedForm from "~/components/CompletedForm";
 import FormCheckList from "~/components/FormCheckList";
+import FormCombobox from "~/components/FormCombobox";
 import FormInput from "~/components/FormInput";
+import { cgLocations } from "~/data/locations";
 
 export default function GetConnected() {
   const [isNeedHelp, setIsNeedHelp] = useState(false);
@@ -12,7 +14,7 @@ export default function GetConnected() {
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState(cgLocations[0]!.value);
   const [age, setAge] = useState("");
   const [category, setCategory] = useState("");
   const [nameError, setNameError] = useState(false);
@@ -77,7 +79,7 @@ export default function GetConnected() {
               // height={100}
               className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
             ></Image>
-            <div className="absolute inset-0 ms-[15vw] mt-[3vw] sm:mt-[7.9vw]">
+            <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[7.9vw]">
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
                 Get Connected
               </h3>
@@ -116,7 +118,10 @@ export default function GetConnected() {
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                       ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </h6>
-                    <button className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:text-xl xl:px-10 xl:py-3.5">
+                    <button
+                      onClick={() => setIsNeedHelp(true)}
+                      className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:text-xl xl:px-10 xl:py-3.5"
+                    >
                       Find a ConnectGroup{" "}
                       <Image
                         src={"/icons/right_arrow.svg"}
@@ -187,7 +192,7 @@ export default function GetConnected() {
                     setError={setPhoneNumberError}
                   />
 
-                  <FormInput
+                  {/* <FormInput
                     className="w-4/5"
                     label="Locations"
                     type="text"
@@ -201,6 +206,16 @@ export default function GetConnected() {
                     onInputChange={(value) => setLocation(value)}
                     error={locationError}
                     setError={setLocationError}
+                  /> */}
+
+                  <FormCombobox
+                    label="Service Location"
+                    name="service_location"
+                    id="service_location"
+                    options={cgLocations}
+                    className="w-4/5"
+                    selectedValue={location}
+                    onValueChange={(value) => setLocation(value)}
                   />
 
                   <FormInput
@@ -256,22 +271,21 @@ export default function GetConnected() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </div>
               <div className="mt-[1.94vw] flex flex-col items-center">
-                <button
-                  onClick={() => setIsNeedHelp(true)}
-                  className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4"
-                >
-                  Let&#39;s Talk
-                  <div className="w-[1.18vw]"></div>
-                  <div className="w-[2.92vw]">
-                    <Image
-                      src={"/icons/right_arrow.svg"}
-                      width={42}
-                      height={42}
-                      alt="right arrow icon"
-                      className=""
-                    />
-                  </div>
-                </button>
+                <a href="mailto:info@fgacyc.com">
+                  <button className="border-b-solid flex items-center border-b-2 border-black text-xs font-bold text-black lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4">
+                    Let&#39;s Talk
+                    <div className="w-[1.18vw]"></div>
+                    <div className="w-[2.92vw]">
+                      <Image
+                        src={"/icons/right_arrow.svg"}
+                        width={42}
+                        height={42}
+                        alt="right arrow icon"
+                        className=""
+                      />
+                    </div>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
