@@ -237,7 +237,7 @@ export default function Wonderkids() {
             <path d="M1199 286C1295 223.6 1257.67 93.3333 1227 36L1271 0C1411.8 99.2 1444.33 232 1443 286V1748H-9V286C71 226.8 181.667 261.333 227 286C787 450.8 1108.33 354.667 1199 286Z" fill="#1C76C9" />
           </svg>
           <div className={`mx-auto mt-12 w-full max-w-[953px] relative z-[3]`}>
-            <img src={`https://placehold.co/953x422`} alt="" width={`953`} height={`422`} />
+            <img className={`invisible`} src={`https://placehold.co/953x422`} alt="" width={`953`} height={`422`} />
           </div>
         </section>
 
