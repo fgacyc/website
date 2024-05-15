@@ -5,7 +5,8 @@ export default function Footer() {
   const router = useRouter();
 
   const getFooterCSS = () => {
-    if (router.pathname === "/about-us") {
+    if (router.pathname === "/" || router.pathname === "/about-us"
+      || router.pathname === "/visit-fga") {
       return {
         logo: (
           <svg
