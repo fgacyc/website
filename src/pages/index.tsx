@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import ArrowLink from "~/components/ArrowLink";
+import ExperienceGallery from "~/components/ExperienceImages";
 
 const HomeSection1 = () => {
   return (
@@ -73,35 +74,41 @@ const HomeSection3 = () => {
   return (
     <section
       className="flex min-h-screen flex-col justify-center bg-[url(/images/landing/bg_landing_3.png)] 
-  bg-cover px-[30px] text-white sm:px-[59px] sm:py-[169px] md:px-[165px] lg:px-[243px]"
+  bg-cover py-[169px] text-white"
     >
-      <div className="text-7xl font-bold sm:text-9xl">Our Vision</div>
-      <div className="w-[270px] text-2xl font-bold sm:w-[530px] sm:text-[40px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
-        Antioch Church — <br />
-        An apostolic and prophetic cell-based church.
+      <div className="mx-[30px] mb-[62px] text-7xl font-bold sm:mx-[59px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
+        The Experience
       </div>
-      <div
-        className="relative mt-10 h-[180px] w-[270px] rounded-bl-[35px] border-[6px] border-[#00EDC2] 
+      <ExperienceGallery className="border-[#3AFFAC] text-white" />
+      <div className="mx-[30px] sm:mx-[59px] sm:mt-[135px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
+        <div className="text-7xl font-bold sm:text-9xl">Our Vision</div>
+        <div className="w-[270px] text-2xl font-bold sm:w-[530px] sm:text-[40px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
+          Antioch Church — <br />
+          An apostolic and prophetic cell-based church.
+        </div>
+        <div
+          className="relative mt-10 h-[180px] w-[270px] rounded-bl-[35px] border-[6px] border-[#00EDC2] 
     sm:mt-[80px] sm:h-[353px] sm:w-[530px] sm:rounded-bl-[60px] sm:border-[12px] md:h-[309px] md:w-[463px]
     md:rounded-bl-[70px] lg:h-[401px] lg:w-[602px] lg:rounded-bl-[96px] xl:h-[541px] xl:w-[805px]"
-      >
-        <Image
-          src="/images/landing/our_vision.png"
-          alt="Our Vision Image"
-          width={804}
-          height={536}
-          className="absolute bottom-[10.5px] left-[10px] sm:bottom-[18.5px] sm:left-[18px] md:bottom-[29px] md:left-[28px]"
-        />
-        <ArrowLink
-          href="/visit_fga"
-          text="Visit FGA"
-          text_color="text-black"
-          arrow_color="black"
-          bg_color="bg-[#00EDC2]"
-          className="absolute bottom-[18px] right-[-60px] h-[50px] rounded-[50px] px-[30px] text-medium 
+        >
+          <Image
+            src="/images/landing/our_vision.png"
+            alt="Our Vision Image"
+            width={804}
+            height={536}
+            className="absolute bottom-[10.5px] left-[10px] sm:bottom-[18.5px] sm:left-[18px] md:bottom-[29px] md:left-[28px]"
+          />
+          <ArrowLink
+            href="/visit_fga"
+            text="Visit FGA"
+            text_color="text-black"
+            arrow_color="black"
+            bg_color="bg-[#00EDC2]"
+            className="absolute bottom-[18px] right-[-60px] h-[50px] rounded-[50px] px-[30px] text-medium 
         sm:bottom-[30px] sm:h-[75px] sm:px-[55px] sm:text-xl 
         md:bottom-[40px] md:right-[-140px] md:mt-[95px] md:h-[100px] md:px-[65px] md:text-[40px] lg:bottom-[65px] lg:right-[-160px]"
-        />
+          />
+        </div>
       </div>
     </section>
   );
