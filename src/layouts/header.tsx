@@ -68,6 +68,17 @@ export default function Header() {
       };
     }
   };
+  const getNavMenuItems = () => {
+    if (router.pathname === '/') {
+      return {}
+    }
+
+    return {
+      "/about-us": "About Us",
+      "/get-connected": "Get Connected",
+      "/locations": "Visit FGA"
+    }
+  };
   const { logo, text_color } = getHeaderMainMenuCSS();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,30 +97,14 @@ export default function Header() {
         </Link>
         <div className="block w-auto">
           <ul className="flex flex-row rounded-lg bg-transparent font-medium rtl:space-x-reverse dark:border-none dark:bg-transparent md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:dark:bg-transparent">
-            <li className="hidden md:block">
-              <Link
-                href="/about-us"
-                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="hidden md:block">
-              <Link
-                href="/get-connected"
-                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
-              >
-                Get Connected
-              </Link>
-            </li>
-            <li className="hidden md:block">
-              <Link
-                href="/locations"
-                className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}
-              >
-                Visit FGA
-              </Link>
-            </li>
+            {Object.entries(getNavMenuItems()).map(([path, label]) => (
+              <li key={path} className="hidden md:block">
+                <Link href={path} className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+
             <li className="">
               <button
                 onClick={toggleMenu}
