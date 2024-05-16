@@ -2,6 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { locations } from "../../data/locations";
 import Location from "~/components/Location";
+import Link from "next/link";
 
 export default function Locations() {
   return (
@@ -143,18 +144,20 @@ export default function Locations() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </div>
               <div className="mt-4 lg:mt-[52px]">
-                <button className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-5 lg:border-b-4 lg:text-xl xl:pb-2 xl:text-[33px]">
-                  Learn More
-                  <div className="w-5 lg:w-7 xl:w-auto">
-                    <Image
-                      src={"/icons/right_arrow.svg"}
-                      width={42}
-                      height={42}
-                      alt="right arrow icon"
-                      className="ml-3"
-                    />
-                  </div>
-                </button>
+                <Link href={"wonderkids"}>
+                  <button className="border-b-solid mt-1 flex items-center border-b-2 border-black text-xs font-bold text-black md:mt-0 lg:mt-5 lg:border-b-4 lg:text-xl xl:pb-2 xl:text-[33px]">
+                    Learn More
+                    <div className="w-5 lg:w-7 xl:w-auto">
+                      <Image
+                        src={"/icons/right_arrow.svg"}
+                        width={42}
+                        height={42}
+                        alt="right arrow icon"
+                        className="ml-3"
+                      />
+                    </div>
+                  </button>
+                </Link>
               </div>
             </div>
 

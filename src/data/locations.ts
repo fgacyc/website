@@ -25,3 +25,15 @@ export const locations = [
     services: ["SATURDAY 3PM • 5.30PM", "SUNDAY 1.30PM"],
   },
 ];
+
+export const cgLocations = [
+  { value: "kuchai", label: "Kuchai" },
+  { value: "serdang", label: "Serdang" },
+  { value: "kepong", label: "Kepong" },
+  { value: "usj", label: "USJ" },
+  { value: "setapak", label: "Setapak" },
+  { value: "sg_long", label: "Sungai Long" },
+  { value: "seremban", label: "Seremban" },
+  { value: "penang", label: "Penang" },
+  { value: "johor", label: "Johor" },
+];
