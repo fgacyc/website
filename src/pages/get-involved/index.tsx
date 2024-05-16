@@ -6,20 +6,26 @@ import FormInput from "~/components/FormInput";
 import CompletedForm from "~/components/CompletedForm";
 import Banner from "~/components/Banner";
 import { ministry_data, team_data } from "~/data/ministry";
+import Link from "next/link";
+import ArrowLink from "~/components/ArrowLink";
 
 interface TeamDescCardProps {
+  index: number;
   title: string;
   subtitle?: string;
   desc1: string;
   desc2: string;
+  setIsFormVisible: (value: boolean) => void;
   onLearnMoreClick: () => void;
 }
 
 const TeamDescCard = ({
+  index,
   title,
   subtitle,
   desc1,
   desc2,
+  setIsFormVisible,
   onLearnMoreClick,
 }: TeamDescCardProps) => {
   return (
@@ -29,8 +35,8 @@ const TeamDescCard = ({
       <div className="microsoft-yahei mt-7">{desc1} </div>
       <div className="microsoft-yahei mt-10">{desc2}</div>
       <div className="mt-5 items-center justify-between md:flex">
-        <button onClick={onLearnMoreClick}>
-          <div className="flex items-center justify-between border-b-[3px] border-black pb-1.5 font-semibold">
+        <Link href={`#ministry_${index}`} onClick={onLearnMoreClick}>
+          <div className="flex w-[140px] items-center justify-between border-b-[3px] border-black pb-1.5 font-semibold">
             Learn More{" "}
             <Image
               src={"/icons/right_arrow.svg"}
@@ -40,15 +46,14 @@ const TeamDescCard = ({
               className="ml-3"
             />
           </div>
-        </button>
-        <ArrowButton
+        </Link>
+        <ArrowLink
+          href="#get_involved_form"
           text="Get involved now"
           arrow_color="black"
           bg_color="bg-[#00EDC2]"
           className="mt-5 md:mt-0"
-          onClick={() => {
-            console.log("Get involved now");
-          }}
+          onClick={() => setIsFormVisible(true)}
         />
       </div>
     </div>
@@ -165,7 +170,10 @@ const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
   const ministry_list = ministry_data;
 
   return (
-    <div className={`relative h-screen bg-[#241F20] px-10 pt-11`}>
+    <div
+      id={`ministry_${index}`}
+      className={`relative h-screen bg-[#241F20] px-10 pt-11`}
+    >
       <div className="flex overflow-auto scrollbar-hide">
         {" "}
         {ministry_list[index]?.map((ministries, index) => (
@@ -200,7 +208,11 @@ const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
   );
 };
 
-const Explore = () => {
+interface ExploreProps {
+  setIsFormVisible: (value: boolean) => void;
+}
+
+const Explore = ({ setIsFormVisible }: ExploreProps) => {
   const teamDescCards = team_data;
 
   const [openMinistryIndex, setOpenMinistryIndex] = useState<number>(-1);
@@ -224,7 +236,9 @@ const Explore = () => {
             {/* todo: card */}
             <div className="lg:w-1/2"></div>
             <TeamDescCard
+              index={index}
               {...teamDescCard}
+              setIsFormVisible={setIsFormVisible}
               onLearnMoreClick={() => handleLearnMoreClick(index)}
             />
           </div>
@@ -241,7 +255,12 @@ const Explore = () => {
   );
 };
 
-const Form = () => {
+interface FormProps {
+  isFormVisible: boolean;
+  setIsFormVisible: (value: boolean) => void;
+}
+
+const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   // todo: add actual pastoral options
   const pastoral_options = [
     { value: "ps._melvin_zone", label: "Ps. Melvin Zone" },
@@ -273,6 +292,17 @@ const Form = () => {
   const [phoneNumberError, setPhoneNumberError] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
+  const resetForm = () => {
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setPastoralTeam(pastoral_options[0]!.value);
+    setMinistry(ministry_options[0]!.value);
+    setNameError(false);
+    setPhoneNumberError(false);
+    setEmailError(false);
+  };
+
   // todo: add validation
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -286,11 +316,17 @@ const Form = () => {
         ministry,
       }),
     });
-    res.status === 200 ? setIsSubmitted(true) : alert("Failed to submit");
+
+    if (res.status === 200) {
+      setIsSubmitted(true);
+      resetForm();
+    } else {
+      alert("Failed to submit");
+    }
   };
 
   return (
-    <>
+    <div id="get_involved_form" className={isFormVisible ? "block" : "hidden"}>
       {isSubmitted ? (
         <div className="flex h-screen flex-col items-center justify-center">
           <CompletedForm
@@ -301,13 +337,17 @@ const Form = () => {
             text="COMPLETED!"
             button_text="Yay!"
             desc="We have received your submission, and we will be in touch soon!"
-            onClick={() => setIsSubmitted(false)}
+            onClick={() => {
+              setIsSubmitted(false), setIsFormVisible(false);
+              setTimeout(() => window.scrollTo(0, 0), 100);
+            }}
           />
         </div>
       ) : (
         <form
           onSubmit={(e) => void handleSubmit(e)}
-          className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#F5F5F8] py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] 
+          bg-[#F5F5F8] py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         >
           <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
             Get involved
@@ -386,12 +426,13 @@ const Form = () => {
           />
         </form>
       )}
-    </>
+    </div>
   );
 };
 
-// todo: add bg
 const GetInvolved = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
   return (
     <div className="bg-[url('/images/get-involved/bg_white.png')] pt-[68px]">
       <div className="bg-white">
@@ -403,10 +444,9 @@ const GetInvolved = () => {
           img_height={622}
         />
       </div>
-      <Explore />
-      <Form />
+      <Explore setIsFormVisible={setIsFormVisible} />
+      <Form isFormVisible={isFormVisible} setIsFormVisible={setIsFormVisible} />
     </div>
-
   );
 };
 
