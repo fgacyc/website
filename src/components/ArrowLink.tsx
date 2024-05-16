@@ -8,6 +8,7 @@ interface ArrowLinkProps {
   bg_color: string; // bg-black || bg-[#000000]
   className?: string;
   href: string;
+  onClick?: () => void;
 }
 
 const ArrowLink = ({
@@ -17,11 +18,13 @@ const ArrowLink = ({
   bg_color,
   className,
   href,
+  onClick,
 }: ArrowLinkProps) => {
   return (
     <Link
       href={href}
       className={`flex items-center justify-between rounded-[35px] px-12 py-5 text-[25px] font-bold ${text_color} ${arrow_color} ${bg_color} ${className}`}
+      onClick={onClick}
     >
       {text}{" "}
       <svg
