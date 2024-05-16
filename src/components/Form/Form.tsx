@@ -100,8 +100,9 @@ export default function Form() {
   const [nameError, setNameError] = useState<boolean>(false);
   const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
   const [dobError, setDobError] = useState<boolean>(false);
+  const [icNoError, setIcNoError] = useState<boolean>(false);
 
-  const [emailError, setEmailError] = useState<boolean>(false);
+  const [cglNameError, setCglNameError] = useState<boolean>(false);
   const [gender, setGender] = useState<string>("");
   const [dob, setDob] = useState<string>("");
   const [cglName, setCglName] = useState<string>("");
@@ -352,7 +353,7 @@ export default function Form() {
             name="dob"
             id="dob"
             validate={(value: string) =>
-              /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/.test(
+              /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/i.test(
                 value
               )
             }
@@ -363,6 +364,7 @@ export default function Form() {
             setError={setDobError}
             desc={"Date, Month, year"}
           />
+          dobError {dobError}
           <FormInput
             className="col-span-2 w-full"
             label="I.C No"
@@ -373,8 +375,8 @@ export default function Form() {
             placeholder="xxxxxx-xx-xxxx"
             value={icNo}
             onInputChange={(value) => setIcNo(value)}
-            error={dobError}
-            setError={setDobError}
+            error={icNoError}
+            setError={setIcNoError}
           />
           <FormInput
             className="col-span-2 w-full"
@@ -409,7 +411,6 @@ export default function Form() {
             selectedValue={serviceLocation}
             onValueChange={(value) => setPastoralTeamAndLoction(value)}
           />
-
           <FormCombobox
             label="Pastoral Team"
             name="pastoralTeam"
@@ -425,12 +426,12 @@ export default function Form() {
             type="text"
             name="cglName"
             id="cglName"
-            validate={(value: string) => /^\S+@\S+\.\S+$/.test(value)}
+            validate={(value: string) => /^[A-Za-z\s]+$/.test(value)}
             placeholder="eg. Albert Mah"
             value={cglName}
             onInputChange={(value) => setCglName(value)}
-            error={emailError}
-            setError={setEmailError}
+            error={cglNameError}
+            setError={setCglNameError}
           />
           <fieldset>
             <legend className="text-xl font-semibold leading-6 text-gray-900">
