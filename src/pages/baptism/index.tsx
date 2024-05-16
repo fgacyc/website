@@ -19,15 +19,6 @@ export default function Baptism() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const windowHeight = window.innerHeight;
-  //   const windowWidth = window.innerWidth;
-  //   // console.log("window.innerHeight; ", windowHeight)
-  //   // console.log("window.innerWidth; ", windowHeight)
-
-  //   setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
-  // }, []);
-
   useEffect(() => {
     const handleResize = () => {
       const windowHeight = window.innerHeight;

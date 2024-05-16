@@ -1,5 +1,5 @@
 import FormInput from "./FormInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CompletedForm from "./CompletedForm";
 import FormCombobox from "./FormCombobox";
 import FormCheckList from "./FormCheckList";
@@ -10,12 +10,41 @@ import { useRouter } from "next/router";
 export default function Form() {
   const router = useRouter();
 
+  interface PastoralTeam {
+    value: string;
+    label: string;
+  }
+
   const handleNavigation = async () => {
     try {
       await router.push("/");
     } catch (error) {
       console.error("Error navigating:", error);
     }
+  };
+  const defaultPatoralLs = [
+    { value: "Move", label: "Move" },
+    { value: "Voice", label: "Voice" },
+    { value: "Mind", label: "Mind" },
+    { value: "Force", label: "Force" },
+    { value: "Heart", label: "Heart" },
+  ];
+  const pastoral_team_with_location_list = {
+    KuchaiYW: ["Move", "Voice", "Mind", "Force", "Heart"],
+    KuchaiWK: ["GS - Joshua Zone"],
+    KuchaiGS: [
+      "GS - Daniel Yeo Zone",
+      "GS - Ps Jasmine Zone",
+      "GS - Ps Melvin Zone",
+    ],
+    Serdang: ["Adult", "Young Warrior", "Young Professional"],
+    Kepong: ["Adult", "Young Warrior", "Young Professional"],
+    USJ: ["Young Warrior", "General Service"],
+    Setapak: ["Young Warrior", "Young Professional", "Adult"],
+    sgLong: ["Young Warrior", "Young Professional", "Young Family"],
+    Seremban: ["Young Warrior"],
+    Penang: [],
+    Johor: [],
   };
   const pastoral_status = [
     { value: "new_believer", label: "New Believer" },
@@ -26,11 +55,19 @@ export default function Form() {
   ];
 
   const service_location_list = [
-    { value: "fgaCycKuchaiLama", label: "FGA CYC Kuchai Lama" },
-    { value: "fgaCycSetapak", label: "FGA CYC Setapak" },
-    { value: "fgaCycKepong", label: "FGA CYC Kepong" },
-    { value: "fgaCycSgLong", label: "FGA CYC Sg. Long" },
-    { value: "fgaCycSeremban", label: "FGA CYC Seremban" },
+    { value: "kuchaiYw", label: "Kuchai YW" },
+    { value: "kuchaiWk", label: "Kuchai WK" },
+    { value: "kuchaiGs", label: "Kuchai GS" },
+    { value: "Serdang", label: "Serdang" },
+    { value: "Kepong", label: "Kepongn" },
+    { value: "USJ", label: "USJ" },
+    { value: "Setapak", label: "Setapak" },
+    { value: "sgLong", label: "SG Long" },
+    { value: "Seremban", label: "Seremban" },
+    { value: "Penang", label: "Penang" },
+    { value: "Johor", label: "Johor" },
+
+    // { value: "fgaCycSeremban", label: "SG Long" },
   ];
 
   const t_shirt_size_list = [
@@ -49,6 +86,8 @@ export default function Form() {
   const [icNo, setIcNo] = useState<string>("");
 
   const [chineseName, setChineseName] = useState<string>("");
+  const [pastoralTeamList, setPastoralTeamList] =
+    useState<PastoralTeam[]>(defaultPatoralLs);
 
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [pastoralStatus, setPastoralStatus] = useState<string>(
@@ -69,14 +108,137 @@ export default function Form() {
   const [pastoralTeam, setPastoralTeam] = useState<string>("");
   const [selectedTShirt, setSelectedTShirt] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const setPastoralTeamAndLoction = (e: string) => {
+    const list: PastoralTeam[] = [];
+    console.log({ e });
+    console.log("changed");
+    switch (e) {
+      case "kuchaiYw":
+        for (const val of pastoral_team_with_location_list.KuchaiYW) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "kuchaiWk":
+        for (const val of pastoral_team_with_location_list.KuchaiWK) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "kuchaiGs":
+        for (const val of pastoral_team_with_location_list.KuchaiGS) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Serdang":
+        for (const val of pastoral_team_with_location_list.Serdang) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Kepong":
+        for (const val of pastoral_team_with_location_list.Kepong) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "USJ":
+        for (const val of pastoral_team_with_location_list.USJ) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Setapak":
+        for (const val of pastoral_team_with_location_list.Setapak) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "sgLong":
+        for (const val of pastoral_team_with_location_list.sgLong) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Seremban":
+        for (const val of pastoral_team_with_location_list.Seremban) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Penang":
+        for (const val of pastoral_team_with_location_list.Penang) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      case "Johor":
+        for (const val of pastoral_team_with_location_list.Johor) {
+          const locationAndPatoralTeamObj = { value: val, label: val };
+          console.log({ val });
+          list.push(locationAndPatoralTeamObj);
+        }
+        setPastoralTeamList(list);
+        break;
+      default:
+    }
+    setServiceLocation(e);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log({
       name,
-      phoneNumber,
+      chineseName,
       pastoralStatus,
+      icNo,
+      phoneNumber,
+      pastoralTeam,
+      cglName,
+      selectedTShirt,
+
       //   ministry,
     });
+
+    const res = await fetch("/api/water_baptism", {
+      method: "POST",
+      body: JSON.stringify({
+        name_en: name,
+        name_cn: chineseName,
+        gender,
+        dob,
+        ic_no: icNo,
+        phone_no: phoneNumber,
+        pastoral_status: pastoralStatus,
+        service_location: serviceLocation,
+        pastoral_team: pastoralTeam,
+        cgl_name: cglName,
+        t_shirt_size: selectedTShirt,
+      }),
+    });
+    res.status === 200 ? setIsSubmitted(true) : alert("Failed to submit");
+
     setIsSubmitted(true);
   };
 
@@ -104,7 +266,7 @@ export default function Form() {
         </div>
       ) : (
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => void handleSubmit(e)}
           className="mx-auto my-[82px] mt-5 grid w-4/5  grid-cols-2 items-center gap-4 rounded-[20px]	bg-white p-10 py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         >
           <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px] font-bold ">
@@ -117,14 +279,13 @@ export default function Form() {
             type="text"
             name="name"
             id="name"
-            validate={(inputValue: string) => /^[A-Za-z\s]+$/.test(inputValue)}
+            validate={(value: string) => /^[A-Za-z\s]+$/.test(value)}
             placeholder="Full name"
             value={name}
             onInputChange={(value) => setName(value)}
             error={nameError}
             setError={setNameError}
           />
-
           <FormInput
             className=" w-full"
             label="&nbsp;"
@@ -138,7 +299,6 @@ export default function Form() {
             error={nameError}
             setError={setNameError}
           />
-
           <fieldset>
             <legend className="text-xl font-semibold leading-6 text-gray-900">
               Gender
@@ -185,16 +345,15 @@ export default function Form() {
               </div>
             </div>
           </fieldset>
-
           <FormInput
             className="col-span-2 w-full"
             label="Date of Birth"
             type="dob"
             name="dob"
             id="dob"
-            validate={(inputValue: string) =>
+            validate={(value: string) =>
               /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/.test(
-                inputValue
+                value
               )
             }
             placeholder="DD/MM/YYYY"
@@ -204,31 +363,27 @@ export default function Form() {
             setError={setDobError}
             desc={"Date, Month, year"}
           />
-
           <FormInput
             className="col-span-2 w-full"
             label="I.C No"
             type="text"
             name="icNo"
             id="icNo"
-            validate={(inputValue: string) =>
-              /^\d{6}-\d{2}-\d{4}$/.test(inputValue)
-            }
+            validate={(value: string) => /^\d{6}-\d{2}-\d{4}$/.test(value)}
             placeholder="xxxxxx-xx-xxxx"
             value={icNo}
             onInputChange={(value) => setIcNo(value)}
             error={dobError}
             setError={setDobError}
           />
-
           <FormInput
             className="col-span-2 w-full"
             label="Phone Number"
             type="tel"
             name="phone_number"
             id="phone_number"
-            validate={(inputValue: string) =>
-              /^\+?[0-9]{1,3}-?[0-9]{3,4}-?[0-9]{4,}$/i.test(inputValue)
+            validate={(value: string) =>
+              /^\+?[0-9]{1,3}-?[0-9]{3,4}-?[0-9]{4,}$/i.test(value)
             }
             placeholder="+60xx-xxx-xxxx"
             value={phoneNumber}
@@ -236,7 +391,6 @@ export default function Form() {
             error={phoneNumberError}
             setError={setPhoneNumberError}
           />
-
           <FormCombobox
             label="Pastoral Status"
             name="pastoral_status"
@@ -246,7 +400,6 @@ export default function Form() {
             selectedValue={pastoralStatus}
             onValueChange={(value) => setPastoralStatus(value)}
           />
-
           <FormCombobox
             label="Service Location"
             name="service_location"
@@ -254,37 +407,31 @@ export default function Form() {
             options={service_location_list}
             className="col-span-2 w-full"
             selectedValue={serviceLocation}
-            onValueChange={(value) => setServiceLocation(value)}
+            onValueChange={(value) => setPastoralTeamAndLoction(value)}
           />
 
-          <FormInput
-            className="col-span-2 w-full"
+          <FormCombobox
             label="Pastoral Team"
-            type="text"
             name="pastoralTeam"
-            id="pastoralTeam"
-            validate={(inputValue: string) => /^\S+@\S+\.\S+$/.test(inputValue)}
-            placeholder="eg. Jason Team"
-            value={pastoralTeam}
-            onInputChange={(value) => setPastoralTeam(value)}
-            error={emailError}
-            setError={setEmailError}
+            id="service_location"
+            options={pastoralTeamList}
+            className="col-span-2 w-full"
+            selectedValue={pastoralTeam}
+            onValueChange={(value) => setPastoralTeam(value)}
           />
-
           <FormInput
             className="col-span-2 w-full"
             label="CGL Name"
             type="text"
             name="cglName"
             id="cglName"
-            validate={(inputValue: string) => /^\S+@\S+\.\S+$/.test(inputValue)}
+            validate={(value: string) => /^\S+@\S+\.\S+$/.test(value)}
             placeholder="eg. Albert Mah"
             value={cglName}
             onInputChange={(value) => setCglName(value)}
             error={emailError}
             setError={setEmailError}
           />
-
           <fieldset>
             <legend className="text-xl font-semibold leading-6 text-gray-900">
               Baptism T-Shirt Size
