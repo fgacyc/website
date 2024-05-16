@@ -106,7 +106,7 @@ export default function AboutUs() {
           <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
         </div>
 
-        <ExperienceGallery />
+        <ExperienceGallery className="border-black text-black" />
 
         <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
           <hr className="border-dotted"></hr>
