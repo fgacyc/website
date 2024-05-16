@@ -103,7 +103,7 @@ export default function AboutUs() {
           <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
         </div>
 
-        <ExperienceGallery />
+        <ExperienceGallery className="border-black text-black" />
 
       </main>
     </>
