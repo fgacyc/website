@@ -80,11 +80,12 @@ const HomeSection3 = () => {
         The Experience
       </div>
       <ExperienceGallery className="border-[#3AFFAC] text-white" />
-      <div className="mx-[30px] sm:mx-[59px] sm:mt-[135px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
+      <div className="mx-[30px] mt-[135px] sm:mx-[59px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
         <div className="text-7xl font-bold sm:text-9xl">Our Vision</div>
-        <div className="w-[270px] text-2xl font-bold sm:w-[530px] sm:text-[40px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
-          Antioch Church — <br />
-          An apostolic and prophetic cell-based church.
+        <div className="mt-1.5 w-[270px] text-2xl font-bold leading-tight sm:w-[530px] sm:text-[40px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
+          <span>Antioch Church —</span>
+          <br />
+          <span>An apostolic and prophetic cell-based church.</span>
         </div>
         <div
           className="relative mt-10 h-[180px] w-[270px] rounded-bl-[35px] border-[6px] border-[#00EDC2] 
