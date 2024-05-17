@@ -7,7 +7,7 @@ interface CompletedFormProps {
   button_color: string; // bg-white || bg-[#FFFFFF]
   text: string;
   desc: string;
-  onClick?: () => void;
+  onClick?: () => Promise<void>;
 }
 
 const CompletedForm = ({
