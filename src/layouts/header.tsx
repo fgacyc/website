@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 export default function Header() {
   const router = useRouter();
   const getHeaderMainMenuCSS = () => {
-    if (router.pathname === "/about-us") {
+    if (router.pathname === "/" || router.pathname === "/get-connected"
+      || router.pathname === "/locations") {
       return {
         logo: (
           <svg
@@ -33,7 +34,7 @@ export default function Header() {
             />
           </svg>
         ),
-        main_menu_btn_color: "text-white",
+        text_color: "text-white",
       };
     } else {
       return {
@@ -63,11 +64,22 @@ export default function Header() {
             />
           </svg>
         ),
-        main_menu_btn_color: "text-black",
+        text_color: "text-black",
       };
     }
   };
-  const { logo, main_menu_btn_color } = getHeaderMainMenuCSS();
+  const getNavMenuItems = () => {
+    if (router.pathname === '/') {
+      return {}
+    }
+
+    return {
+      "/about-us": "About Us",
+      "/get-connected": "Get Connected",
+      "/locations": "Visit FGA"
+    }
+  };
+  const { logo, text_color } = getHeaderMainMenuCSS();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -85,35 +97,19 @@ export default function Header() {
         </Link>
         <div className="block w-auto">
           <ul className="flex flex-row rounded-lg bg-transparent font-medium rtl:space-x-reverse dark:border-none dark:bg-transparent md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:dark:bg-transparent">
-            <li className="hidden md:block">
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="hidden md:block">
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
-              >
-                Get Connected
-              </Link>
-            </li>
-            <li className="hidden md:block">
-              <Link
-                href="#"
-                className="inline-flex items-center justify-center p-2 text-sm text-black"
-              >
-                Visit FGA
-              </Link>
-            </li>
+            {Object.entries(getNavMenuItems()).map(([path, label]) => (
+              <li key={path} className="hidden md:block">
+                <Link href={path} className={`inline-flex items-center justify-center p-2 text-sm ${text_color}`}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+
             <li className="">
               <button
                 onClick={toggleMenu}
                 type="button"
-                className={`hover:bg-tranparent dark:hover:bg-tranparent inline-flex items-center justify-center p-2 text-sm text-black focus:outline-none dark:text-black ${main_menu_btn_color}`}
+                className={`hover:bg-tranparent dark:hover:bg-tranparent inline-flex items-center justify-center p-2 text-sm text-black focus:outline-none dark:text-black ${text_color}`}
                 aria-controls="headerDropDownMenu"
                 aria-expanded={isMenuOpen}
               >
@@ -168,7 +164,7 @@ export default function Header() {
                   <div className="mt-[87px]">
                     <li>
                       <Link
-                        href="#"
+                        href="/about-us"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         About Us
@@ -176,7 +172,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/get-connected"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Get Connected
@@ -184,7 +180,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/locations"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Visit FGA
@@ -192,7 +188,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/wonderkids"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Wonder Kids
@@ -200,7 +196,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/get-involved"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Get Involved
@@ -208,7 +204,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/giving"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Giving
@@ -216,7 +212,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/baptism"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Baptise
@@ -224,7 +220,8 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="https://faithflix.versal.app/"
+                        target="_blank"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Stream
@@ -232,7 +229,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="/mobile-app-download"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
                         Mobile App
