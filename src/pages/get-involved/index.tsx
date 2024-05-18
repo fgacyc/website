@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
 import FormCombobox from "~/components/Form/FormCombobox";
 import FormInput from "~/components/Form/FormInput";
@@ -173,32 +173,78 @@ interface MinistriesProps {
 const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
   const ministry_list = ministry_data;
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       id={`ministry_${index}`}
       className={`relative h-screen bg-[#241F20] px-10 pt-11`}
     >
-      <div className="flex overflow-auto scrollbar-hide">
-        {" "}
-        {ministry_list[index]?.map((ministries, index) => (
-          <div key={index} className="ml-14 flex">
-            <MinistryDesc title={ministries.title} desc={ministries.desc} />
-            <div className="mt-10 flex">
-              {ministries.ministry.map((item, index) => (
-                <MinistryCard
-                  key={index}
-                  image={item.image}
-                  titleCn={item.titleCn}
-                  titleEn={item.titleEn}
-                  desc1={item.desc[0]!}
-                  desc2={item.desc[1] ?? ""}
-                  skill_level={item.rate[0]!}
-                  commitment_level={item.rate[1]!}
-                />
-              ))}
+      <div className="relative">
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_left_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-auto scrollbar-hide"
+        >
+          {ministry_list[index]?.map((ministries, index) => (
+            <div key={index} className="ml-14 flex">
+              <MinistryDesc title={ministries.title} desc={ministries.desc} />
+              <div className="mt-10 flex">
+                {ministries.ministry.map((item, index) => (
+                  <MinistryCard
+                    key={index}
+                    image={item.image}
+                    titleCn={item.titleCn}
+                    titleEn={item.titleEn}
+                    desc1={item.desc[0]!}
+                    desc2={item.desc[1] ?? ""}
+                    skill_level={item.rate[0]!}
+                    commitment_level={item.rate[1]!}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <button
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_right_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
       </div>
       <Image
         src={"/icons/cross.svg"}
@@ -393,16 +439,6 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             error={emailError}
             setError={setEmailError}
           />
-
-          {/* <FormCombobox
-            label="Pastoral Team"
-            name="pastoral_team"
-            id="pastoral_team"
-            options={pastoral_options}
-            className="w-4/5"
-            selectedValue={pastoralTeam}
-            onValueChange={(value) => setPastoralTeam(value)}
-          /> */}
 
           <FormCascader
             label="Pastoral Team"
