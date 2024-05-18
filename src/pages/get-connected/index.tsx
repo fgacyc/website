@@ -3,10 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
-import CompletedForm from "~/components/CompletedForm";
-import FormCheckList from "~/components/FormCheckList";
-import FormCombobox from "~/components/FormCombobox";
-import FormInput from "~/components/FormInput";
+import CompletedForm from "~/components/Form/CompletedForm";
+import FormCheckList from "~/components/Form/FormCheckList";
+import FormCombobox from "~/components/Form/FormCombobox";
+import FormInput from "~/components/Form/FormInput";
 import { cgLocations } from "~/data/locations";
 
 export default function GetConnected() {

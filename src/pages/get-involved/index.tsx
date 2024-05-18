@@ -1,13 +1,17 @@
 import Image from "next/image";
 import React, { Fragment, useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
-import FormCombobox from "~/components/FormCombobox";
-import FormInput from "~/components/FormInput";
-import CompletedForm from "~/components/CompletedForm";
+import FormCombobox from "~/components/Form/FormCombobox";
+import FormInput from "~/components/Form/FormInput";
+import CompletedForm from "~/components/Form/CompletedForm";
 import Banner from "~/components/Banner";
 import { ministry_data, team_data } from "~/data/ministry";
 import Link from "next/link";
 import ArrowLink from "~/components/ArrowLink";
+import FormCascader, {
+  convertDataToOptions,
+} from "~/components/Form/FormCascader";
+import { satellite_pastoralTeam } from "~/data/pastoral";
 
 interface TeamDescCardProps {
   index: number;
@@ -261,15 +265,6 @@ interface FormProps {
 }
 
 const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
-  // todo: add actual pastoral options
-  const pastoral_options = [
-    { value: "ps._melvin_zone", label: "Ps. Melvin Zone" },
-    { value: "ps._daniel_zone", label: "Ps. Daniel Zone" },
-    { value: "json_zone", label: "Json Zone" },
-    { value: "xxxx1", label: "xxxx1" },
-    { value: "xxxx2", label: "xxxx2" },
-  ];
-
   const ministry_list = ministry_data;
 
   const ministry_options = ministry_list.flatMap((ministries) =>
@@ -286,7 +281,9 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [pastoralTeam, setPastoralTeam] = useState(pastoral_options[0]!.value);
+  const [pastoralTeam, setPastoralTeam] = useState(
+    satellite_pastoralTeam["Kuchai YW"][0]
+  );
   const [ministry, setMinistry] = useState(ministry_options[0]!.value);
   const [nameError, setNameError] = useState(false);
   const [phoneNumberError, setPhoneNumberError] = useState(false);
@@ -296,7 +293,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
     setName("");
     setPhoneNumber("");
     setEmail("");
-    setPastoralTeam(pastoral_options[0]!.value);
+    setPastoralTeam(satellite_pastoralTeam["Kuchai YW"][0]);
     setMinistry(ministry_options[0]!.value);
     setNameError(false);
     setPhoneNumberError(false);
@@ -397,13 +394,23 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             setError={setEmailError}
           />
 
-          <FormCombobox
+          {/* <FormCombobox
             label="Pastoral Team"
             name="pastoral_team"
             id="pastoral_team"
             options={pastoral_options}
             className="w-4/5"
             selectedValue={pastoralTeam}
+            onValueChange={(value) => setPastoralTeam(value)}
+          /> */}
+
+          <FormCascader
+            label="Pastoral Team"
+            name="pastoral_team"
+            id="pastoral_team"
+            options={convertDataToOptions(satellite_pastoralTeam)}
+            className="w-4/5"
+            selectedValue={pastoralTeam!}
             onValueChange={(value) => setPastoralTeam(value)}
           />
 
