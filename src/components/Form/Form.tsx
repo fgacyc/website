@@ -259,10 +259,11 @@ export default function Form() {
             bg_color="bg-white"
             tick_bg="bg-[#1FC4CF]"
             tick_color="white"
+            desc="We have received your registration, and we will be in touch soon!"
             button_color="bg-black"
-            text="COMPLETED!"
-            desc="We have received your submission, and we will be in touch soon!"
-            onClick={setSubmitAndRedirect}
+            text="CONGRATULATIONS!"
+            button_text="Yay!"
+            onClick={() => void setSubmitAndRedirect()}
           />
         </div>
       ) : (

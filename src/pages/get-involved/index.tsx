@@ -1,13 +1,17 @@
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
-import FormCombobox from "~/components/FormCombobox";
-import FormInput from "~/components/FormInput";
-import CompletedForm from "~/components/CompletedForm";
+import FormCombobox from "~/components/Form/FormCombobox";
+import FormInput from "~/components/Form/FormInput";
+import CompletedForm from "~/components/Form/CompletedForm";
 import Banner from "~/components/Banner";
 import { ministry_data, team_data } from "~/data/ministry";
 import Link from "next/link";
 import ArrowLink from "~/components/ArrowLink";
+import FormCascader, {
+  convertDataToOptions,
+} from "~/components/Form/FormCascader";
+import { satellite_pastoralTeam } from "~/data/pastoral";
 
 interface TeamDescCardProps {
   index: number;
@@ -169,32 +173,78 @@ interface MinistriesProps {
 const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
   const ministry_list = ministry_data;
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       id={`ministry_${index}`}
       className={`relative h-screen bg-[#241F20] px-10 pt-11`}
     >
-      <div className="flex overflow-auto scrollbar-hide">
-        {" "}
-        {ministry_list[index]?.map((ministries, index) => (
-          <div key={index} className="ml-14 flex">
-            <MinistryDesc title={ministries.title} desc={ministries.desc} />
-            <div className="mt-10 flex">
-              {ministries.ministry.map((item, index) => (
-                <MinistryCard
-                  key={index}
-                  image={item.image}
-                  titleCn={item.titleCn}
-                  titleEn={item.titleEn}
-                  desc1={item.desc[0]!}
-                  desc2={item.desc[1] ?? ""}
-                  skill_level={item.rate[0]!}
-                  commitment_level={item.rate[1]!}
-                />
-              ))}
+      <div className="relative">
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_left_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-auto scrollbar-hide"
+        >
+          {ministry_list[index]?.map((ministries, index) => (
+            <div key={index} className="ml-14 flex">
+              <MinistryDesc title={ministries.title} desc={ministries.desc} />
+              <div className="mt-10 flex">
+                {ministries.ministry.map((item, index) => (
+                  <MinistryCard
+                    key={index}
+                    image={item.image}
+                    titleCn={item.titleCn}
+                    titleEn={item.titleEn}
+                    desc1={item.desc[0]!}
+                    desc2={item.desc[1] ?? ""}
+                    skill_level={item.rate[0]!}
+                    commitment_level={item.rate[1]!}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <button
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_right_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
       </div>
       <Image
         src={"/icons/cross.svg"}
@@ -261,15 +311,6 @@ interface FormProps {
 }
 
 const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
-  // todo: add actual pastoral options
-  const pastoral_options = [
-    { value: "ps._melvin_zone", label: "Ps. Melvin Zone" },
-    { value: "ps._daniel_zone", label: "Ps. Daniel Zone" },
-    { value: "json_zone", label: "Json Zone" },
-    { value: "xxxx1", label: "xxxx1" },
-    { value: "xxxx2", label: "xxxx2" },
-  ];
-
   const ministry_list = ministry_data;
 
   const ministry_options = ministry_list.flatMap((ministries) =>
@@ -286,7 +327,9 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [pastoralTeam, setPastoralTeam] = useState(pastoral_options[0]!.value);
+  const [pastoralTeam, setPastoralTeam] = useState(
+    satellite_pastoralTeam["Kuchai YW"][0]
+  );
   const [ministry, setMinistry] = useState(ministry_options[0]!.value);
   const [nameError, setNameError] = useState(false);
   const [phoneNumberError, setPhoneNumberError] = useState(false);
@@ -296,7 +339,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
     setName("");
     setPhoneNumber("");
     setEmail("");
-    setPastoralTeam(pastoral_options[0]!.value);
+    setPastoralTeam(satellite_pastoralTeam["Kuchai YW"][0]);
     setMinistry(ministry_options[0]!.value);
     setNameError(false);
     setPhoneNumberError(false);
@@ -397,13 +440,13 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             setError={setEmailError}
           />
 
-          <FormCombobox
+          <FormCascader
             label="Pastoral Team"
             name="pastoral_team"
             id="pastoral_team"
-            options={pastoral_options}
+            options={convertDataToOptions(satellite_pastoralTeam)}
             className="w-4/5"
-            selectedValue={pastoralTeam}
+            selectedValue={pastoralTeam!}
             onValueChange={(value) => setPastoralTeam(value)}
           />
 
