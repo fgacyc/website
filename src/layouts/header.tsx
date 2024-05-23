@@ -90,7 +90,7 @@ export default function Header() {
     <nav className="absolute left-0 top-0 z-[1000] w-full bg-transparent dark:bg-transparent">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <Link
-          href="#"
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           {logo}
