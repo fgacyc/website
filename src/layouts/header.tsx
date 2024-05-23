@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-
 export default function Header() {
   const router = useRouter();
   const getHeaderMainMenuCSS = () => {
