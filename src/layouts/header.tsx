@@ -1,6 +1,7 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+
 
 export default function Header() {
   const router = useRouter();
@@ -70,14 +71,14 @@ export default function Header() {
   };
   const getNavMenuItems = () => {
     if (router.pathname === '/') {
-      return {}
+      return {
+        "/about-us": "About Us",
+        "/get-connected": "Get Connected",
+        "/locations": "Visit FGA"
+      }
     }
 
-    return {
-      "/about-us": "About Us",
-      "/get-connected": "Get Connected",
-      "/locations": "Visit FGA"
-    }
+    return {}
   };
   const { logo, text_color } = getHeaderMainMenuCSS();
 
@@ -85,6 +86,25 @@ export default function Header() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsMenuOpen(false); // Set isMenuOpen to false when route changes
+    };
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false); // Close menu when "Escape" key is pressed
+      }
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [router.events]);
 
   return (
     <nav className="absolute left-0 top-0 z-[1000] w-full bg-transparent dark:bg-transparent">
@@ -220,7 +240,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        href="https://faithflix.versal.app/"
+                        href="https://faithflix.vercel.app/"
                         target="_blank"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >

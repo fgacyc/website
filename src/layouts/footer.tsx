@@ -289,7 +289,7 @@ export default function Footer() {
                 </h2>
                 <ul className={`${text_color} font-medium`}>
                   <li className="mb-4">
-                    <Link href="https://faithflix.versal.app/" target="_blank" className="hover:underline">
+                    <Link href="https://faithflix.vercel.app/" target="_blank" className="hover:underline">
                       Stream
                     </Link>
                   </li>
