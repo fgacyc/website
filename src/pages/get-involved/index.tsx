@@ -246,6 +246,12 @@ const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
           />
         </button>
       </div>
+      <div className="absolute bottom-10 left-10 flex items-center md:hidden">
+        <div className="mr-3 whitespace-nowrap text-[10px] font-thin uppercase tracking-widest text-white">
+          SWIPE LEFT FOR MORE
+        </div>
+        <div className="h-[1px] w-[50px] bg-[#919191]"></div>
+      </div>
       <Image
         src={"/icons/cross.svg"}
         alt="Close Icon"
@@ -346,9 +352,31 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
     setEmailError(false);
   };
 
+  const handleValidation = () => {
+    let valid = true;
+
+    if (
+      name.trim() === "" ||
+      phoneNumber.trim() === "" ||
+      email.trim() === "" ||
+      !nameError ||
+      !phoneNumberError ||
+      !emailError
+    ) {
+      valid = false;
+    }
+
+    return valid;
+  };
+
   // todo: add validation
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!handleValidation()) {
+      alert("Please fill in the form correctly");
+      return;
+    }
+
     const res = await fetch("/api/get_involved", {
       method: "POST",
       body: JSON.stringify({
@@ -382,7 +410,6 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             desc="We have received your submission, and we will be in touch soon!"
             onClick={() => {
               setIsSubmitted(false), setIsFormVisible(false);
-              setTimeout(() => window.scrollTo(0, 0), 100);
             }}
           />
         </div>

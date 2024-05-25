@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface CompletedFormProps {
@@ -45,12 +46,13 @@ const CompletedForm = ({
       <div className="sf-pro-display mx-5 mb-14 max-w-[293px] text-xl text-[#747474]">
         {desc}
       </div>
-      <button
+      <Link
+        href={"/"}
         onClick={onClick}
         className={`sf-pro-display-black rounded-[35px] ${button_color} px-20 py-6 text-[25px] text-white`}
       >
         {button_text}
-      </button>
+      </Link>
     </div>
   );
 };
