@@ -100,7 +100,7 @@ const HomeSection3 = () => {
             className="absolute bottom-[10.5px] left-[10px] sm:bottom-[18.5px] sm:left-[18px] md:bottom-[29px] md:left-[28px]"
           />
           <ArrowLink
-            href="/about-us"
+            href="/locations"
             text="Visit FGA"
             text_color="text-black"
             arrow_color="black"

@@ -289,8 +289,22 @@ const Explore = ({ setIsFormVisible }: ExploreProps) => {
       {teamDescCards.map((teamDescCard, index) => (
         <Fragment key={index}>
           <div className="mx-10 mt-20 justify-between sm:mx-[90px] md:mt-32 lg:flex">
-            {/* todo: card */}
-            <div className="lg:w-1/2"></div>
+            {/* todo: card animation */}
+            <div className="lg:w-1/2">
+              <div className="relative mb-5 lg:mb-0">
+                <Image
+                  src={`/images/get-involved/${teamDescCard.title
+                    .toLocaleLowerCase()
+                    .replace(/ /g, "_")}.png`}
+                  alt={teamDescCard.title}
+                  width={300}
+                  height={443}
+                />
+                <div className="sf-pro-display-black absolute bottom-[60px] left-[20px] w-[182px] text-[32px] text-white ">
+                  {teamDescCard.title}
+                </div>
+              </div>
+            </div>
             <TeamDescCard
               index={index}
               {...teamDescCard}
