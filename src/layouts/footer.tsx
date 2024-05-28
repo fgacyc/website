@@ -295,7 +295,7 @@ export default function Footer() {
                   </li>
                   <li className="mb-4">
                     <Link href="/mobile-app-download" className="hover:underline">
-                      Get App
+                      Mobile App
                     </Link>
                   </li>
                 </ul>
