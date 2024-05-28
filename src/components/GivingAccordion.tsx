@@ -20,15 +20,15 @@ export default function GivingAccordion() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="overflow-hidden">
+      <main className="overflow-hidden ">
         <Accordion className="" isCompact={true}>
           <AccordionItem
             key="1"
             aria-label="Accordion 1"
-            className="my-5"
+            className="my-5 h-1/5"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 text-2xl text-white">
+              <h1 className="border-white-500 border-t-8 pt-5 xl:text-2xl lg:text-1xl text-white">
                 Giving Online
               </h1>
             }
@@ -37,7 +37,7 @@ export default function GivingAccordion() {
               <div className="">
                 {/* QR CODE */}
                 <Image
-                  src="/images/bank-qr.png"
+                  src="/images/giving/bank-qr.png"
                   alt="bank-qr"
                   width={100}
                   height={600}
@@ -51,7 +51,7 @@ export default function GivingAccordion() {
               </div>
               {/* TnG  */}
               <Image
-                src="/images/tng.png"
+                src="/images/giving/tng.png"
                 alt="tng"
                 width={60}
                 height={250}
@@ -64,11 +64,11 @@ export default function GivingAccordion() {
           {/* ACCORDION 2  */}
           <AccordionItem
             key="2"
-            className="mt-10 "
+            className="mt-10"
             aria-label="Accordion 1"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 text-2xl text-white">
+              <h1 className="border-white-500 border-t-8 pt-5 xl:text-2xl lg:text-1XL text-white">
                 &quot;Love Our Home&quot;
                 <br />
                 Building Fund
@@ -78,7 +78,7 @@ export default function GivingAccordion() {
             <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
               <div className="">
                 <Image
-                  src="/images/bank-qr.png"
+                  src="/images/giving/bank-qr.png"
                   alt="bank-qr"
                   width={100}
                   height={600}
@@ -93,7 +93,7 @@ export default function GivingAccordion() {
               </div>
               {/* <div> */}
               <Image
-                src="/images/tng.png"
+                src="/images/giving/tng.png"
                 alt="bank-qr"
                 width={60}
                 height={250}

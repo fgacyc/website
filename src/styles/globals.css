@@ -80,6 +80,7 @@
 
 :root {
   color: #000000;
+  scroll-behavior: smooth;
 }
 
 .sf-pro-display {
@@ -133,4 +134,12 @@
 
 #baptiseBtn {
   width: 25rem;
+}
+
+.h-screen-lg {
+  height: 150vh;
+}
+
+.h-screen-xl {
+  height: 180vh;
 }

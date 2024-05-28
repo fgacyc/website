@@ -1,15 +1,46 @@
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import React from "react";
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface OptionGroup {
+  label: string;
+  options: Option[];
+}
 
 interface FormCascaderProps {
   label: string;
   name: string;
   id: string;
-  options: Record<string, string[]>;
+  options: (Option | OptionGroup)[];
   className?: string;
-  selectedValue: { group: string; team: string };
-  onGroupChange: (group: string) => void;
-  onTeamChange: (team: string) => void;
+  selectedValue: string;
+  onValueChange: (value: string) => void;
 }
+
+export const convertDataToOptions = (
+  data: Record<string, string[]>
+): (Option | OptionGroup)[] => {
+  return Object.entries(data).map(([key, values]) => {
+    if (values.length > 0) {
+      return {
+        label: key,
+        options: values.map((value) => ({
+          value: value,
+          label: value,
+        })),
+      } as OptionGroup;
+    } else {
+      return {
+        value: key,
+        label: key,
+      } as Option;
+    }
+  });
+};
 
 const FormCascader = ({
   label,
@@ -18,34 +49,8 @@ const FormCascader = ({
   options,
   className,
   selectedValue,
-  onGroupChange,
-  onTeamChange,
+  onValueChange,
 }: FormCascaderProps) => {
-  const [selectedGroup, setSelectedGroup] = useState(selectedValue.group || "");
-  const [selectedTeam, setSelectedTeam] = useState(selectedValue.team || "");
-
-  useEffect(() => {
-    setSelectedGroup(selectedValue.group);
-    setSelectedTeam(selectedValue.team);
-  }, [selectedValue]);
-
-  const handleGroupChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const group = e.target.value;
-    setSelectedGroup(group);
-    setSelectedTeam("");
-    onGroupChange(group);
-    onTeamChange("");
-  };
-
-  const handleTeamChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const team = e.target.value;
-    setSelectedTeam(team);
-    onTeamChange(team);
-  };
-
-  const groupOptions = Object.keys(options);
-  const teamOptions = selectedGroup ? options[selectedGroup] : [];
-
   return (
     <div
       className={`sf-pro-display relative mx-auto mb-5 flex flex-col text-xl ${className}`}
@@ -54,43 +59,43 @@ const FormCascader = ({
         {label}
       </label>
       <select
-        name={`${name}_group`}
-        id={`${id}_group`}
-        value={selectedGroup}
-        onChange={handleGroupChange}
+        name={name}
+        id={id}
+        value={selectedValue}
+        onChange={(e) => onValueChange(e.target.value)}
         className="w-full appearance-none rounded-[5px] border border-[#B2B2B2] bg-white px-[18px] py-[13px] text-xl focus:outline-none"
       >
-        <option value="" disabled>
-          Select Group
-        </option>
-        {groupOptions.map((group, index) => (
-          <option key={index} value={group} className="bg-[#9E9E9E] text-white">
-            {group}
-          </option>
-        ))}
-      </select>
-      {teamOptions && teamOptions.length > 0 && (
-        <select
-          name={`${name}_team`}
-          id={`${id}_team`}
-          value={selectedTeam}
-          onChange={handleTeamChange}
-          className="mt-4 w-full appearance-none rounded-[5px] border border-[#B2B2B2] bg-white px-[18px] py-[13px] text-xl focus:outline-none"
-        >
-          <option value="" disabled>
-            Select Team
-          </option>
-          {teamOptions.map((team, index) => (
+        {options.map((option, index) =>
+          "options" in option ? (
+            <optgroup key={index} label={option.label} className="bg-[#00EDC2]">
+              {option.options.map((subOption, subIndex) => (
+                <option
+                  key={subIndex}
+                  value={subOption.value}
+                  className="bg-[#9E9E9E] text-white"
+                >
+                  {subOption.label}
+                </option>
+              ))}
+            </optgroup>
+          ) : (
             <option
               key={index}
-              value={team}
-              className="bg-[#9E9E9E] text-white"
+              value={option.value}
+              className="bg-[#00EDC2] font-semibold text-black"
             >
-              {team}
+              {option.label}
             </option>
-          ))}
-        </select>
-      )}
+          )
+        )}
+      </select>
+      <Image
+        src={"/icons/arrow_down.svg"}
+        alt="Arrow Down Icon"
+        width={13}
+        height={7}
+        className="absolute bottom-[20px] right-[18px]"
+      />
     </div>
   );
 };

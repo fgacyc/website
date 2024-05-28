@@ -1,9 +1,30 @@
 import Head from "next/head";
+import { useEffect, useState } from 'react';
 import GivingAccordion from "src/components/GivingAccordion";
 import { Button } from "@nextui-org/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function AboutUs() {
+
+  const [screenHeightClass, setScreenHeightClass] = useState('h-screen-lg');
+  const wayWeGiveClassStyle = "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " + screenHeightClass;
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowHeight = window.innerHeight;
+      const windowWidth = window.innerWidth;
+      setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); 
+
   return (
     <>
       {/*  items-center justify-center */}
@@ -15,24 +36,24 @@ export default function AboutUs() {
       <main className="overflow-x-hidden pt-[68px]">
         <div className="min-w-screen  relative  flex h-screen w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover">
           <div className="font-bold leading-10">
-            <h1 className="mb-5 text-2xl  md:text-3xl lg:text-5xl xl:text-6xl">
+            <h1 className="mb-5 text-1xl  md:text-3xl lg:text-5xl xl:text-5xl">
               {" "}
               A generous person will prosper;{" "}
             </h1>
-            <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+            <h1 className="my-1 mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               Whoever refreshes
             </h1>
-            <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+            <h1 className="my-1 mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               Others will be
             </h1>
-            <h1 className="mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+            <h1 className="mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               refreshed.
             </h1>
             <br />
-            <h1 className="mb-5 text-2xl md:text-3xl lg:text-4xl xl:text-5xl ">
+            <h1 className="mb-5 text-1xl md:text-3xl lg:text-4xl xl:text-4xl ">
               Proverbs 11:25{" "}
             </h1>
           </div>
@@ -40,7 +61,7 @@ export default function AboutUs() {
         </div>
 
         <div className=" font-bold text-white">
-          <div className=" h-screen w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex ">
+          <div className={wayWeGiveClassStyle}>
             <div className="xl:mt-44">
               <div className=" pl-24 xl:mx-24 xl:mt-0 2xl:mx-60 ">
                 <div className=" pt-20 text-5xl sm:max-md:text-lg lg:text-9xl xl:pt-0">
@@ -48,6 +69,9 @@ export default function AboutUs() {
                   Give
                   <br />
                 </div>
+                {/* 
+                    <a href="https://your-link-here.com" target="_blank" rel="noopener noreferrer">
+
                 <Button
                   color="success"
                   className="text-md mt-5 bg-[#00EDC2] px-12 py-5 font-bold text-black lg:w-72 lg:text-lg"
@@ -55,9 +79,11 @@ export default function AboutUs() {
                   Give Now
                   <ArrowLongRightIcon className="w-15 size-8" />
                 </Button>
+                </a>
+                */}
               </div>
             </div>
-            <div className="w-11/12 lg:mt-44 xl:w-128">
+            <div className="w-11/12 xl:mt-44 mt-20 xl:w-128">
               <GivingAccordion />
             </div>
           </div>
@@ -110,10 +136,13 @@ export default function AboutUs() {
             If you’ve got questions about what you can give and how to give it,
             we’d love to help you figure it out.{" "}
           </h1>
+
           <Button className="my-5 rounded-none border-b-4	border-b-black bg-[#D9D9D9] p-10 ">
             <h1 className="  inline-block text-7xl font-bold">
               {" "}
+              <a href="mailto:info@fgacyc.com">         
               Let&apos;s Talk{" "}
+              </a>
               <ArrowLongRightIcon className="size-20 inline-block w-10" />{" "}
             </h1>
           </Button>

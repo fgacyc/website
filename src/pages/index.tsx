@@ -59,7 +59,7 @@ const HomeSection2 = () => {
         ))}
       </div>
       <ArrowLink
-        href="/connect"
+        href="/get-connected"
         text="GET CONNECTED"
         bg_color="bg-[#3AFFAC]"
         arrow_color="black"
@@ -100,7 +100,7 @@ const HomeSection3 = () => {
             className="absolute bottom-[10.5px] left-[10px] sm:bottom-[18.5px] sm:left-[18px] md:bottom-[29px] md:left-[28px]"
           />
           <ArrowLink
-            href="/visit_fga"
+            href="/locations"
             text="Visit FGA"
             text_color="text-black"
             arrow_color="black"

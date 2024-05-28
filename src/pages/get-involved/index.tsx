@@ -1,13 +1,17 @@
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
-import FormCombobox from "~/components/FormCombobox";
-import FormInput from "~/components/FormInput";
-import CompletedForm from "~/components/CompletedForm";
+import FormCombobox from "~/components/Form/FormCombobox";
+import FormInput from "~/components/Form/FormInput";
+import CompletedForm from "~/components/Form/CompletedForm";
 import Banner from "~/components/Banner";
 import { ministry_data, team_data } from "~/data/ministry";
 import Link from "next/link";
 import ArrowLink from "~/components/ArrowLink";
+import FormCascader, {
+  convertDataToOptions,
+} from "~/components/Form/FormCascader";
+import { satellite_pastoralTeam } from "~/data/pastoral";
 
 interface TeamDescCardProps {
   index: number;
@@ -169,32 +173,84 @@ interface MinistriesProps {
 const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
   const ministry_list = ministry_data;
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: scrollContainerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       id={`ministry_${index}`}
       className={`relative h-screen bg-[#241F20] px-10 pt-11`}
     >
-      <div className="flex overflow-auto scrollbar-hide">
-        {" "}
-        {ministry_list[index]?.map((ministries, index) => (
-          <div key={index} className="ml-14 flex">
-            <MinistryDesc title={ministries.title} desc={ministries.desc} />
-            <div className="mt-10 flex">
-              {ministries.ministry.map((item, index) => (
-                <MinistryCard
-                  key={index}
-                  image={item.image}
-                  titleCn={item.titleCn}
-                  titleEn={item.titleEn}
-                  desc1={item.desc[0]!}
-                  desc2={item.desc[1] ?? ""}
-                  skill_level={item.rate[0]!}
-                  commitment_level={item.rate[1]!}
-                />
-              ))}
+      <div className="relative">
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_left_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-auto scrollbar-hide"
+        >
+          {ministry_list[index]?.map((ministries, index) => (
+            <div key={index} className="ml-14 flex">
+              <MinistryDesc title={ministries.title} desc={ministries.desc} />
+              <div className="mt-10 flex">
+                {ministries.ministry.map((item, index) => (
+                  <MinistryCard
+                    key={index}
+                    image={item.image}
+                    titleCn={item.titleCn}
+                    titleEn={item.titleEn}
+                    desc1={item.desc[0]!}
+                    desc2={item.desc[1] ?? ""}
+                    skill_level={item.rate[0]!}
+                    commitment_level={item.rate[1]!}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <button
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
+        >
+          <Image
+            src={"/icons/carousel_right_arrow.svg"}
+            alt="Right Arrow"
+            width={40}
+            height={67}
+          />
+        </button>
+      </div>
+      <div className="absolute bottom-10 left-10 flex items-center md:hidden">
+        <div className="mr-3 whitespace-nowrap text-[10px] font-thin uppercase tracking-widest text-white">
+          SWIPE LEFT FOR MORE
+        </div>
+        <div className="h-[1px] w-[50px] bg-[#919191]"></div>
       </div>
       <Image
         src={"/icons/cross.svg"}
@@ -233,8 +289,22 @@ const Explore = ({ setIsFormVisible }: ExploreProps) => {
       {teamDescCards.map((teamDescCard, index) => (
         <Fragment key={index}>
           <div className="mx-10 mt-20 justify-between sm:mx-[90px] md:mt-32 lg:flex">
-            {/* todo: card */}
-            <div className="lg:w-1/2"></div>
+            {/* todo: card animation */}
+            <div className="lg:w-1/2">
+              <div className="relative mb-5 lg:mb-0">
+                <Image
+                  src={`/images/get-involved/${teamDescCard.title
+                    .toLocaleLowerCase()
+                    .replace(/ /g, "_")}.png`}
+                  alt={teamDescCard.title}
+                  width={300}
+                  height={443}
+                />
+                <div className="sf-pro-display-black absolute bottom-[60px] left-[20px] w-[182px] text-[32px] text-white ">
+                  {teamDescCard.title}
+                </div>
+              </div>
+            </div>
             <TeamDescCard
               index={index}
               {...teamDescCard}
@@ -261,15 +331,6 @@ interface FormProps {
 }
 
 const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
-  // todo: add actual pastoral options
-  const pastoral_options = [
-    { value: "ps._melvin_zone", label: "Ps. Melvin Zone" },
-    { value: "ps._daniel_zone", label: "Ps. Daniel Zone" },
-    { value: "json_zone", label: "Json Zone" },
-    { value: "xxxx1", label: "xxxx1" },
-    { value: "xxxx2", label: "xxxx2" },
-  ];
-
   const ministry_list = ministry_data;
 
   const ministry_options = ministry_list.flatMap((ministries) =>
@@ -286,7 +347,9 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [pastoralTeam, setPastoralTeam] = useState(pastoral_options[0]!.value);
+  const [pastoralTeam, setPastoralTeam] = useState(
+    satellite_pastoralTeam["Kuchai YW"][0]
+  );
   const [ministry, setMinistry] = useState(ministry_options[0]!.value);
   const [nameError, setNameError] = useState(false);
   const [phoneNumberError, setPhoneNumberError] = useState(false);
@@ -296,16 +359,38 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
     setName("");
     setPhoneNumber("");
     setEmail("");
-    setPastoralTeam(pastoral_options[0]!.value);
+    setPastoralTeam(satellite_pastoralTeam["Kuchai YW"][0]);
     setMinistry(ministry_options[0]!.value);
     setNameError(false);
     setPhoneNumberError(false);
     setEmailError(false);
   };
 
+  const handleValidation = () => {
+    let valid = true;
+
+    if (
+      name.trim() === "" ||
+      phoneNumber.trim() === "" ||
+      email.trim() === "" ||
+      !nameError ||
+      !phoneNumberError ||
+      !emailError
+    ) {
+      valid = false;
+    }
+
+    return valid;
+  };
+
   // todo: add validation
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!handleValidation()) {
+      alert("Please fill in the form correctly");
+      return;
+    }
+
     const res = await fetch("/api/get_involved", {
       method: "POST",
       body: JSON.stringify({
@@ -339,7 +424,6 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             desc="We have received your submission, and we will be in touch soon!"
             onClick={() => {
               setIsSubmitted(false), setIsFormVisible(false);
-              setTimeout(() => window.scrollTo(0, 0), 100);
             }}
           />
         </div>
@@ -397,13 +481,13 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             setError={setEmailError}
           />
 
-          <FormCombobox
+          <FormCascader
             label="Pastoral Team"
             name="pastoral_team"
             id="pastoral_team"
-            options={pastoral_options}
+            options={convertDataToOptions(satellite_pastoralTeam)}
             className="w-4/5"
-            selectedValue={pastoralTeam}
+            selectedValue={pastoralTeam!}
             onValueChange={(value) => setPastoralTeam(value)}
           />
 

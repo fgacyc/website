@@ -1,9 +1,11 @@
+import Link from "next/link";
 import React from "react";
 
 interface CompletedFormProps {
   bg_color: string; // bg-black || bg-[#000000]
   tick_bg: string; // bg-white || bg-[#FFFFFF]
   tick_color: string; // #000000
+  button_text: string;
   button_color: string; // bg-white || bg-[#FFFFFF]
   text: string;
   desc: string;
@@ -14,6 +16,7 @@ const CompletedForm = ({
   bg_color,
   tick_bg,
   tick_color,
+  button_text,
   button_color,
   text,
   desc,
@@ -43,12 +46,13 @@ const CompletedForm = ({
       <div className="sf-pro-display mx-5 mb-14 max-w-[293px] text-xl text-[#747474]">
         {desc}
       </div>
-      <button
+      <Link
+        href={"/"}
         onClick={onClick}
         className={`sf-pro-display-black rounded-[35px] ${button_color} px-20 py-6 text-[25px] text-white`}
       >
-        Yay!
-      </button>
+        {button_text}
+      </Link>
     </div>
   );
 };
