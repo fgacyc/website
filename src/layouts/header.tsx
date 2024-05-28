@@ -251,7 +251,7 @@ export default function Header() {
                         href="/mobile-app-download"
                         className="block px-4 py-2 pr-32 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
                       >
-                        Mobile App
+                        Get App
                       </Link>
                     </li>
                   </div>
