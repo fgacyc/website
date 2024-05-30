@@ -116,17 +116,16 @@ export default function GetConnected() {
                 <h3 className="w-[34vw] text-3xl font-bold transition delay-150 duration-300 hover:-translate-y-7 sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl">
                   What is Connect Group?
                 </h3>
-                <div className="ms-[3.6vw] flex items-center">
+                <div className="ms-[3.6vw] flex items-end">
                   <div>
-                    <h6 className="mb-[3.33vw] w-[22vw] text-[8px] sm:text-[10px] lg:text-xl">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <h6 className="mb-[3.33vw] w-[22vw] text-[8px] leading-tight sm:text-[10px] lg:mb-[2vw] lg:text-lg">
+                      Connect Groups is a Godly community where you will find
+                      your second (spiritual) family where everyone aims to be
+                      more like Jesus.
                     </h6>
                     <button
                       onClick={() => setIsNeedHelp(true)}
-                      className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:text-xl xl:px-10 xl:py-3.5"
+                      className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
                     >
                       Find a ConnectGroup{" "}
                       <Image
