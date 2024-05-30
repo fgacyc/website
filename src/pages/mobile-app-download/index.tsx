@@ -27,7 +27,7 @@ export default function MobileAppDownload() {
               ></Image>
             </div>
             <div className="ms-6 flex lg:ms-16 xl:ms-[80px]">
-              <div className="mt-[6px] w-1/2 sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px]">
+              <div className="mt-[6px] w-1/2 sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px] 2xl:w-[203px]">
                 <Image
                   alt=""
                   src={"/images/mobile-app-download/app-store.png"}
@@ -36,7 +36,7 @@ export default function MobileAppDownload() {
                 ></Image>
               </div>
 
-              <div className="w-[60%]">
+              <div className="w-[60%] 2xl:mt-1">
                 <Image
                   alt=""
                   src={"/images/mobile-app-download/google-play.png"}
