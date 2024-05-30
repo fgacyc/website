@@ -1,6 +1,7 @@
 import { Divider } from "@nextui-org/react";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import ArrowButton from "~/components/ArrowButton";
 import CompletedForm from "~/components/Form/CompletedForm";
@@ -22,6 +23,8 @@ export default function GetConnected() {
   const [phoneNumberError, setPhoneNumberError] = useState(false);
   // const [locationError, setLocationError] = useState(false);
   const [ageError, setAgeError] = useState(false);
+
+  const router = useRouter();
 
   const categories_list = [
     { value: "secondary", label: "Secondary Students" },
@@ -153,7 +156,10 @@ export default function GetConnected() {
                     button_text="Keep Exploring"
                     text="COMPLETED!"
                     desc="We have received your request."
-                    onClick={() => setIsSubmitted(false)}
+                    // onClick={() => setIsSubmitted(false)}
+                    onClick={() => {
+                      router.push("");
+                    }}
                   />
                 </div>
               ) : (
