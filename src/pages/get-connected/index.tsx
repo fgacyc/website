@@ -86,7 +86,8 @@ export default function GetConnected() {
               height={600}
               // width={100}
               // height={100}
-              className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
+              className="w-[90%] rounded-lg md:w-[80%]"
+              // className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
             ></Image>
             <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[6.5vw]">
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
@@ -102,7 +103,8 @@ export default function GetConnected() {
           </div>
           <div className="mb-[16.45vw] mt-[13vw]">
             <div>
-              <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7">
+              <div className="ms-[20vw]">
+                {/* <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7"> */}
                 <h3 className="w-[55vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
                   How to Get Connect?
                 </h3>
@@ -116,7 +118,8 @@ export default function GetConnected() {
               </div>
               {/* <div className="ms-[20vw] text-white">123123</div> */}
               <div className="ms-[20vw] flex">
-                <h3 className="w-[34vw] text-3xl font-bold transition delay-150 duration-300 hover:-translate-y-7 sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl">
+                <h3 className="w-[34vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl">
+                  {/* <h3 className="w-[34vw] text-3xl font-bold transition delay-150 duration-300 hover:-translate-y-7 sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl"> */}
                   What is Connect Group?
                 </h3>
                 <div className="ms-[3.6vw] flex items-end">
@@ -158,7 +161,7 @@ export default function GetConnected() {
                     desc="We have received your request."
                     // onClick={() => setIsSubmitted(false)}
                     onClick={() => {
-                      router.push("");
+                      void router.push("");
                     }}
                   />
                 </div>
