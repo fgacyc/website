@@ -82,7 +82,7 @@ export default function Locations() {
 
           {/* Our Pastor */}
           <div className="relative bg-[#1d2129] pb-9 ps-10 pt-12 text-white sm:pb-64 lg:ps-[20vw] lg:pt-36 xl:pb-[30vw]">
-            <div className="absolute -top-14 right-5 w-[45%] lg:right-20 lg:top-[-222px]">
+            <div className="absolute -top-14 right-5 w-[45%] lg:right-20 lg:top-[-222px] 2xl:w-2/5">
               <div className="relative flex w-full justify-end">
                 <Image
                   src={"/images/locations/CG.png"}
