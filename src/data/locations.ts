@@ -27,7 +27,7 @@ export const locations = [
   {
     name: "USJ",
     addr: "12 & 14, Jalan Indusri USJ 1/6, Taman Perindustrian USJ 1, 47600 Subang Jaya, Selangor",
-    services: ["SATURDAY 4.15PM", "SUNDAY 10.30AM"],
+    services: ["SATURDAY 4.30PM", "SUNDAY 10.30AM"],
   },
   {
     name: "Serdang",
