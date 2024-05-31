@@ -138,17 +138,15 @@ const HomeSection4 = () => {
             <span>r Pastors</span>
           </div>
           <div className="mt-[52px] text-xl sm:w-[491px] xl:ml-[49px] xl:w-[425px] 2xl:w-[491px]">
-            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation.&quot;Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation. <br />
+            Ps Jonathan and Priscilla carry a vision and a burning heart to see
+            generations being transformed by the love and power of God.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation.
+            <br />
+            Upon receiving a mandate from God to win Malaysia for Jesus 18 years
+            ago, they planted themselves in FGA and started a revival movement.
+            Since then, what started as a 50 people youth gathering grew into a
+            multi-generational and multi-location church of 3,000 strong.
           </div>
         </div>
       </div>
@@ -162,7 +160,7 @@ const HomeSection4 = () => {
             Ways We Give
           </div>
           <div className="mr-[30px] mt-[20px] text-xl">
-            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Offering our finances to God is our worship to Him.
           </div>
           <Link href={"/giving"} className="mt-[33px] w-[194px]">
             <div className="flex items-center justify-between border-b-[3px] border-[#00EDC2] pb-1.5 text-[33px] font-bold text-[#00EDC2]">
