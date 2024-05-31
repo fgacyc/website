@@ -34,11 +34,11 @@ export const locations = [
     addr: "24 & 26, Jalan PSK 4, Pusat Perdagangan Seri Kembangan, 43300 Seri Kembangan, Selangor",
     services: ["SUNDAY 10.30AM • 1.30PM"],
   },
-  {
-    name: "The Blessing (Puchong)",
-    addr: "Puchong IOI Boulevard",
-    services: [],
-  },
+  // {
+  //   name: "The Blessing (Puchong)",
+  //   addr: "Puchong IOI Boulevard",
+  //   services: [],
+  // },
 ];
 
 export const cgLocations = [
