@@ -283,7 +283,8 @@ export default function GetConnected() {
                 Need help?
               </div>
               <div className="mt-[1.18vw] flex flex-col items-center text-[8px] sm:text-[10px] lg:text-lg xl:text-xl">
-                Don't hesitate to reach out to us, we'd love to help you!
+                Don&#39;t hesitate to reach out to us, we&#39;d love to help
+                you!
               </div>
               <div className="mt-[1.94vw] flex flex-col items-center">
                 <a href="mailto:info@fgacyc.com">

@@ -22,7 +22,7 @@ export const locations = [
   {
     name: "Seremban",
     addr: "SCS Prima Sdn Bhd, 287-1, Jalan S2 B, Up Town Avenue, 70300 Seremban",
-    services: ["SATURDAY 5PM", "SUNDAY 10.30AM"],
+    services: ["SATURDAY 5PM"],
   },
   {
     name: "USJ",
