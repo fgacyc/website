@@ -93,11 +93,10 @@ export default function GetConnected() {
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
                 Get Connected
               </h3>
-              <h6 className="w-[35vw] text-[8px] sm:text-[10px] md:mt-1 md:w-[192px] lg:w-[35vw] lg:text-lg lg:leading-5 xl:text-xl">
-                &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation.&quot;
+              <h6 className="w-[35vw] text-[8px] sm:text-[10px] md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg lg:leading-5 xl:text-xl">
+                We believe life transformation happens through real and
+                authentic relationships, and no one should be alone in their
+                journey pursuing God.
               </h6>
             </div>
           </div>
@@ -108,9 +107,11 @@ export default function GetConnected() {
                 <h3 className="w-[55vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
                   How to Get Connect?
                 </h3>
-                <h6 className="mt-[2vw] w-[52vw] text-[8px] sm:text-[10px] lg:text-xl">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <h6 className="mt-[2vw] w-[52vw] text-[8px] leading-tight sm:text-[10px] lg:text-xl">
+                  Connect Groups are where we pray for each other, learn about
+                  the Word, and put our faith into practice. These gatherings
+                  happen once a week, and no matter what stage of life you are
+                  in, there will be a Connect Group suitable for you!
                 </h6>
               </div>
               <div className="flex w-full flex-col items-center">
@@ -282,7 +283,7 @@ export default function GetConnected() {
                 Need help?
               </div>
               <div className="mt-[1.18vw] flex flex-col items-center text-[8px] sm:text-[10px] lg:text-lg xl:text-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Don't hesitate to reach out to us, we'd love to help you!
               </div>
               <div className="mt-[1.94vw] flex flex-col items-center">
                 <a href="mailto:info@fgacyc.com">
