@@ -116,7 +116,7 @@ export default function Wonderkids() {
           className={"relative z-[0] bg-cover bg-no-repeat bg-center h-[810px]"}
           style={{ backgroundImage: `url(${wonderkidsBg.src})` }}
         >
-          <div className={`mx-auto max-w-[1248px] pt-[68px]`}>
+          <div className={`mx-auto max-w-screen pt-[68px] pl-4`}>
             <svg
               width="9"
               height="189"
@@ -140,7 +140,7 @@ export default function Wonderkids() {
             height={`430`}
           />
           <div
-            className={`relative z-[3] md:ml-[151px] lg:ml-[194px] xl:ml-[237px] 2xl:ml-[280px]`}
+            className={`relative z-[3] mx-4 min-[1046px]:ml-[calc(11vw)] min-[1121px]:ml-[calc(11.4vw)] min-[1221px]:ml-[calc(12.4vw)] min-[1321px]:ml-[calc(13.4vw)] min-[1421px]:ml-[calc(14.4vw)]`}
           >
             <Image
               src={`${wonderkidLogo.src}`}
@@ -157,7 +157,7 @@ export default function Wonderkids() {
               enim ad minim veniam, quis nostrud exercitation.
             </p>
             <div className="mt-10 flex items-center gap-3">
-              <Link href="https://www.facebook.com/FGACYC" target="_blank">
+              <Link href="https://www.facebook.com/FGAWONDERKIDS" target="_blank">
                 <svg
                   width="15"
                   height="29"
@@ -179,7 +179,7 @@ export default function Wonderkids() {
                 </svg>
               </Link>
               <Link
-                href="https://instagram.com/fgacyc"
+                href="https://instagram.com/fgawonderkids"
                 target="_blank"
                 className="ms-5"
               >
@@ -212,7 +212,7 @@ export default function Wonderkids() {
                 </svg>
               </Link>
               <Link
-                href="https://www.youtube.com/user/fgacyc"
+                href="https://youtube.com/@fgawonderkids"
                 target="_blank"
                 className="ms-5"
               >
@@ -498,20 +498,14 @@ export default function Wonderkids() {
           </svg>
           <div className={`mx-auto max-w-[954px] pt-24 relative z-[1]`}>
             <div className="flex flex-wrap gap-2 py-5 sm:py-8">
-              <div className="flex w-auto max-w-[655px] flex-wrap gap-2 relative z-[2]">
-                <Image src={photo1.src} alt="" className="w-full md:w-auto" width={photo1.width} height={photo1.height} />
-                <Image src={photo2.src} alt="" className="w-full md:w-auto" width={photo2.width} height={photo2.height} />
-                <Image src={photo4.src} alt="" className="w-full md:w-auto" width={photo4.width} height={photo4.height} />
+              <div className="flex w-auto mx-auto max-w-[655px] flex-wrap gap-2 relative z-[2]">
+                <Image src={photo1.src} alt="" className="w-full lg:w-auto" width={photo1.width} height={photo1.height} />
+                <Image src={photo2.src} alt="" className="w-full lg:w-auto" width={photo2.width} height={photo2.height} />
+                <Image src={photo4.src} alt="" className="w-full lg:w-auto" width={photo4.width} height={photo4.height} />
               </div>
-              <div className="flex w-auto flex-wrap justify-center gap-2 sm:flex-nowrap lg:max-w-[281px] lg:flex-wrap">
-                <Image src={photo3.src} alt="" className="w-full md:w-auto" width={photo3.width} height={photo3.height} />
-                <Image
-                  src={photo5.src}
-                  width={photo5.width}
-                  height={photo5.height}
-                  alt=""
-                  className="w-full sm:object-cover md:w-auto lg:object-none"
-                />
+              <div className="flex w-full flex-wrap justify-center gap-2 sm:flex-nowrap lg:max-w-[281px] lg:flex-wrap">
+                <Image src={photo3.src} alt="" className="w-full lg:w-auto" width={photo3.width} height={photo3.height} />
+                <Image src={photo5.src} width={photo5.width} height={photo5.height} alt="" className="w-full sm:object-cover lg:w-auto lg:object-none" />
               </div>
               <svg className={`absolute left-[-65px] top-[500px] z-[1]`} width="115" height="96" viewBox="0 0 115 96" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_245_372)">
@@ -533,12 +527,14 @@ export default function Wonderkids() {
                   </clipPath>
                 </defs>
               </svg>
-              <div className="flex w-auto flex-wrap gap-2">
-                <Image src={photo7.src} width={photo7.width} height={photo7.height} alt="" className="w-full md:w-auto" />
-                <Image src={photo6.src} width={photo6.width} height={photo6.height} alt="" className="w-full md:w-auto" />
-                <Image src={photo8.src} width={photo8.width} height={photo8.height} alt="" className="w-full md:w-auto" />
-                <Image src={photo9.src} width={photo9.width} height={photo9.height} alt="" className="w-full md:w-auto" />
-                <Image src={photo10.src} width={photo10.width} height={photo10.height} alt="" className="w-full md:w-auto" />
+              <div className="flex w-auto mx-auto flex-wrap gap-2">
+                <Image src={photo7.src} width={photo7.width} height={photo7.height} alt="" className="w-full lg:w-auto" />
+                <Image src={photo6.src} width={photo6.width} height={photo6.height} alt="" className="w-full lg:w-auto" />
+                <Image src={photo8.src} width={photo8.width} height={photo8.height} alt="" className="w-full lg:w-auto" />
+              </div>
+              <div className="flex w-auto mx-auto flex-wrap gap-2">
+                <Image src={photo9.src} width={photo9.width} height={photo9.height} alt="" className="w-full lg:w-auto" />
+                <Image src={photo10.src} width={photo10.width} height={photo10.height} alt="" className="w-full lg:w-auto" />
               </div>
             </div>
           </div>
@@ -549,14 +545,14 @@ export default function Wonderkids() {
         </section>
 
         <section className={`relative z-[0]`}>
-          <div className={`mx-auto max-w-[955px] pb-56 pt-60 relative z-[1]`}>
+          <div className={`mx-auto max-w-[955px] pb-16 sm:pb-26 md:pb-36 lg:pb-56 pt-10 sm:pt-20 md:pt-40 lg:pt-60 relative z-[1]`}>
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-4/12">
                 <div className="text-8xl font-bold text-white max-lg:text-center lg:text-9xl">
                   FAQ
                 </div>
               </div>
-              <div className="w-full lg:w-9/12">
+              <div className="w-full w-dvw lg:w-9/12">
                 <WkFAQAccordion />
               </div>
             </div>
