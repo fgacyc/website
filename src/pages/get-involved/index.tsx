@@ -522,7 +522,7 @@ const GetInvolved = () => {
       <div className="bg-white">
         <Banner
           text="Build our home together"
-          desc='"Lorem ipsum dolor sit amet, consectetur adipiscing elit."'
+          desc="Get yourself involved in serving others and witness a breakthrough in your spiritual growth."
           img_url="/images/get-involved/get_involved.png"
           img_width={1258}
           img_height={622}
