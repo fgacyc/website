@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 const Custom404: FC = () => {
   return (
-    <div className="pt-[68px] lg:pt-[0px] flex flex-col lg:flex-row items-center justify-center min-h-screen min--screen text-center">
+    <div className="pt-[68px] lg:pt-[0px] flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
       <div className="max-[1200px]:p-4 p-0 flex flex-col lg:flex-row items-start relative">
         <div className="flex flex-col w-full">
           <h1 className="lg:mt-[40px] text-center lg:text-left font-bold text-[50px] leading-[50px] sm:text-[60px] sm:leading-[60px] md:text-[80px] md:leading-[80px] lg:text-[100px] lg:leading-[100px] tracking-[-0.011em]">
@@ -31,7 +31,7 @@ const Custom404: FC = () => {
         </div>
         <div className='flex flex-col w-full'>
           <svg className='w-full z-[1] max-[411px]:mt-[-10vh] lg:ml-[-74.5px]' height="491" viewBox="0 0 660 491" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1424_89)">
+            <g clipPath="url(#clip0_1424_89)">
               <path d="M606.456 -176.723C632.509 -183.449 657.107 -161.713 653.638 -135.03L586.913 378.153C584.207 398.965 565.142 413.642 544.331 410.936L142.198 358.65C121.386 355.944 106.709 336.88 109.415 316.068L155.138 -35.5911C157.139 -50.9801 168.296 -63.6061 183.322 -67.4852L606.456 -176.723Z" fill="url(#paint0_linear_1424_89)" />
               <path d="M106.731 308.386L100.012 359.1C99.3729 363.951 102.807 368.438 107.658 369.078L573.512 430.747C578.363 431.386 582.851 427.952 583.49 423.101L590.208 372.387L106.731 308.386Z" fill="#F0F0F0" />
               <path d="M106.73 308.385L106.969 306.53" stroke="#4F3CC9" stroke-width="2" stroke-miterlimit="10" />
