@@ -1,4 +1,5 @@
-import Link from 'next/link';
+// import Link from 'next/link';
+import ArrowLink from "~/components/ArrowLink";
 import type { FC } from 'react';
 
 const Custom404: FC = () => {
@@ -9,10 +10,10 @@ const Custom404: FC = () => {
           <h1 className="lg:mt-[40px] text-center lg:text-left font-bold text-[50px] leading-[50px] sm:text-[60px] sm:leading-[60px] md:text-[80px] md:leading-[80px] lg:text-[100px] lg:leading-[100px] tracking-[-0.011em]">
             Something<br />went wrong
           </h1>
-          <p className="text-center lg:text-left mt-4 text-lg text-black">
+          <p className="text-center lg:text-left mt-4 text-2xl text-black">
             Maybe you should run
           </p>
-          <Link href="/" className={`max-[1023px]:mx-auto lg:text-left mt-8 min-[1105px]:mt-24 download-arrow w-[257px] max-w-[300px] items-center rounded-full bg-[#00EDC2] px-4 py-2 font-bold max-[320px]:w-full`}>
+          {/* <Link href="/" className={`max-[1023px]:mx-auto lg:text-left mt-8 min-[1105px]:mt-24 download-arrow w-[257px] max-w-[300px] items-center rounded-full bg-[#00EDC2] px-4 py-2 font-bold max-[320px]:w-full`}>
             Click to Run&nbsp;
             <svg
               className={`inline-block`}
@@ -27,7 +28,14 @@ const Custom404: FC = () => {
                 fill="black"
               />
             </svg>
-          </Link>
+          </Link> */}
+          <ArrowLink
+            href="/"
+            text="Click to Run"
+            bg_color="bg-[#3AFFAC]"
+            arrow_color="black"
+            className={`max-[1023px]:mx-auto lg:text-left mt-8 min-[1105px]:mt-24 download-arrow w-[257px] max-w-[300px] items-center rounded-full bg-[#00EDC2] px-4 py-2 font-bold max-[320px]:w-full`}
+          />
         </div>
         <div className='flex flex-col w-full'>
           <svg className='w-full z-[1] max-[411px]:mt-[-10vh] lg:ml-[-74.5px]' height="491" viewBox="0 0 660 491" fill="none" xmlns="http://www.w3.org/2000/svg">
