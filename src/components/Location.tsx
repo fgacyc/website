@@ -29,7 +29,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
             className={
               hide
                 ? "w-[35px] lg:w-10 xl:w-14 2xl:w-16"
-                : "w-[24px] lg:w-8 xl:w-12 2xl:w-16"
+                : "w-[24px] lg:w-8 xl:w-11"
             }
           >
             <Image
