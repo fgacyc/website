@@ -1,29 +1,31 @@
 import Head from "next/head";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import GivingAccordion from "src/components/GivingAccordion";
 import { Button } from "@nextui-org/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function AboutUs() {
-
-  const [screenHeightClass, setScreenHeightClass] = useState('h-screen-lg');
-  const wayWeGiveClassStyle = "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " + screenHeightClass;
-
+  const [screenHeightClass, setScreenHeightClass] = useState("h-screen-lg");
+  const wayWeGiveClassStyle =
+    "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " +
+    screenHeightClass;
 
   useEffect(() => {
     const handleResize = () => {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
-      setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
+      setScreenHeightClass(
+        windowHeight < 700 && windowWidth >= 1000 ? "h-screen-lg" : "h-screen"
+      );
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -34,9 +36,9 @@ export default function AboutUs() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden pt-[68px]">
-        <div className="min-w-screen  relative  flex h-screen w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover">
+        <div className="min-w-screen  h-120  relative flex w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover lg:h-screen">
           <div className="font-bold leading-10">
-            <h1 className="mb-5 text-1xl  md:text-3xl lg:text-5xl xl:text-5xl">
+            <h1 className="text-1xl mb-5  md:text-3xl lg:text-5xl xl:text-5xl">
               {" "}
               A generous person will prosper;{" "}
             </h1>
@@ -53,7 +55,7 @@ export default function AboutUs() {
               refreshed.
             </h1>
             <br />
-            <h1 className="mb-5 text-1xl md:text-3xl lg:text-4xl xl:text-4xl ">
+            <h1 className="text-1xl mb-5 md:text-3xl lg:text-4xl xl:text-4xl ">
               Proverbs 11:25{" "}
             </h1>
           </div>
@@ -83,7 +85,7 @@ export default function AboutUs() {
                 */}
               </div>
             </div>
-            <div className="w-11/12 xl:mt-44 mt-20 xl:w-128">
+            <div className="mt-20 w-11/12 xl:mt-44 xl:w-128">
               <GivingAccordion />
             </div>
           </div>
@@ -140,10 +142,8 @@ export default function AboutUs() {
           <Button className="my-5 rounded-none border-b-4	border-b-black bg-[#D9D9D9] p-10 ">
             <h1 className="  inline-block text-7xl font-bold">
               {" "}
-              <a href="mailto:info@fgacyc.com">         
-              Let&apos;s Talk{" "}
-              </a>
-              <ArrowLongRightIcon className="size-20 inline-block w-10" />{" "}
+              <a href="mailto:info@fgacyc.com">Let&apos;s Talk </a>
+              <ArrowLongRightIcon className="inline-block size-20 w-10" />{" "}
             </h1>
           </Button>
         </div>

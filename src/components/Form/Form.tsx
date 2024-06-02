@@ -3,9 +3,10 @@ import { useState } from "react";
 import CompletedForm from "./CompletedForm";
 import FormCombobox from "./FormCombobox";
 import FormCheckList from "./FormCheckList";
-import { Button } from "@nextui-org/react";
+import { Button, Tooltip } from "@nextui-org/react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
+// import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/popover";
 
 export default function Form() {
   const router = useRouter();
@@ -85,6 +86,8 @@ export default function Form() {
   const [name, setName] = useState<string>("");
   const [icNo, setIcNo] = useState<string>("");
 
+  const [errorArr, setErrorArr] = useState<string[]>([]);
+
   const [chineseName, setChineseName] = useState<string>("");
   const [pastoralTeamList, setPastoralTeamList] =
     useState<PastoralTeam[]>(defaultPatoralLs);
@@ -97,10 +100,16 @@ export default function Form() {
     service_location_list[0]!.value
   );
   //   const [ministry, setMinistry] = useState<string>("");
+  const [tShirtErr, setTShirtErr] = useState<boolean>(false);
   const [nameError, setNameError] = useState<boolean>(false);
   const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
   const [dobError, setDobError] = useState<boolean>(false);
   const [icNoError, setIcNoError] = useState<boolean>(false);
+  const [genderErr, setGenderErr] = useState<boolean>(false);
+  const [pastoralStatusError, setPastoralStatusError] =
+    useState<boolean>(false);
+  const [serviceLocationError, setServiceLocationError] =
+    useState<boolean>(false);
 
   const [cglNameError, setCglNameError] = useState<boolean>(false);
   const [gender, setGender] = useState<string>("");
@@ -207,40 +216,80 @@ export default function Form() {
     setServiceLocation(e);
   };
 
+  const errorMsgArr: string[] = [];
+
+  const inputFieldChecker = (value: string, errorMsg: string) => {
+    if (value.trim().length < 1) {
+      errorMsgArr.push(errorMsg);
+      return true;
+    }
+    return false;
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    setNameError(inputFieldChecker(name, "Full Name cannot be empty"));
+
+    setPastoralStatusError(
+      inputFieldChecker(pastoralStatus, "Please select pastoral status")
+    );
+    setGenderErr(inputFieldChecker(gender, "Please select Gender"));
+
+    setDobError(inputFieldChecker(dob, "Date of birth cannot be empty"));
+    setPhoneNumberError(
+      inputFieldChecker(phoneNumber, "Phone number cannot be empty")
+    );
+    setPastoralStatusError(
+      inputFieldChecker(pastoralStatus, "Please select Pastoral Sattus")
+    );
+
+    setServiceLocationError(
+      inputFieldChecker(serviceLocation, "Please select Service Location")
+    );
+
+    setIcNoError(inputFieldChecker(icNo, "IC No cannot be empty"));
+    setCglNameError(inputFieldChecker(cglName, "CGL name cannot be empty"));
+
+    setTShirtErr(
+      inputFieldChecker(selectedTShirt, "Please select your t-shirt size")
+    );
+    setErrorArr(errorMsgArr);
+
+    console.log("errorArr : ", errorArr);
     console.log({
       name,
       chineseName,
       pastoralStatus,
+      gender,
       icNo,
+      dob,
       phoneNumber,
       pastoralTeam,
       cglName,
       selectedTShirt,
-
-      //   ministry,
     });
 
-    const res = await fetch("/api/water_baptism", {
-      method: "POST",
-      body: JSON.stringify({
-        name_en: name,
-        name_cn: chineseName,
-        gender,
-        dob,
-        ic_no: icNo,
-        phone_no: phoneNumber,
-        pastoral_status: pastoralStatus,
-        service_location: serviceLocation,
-        pastoral_team: pastoralTeam,
-        cgl_name: cglName,
-        t_shirt_size: selectedTShirt,
-      }),
-    });
-    res.status === 200 ? setIsSubmitted(true) : alert("Failed to submit");
+    if (errorArr.length < 1) {
+      const res = await fetch("/api/water_baptism", {
+        method: "POST",
+        body: JSON.stringify({
+          name_en: name,
+          name_cn: chineseName,
+          gender,
+          dob,
+          ic_no: icNo,
+          phone_no: phoneNumber,
+          pastoral_status: pastoralStatus,
+          service_location: serviceLocation,
+          pastoral_team: pastoralTeam,
+          cgl_name: cglName,
+          t_shirt_size: selectedTShirt,
+        }),
+      });
+      res.status === 200 ? setIsSubmitted(true) : alert("Failed to submit");
 
-    setIsSubmitted(true);
+      setIsSubmitted(true);
+    }
   };
 
   const setSubmitAndRedirect = async () => {
@@ -303,7 +352,8 @@ export default function Form() {
           />
           <fieldset>
             <legend className="text-xl font-semibold leading-6 text-gray-900">
-              Gender
+              Gender{" "}
+              {genderErr && <span className="ml-1 text-[#FF0000]"> * </span>}
             </legend>
 
             <div className="mb-3 mt-6 space-y-6">
@@ -365,7 +415,6 @@ export default function Form() {
             setError={setDobError}
             desc={"Date, Month, year"}
           />
-          dobError {dobError}
           <FormInput
             className="col-span-2 w-full"
             label="I.C No"
@@ -402,6 +451,7 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={pastoralStatus}
             onValueChange={(value) => setPastoralStatus(value)}
+            error={pastoralStatusError}
           />
           <FormCombobox
             label="Service Location"
@@ -411,6 +461,7 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={serviceLocation}
             onValueChange={(value) => setPastoralTeamAndLoction(value)}
+            error={serviceLocationError}
           />
           <FormCombobox
             label="Pastoral Team"
@@ -420,6 +471,7 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={pastoralTeam}
             onValueChange={(value) => setPastoralTeam(value)}
+            error={false}
           />
           <FormInput
             className="col-span-2 w-full"
@@ -436,7 +488,8 @@ export default function Form() {
           />
           <fieldset>
             <legend className="text-xl font-semibold leading-6 text-gray-900">
-              Baptism T-Shirt Size
+              Baptism T-Shirt Size{" "}
+              {tShirtErr && <span className="ml-1 text-[#FF0000]"> * </span>}
             </legend>
             <span className="text-xs text-[#B2B2B2] ">
               {" "}
@@ -464,6 +517,14 @@ export default function Form() {
               I want to be baptised &nbsp;
               <ArrowLongRightIcon className="size-10 w-24 " />
             </Button>
+          </div>
+          <div className="col-span-2 w-full">
+            {errorArr.map((e, int) => (
+              <p className="ml-1 w-full text-[#FF0000]" key={int}>
+                {" "}
+                * {e}{" "}
+              </p>
+            ))}
           </div>
         </form>
       )}
