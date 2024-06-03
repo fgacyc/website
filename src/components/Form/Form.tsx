@@ -269,7 +269,7 @@ export default function Form() {
       selectedTShirt,
     });
 
-    if (errorArr.length < 1) {
+    if (errorMsgArr.length < 1) {
       const res = await fetch("/api/water_baptism", {
         method: "POST",
         body: JSON.stringify({
