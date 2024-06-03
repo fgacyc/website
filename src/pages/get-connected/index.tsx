@@ -224,7 +224,6 @@ export default function GetConnected() {
                   /> */}
 
                   <FormCombobox
-                    error={false}
                     label="Service Location"
                     name="service_location"
                     id="service_location"

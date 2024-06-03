@@ -451,7 +451,6 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={pastoralStatus}
             onValueChange={(value) => setPastoralStatus(value)}
-            error={pastoralStatusError}
           />
           <FormCombobox
             label="Service Location"
@@ -461,7 +460,6 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={serviceLocation}
             onValueChange={(value) => setPastoralTeamAndLoction(value)}
-            error={serviceLocationError}
           />
           <FormCombobox
             label="Pastoral Team"
@@ -471,7 +469,6 @@ export default function Form() {
             className="col-span-2 w-full"
             selectedValue={pastoralTeam}
             onValueChange={(value) => setPastoralTeam(value)}
-            error={false}
           />
           <FormInput
             className="col-span-2 w-full"

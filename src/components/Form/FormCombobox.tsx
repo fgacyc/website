@@ -9,7 +9,6 @@ interface FormComboboxProps {
   className?: string;
   selectedValue: string;
   onValueChange: (value: string) => void;
-  error: boolean;
 }
 
 const FormCombobox = ({
@@ -20,7 +19,6 @@ const FormCombobox = ({
   className,
   selectedValue,
   onValueChange,
-  error,
 }: FormComboboxProps) => {
   return (
     <div
@@ -28,16 +26,14 @@ const FormCombobox = ({
     >
       <label htmlFor={name} className="mb-[13px] font-semibold">
         {label}
-        {error && <span className="ml-1 text-[#FF0000]">* </span>}
       </label>
       <select
         name={name}
         id={id}
         value={selectedValue}
         onChange={(e) => onValueChange(e.target.value)}
-        className={`w-full appearance-none  rounded-[5px] border ${
-          error ? "border-red-500" : "border-[#B2B2B2]"
-        } bg-white px-[18px] py-[13px] text-xl focus:outline-none`}
+        className="w-full appearance-none  rounded-[5px] border
+         bg-white px-[18px] py-[13px] text-xl focus:outline-none"
       >
         {options.map((option, index) => (
           <option
