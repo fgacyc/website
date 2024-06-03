@@ -106,10 +106,6 @@ export default function Form() {
   const [dobError, setDobError] = useState<boolean>(false);
   const [icNoError, setIcNoError] = useState<boolean>(false);
   const [genderErr, setGenderErr] = useState<boolean>(false);
-  const [pastoralStatusError, setPastoralStatusError] =
-    useState<boolean>(false);
-  const [serviceLocationError, setServiceLocationError] =
-    useState<boolean>(false);
 
   const [cglNameError, setCglNameError] = useState<boolean>(false);
   const [gender, setGender] = useState<string>("");
@@ -230,23 +226,12 @@ export default function Form() {
 
     setNameError(inputFieldChecker(name, "Full Name cannot be empty"));
 
-    setPastoralStatusError(
-      inputFieldChecker(pastoralStatus, "Please select pastoral status")
-    );
     setGenderErr(inputFieldChecker(gender, "Please select Gender"));
 
     setDobError(inputFieldChecker(dob, "Date of birth cannot be empty"));
     setPhoneNumberError(
       inputFieldChecker(phoneNumber, "Phone number cannot be empty")
     );
-    setPastoralStatusError(
-      inputFieldChecker(pastoralStatus, "Please select Pastoral Sattus")
-    );
-
-    setServiceLocationError(
-      inputFieldChecker(serviceLocation, "Please select Service Location")
-    );
-
     setIcNoError(inputFieldChecker(icNo, "IC No cannot be empty"));
     setCglNameError(inputFieldChecker(cglName, "CGL name cannot be empty"));
 
@@ -255,7 +240,6 @@ export default function Form() {
     );
     setErrorArr(errorMsgArr);
 
-    console.log("errorArr : ", errorArr);
     console.log({
       name,
       chineseName,
