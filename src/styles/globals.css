@@ -143,3 +143,7 @@
 .h-screen-xl {
   height: 180vh;
 }
+
+.h-120 {
+  height: 30rem;
+}
