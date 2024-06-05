@@ -32,7 +32,8 @@ const FormCombobox = ({
         id={id}
         value={selectedValue}
         onChange={(e) => onValueChange(e.target.value)}
-        className="w-full appearance-none rounded-[5px] border border-[#B2B2B2] bg-white px-[18px] py-[13px] text-xl focus:outline-none"
+        className="w-full appearance-none  rounded-[5px] border
+         bg-white px-[18px] py-[13px] text-xl focus:outline-none"
       >
         {options.map((option, index) => (
           <option

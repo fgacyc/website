@@ -1,29 +1,31 @@
 import Head from "next/head";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import GivingAccordion from "src/components/GivingAccordion";
 import { Button } from "@nextui-org/button";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 
 export default function AboutUs() {
-
-  const [screenHeightClass, setScreenHeightClass] = useState('h-screen-lg');
-  const wayWeGiveClassStyle = "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " + screenHeightClass;
-
+  const [screenHeightClass, setScreenHeightClass] = useState("h-screen-lg");
+  const wayWeGiveClassStyle =
+    "w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover  sm:max-md:flex lg:flex " +
+    screenHeightClass;
 
   useEffect(() => {
     const handleResize = () => {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
-      setScreenHeightClass((windowHeight < 700 && windowWidth >= 1000) ? 'h-screen-lg' : 'h-screen');
+      setScreenHeightClass(
+        windowHeight < 700 && windowWidth >= 1000 ? "h-screen-lg" : "h-screen"
+      );
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -34,9 +36,9 @@ export default function AboutUs() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden pt-[68px]">
-        <div className="min-w-screen  relative  flex h-screen w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover">
+        <div className="min-w-screen  h-120  relative flex w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover lg:h-screen">
           <div className="font-bold leading-10">
-            <h1 className="mb-5 text-1xl  md:text-3xl lg:text-5xl xl:text-5xl">
+            <h1 className="text-1xl mb-5  md:text-3xl lg:text-5xl xl:text-5xl">
               {" "}
               A generous person will prosper;{" "}
             </h1>
@@ -53,7 +55,7 @@ export default function AboutUs() {
               refreshed.
             </h1>
             <br />
-            <h1 className="mb-5 text-1xl md:text-3xl lg:text-4xl xl:text-4xl ">
+            <h1 className="text-1xl mb-5 md:text-3xl lg:text-4xl xl:text-4xl ">
               Proverbs 11:25{" "}
             </h1>
           </div>
@@ -83,7 +85,7 @@ export default function AboutUs() {
                 */}
               </div>
             </div>
-            <div className="w-11/12 xl:mt-44 mt-20 xl:w-128">
+            <div className="mt-20 w-11/12 xl:mt-44 xl:w-128">
               <GivingAccordion />
             </div>
           </div>
@@ -98,52 +100,44 @@ export default function AboutUs() {
           /> */}
         </div>
 
-        <div className="min-w-screen relative mt-10 w-screen  flex-row items-center justify-center overflow-hidden text-center">
-          <h1 className="lg:text-1xl my-10 justify-center text-sm font-bold sm:text-4xl">
+        <div className="min-w-screen relative mt-10 w-screen  flex-row items-center justify-center overflow-hidden ">
+          <h1 className="lg:text-1xl text-md my-10 justify-center text-center font-bold sm:text-4xl">
             {" "}
             Why Should I tithe?{" "}
           </h1>
-          <h1 className="lg:text-1xl my-5 text-sm font-bold sm:text-4xl">
+          <h1 className="lg:text-1xl text-md my-5 text-center font-bold  sm:text-4xl">
             When you tithe, you’re trusting God with your finances.
           </h1>
-          <p className="lg:text-1xl mb-10 text-sm leading-10 sm:text-2xl">
-            Tithing is a biblical principle. God calls us to give the first 10%
-            of our income back to
-            <br />
-            Him. We’ve seen God provide abundantly in our church, and we know He
-            will provide
-            <br />
-            abundantly for you and your family when you put Him first in your
-            finances. In fact, it’s
-            <br />
-            the one area in the Bible where God tells you to test Him.
-            <br />
-            <br />
-            <br />
-            Malachi 3:10, God tells us to bring tithe, which is 10% of our
-            income, to Him. Later,
-            <br />
-            Jesus affirms this in the New Testament.
-          </p>
+          <div className="flex justify-center">
+            <p className="lg:text-1xl mb-10 w-screen p-3 text-center text-sm leading-10 sm:text-2xl lg:w-1/2">
+              Tithing is a biblical principle. God calls us to give the first
+              10% of our income back to Him. We’ve seen God provide abundantly
+              in our church, and we know He will provide abundantly for you and
+              your family when you put Him first in your finances. In fact, it’s
+              the one area in the Bible where God tells you to test Him.
+              <br />
+              <br />
+              Malachi 3:10, God tells us to bring tithe, which is 10% of our
+              income, to Him. Later, Jesus affirms this in the New Testament.
+            </p>
+          </div>
         </div>
 
         {/* #D9D9D9 */}
-        <div className="min-w-screen relative mt-10 w-screen items-center justify-center overflow-hidden bg-[#D9D9D9] text-center">
+        <div className="min-w-screen relative w-screen  items-center justify-center overflow-hidden bg-[#D9D9D9] pb-20 text-center">
           <br />
           <br />
-          <h1 className="my-10 mt-10 text-8xl font-bold ">Need Help?</h1>
-          <h1 className="my-5 text-xl">
+          <h1 className="mt-10 text-3xl font-bold xl:text-8xl ">Need Help?</h1>
+          <h1 className="mt-5 text-lg xl:text-xl">
             If you’ve got questions about what you can give and how to give it,
             we’d love to help you figure it out.{" "}
           </h1>
 
-          <Button className="my-5 rounded-none border-b-4	border-b-black bg-[#D9D9D9] p-10 ">
-            <h1 className="  inline-block text-7xl font-bold">
+          <Button className=" rounded-none border-b-4	border-b-black bg-[#D9D9D9] p-5">
+            <h1 className="  inline-block text-2xl font-bold">
               {" "}
-              <a href="mailto:info@fgacyc.com">         
-              Let&apos;s Talk{" "}
-              </a>
-              <ArrowLongRightIcon className="size-20 inline-block w-10" />{" "}
+              <a href="mailto:info@fgacyc.com">Let&apos;s Talk </a>
+              <ArrowLongRightIcon className="inline-block size-10 w-5" />{" "}
             </h1>
           </Button>
         </div>

@@ -43,7 +43,7 @@ const FormInput = ({
     >
       <label htmlFor={name} className="mb-[13px] font-semibold">
         {label}
-        {error && <span className="ml-1 text-[#FF0000]">*</span>}
+        {error && <span className="ml-1 text-[#FF0000]">* </span>}
       </label>
       <input
         type={type}

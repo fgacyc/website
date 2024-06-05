@@ -18,11 +18,14 @@ export default function AboutUs() {
       </Head>
       <main className="overflow-x-hidden">
         {/* VISION && MISSION */}
-        <div className="min-w-screen  relative flex h-screen w-screen items-center justify-center bg-[url('/images/about-us/About-us-top-bg.png')] bg-cover">
-          <div className="top-30 absolute left-20 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60 lg:top-50	">
+        <div className="min-w-screen  h-120 relative flex w-screen items-center justify-center bg-[url('/images/about-us/About-us-top-bg.png')] bg-cover lg:h-screen">
+          <div className="top-30 lg:top-50 absolute left-20 font-extrabold leading-10 sm:left-40 sm:top-40 lg:left-60	">
             <h1 className="text-2xl sm:text-4xl lg:text-7xl"> Our Vision </h1>
             <h1 className="sm:text-1xl my-1 text-sm lg:text-2xl">
-              Antioch Church <span className="tracking-tighter relative top-[5px] lg:top-[10px]">&#x2015;&#x2015;</span>{" "}
+              Antioch Church{" "}
+              <span className="relative top-[5px] tracking-tighter lg:top-[10px]">
+                &#x2015;&#x2015;
+              </span>{" "}
             </h1>
             <h1 className="sm:text-1xl mb-5 text-sm lg:text-2xl">
               An apostolic and prophetic cell-based church{" "}
@@ -44,7 +47,7 @@ export default function AboutUs() {
         </div>
 
         {/* CORE VALUE */}
-        <div className="relative h-screen w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover font-bold text-white">
+        <div className="h-120  relative  w-screen bg-[url('/images/about-us/About-us-middle-bg.png')] bg-cover font-bold text-white lg:h-screen">
           <div className="absolute left-10 top-40 sm:top-40 md:left-10 lg:left-40 lg:top-80">
             <span className="text-2xl -tracking-[.25em] sm:text-5xl lg:text-8xl ">
               {" "}
@@ -103,7 +106,6 @@ export default function AboutUs() {
         </div>
 
         <ExperienceGallery className="border-black text-black" />
-
       </main>
     </>
   );

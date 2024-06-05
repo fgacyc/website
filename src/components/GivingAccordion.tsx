@@ -28,13 +28,13 @@ export default function GivingAccordion() {
             className="my-5 h-1/5"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 xl:text-2xl lg:text-1xl text-white">
+              <h1 className="border-white-500 lg:text-1xl border-t-8 pt-5 text-white xl:text-2xl">
                 Giving Online
               </h1>
             }
           >
-            <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
-              <div className="">
+            <div className="grid grid-cols-3  justify-items-center rounded-br-3xl border-4 border-neutral-50 p-10">
+              <div className="col-span-1">
                 {/* QR CODE */}
                 <Image
                   src="/images/giving/bank-qr.png"
@@ -42,22 +42,25 @@ export default function GivingAccordion() {
                   width={100}
                   height={600}
                 />
-                <h1 className="text-2xl font-normal">
+                {/* TnG  */}
+                <Image
+                  src="/images/giving/tng.png"
+                  alt="tng"
+                  width={60}
+                  height={250}
+                  className="my-2 ml-5"
+                />
+              </div>
+
+              {/* </div> */}
+              <div className="col-span-2">
+                <h1 className=" text-[20px] font-normal">
                   Full Gospel Assembly
                   <br /> 2920 0020 960
                   <br />
                   <span className="text-gray-500	"> HONG LEONG BANK</span>
                 </h1>
               </div>
-              {/* TnG  */}
-              <Image
-                src="/images/giving/tng.png"
-                alt="tng"
-                width={60}
-                height={250}
-                className="my-2 ml-5"
-              />
-              {/* </div> */}
             </div>
           </AccordionItem>
 
@@ -68,39 +71,46 @@ export default function GivingAccordion() {
             aria-label="Accordion 1"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 xl:text-2xl lg:text-1XL text-white">
+              <h1 className="border-white-500 lg:text-1XL border-t-8 pt-5 text-white xl:text-2xl">
                 &quot;Love Our Home&quot;
                 <br />
                 Building Fund
               </h1>
             }
           >
-            <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
-              <div className="">
+            <div className="grid grid-cols-3  justify-items-center rounded-br-3xl border-4 border-neutral-50 p-10">
+              <div className="col-span-1">
+                {/* QR CODE */}
                 <Image
                   src="/images/giving/bank-qr.png"
                   alt="bank-qr"
                   width={100}
                   height={600}
-                  priority={true}
                 />
-                <h1 className="text-2xl font-normal">
+                {/* TnG  */}
+                <Image
+                  src="/images/giving/tng.png"
+                  alt="tng"
+                  width={60}
+                  height={250}
+                  className="my-2 ml-5"
+                />
+              </div>
+
+              {/* </div> */}
+              <div className="col-span-2">
+                <h1 className=" text-[20px] font-normal">
                   Full Gospel Assembly
                   <br /> 2920 0020 960
                   <br />
                   <span className="text-gray-500	"> HONG LEONG BANK</span>
+                  <br />
+                  <span className="text-[#FF0000]">
+                    {" "}
+                    REF: M100 CHINESE FUND{" "}
+                  </span>
                 </h1>
               </div>
-              {/* <div> */}
-              <Image
-                src="/images/giving/tng.png"
-                alt="bank-qr"
-                width={60}
-                height={250}
-                className="my-2 ml-5"
-                priority={true}
-              />
-              {/* </div> */}
             </div>
           </AccordionItem>
         </Accordion>
