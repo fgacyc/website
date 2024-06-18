@@ -77,7 +77,7 @@ const HomeSection3 = () => {
   bg-cover py-[169px] text-white"
     >
       <h1 className="mx-[30px] mb-[62px] font-bold sm:mx-[59px] md:mx-[165px] lg:mx-[243px]">
-        The Experience
+        The FGA Experience
       </h1>
       <ExperienceGallery className="border-[#3AFFAC] text-white" />
       <div className="mx-[30px] mt-[135px] sm:mx-[59px] md:mx-[165px] lg:mx-[243px]">

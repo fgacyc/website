@@ -513,7 +513,7 @@ const GetInvolved = () => {
     <div className="bg-[url('/images/get-involved/bg_white.png')] pt-[68px]">
       <div className="bg-white">
         <Banner
-          text="Build our home together"
+          text="Build this house together"
           desc="Get yourself involved in serving others and witness a breakthrough in your spiritual growth."
           img_url="/images/get-involved/get_involved.png"
           img_width={1258}
