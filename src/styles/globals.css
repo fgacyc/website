@@ -147,3 +147,7 @@
 .h-120 {
   height: 30rem;
 }
+
+.wonderkids > hr {
+  display: none !important;
+}
