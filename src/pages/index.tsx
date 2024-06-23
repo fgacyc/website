@@ -8,18 +8,18 @@ const HomeSection1 = () => {
   return (
     <section className="relative flex h-screen w-full items-center bg-[url(/images/landing/bg_landing_1.png)] bg-cover text-white">
       <div className="pl-[30px] sm:pl-[59px] md:pl-[165px] lg:pl-[243px]">
-        <div className="text-2xl sm:text-[40px]">/ FGA CYC</div>
-        <div className="mt-[25px] text-7xl font-bold sm:mt-[53px] sm:text-9xl">
+        <h4>/ FGA CYC</h4>
+        <h1 className="mt-[25px] font-bold sm:mt-[53px]">
           Welcome
           <br />
           Home
-        </div>
+        </h1>
       </div>
       <div className="absolute bottom-0 right-[30px] top-[80%] w-[1px] -translate-y-[70px] transform sm:right-[59px] sm:-translate-y-[115px]">
         {/* todo: get sf pro display thin */}
-        <div className="-rotate-90 whitespace-nowrap text-[10px] font-thin uppercase tracking-widest">
+        <p className="-rotate-90 whitespace-nowrap font-thin uppercase tracking-widest">
           SCROLL TO BEGIN YOUR JOURNEY
-        </div>
+        </p>
         <div className="mt-4 w-[1px]">
           <div className="h-[27px] bg-[#919191]"></div>
           <div className="h-[62px] bg-white"></div>
@@ -63,8 +63,8 @@ const HomeSection2 = () => {
         text="GET CONNECTED"
         bg_color="bg-[#3AFFAC]"
         arrow_color="black"
-        className="absolute mt-[42px] h-[50px] rounded-[90px] px-[30px] text-medium sm:mt-[72px] sm:h-[75px] sm:px-[55px] 
-    sm:text-xl md:mt-[95px] md:h-[100px] md:px-[65px] md:text-[40px] lg:mt-[125px] xl:mt-[170px] xl:h-[132px]"
+        className="absolute mt-[42px] h-[50px] rounded-[90px] px-[30px] sm:mt-[72px] sm:h-[75px] sm:px-[55px] 
+                  md:mt-[95px] md:h-[100px] md:px-[65px] lg:mt-[125px] xl:mt-[170px] xl:h-[132px]"
       />
     </section>
   );
@@ -76,16 +76,15 @@ const HomeSection3 = () => {
       className="flex min-h-screen flex-col justify-center bg-[url(/images/landing/bg_landing_3.png)] 
   bg-cover py-[169px] text-white"
     >
-      <div className="mx-[30px] mb-[62px] text-7xl font-bold sm:mx-[59px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
-        The Experience
-      </div>
+      <h1 className="mx-[30px] mb-[62px] font-bold sm:mx-[59px] md:mx-[165px] lg:mx-[243px]">
+        The FGA Experience
+      </h1>
       <ExperienceGallery className="border-[#3AFFAC] text-white" />
-      <div className="mx-[30px] mt-[135px] sm:mx-[59px] sm:text-9xl md:mx-[165px] lg:mx-[243px]">
-        <div className="text-7xl font-bold sm:text-9xl">Our Vision</div>
-        <div className="mt-1.5 w-[270px] text-2xl font-bold leading-tight sm:w-[530px] sm:text-[40px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
-          <span>Antioch Church —</span>
-          <br />
-          <span>An apostolic and prophetic cell-based church.</span>
+      <div className="mx-[30px] mt-[135px] sm:mx-[59px] md:mx-[165px] lg:mx-[243px]">
+        <h1 className="font-bold">Our Vision</h1>
+        <div className="mt-1.5 w-[270px] font-bold leading-tight sm:w-[530px] md:w-[463px] lg:w-[602px] xl:w-[805px]">
+          <h4>Antioch Church —</h4>
+          <h4>An apostolic and prophetic cell-based church.</h4>
         </div>
         <div
           className="relative mt-10 h-[180px] w-[270px] rounded-bl-[35px] border-[6px] border-[#00EDC2] 
@@ -105,9 +104,8 @@ const HomeSection3 = () => {
             text_color="text-black"
             arrow_color="black"
             bg_color="bg-[#00EDC2]"
-            className="absolute bottom-[18px] right-[-60px] h-[50px] rounded-[50px] px-[30px] text-medium 
-        sm:bottom-[30px] sm:h-[75px] sm:px-[55px] sm:text-xl 
-        md:bottom-[40px] md:right-[-140px] md:mt-[95px] md:h-[100px] md:px-[65px] md:text-[40px] lg:bottom-[65px] lg:right-[-160px]"
+            className="absolute bottom-[18px] right-[-60px] h-[50px] rounded-[50px] px-[30px] sm:bottom-[30px] sm:h-[75px] sm:px-[55px]
+                      md:bottom-[40px] md:right-[-140px] md:mt-[95px] md:h-[100px] md:px-[65px] lg:bottom-[65px] lg:right-[-160px]"
           />
         </div>
       </div>
@@ -133,11 +131,11 @@ const HomeSection4 = () => {
           />
         </div>
         <div className="xl:px-0">
-          <div className="relative z-20 mt-10 text-7xl font-bold sm:text-9xl xl:ml-[-173px] xl:mt-0">
-            <span className="xl:text-white">Ou</span>
-            <span>r Pastors</span>
+          <div className="relative z-20 mt-10 flex font-bold xl:ml-[-173px] xl:mt-0">
+            <h1 className="xl:text-white">Ou</h1>
+            <h1>r Pastors</h1>
           </div>
-          <div className="mt-[52px] text-xl sm:w-[491px] xl:ml-[49px] xl:w-[425px] 2xl:w-[491px]">
+          <h6 className="mt-[52px] sm:w-[491px] xl:ml-[49px] xl:w-[425px] 2xl:w-[491px]">
             Ps Jonathan and Priscilla carry a vision and a burning heart to see
             generations being transformed by the love and power of God.
             <br />
@@ -147,7 +145,7 @@ const HomeSection4 = () => {
             ago, they planted themselves in FGA and started a revival movement.
             Since then, what started as a 50 people youth gathering grew into a
             multi-generational and multi-location church of 3,000 strong.
-          </div>
+          </h6>
         </div>
       </div>
 
@@ -156,14 +154,12 @@ const HomeSection4 = () => {
       <div className="relative mx-auto h-[575px] w-4/5 xl:h-[360px]">
         <div className="absolute bottom-[-12px] right-[-12px] z-0 h-[575px] w-[300px] rounded-br-[88px] border-[12px] border-[#00EDC2] md:w-[405px] xl:h-[360px]"></div>
         <div className="relative z-10 flex h-full w-full flex-col justify-center rounded-br-[70px] bg-[#241F20] pl-[60px] text-white">
-          <div className="mr-[30px] text-7xl font-bold sm:text-9xl">
-            Ways We Give
-          </div>
-          <div className="mr-[30px] mt-[20px] text-xl">
+          <h1 className="mr-[30px] font-bold">Ways We Give</h1>
+          <h6 className="mr-[30px] mt-[20px]">
             Offering our finances to God is our worship to Him.
-          </div>
+          </h6>
           <Link href={"/giving"} className="mt-[33px] w-[194px]">
-            <div className="flex items-center justify-between border-b-[3px] border-[#00EDC2] pb-1.5 text-[33px] font-bold text-[#00EDC2]">
+            <h5 className="flex items-center justify-between border-b-[3px] border-[#00EDC2] pb-1.5 font-bold text-[#00EDC2]">
               Give Now{" "}
               <svg
                 width="44"
@@ -178,7 +174,7 @@ const HomeSection4 = () => {
                   fill="#00EDC2"
                 />
               </svg>
-            </div>
+            </h5>
           </Link>
         </div>
       </div>

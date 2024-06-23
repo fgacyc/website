@@ -33,11 +33,11 @@ const TeamDescCard = ({
   onLearnMoreClick,
 }: TeamDescCardProps) => {
   return (
-    <div className="sf-pro-display mb-32 text-xl lg:w-1/2">
-      <div className="sf-pro-display-black mb-7 text-[33px]">{title}</div>
-      {subtitle && <div className="sf-pro-display-black">{subtitle}</div>}
-      <div className="microsoft-yahei mt-7">{desc1} </div>
-      <div className="microsoft-yahei mt-10">{desc2}</div>
+    <div className="sf-pro-display mb-32 lg:w-1/2">
+      <h5 className="sf-pro-display-black mb-7">{title}</h5>
+      {subtitle && <h6 className="sf-pro-display-black">{subtitle}</h6>}
+      <h6 className="microsoft-yahei mt-7">{desc1} </h6>
+      <h6 className="microsoft-yahei mt-10">{desc2}</h6>
       <div className="mt-5 items-center justify-between md:flex">
         <Link href={`#ministry_${index}`} onClick={onLearnMoreClick}>
           <div className="flex w-[140px] items-center justify-between border-b-[3px] border-black pb-1.5 font-semibold">
@@ -81,9 +81,7 @@ const Rating = ({
 }: RatingProps) => {
   return (
     <div className="mb-1 flex items-center">
-      <div className={`fz-chao-cu-hei mr-4 text-[13px] ${text_color}`}>
-        {text}
-      </div>
+      <p className={`fz-chao-cu-hei mr-4 ${text_color}`}>{text}</p>
       <div className="inline-flex">
         {Array.from({ length: 5 }, (_, i) => (
           <div
@@ -116,10 +114,8 @@ interface MinistryDescProps {
 const MinistryDesc = ({ title, desc }: MinistryDescProps) => {
   return (
     <div className="mr-[97px] w-[245px] text-white">
-      <div className="sf-pro-display sf-pro-display-black text-[33px]">
-        {title}
-      </div>
-      <div className="microsoft-yahei mt-[25px] text-xl">{desc}</div>
+      <h5 className="sf-pro-display-black">{title}</h5>
+      <h6 className="microsoft-yahei mt-[25px]">{desc}</h6>
     </div>
   );
 };
@@ -137,15 +133,13 @@ const MinistryCard = ({
     <div className={`relative h-[543px] w-[379px] text-white`}>
       <Image src={image} alt={titleEn} fill={true} />
       <div className="absolute bottom-14 ml-12 w-[236px]">
-        <div className="fz-chao-cu-hei text-xl">{titleCn}</div>
-        <div className="sf-pro-display sf-pro-display-black text-[40px]">
-          {titleEn}
-        </div>
-        <div className="microsoft-jheng-hei mb-6 mt-3 text-[11px] font-bold">
+        <h6 className="fz-chao-cu-hei">{titleCn}</h6>
+        <h5 className="sf-pro-display-black">{titleEn}</h5>
+        <p className="microsoft-jheng-hei mb-6 mt-3 font-bold">
           {desc1}
           <br />
           {desc2}
-        </div>
+        </p>
         <Rating
           fill={skill_level}
           text="技术等级"
@@ -247,9 +241,9 @@ const Ministries = ({ onCloseClick, index }: MinistriesProps) => {
         </button>
       </div>
       <div className="absolute bottom-10 left-10 flex items-center md:hidden">
-        <div className="mr-3 whitespace-nowrap text-[10px] font-thin uppercase tracking-widest text-white">
+        <p className="mr-3 whitespace-nowrap font-thin uppercase tracking-widest text-white">
           SWIPE LEFT FOR MORE
-        </div>
+        </p>
         <div className="h-[1px] w-[50px] bg-[#919191]"></div>
       </div>
       <Image
@@ -280,12 +274,12 @@ const Explore = ({ setIsFormVisible }: ExploreProps) => {
   return (
     <>
       {/* todo: adjust ml */}
-      <div
-        className="sf-pro-display xl:ml-50 my-8 ml-12 text-2xl font-bold sm:my-14 
-               sm:ml-20 sm:text-5xl md:ml-32 md:text-6xl lg:my-20 lg:ml-40 lg:text-8xl xl:text-9xl"
+      <h1
+        className="sf-pro-display xl:ml-50 my-8 ml-12 font-bold sm:my-14 
+               sm:ml-20 md:ml-32 lg:my-20 lg:ml-40"
       >
         Explore
-      </div>
+      </h1>
       {teamDescCards.map((teamDescCard, index) => (
         <Fragment key={index}>
           <div className="mx-10 mt-20 justify-between sm:mx-[90px] md:mt-32 lg:flex">
@@ -300,9 +294,9 @@ const Explore = ({ setIsFormVisible }: ExploreProps) => {
                   width={300}
                   height={443}
                 />
-                <div className="sf-pro-display-black absolute bottom-[60px] left-[20px] w-[182px] text-[32px] text-white ">
+                <h5 className="sf-pro-display-black absolute bottom-[60px] left-[20px] w-[182px] text-white ">
                   {teamDescCard.title}
-                </div>
+                </h5>
               </div>
             </div>
             <TeamDescCard
@@ -373,9 +367,9 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
       name.trim() === "" ||
       phoneNumber.trim() === "" ||
       email.trim() === "" ||
-      !nameError ||
-      !phoneNumberError ||
-      !emailError
+      nameError ||
+      phoneNumberError ||
+      emailError
     ) {
       valid = false;
     }
@@ -433,10 +427,8 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
           className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] 
           bg-[#F5F5F8] py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         >
-          <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
-            Get involved
-          </div>
-          <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
+          <h6 className="sf-pro-display-black mb-[76px] w-4/5">Get involved</h6>
+          <h6 className="sf-pro-display mx-auto flex w-4/5 flex-col"></h6>
           <FormInput
             className="w-4/5"
             label="Your name"
@@ -506,7 +498,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             text_color="text-white"
             arrow_color="white"
             bg_color="bg-black"
-            className="mt-[111px] w-4/5 text-lg sm:w-auto sm:text-[25px]"
+            className="mt-[111px] w-4/5 sm:w-auto"
           />
         </form>
       )}
@@ -521,7 +513,7 @@ const GetInvolved = () => {
     <div className="bg-[url('/images/get-involved/bg_white.png')] pt-[68px]">
       <div className="bg-white">
         <Banner
-          text="Build our home together"
+          text="Build this house together"
           desc="Get yourself involved in serving others and witness a breakthrough in your spiritual growth."
           img_url="/images/get-involved/get_involved.png"
           img_width={1258}

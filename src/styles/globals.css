@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-5xl font-bold md:text-6xl lg:text-8xl xl:text-9xl;
+  }
+
+  h2 {
+    @apply text-8xl;
+  }
+
+  h3 {
+    @apply text-6xl;
+  }
+
+  h4 {
+    @apply text-2xl sm:text-5xl;
+  }
+
+  h5 {
+    @apply text-3xl font-semibold;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  /* p {
+    @apply text-[10px] sm:text-xs md:text-base lg:text-xl;
+  } */
+}
+
 @media (min-width: 400px) and (max-width: 499px) {
   .wk-age-groups > .slick-list > .slick-track > .slick-slide > div {
     margin: 0 8vw;
