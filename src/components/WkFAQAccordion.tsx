@@ -6,32 +6,32 @@ export default function WkFAQAccordion() {
   const openAndCloseIcon = (isOpen: boolean | undefined) => {
     if (isOpen)
       return (
-        <XMarkIcon className="text-bold w-10 size-6  -translate-y-10 text-white" />
+        <XMarkIcon className="text-bold w-auto size-12  -translate-y-10 text-white" />
       );
     else
       return (
-        <ArrowLongRightIcon className="text-bold w-10 size-6 -translate-x-10 text-white" />
+        <ArrowLongRightIcon className="text-bold mt-8 w-auto size-12 -translate-x-10 text-white" />
       );
   };
 
   return (
     <>
       <div className="overflow-hidden">
-        <Accordion className="" isCompact={true}>
+        <Accordion className="wonderkids" isCompact={true}>
           <AccordionItem
             key="1"
             aria-label="Accordion 1"
             className="my-5"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 text-2xl text-white">
+              <p className="border-white-500 border-t-8 pt-5 text-2xl text-white mr-[-1.25rem]">
                 How can my kids be a part?
-              </h1>
+              </p>
             }
           >
             <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
               <div className="">
-                <p>We have services each week at all of our service locations, specially catered to kids aged 4 - 12 years old. <Link className={`font-bold`} href="#"><u>Visit FGACYC</u></Link></p>
+                <p>We have services each week at all of our service locations, specially catered to kids aged 4 - 12 years old. <Link className={`font-bold`} href="/locations"><u>Visit FGACYC</u></Link></p>
               </div>
               {/* </div> */}
             </div>
@@ -43,9 +43,9 @@ export default function WkFAQAccordion() {
             aria-label="Accordion 3"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 text-2xl text-white">
+              <p className="border-white-500 border-t-8 pt-5 text-2xl text-white mr-[-1.25rem]">
                 Where should I send my kids to?
-              </h1>
+              </p>
             }
           >
             <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
@@ -95,9 +95,9 @@ export default function WkFAQAccordion() {
             aria-label="Accordion 2"
             indicator={({ isOpen }) => openAndCloseIcon(isOpen)}
             title={
-              <h1 className="border-white-500 border-t-8 pt-5 text-2xl text-white">
+              <p className="border-white-500 border-t-8 pt-5 text-2xl text-white mr-[-1.25rem]">
                 What is WonderKids Online CG?
-              </h1>
+              </p>
             }
           >
             <div className="rounded-br-3xl border-4 border-neutral-50 p-10">
