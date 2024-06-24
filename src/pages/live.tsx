@@ -1,4 +1,5 @@
 import {FC, useEffect} from "react";
+import Loading from "~/pages/components/loading";
 
 const LivePage : FC = () => {
     useEffect(() => {
@@ -7,9 +8,7 @@ const LivePage : FC = () => {
 
 
     return (
-        <div>
-            <h1>Spotify</h1>
-        </div>
+        <Loading page_title={"Live"} />
     );
 }
 

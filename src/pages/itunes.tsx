@@ -1,4 +1,6 @@
 import {FC, useEffect} from "react";
+import Loading from "~/pages/components/loading";
+
 
 const ItunesPage : FC = () => {
     useEffect(() => {
@@ -6,9 +8,7 @@ const ItunesPage : FC = () => {
     }, []);
 
   return (
-    <div>
-      <h1>Itunes</h1>
-    </div>
+    <Loading page_title={"Itunes"} />
   );
 }
 
