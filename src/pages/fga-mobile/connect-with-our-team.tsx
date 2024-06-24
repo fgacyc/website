@@ -2,7 +2,7 @@ import FormInput from "~/components/Form/FormInput";
 import FormCombobox from "~/components/Form/FormCombobox";
 import {cgLocations} from "~/data/locations";
 import ArrowButton from "~/components/ArrowButton";
-import React, {useState} from "react";
+import React  from "react";
 import FormTextArea from "~/components/Form/FormTextArea";
 
 const ConnectWithOurTeam: React.FC = () => {
@@ -11,9 +11,9 @@ const ConnectWithOurTeam: React.FC = () => {
     const [location, setLocation] = React.useState<string>("");
     const [comment, setComment] = React.useState<string>("");
 
-    const [nameError, setNameError] =  useState<boolean>(false);
-    const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
-    const [commentError, setCommentError] = useState<boolean>(false);
+    const [nameError, setNameError] =  React.useState<boolean>(false);
+    const [phoneNumberError, setPhoneNumberError] = React.useState<boolean>(false);
+    const [commentError, setCommentError] = React.useState<boolean>(false);
 
 
 

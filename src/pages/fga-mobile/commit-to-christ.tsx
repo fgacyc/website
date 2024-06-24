@@ -2,14 +2,14 @@ import FormInput from "~/components/Form/FormInput";
 import FormCombobox from "~/components/Form/FormCombobox";
 import {cgLocations} from "~/data/locations";
 import ArrowButton from "~/components/ArrowButton";
-import React, {useState} from "react";
+import {FormEvent, useState} from "react";
 import FormTextArea from "~/components/Form/FormTextArea";
 
-const commitToChristPage: React.FC = () => {
-    const [name, setName] = React.useState<string>("");
-    const [phoneNumber, setPhoneNumber] = React.useState<string>("");
-    const [location, setLocation] = React.useState<string>("");
-    const [comment, setComment] = React.useState<string>("");
+const CommitToChristPage =  () => {
+    const [name, setName] = useState<string>("");
+    const [phoneNumber, setPhoneNumber] = useState<string>("");
+    const [location, setLocation] = useState<string>("");
+    const [comment, setComment] = useState<string>("");
 
     const [nameError, setNameError] =  useState<boolean>(false);
     const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
@@ -17,7 +17,7 @@ const commitToChristPage: React.FC = () => {
 
 
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         console.log({
             name,
@@ -35,7 +35,7 @@ const commitToChristPage: React.FC = () => {
                 py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]`}
             >
                 <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
-                    I'm committing my life to Christ
+                    I am committing my life to Christ
                 </div>
                 <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
                 <FormInput
@@ -106,4 +106,4 @@ const commitToChristPage: React.FC = () => {
     )
 };
 
-export default commitToChristPage;
+export default CommitToChristPage;
