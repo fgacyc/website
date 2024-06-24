@@ -85,11 +85,18 @@ export default function Header() {
         return {}
     };
     const {logo, text_color} = getHeaderMainMenuCSS();
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    const [menuWidth, setMenuWidth] = useState(300);
+    useEffect(() => {
+    //     get screen width
+        const screenWidth = window.innerWidth;
+        if(screenWidth >1280){
+            setMenuWidth(400)
+        }
+    }, []);
 
     useEffect(() => {
         const handleRouteChange = () => {
@@ -116,6 +123,7 @@ export default function Header() {
                   customBurgerIcon={false}
                   isOpen={isMenuOpen}
                   onStateChange={(state:StateChange) => setIsMenuOpen(state.isOpen)}
+                  width={menuWidth}
             >
                 <Link href="/about-us"
                     className="block px-4 py-2 pr-6 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl" >
