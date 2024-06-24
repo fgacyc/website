@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, {useState, useEffect} from "react";
 import {useRouter} from "next/router";
-import {slide as Menu} from 'react-burger-menu'
+import {slide as Menu} from "react-burger-menu"
 import {IoMdMenu} from "react-icons/io";
 interface StateChange {
     isOpen: boolean;
