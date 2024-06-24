@@ -34,7 +34,7 @@ const Custom404: FC = () => {
           <ArrowLink
             href="/"
             text="Click to Run"
-            bg_color="bg-[#3AFFAC]"
+            bg_color="bg-[#00EDC2]"
             arrow_color="black"
             className={`download-arrow mt-8 w-[257px] max-w-[300px] items-center rounded-full bg-[#00EDC2] px-4 py-2 font-bold max-[1023px]:mx-auto max-[320px]:w-full lg:text-left min-[1105px]:mt-24`}
           />
