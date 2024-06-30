@@ -51,34 +51,26 @@ export default function Baptism() {
             screenHeightClass
           }
         >
-          <div className=" font-bold leading-10 sm:pl-20 xl:pr-40">
-            <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+          <div className=" leading-10 sm:pl-20 xl:pr-40">
+            <h1 className="my-1 mb-5 text-5xl font-bold md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
               The{" "}
             </h1>
-            <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+            <h1 className="my-1 mb-5 text-5xl font-bold md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
               old life
             </h1>
-            <h1 className="my-1 mb-5 text-5xl md:text-5xl lg:text-8xl xl:text-9xl">
+            <h1 className="my-1 mb-5 text-5xl font-bold md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
               is gone.
             </h1>
-            <p>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              &nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <p>
-              {" "}
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            </p>
-            <p>enim ad minim veniam, quis nostrud exercitation. </p>
+            <h3 className="lg:text-1xl my-1	 mb-5 text-lg font-medium md:text-lg xl:text-2xl">
+              The Bible teaches that we should be baptized in water in the name
+              <br />
+              of the Father, the Son and of the Holy Spirit. We believe in water
+              <br />
+              baptism because Jesus himself modeled it for us.{" "}
+            </h3>
             <Image
               src="/images/baptism/baptise-img-1.png"
               alt="aboutUs"

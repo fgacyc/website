@@ -54,7 +54,7 @@ export default function GivingAccordion() {
 
               {/* </div> */}
               <div className="col-span-2">
-                <h1 className=" text-[20px] font-normal">
+                <h1 className=" pl-5 text-[18px] font-normal">
                   Full Gospel Assembly
                   <br /> 2920 0020 960
                   <br />
@@ -99,7 +99,7 @@ export default function GivingAccordion() {
 
               {/* </div> */}
               <div className="col-span-2">
-                <h1 className=" text-[20px] font-normal">
+                <h1 className="pl-5 text-[18px] font-normal">
                   Full Gospel Assembly
                   <br /> 2920 0020 960
                   <br />
