@@ -15,8 +15,13 @@ export default function AboutUs() {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
       setScreenHeightClass(
-        windowHeight < 700 && windowWidth >= 1000 ? "h-screen-lg" : "h-screen"
+        (windowHeight < 700 && windowWidth >= 1000) ||
+          (windowHeight < 750 && windowWidth < 600)
+          ? "h-screen-lg pt-10"
+          : "h-screen"
       );
+
+      console.log("screenHeightClass : ", screenHeightClass);
     };
 
     handleResize(); // Set initial value
@@ -25,7 +30,7 @@ export default function AboutUs() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [screenHeightClass]);
 
   return (
     <>
@@ -66,38 +71,17 @@ export default function AboutUs() {
           <div className={wayWeGiveClassStyle}>
             <div className="xl:mt-44">
               <div className=" pl-24 xl:mx-24 xl:mt-0 2xl:mx-60 ">
-                <div className=" pt-20 text-5xl sm:max-md:text-lg lg:text-9xl xl:pt-0">
+                <div className=" xs:max-md:text-lg pt-20 text-5xl lg:text-9xl xl:pt-0">
                   Ways <br></br> We <br />
                   Give
                   <br />
                 </div>
-                {/* 
-                    <a href="https://your-link-here.com" target="_blank" rel="noopener noreferrer">
-
-                <Button
-                  color="success"
-                  className="text-md mt-5 bg-[#00EDC2] px-12 py-5 font-bold text-black lg:w-72 lg:text-lg"
-                >
-                  Give Now
-                  <ArrowLongRightIcon className="w-15 size-8" />
-                </Button>
-                </a>
-                */}
               </div>
             </div>
             <div className="mt-20 w-11/12 xl:mt-44 xl:w-128">
               <GivingAccordion />
             </div>
           </div>
-
-          {/* <div className="right-50 absolute top-20"></div> */}
-          {/* <Image
-            src="/About-us-middle-bg.png"
-            width={100}
-            height={600}
-            layout="responsive"
-            alt={""}
-          /> */}
         </div>
 
         <div className="min-w-screen relative mt-10 w-screen  flex-row items-center justify-center overflow-hidden ">

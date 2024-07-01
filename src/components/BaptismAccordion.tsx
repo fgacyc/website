@@ -68,28 +68,13 @@ export default function BaptismAccordion() {
             }
           >
             <p className={accordionTextClass}>
-              Water baptism is a public declaration of a believer’s faith and{" "}
-              commitment in Jesus Christ. It is the next step after one has{" "}
-              received salvation from Christ through faith and repentance and is
-              an important foundation for the Christian life.
+              Water baptism doesn&apos;t save you or forgive your sins, but it shows
+              that you&apos;ve already turned back to God. It&apos;s a public way for
+              believers to show their faith. Baptism symbolizes being united
+              with Christ: going under the water represents dying with Him,
+              staying under the water represents being buried with Him, and
+              coming out of the water represents living a new life with Him.
             </p>{" "}
-            <p className={accordionTextClass}>
-              Baptism by immersion symbolically identifies us with Jesus’ death
-              on the cross, His burial, and His resurrection from the dead.
-            </p>
-            <p className={accordionTextClass}>
-              &quot;For we died and were buried with Christ by baptism. And just
-              as Christ was raised from the dead by the glorious power of the
-              Father, now we also may live new lives.” (ROMANS 6:4).
-            </p>
-            <p className={accordionTextClass}>
-              Water baptism does not make us a believer, it shows that we are
-              already one! Water baptism does not ‘save’ us; only our faith in
-              Jesus Christ does that.
-            </p>
-            <p className={accordionTextClass}>
-              “God saved you by his grace when you believed.” (EPHESIANS 2:8a).
-            </p>
           </AccordionItem>
 
           {/* ACCORDION 2  */}
@@ -106,27 +91,13 @@ export default function BaptismAccordion() {
             }
           >
             <p className={accordionTextClass}>
-              Water baptism is a public declaration of a believer’s faith and{" "}
-              commitment in Jesus Christ. It is the next step after one has{" "}
-              received salvation from Christ through faith and repentance and is
-              an important foundation for the Christian life.
-            </p>{" "}
-            <p className={accordionTextClass}>
-              Baptism by immersion symbolically identifies us with Jesus’ death
-              on the cross, His burial, and His resurrection from the dead.
-            </p>
-            <p className={accordionTextClass}>
-              &quot;For we died and were buried with Christ by baptism. And just
-              as Christ was raised from the dead by the glorious power of the
-              Father, now we also may live new lives.” (ROMANS 6:4).
-            </p>
-            <p className={accordionTextClass}>
-              Water baptism does not make us a believer, it shows that we are
-              already one! Water baptism does not ‘save’ us; only our faith in
-              Jesus Christ does that.
-            </p>
-            <p className={accordionTextClass}>
-              “God saved you by his grace when you believed.” (EPHESIANS 2:8a).
+              A disciple should believe in their heart, confess with their
+              mouth, and accept Jesus Christ. Jesus commanded that anyone who
+              believes and is baptized will be saved (Mark 16:16). He told His
+              followers to make disciples and baptize them in the name of the
+              Father, Son, and Holy Spirit (Matthew 28:18-19). This means that
+              believing and being baptized go together as one important step in
+              following Jesus.
             </p>
           </AccordionItem>
 
@@ -143,27 +114,39 @@ export default function BaptismAccordion() {
             }
           >
             <p className={accordionTextClass}>
-              Water baptism is a public declaration of a believer’s faith and{" "}
-              commitment in Jesus Christ. It is the next step after one has{" "}
-              received salvation from Christ through faith and repentance and is
-              an important foundation for the Christian life.
-            </p>{" "}
-            <p className={accordionTextClass}>
-              Baptism by immersion symbolically identifies us with Jesus’ death
-              on the cross, His burial, and His resurrection from the dead.
-            </p>
-            <p className={accordionTextClass}>
-              &quot;For we died and were buried with Christ by baptism. And just
-              as Christ was raised from the dead by the glorious power of the
-              Father, now we also may live new lives.” (ROMANS 6:4).
-            </p>
-            <p className={accordionTextClass}>
-              Water baptism does not make us a believer, it shows that we are
-              already one! Water baptism does not ‘save’ us; only our faith in
-              Jesus Christ does that.
-            </p>
-            <p className={accordionTextClass}>
-              “God saved you by his grace when you believed.” (EPHESIANS 2:8a).
+              After you get baptized, it symbolizes a new life in Christ. Here&apos;s
+              what happens:
+              <br />
+              <br />
+              <b> 1. Died with Christ (going into the water):</b> This
+              represents leaving behind your old life and bad habits, as if they
+              were nailed to the cross with Jesus.
+              <br />
+              <b> 2. Buried with Christ (immersed in the water) :</b> This
+              signifies the end of your old life, like being buried with Jesus.
+              <br />
+              <b>3. Raised with Christ (coming out of the water): </b> This
+              means you start a new life, just like Jesus was raised from the
+              dead. You&apos;re now a new person with new behaviors that honor God.
+              <br />
+              <br />
+              Additionally, turning back to God involves:
+              <br />
+              <br />
+              <b>-Confessing your sins:</b>
+              Admit the wrong things you&apos;ve done, like lying or jealousy (1 John
+              1:9).
+              <br />
+              <b>-Breaking ties with idols:</b> Stop worshiping anything or
+              anyone other than God.
+              <br />
+              <b>-Living a new life:</b> Avoid sinful behaviors such as smoking,
+              drinking, gambling, and sexual immorality. Seek help and guidance
+              from church leaders to grow in your faith.
+              <br />
+              <br />
+              By doing these things, you&apos;ll live a life that reflects your new
+              faith in Christ.
             </p>
           </AccordionItem>
         </Accordion>
