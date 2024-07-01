@@ -102,7 +102,7 @@ export default function AboutUs() {
         </div>
 
         <div className="text-1xl relative my-10  flex h-full w-full flex-col items-center justify-center font-extrabold">
-          <h1 className="text-2xl sm:text-7xl"> The Experience </h1>
+          <h1 className="text-2xl sm:text-7xl"> The FGA Experience </h1>
         </div>
 
         <ExperienceGallery className="border-black text-black" />
