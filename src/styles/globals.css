@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-5xl font-bold md:text-6xl lg:text-8xl xl:text-9xl;
+  }
+
+  h2 {
+    @apply text-8xl;
+  }
+
+  h3 {
+    @apply text-6xl;
+  }
+
+  h4 {
+    @apply text-2xl sm:text-5xl;
+  }
+
+  h5 {
+    @apply text-3xl font-semibold;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  /* p {
+    @apply text-[10px] sm:text-xs md:text-base lg:text-xl;
+  } */
+}
+
 @media (min-width: 400px) and (max-width: 499px) {
   .wk-age-groups > .slick-list > .slick-track > .slick-slide > div {
     margin: 0 8vw;
@@ -146,4 +180,82 @@
 
 .h-120 {
   height: 30rem;
+}
+
+.wonderkids > hr {
+  display: none !important;
+}
+
+
+
+/* burger menu */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: black;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  /*padding: 2.5em 1.5em 0;*/
+  padding-top: 87px;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: black;
+  /*padding: 0.8em;*/
+  /*font-size: 30px;*/
+  /*padding: 8px 16px 100px 16px;*/
+  /*text-align: right;*/
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

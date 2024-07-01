@@ -269,7 +269,7 @@ export default function GetConnected() {
                     text_color="text-white"
                     arrow_color="white"
                     bg_color="bg-black"
-                    className="mt-[111px] w-4/5 text-lg sm:w-auto sm:text-[25px]"
+                    className="mt-[111px] w-4/5 sm:w-auto"
                   />
                 </form>
               )}

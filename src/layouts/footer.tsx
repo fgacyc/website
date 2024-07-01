@@ -231,7 +231,7 @@ export default function Footer() {
                 <br />
                 Kuala Lumpur.
               </p>
-              <p className={`${text_color}`}><a href="tel:+600379814755">03-7981 4755</a></p>
+              <p className={`${text_color}`}><Link href="tel:+600379814755">03-7981 4755</Link></p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div className="md:ml-6">

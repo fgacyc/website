@@ -41,11 +41,11 @@ export default function ExperienceImages({ className }: ExperienceImagesProps) {
               layout=""
               className="mb-5"
             />
-            <div
-              className={`sf-pro-display mx-auto w-[249px] border-b-[5px] pb-[16px] text-[33px] font-medium ${className}`}
+            <h5
+              className={`sf-pro-display mx-auto w-[249px] border-b-[5px] pb-[16px] ${className}`}
             >
               {image.title}
-            </div>
+            </h5>
           </div>
         ))}
       </div>

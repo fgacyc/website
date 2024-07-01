@@ -152,9 +152,7 @@ export default function Wonderkids() {
             <p
               className={`font-hairline mt-14 max-w-[450px] text-base font-normal leading-6 tracking-tight`}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation.
+              FGA Wonderkids is committed to reaching out, shepherding, and discipling the generation of children entrusted by God to FGA. We believe that every child can be used by God to drive revival and change the world.
             </p>
             <div className="mt-10 flex items-center gap-3">
               <Link href="https://www.facebook.com/FGAWONDERKIDS" target="_blank">
@@ -548,9 +546,9 @@ export default function Wonderkids() {
           <div className={`mx-auto max-w-[955px] pb-16 sm:pb-26 md:pb-36 lg:pb-56 pt-10 sm:pt-20 md:pt-40 lg:pt-60 relative z-[1]`}>
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-4/12">
-                <div className="text-8xl font-bold text-white max-lg:text-center lg:text-9xl">
+                <h2 className="text-8xl font-bold text-white max-lg:text-center lg:text-9xl">
                   FAQ
-                </div>
+                </h2>
               </div>
               <div className="w-full w-dvw lg:w-9/12">
                 <WkFAQAccordion />
