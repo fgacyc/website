@@ -30,7 +30,7 @@ export default function AboutUs() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [screenHeightClass]);
 
   return (
     <>
