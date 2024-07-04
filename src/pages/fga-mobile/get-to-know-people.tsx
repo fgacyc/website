@@ -8,7 +8,7 @@ import FormTextArea from "~/components/Form/FormTextArea";
 const GetToKnowPeople: React.FC = () => {
     const [name, setName] = React.useState<string>("");
     const [phoneNumber, setPhoneNumber] = React.useState<string>("");
-    const [location, setLocation] = React.useState<string>("");
+    const [location, setLocation] = React.useState<string>("kuchai");
     const [comment, setComment] = React.useState<string>("");
 
     const [nameError, setNameError] =  React.useState<boolean>(false);
@@ -17,14 +17,26 @@ const GetToKnowPeople: React.FC = () => {
 
 
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log({
-            name,
-            phoneNumber,
-            location
+        await fetch("/api/mobile" , {
+            method: "POST",
+            body: JSON.stringify({
+                name,
+                phone_number: phoneNumber,
+                location,
+                comment,
+                type: "get_to_know_people"
+            }),
         })
-    }
+            .then((r) => {
+                console.log(r);
+                alert("Thank you for your comment. We will get back to you soon.")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
 
     return (
