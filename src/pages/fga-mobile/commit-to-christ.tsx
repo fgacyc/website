@@ -8,7 +8,7 @@ import FormTextArea from "~/components/Form/FormTextArea";
 const CommitToChristPage =  () => {
     const [name, setName] = useState<string>("");
     const [phoneNumber, setPhoneNumber] = useState<string>("");
-    const [location, setLocation] = useState<string>("");
+    const [location, setLocation] = useState<string>("kuchai");
     const [comment, setComment] = useState<string>("");
 
     const [nameError, setNameError] =  useState<boolean>(false);
@@ -17,14 +17,26 @@ const CommitToChristPage =  () => {
 
 
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log({
-            name,
-            phoneNumber,
-            location
+        await fetch("/api/mobile" , {
+            method: "POST",
+            body: JSON.stringify({
+                name,
+                phone_number: phoneNumber,
+                location,
+                comment,
+                type: "commit_to_christ"
+            }),
         })
-    }
+            .then((r) => {
+                console.log(r);
+                alert("Thank you for your commitment to Christ. We will get back to you soon.")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
 
     return (

@@ -2,18 +2,18 @@ import FormInput from "~/components/Form/FormInput";
 import FormCombobox from "~/components/Form/FormCombobox";
 import {cgLocations} from "~/data/locations";
 import ArrowButton from "~/components/ArrowButton";
-import React, {FC, useState} from "react";
+import React  from "react";
 import FormTextArea from "~/components/Form/FormTextArea";
 
-const RecommitToChristPage: FC = () => {
-    const [name, setName] = useState<string>("");
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
-    const [location, setLocation] =useState<string>("kuchai");
-    const [comment, setComment] = useState<string>("");
+const GetToKnowPeople: React.FC = () => {
+    const [name, setName] = React.useState<string>("");
+    const [phoneNumber, setPhoneNumber] = React.useState<string>("");
+    const [location, setLocation] = React.useState<string>("kuchai");
+    const [comment, setComment] = React.useState<string>("");
 
-    const [nameError, setNameError] =  useState<boolean>(false);
-    const [phoneNumberError, setPhoneNumberError] =useState<boolean>(false);
-    const [commentError, setCommentError] = useState<boolean>(false);
+    const [nameError, setNameError] =  React.useState<boolean>(false);
+    const [phoneNumberError, setPhoneNumberError] = React.useState<boolean>(false);
+    const [commentError, setCommentError] = React.useState<boolean>(false);
 
 
 
@@ -26,12 +26,12 @@ const RecommitToChristPage: FC = () => {
                 phone_number: phoneNumber,
                 location,
                 comment,
-                type: "recommit_to_christ"
+                type: "get_to_know_people"
             }),
         })
             .then((r) => {
                 console.log(r);
-                alert("Thank you for your recommitment to Christ. We will get back to you soon.")
+                alert("Thank you for your comment. We will get back to you soon.")
             })
             .catch((err) => {
                 console.log(err);
@@ -47,7 +47,7 @@ const RecommitToChristPage: FC = () => {
                 py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]`}
             >
                 <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
-                    I am renewing my commitment to Christ
+                    I want to get to know people
                 </div>
                 <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
                 <FormInput
@@ -94,8 +94,8 @@ const RecommitToChristPage: FC = () => {
                 />
 
                 <FormTextArea
-                    label="Question / Comment"
-                    placeholder="Your message here"
+                    label="Message"
+                    placeholder="Message"
                     name="message"
                     id="message"
                     className="w-4/5"
@@ -107,7 +107,7 @@ const RecommitToChristPage: FC = () => {
 
 
                 <ArrowButton
-                    text="Share my decision"
+                    text="Get to know now"
                     text_color="text-white"
                     arrow_color="white"
                     bg_color="bg-black"
@@ -118,4 +118,4 @@ const RecommitToChristPage: FC = () => {
     )
 };
 
-export default RecommitToChristPage;
+export default GetToKnowPeople;
