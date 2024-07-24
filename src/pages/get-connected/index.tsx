@@ -163,7 +163,17 @@ export default function GetConnected() {
                       more like Jesus.
                     </h6>
                     <button
-                      onClick={() => setIsNeedHelp(true)}
+                      onClick={() => {
+                        setIsNeedHelp(true);
+                        setTimeout(() => {
+                          document
+                            .getElementById("sectionRef")
+                            ?.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            });
+                        }, 100);
+                      }}
                       className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
                     >
                       Find a ConnectGroup{" "}
@@ -203,7 +213,10 @@ export default function GetConnected() {
                   onSubmit={(e) => void handleSubmit(e)}
                   className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 >
-                  <div className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]">
+                  <div
+                    id="sectionRef"
+                    className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]"
+                  >
                     Find a Connect Group
                   </div>
                   <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
