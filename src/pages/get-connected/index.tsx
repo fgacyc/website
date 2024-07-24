@@ -28,7 +28,7 @@ export default function GetConnected() {
 
   const categories_list = [
     { value: "secondary", label: "Secondary Students" },
-    { value: "tertiay", label: "College / University" },
+    { value: "tertiary", label: "College / University" },
     { value: "young_adult", label: "Young Adults" },
     { value: "married", label: "Married" },
     { value: "family", label: "Family" },
