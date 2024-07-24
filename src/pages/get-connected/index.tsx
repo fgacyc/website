@@ -35,8 +35,40 @@ export default function GetConnected() {
     { value: "entrepreneur", label: "Entrepreneur" },
   ];
 
+  const handleValidation = (): boolean => {
+    if (name.trim() === "" || nameError) {
+      alert("Full Name cannot be empty");
+      return false;
+    }
+
+    if (phoneNumber.trim() === "" || phoneNumberError) {
+      alert("Phone number cannot be empty");
+      return false;
+    }
+
+    if (age.trim() === "" || ageError) {
+      alert("Age cannot be empty");
+      return false;
+    }
+
+    if (parseInt(age) < 0) {
+      alert("Age cannot be smaller than zero");
+      return false;
+    }
+
+    if (category.trim() === "") {
+      alert("Please select a category");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!handleValidation()) {
+      return;
+    }
 
     const api = "find_cg";
     await fetch("/api/" + api, {
