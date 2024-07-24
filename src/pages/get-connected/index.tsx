@@ -88,6 +88,12 @@ export default function GetConnected() {
       .then((r) => {
         console.log(r);
         setIsSubmitted(true);
+        setTimeout(() => {
+          document.getElementById("completedRef")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
       })
       .catch((err) => {
         console.log(err);
@@ -166,12 +172,10 @@ export default function GetConnected() {
                       onClick={() => {
                         setIsNeedHelp(true);
                         setTimeout(() => {
-                          document
-                            .getElementById("sectionRef")
-                            ?.scrollIntoView({
-                              behavior: "smooth",
-                              block: "start",
-                            });
+                          document.getElementById("formRef")?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }, 100);
                       }}
                       className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
@@ -193,7 +197,10 @@ export default function GetConnected() {
           {isNeedHelp ? (
             <div className="bg-white bg-[url('/images/get-connected/get-connected-bg.png')] bg-cover pb-[5.83vw] pt-[5.83vw]">
               {isSubmitted ? (
-                <div className="flex h-screen flex-col items-center justify-center">
+                <div
+                  className="flex h-screen flex-col items-center justify-center"
+                  id="completedRef"
+                >
                   <CompletedForm
                     bg_color="bg-[#00EDC2]"
                     tick_bg="bg-white"
@@ -214,7 +221,7 @@ export default function GetConnected() {
                   className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 >
                   <div
-                    id="sectionRef"
+                    id="formRef"
                     className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]"
                   >
                     Find a Connect Group
