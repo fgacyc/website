@@ -337,6 +337,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   );
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -380,8 +381,11 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
   // todo: add validation
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsButtonClicked(true);
+
     if (!handleValidation()) {
       alert("Please fill in the form correctly");
+      setIsButtonClicked(false);
       return;
     }
 
@@ -389,7 +393,9 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
       method: "POST",
       body: JSON.stringify({
         name,
-        phone_number: phoneNumber,
+        phone_number: phoneNumber.startsWith("0")
+          ? "+60" + phoneNumber.substring(1)
+          : phoneNumber,
         email,
         pastoral: pastoralTeam,
         ministry,
@@ -402,6 +408,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
     } else {
       alert("Failed to submit");
     }
+    setIsButtonClicked(false);
   };
 
   return (
@@ -498,6 +505,7 @@ const Form = ({ isFormVisible, setIsFormVisible }: FormProps) => {
             text_color="text-white"
             arrow_color="white"
             bg_color="bg-black"
+            isSubmitted={isButtonClicked}
             className="mt-[111px] w-4/5 sm:w-auto"
           />
         </form>
