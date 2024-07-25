@@ -23,8 +23,8 @@ export default function Locations() {
             <Image
               alt=""
               src={"/images/locations/banner.png"}
-              width={1258}
-              height={622}
+              width={1258 * 2}
+              height={622 * 2}
               className="rounded-lg"
             ></Image>
             <div className="absolute left-[9%] mt-5 text-white sm:left-14 sm:mt-12 md:left-[60px] lg:left-[8.4vw] lg:mt-[6vw]">
@@ -40,7 +40,7 @@ export default function Locations() {
 
           {/* Locations */}
           <div className="mb-20 lg:mb-[28vw]">
-            <div className="ms-10 mt-[18vw] sm:ms-36 sm:mt-36 lg:ms-[20vw] lg:mt-40 xl:mt-60">
+            <div className="ms-10 mt-[18vw] sm:ms-36 sm:mt-36 lg:ms-[20vw] lg:mt-40 xl:mt-60 2xl:mt-72">
               <div className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
                 Locations
               </div>
@@ -81,7 +81,7 @@ export default function Locations() {
           </div>
 
           {/* Our Pastor */}
-          <div className="relative bg-[#1d2129] pb-9 ps-10 pt-12 text-white sm:pb-64 lg:ps-[20vw] lg:pt-36 xl:pb-[30vw] 2xl:pb-[35vw]">
+          <div className="relative bg-[#1d2129] pb-9 ps-10 pt-12 text-white sm:pb-64 lg:pe-[12vw] lg:ps-[15.5vw] lg:pt-36 xl:pb-[30vw] xl:pe-[10vw] 2xl:pb-[35vw]">
             <div className="absolute -top-14 right-5 w-[45%] lg:right-20 lg:top-[-222px] 2xl:w-2/5">
               <div className="relative flex w-full justify-end">
                 <Image
@@ -97,6 +97,23 @@ export default function Locations() {
             <div>
               <div className="w-2/5 text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
                 We&apos;re expecting you!
+              </div>
+              <div className="mt-[2.5vw]">
+                <a href="mailto:info@fgacyc.com">
+                  <button className="border-b-solid flex items-center border-b-2 border-white text-xs font-bold text-white lg:border-b-3 lg:pb-[0.625vw] lg:text-[2.29vw] xl:border-b-4">
+                    Contact Us
+                    <div className="w-[1.18vw]"></div>
+                    <div className="w-[2.92vw]">
+                      <Image
+                        src={"/icons/right_arrow_white.svg"}
+                        width={42}
+                        height={42}
+                        alt="right arrow icon"
+                        className=""
+                      />
+                    </div>
+                  </button>
+                </a>
               </div>
               <div className="sf-display-pro mt-3 w-[41vw] text-[8px] sm:text-[10px] lg:mt-7 lg:text-xl">
                 Not sure how to make your way to any of our service locations?
