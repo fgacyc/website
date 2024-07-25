@@ -13,6 +13,7 @@ import { cgLocations } from "~/data/locations";
 export default function GetConnected() {
   const [isNeedHelp, setIsNeedHelp] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -66,7 +67,10 @@ export default function GetConnected() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsButtonClicked(true);
+
     if (!handleValidation()) {
+      setIsButtonClicked(false);
       return;
     }
 
@@ -78,7 +82,9 @@ export default function GetConnected() {
       // },
       body: JSON.stringify({
         name,
-        phone_number: phoneNumber,
+        phone_number: phoneNumber.startsWith("0")
+          ? "+60" + phoneNumber.substring(1)
+          : phoneNumber,
         location,
         age: parseInt(age),
         kids: false,
@@ -86,7 +92,7 @@ export default function GetConnected() {
       }),
     })
       .then((r) => {
-        console.log(r);
+        setIsButtonClicked(false);
         setIsSubmitted(true);
         setTimeout(() => {
           document.getElementById("completedRef")?.scrollIntoView({
@@ -97,14 +103,8 @@ export default function GetConnected() {
       })
       .catch((err) => {
         console.log(err);
+        setIsButtonClicked(false);
       });
-    console.log({
-      name,
-      phoneNumber,
-      location,
-      age,
-      category,
-    });
   };
 
   return (
@@ -321,6 +321,7 @@ export default function GetConnected() {
                     text_color="text-white"
                     arrow_color="white"
                     bg_color="bg-black"
+                    isSubmitted={isButtonClicked}
                     className="mt-[111px] w-4/5 sm:w-auto"
                   />
                 </form>

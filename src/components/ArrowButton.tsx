@@ -6,6 +6,7 @@ interface ArrowButtonProps {
   arrow_color: string; // black || #000000
   bg_color: string; // bg-black || bg-[#000000]
   className?: string;
+  isSubmitted?: boolean;
   onClick?: () => void;
 }
 
@@ -15,10 +16,12 @@ const ArrowButton = ({
   arrow_color,
   bg_color,
   className,
+  isSubmitted,
   onClick,
 }: ArrowButtonProps) => {
   return (
     <button
+      disabled={isSubmitted}
       onClick={onClick}
       className={`flex items-center justify-between rounded-[35px] px-12 py-5 text-lg font-bold sm:text-2xl ${text_color} ${arrow_color} ${bg_color} ${className}`}
     >
