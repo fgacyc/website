@@ -23,7 +23,7 @@ const ArrowLink = ({
   return (
     <Link
       href={href}
-      className={`flex items-center justify-between rounded-[35px] px-12 py-5 font-bold sm:text-xl md:text-4xl ${text_color} ${arrow_color} ${bg_color} ${className}`}
+      className={`flex items-center justify-between rounded-[35px] px-12 py-5 font-bold sm:text-xl md:text-2xl ${text_color} ${arrow_color} ${bg_color} ${className}`}
       onClick={onClick}
     >
       {text}{" "}
