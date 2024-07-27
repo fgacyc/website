@@ -1,4 +1,4 @@
-import {FC, useEffect} from "react";
+import {type FC, useEffect} from "react";
 import Loading from "~/pages/components/loading";
 
 const LivePage : FC = () => {

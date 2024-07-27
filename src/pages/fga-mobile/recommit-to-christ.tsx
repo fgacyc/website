@@ -2,7 +2,7 @@ import FormInput from "~/components/Form/FormInput";
 import FormCombobox from "~/components/Form/FormCombobox";
 import {cgLocations} from "~/data/locations";
 import ArrowButton from "~/components/ArrowButton";
-import React, {FC, useState} from "react";
+import React, {type FC, useState} from "react";
 import FormTextArea from "~/components/Form/FormTextArea";
 
 const RecommitToChristPage: FC = () => {
