@@ -7,14 +7,17 @@ const BlogPage = ({blogData}: { blogData: Blog }) => {
     return (
         <div>
             <div className={"h-16"}></div>
-            <h1>{title}</h1>
-            <img src={image_url} alt={title} className={"w-[300px]"}/>
-           <MdViewer content={content} />
+            <img src={image_url} alt={title} className={"w-full"}/>
+            <div className={`sm:p-8 p-4  max-w-[1000px]  mx-auto
+            
+            `}>
+                <div className={"sm:text-5xl text-2xl text-center font-bold mb-8"}>{title}</div>
+                <MdViewer content={content}/>
+            </div>
         </div>
     );
 };
 export default BlogPage;
-
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
