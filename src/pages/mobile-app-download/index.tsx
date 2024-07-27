@@ -13,11 +13,11 @@ export default function MobileAppDownload() {
         <div className="mt-3 flex sm:mt-7 lg:mt-[100px] xl:mt-[140px]">
           {/* <div className="flex w-[85%] sm:mt-7 lg:mt-[140px] lg:w-[70%]"> */}
           {/* <div className="w-[46%] text-4xl font-bold sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"> */}
-          <div className="absolute ms-[16.875vw] mt-[5.56vw] text-[6.94vw] font-bold">
+          <div className="absolute sm:ms-[16.875vw] sm:m-0 ml-4 mt-[5.56vw] text-[6.94vw] font-bold">
             <div>Church</div>
             <div>in the palm</div>
             <div>of your hands.</div>
-            <div className="mt-1 text-[10px] font-normal sm:mt-3 sm:text-[1.4vw] sm:text-xs md:mt-4 lg:mt-[2vw]">
+            <div className="mt-1 text-[12px] font-normal sm:mt-3 sm:text-[18px] sm:text-xs md:mt-4 lg:mt-[2vw]">
               {/* <div className="mt-1 text-[10px] font-normal sm:text-xs lg:mt-[35px] lg:text-xl"> */}
               Get the FGA App now.
             </div>
@@ -25,34 +25,36 @@ export default function MobileAppDownload() {
           <div>
             <div className="ms-[48.6vw] w-[38.2vw]">
               <Image
-                alt=""
-                src={"/images/mobile-app-download/phone.png"}
-                width={550 * 2}
-                height={490 * 2}
+                  alt=""
+                  src={"/images/mobile-app-download/phone.png"}
+                  width={550 * 2}
+                  height={490 * 2}
               ></Image>
             </div>
-            <div className="flex">
-              <div className="ms-[54.44vw] mt-[3.2639vw] w-[14.1vw]">
+            <div className="flex mt-4 justify-around ">
+              <div className="sm:ms-[54.44vw] sm:mt-[3.2639vw] sm:w-[14.1vw] w-[150px]">
                 {/* <div className="ms-[54.44vw] mt-[5px] w-[14.1vw] sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px]"> */}
                 <Image
-                  alt=""
-                  src={"/images/mobile-app-download/app-store.png"}
-                  width={203 * 3}
-                  height={68 * 3}
+                    alt=""
+                    src={"/images/mobile-app-download/app-store.png"}
+                    width={203 * 3}
+                    height={68 * 3}
                 ></Image>
               </div>
 
-              <div className="mb-[5.139vw] mt-[2.0139vw] w-[18.125vw]">
+              <div className="sm:mb-[5.139vw] sm:mt-[2.1vw] sm:w-[18.125vw] w-[160px]">
                 <Image
-                  alt=""
-                  src={"/images/mobile-app-download/google-play.png"}
-                  width={261 * 2}
-                  height={103 * 2}
+                    alt=""
+                    src={"/images/mobile-app-download/google-play.png"}
+                    width={261 * 2}
+                    height={103 * 2}
                 ></Image>
               </div>
+
             </div>
           </div>
         </div>
+        <div className={"h-10"}></div>
       </div>
     </>
   );
