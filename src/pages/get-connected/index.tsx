@@ -127,25 +127,25 @@ export default function GetConnected() {
               className="w-[90%] rounded-lg md:w-[80%]"
               // className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
             ></Image>
-            <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[6.5vw]">
+            <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[6.5vw] sm:block flex items-center ">
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
                 Get Connected
               </h3>
-              <h6 className="w-[35vw] text-[8px] sm:text-[10px] md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg lg:leading-5 xl:text-xl">
+              <div className="w-[35vw] text-[12px] sm:text-[14px] md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg sm:leading-5 xl:text-xl">
                 We believe life transformation happens through real and
                 authentic relationships, and no one should be alone in their
                 journey pursuing God.
-              </h6>
+              </div>
             </div>
           </div>
           <div className="mb-[16.45vw] mt-[13vw]">
-            <div>
-              <div className="ms-[20vw]">
+            <div className={"sm:m-auto m-4"}>
+              <div className="sm:ms-[20vw] ">
                 {/* <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7"> */}
-                <h3 className="w-[55vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
+                <h3 className="sm:w-[55vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl ">
                   How to Get Connect?
                 </h3>
-                <h6 className="mt-[2vw] w-[52vw] text-[8px] leading-tight sm:text-[10px] lg:text-xl">
+                <h6 className="mt-[2vw] sm:w-[52vw]  w-full text-[12px] leading-tight sm:text-[112px] lg:text-xl">
                   Connect Groups are where we pray for each other, learn about
                   the Word, and put our faith into practice. These gatherings
                   happen once a week, and no matter what stage of life you are
@@ -153,17 +153,15 @@ export default function GetConnected() {
                 </h6>
               </div>
               <div className="flex w-full flex-col items-center">
-                <Divider className="mb-[6vw] mt-[5vw] w-3/5 bg-white"></Divider>
+                <Divider className="mb-[6vw] mt-[5vw] sm:w-3/5 w-full bg-white"></Divider>
               </div>
-              {/* <div className="ms-[20vw] text-white">123123</div> */}
-              <div className="ms-[20vw] flex">
-                <h3 className="w-[34vw] text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl">
-                  {/* <h3 className="w-[34vw] text-3xl font-bold transition delay-150 duration-300 hover:-translate-y-7 sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl"> */}
+              <div className="sm:ms-[20vw] sm:flex">
+                <h3 className="sm:w-[34vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl mb-3 ">
                   What is Connect Group?
                 </h3>
-                <div className="ms-[3.6vw] flex items-end">
+                <div className="sm:ms-[3.6vw] flex items-end">
                   <div>
-                    <h6 className="mb-[3.33vw] w-[22vw] text-[8px] leading-tight sm:text-[10px] lg:mb-[2vw] lg:text-lg">
+                    <h6 className="mb-[3.33vw] sm:w-[22vw] w-full text-[12px] leading-tight sm:text-[10px] lg:mb-[2vw] lg:text-lg">
                       Connect Groups is a Godly community where you will find
                       your second (spiritual) family where everyone aims to be
                       more like Jesus.
@@ -178,7 +176,7 @@ export default function GetConnected() {
                           });
                         }, 100);
                       }}
-                      className="flex w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[2.22vw] font-bold text-black sm:mt-5 sm:w-[27vw] sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
+                      className="flex sm:w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[12px] font-bold text-black sm:mt-5  sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
                     >
                       Find a ConnectGroup{" "}
                       <Image
@@ -335,7 +333,7 @@ export default function GetConnected() {
               <div className="sf-pro-display flex flex-col items-center text-[8.33vw] font-bold">
                 Need help?
               </div>
-              <div className="mt-[1.18vw] flex flex-col items-center text-[8px] sm:text-[10px] lg:text-lg xl:text-xl">
+              <div className="mt-[1.18vw] flex flex-col items-center text-[12px] sm:text-[12px] lg:text-lg xl:text-xl">
                 Don&#39;t hesitate to reach out to us, we&#39;d love to help
                 you!
               </div>
