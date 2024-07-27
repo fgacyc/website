@@ -75,21 +75,22 @@ export default function GetConnected() {
     }
 
     const api = "find_cg";
+    const data = {
+      name,
+      phone_number: phoneNumber.startsWith("0")
+          ? "+60" + phoneNumber.substring(1)
+          : phoneNumber,
+      location,
+      age: parseInt(age),
+      kids: false,
+      categories: [category],
+    }
     await fetch("/api/" + api, {
       method: "POST",
       // headers: {
       //   "Content-Type": "application/json",
       // },
-      body: JSON.stringify({
-        name,
-        phone_number: phoneNumber.startsWith("0")
-          ? "+60" + phoneNumber.substring(1)
-          : phoneNumber,
-        location,
-        age: parseInt(age),
-        kids: false,
-        categories: [category],
-      }),
+      body: JSON.stringify(data),
     })
       .then((r) => {
         setIsButtonClicked(false);
@@ -104,6 +105,27 @@ export default function GetConnected() {
       .catch((err) => {
         console.log(err);
         setIsButtonClicked(false);
+      });
+
+    const newData  = {
+      ...data,
+      category: data.categories[0],
+      type : "fgacyc_web"
+    }
+    const url = "https://uni.api.fgacyc.com/welcome_miniapp/find_cell_group"
+    // const url = "http://127.0.0.1:5000/welcome_miniapp/find_cell_group"
+    await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((r) => {
+        console.log("success");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

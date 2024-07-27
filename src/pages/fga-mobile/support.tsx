@@ -8,13 +8,13 @@ export default function Support() {
     return (
         <div className="">
             <div className={"h-[70px]"}></div>
-            <div className={"max-w-[900px] m-auto p-10"}>
+            <div className={"max-w-[900px] m-auto sm:p-10 p-4"}>
                 <div className={"flex items-center justify-between mb-10 flex-wrap-reverse"}>
                     <div className={"sm:text-4xl text-2xl sm:min-w-[400px] my-6"}>
-                        <div className={"text-[#4CF2C0] sm:text-[50px] text-4xl font-bold leading-[55px] "}>Stay connected</div>
-                        <div className={"leading-[55px]"}>with our</div>
-                        <div className={"leading-[55px]"}>church community</div>
-                        <div className={"leading-[55px]"}>through the FGA app.</div>
+                        <div className={"text-[#4CF2C0] sm:text-[50px] text-4xl font-bold leading-[55px] "}>Stay Connected</div>
+                        <div className={"leading-[55px]"}>With Our</div>
+                        <div className={"leading-[55px]"}>Church Community</div>
+                        <div className={"leading-[55px]"}>Through the FGA App.</div>
                     </div>
                     <img src="/images/mobile-app-download/mobile_app.jpg" alt="mobile image"
                          className={"md:w-1/2 w-full rounded-3xl"}/>
