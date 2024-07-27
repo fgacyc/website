@@ -51,7 +51,7 @@ export default function Baptism() {
             screenHeightClass
           }
         >
-          <div className=" leading-10 sm:pl-20 xl:pr-40">
+          <div className=" leading-10 sm:pl-20 xl:pr-40 pl-2 z-10">
             <h1 className="my-1 mb-5 text-5xl font-bold md:text-5xl lg:text-8xl xl:text-9xl">
               {" "}
               The{" "}
@@ -100,7 +100,7 @@ export default function Baptism() {
             <BaptismAccordion />
           </div>
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center m-4">
           <Button
             color="success"
             id="baptiseBtn"

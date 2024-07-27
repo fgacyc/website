@@ -42,25 +42,25 @@ export default function AboutUs() {
       </Head>
       <main className="overflow-x-hidden pt-[68px]">
         <div className="min-w-screen  h-120  relative flex w-screen items-center justify-around bg-[url('/images/giving/giving-top-bg.png')] bg-cover lg:h-screen">
-          <div className="font-bold leading-10">
-            <h1 className="text-1xl mb-5  md:text-3xl lg:text-5xl xl:text-5xl">
+          <div className="font-bold leading-10  p-4 ">
+            <h1 className="text-xl mb-5  md:text-3xl lg:text-5xl xl:text-5xl ">
               {" "}
               A generous person will prosper;{" "}
             </h1>
-            <h1 className="my-1 mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
+            <h1 className="my-1 mb-5 text-3xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               Whoever refreshes
             </h1>
-            <h1 className="my-1 mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
+            <h1 className="my-1 mb-5 text-3xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               Others will be
             </h1>
-            <h1 className="mb-5 text-4xl md:text-5xl lg:text-8xl xl:text-8xl">
+            <h1 className="mb-5 text-3xl md:text-5xl lg:text-8xl xl:text-8xl">
               {" "}
               refreshed.
             </h1>
             <br />
-            <h1 className="text-1xl mb-5 md:text-3xl lg:text-4xl xl:text-4xl ">
+            <h1 className="text-xl mb-5 md:text-3xl lg:text-4xl xl:text-4xl ">
               Proverbs 11:25{" "}
             </h1>
           </div>
@@ -70,7 +70,7 @@ export default function AboutUs() {
         <div className=" font-bold text-white">
           <div className={wayWeGiveClassStyle}>
             <div className="xl:mt-44">
-              <div className=" pl-24 xl:mx-24 xl:mt-0 2xl:mx-60 ">
+              <div className="sm:pl-24 pl-2 xl:mx-24 xl:mt-0 2xl:mx-60 ">
                 <div className=" xs:max-md:text-lg pt-20 text-5xl lg:text-9xl xl:pt-0">
                   Ways <br></br> We <br />
                   Give
