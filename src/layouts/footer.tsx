@@ -285,9 +285,14 @@ export default function Footer() {
                   Resources
                 </h2>
                 <ul className={`${text_color} font-medium`}>
+                  {/*<li className="mb-4">*/}
+                  {/*  <Link href="https://faithflix.vercel.app/" target="_blank" className="hover:underline">*/}
+                  {/*    Stream*/}
+                  {/*  </Link>*/}
+                  {/*</li>*/}
                   <li className="mb-4">
-                    <Link href="https://faithflix.vercel.app/" target="_blank" className="hover:underline">
-                      Stream
+                    <Link href="/blog" className="hover:underline">
+                      Blogs
                     </Link>
                   </li>
                   <li className="mb-4">
@@ -299,7 +304,7 @@ export default function Footer() {
               </div>
               <div className="w-fit">
                 <h2
-                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Follow us
                 </h2>
