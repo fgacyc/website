@@ -18,9 +18,9 @@ export default function MdViewer({content}: MdViewerProps) {
                     h4: ({node, ...props}) => <h4 className="text-base font-bold" {...props} />,
                     h5: ({node, ...props}) => <h5 className="text-sm font-bold" {...props} />,
                     h6: ({node, ...props}) => <h6 className="text-xs font-bold" {...props} />,
-                    p: ({node, ...props}) => <p className="text-base my-4 block" {...props} />,
+                    p: ({node, ...props}) => <p className="text-base my-4 " {...props} />,
                     ol: ({node, ...props}) => <ol className="list-decimal list-inside" {...props} />,
-                    ul: ({node, ...props}) => <ul className="list-disc list-inside" {...props} />,
+                    ul: ({node, ...props}) => <ul className="list-disc list-item" {...props} />,
                     blockquote: ({ node, ...props }) => (
                         <blockquote className="border-l-4 border-gray-500 pl-4 italic" {...props} />
                     ),
