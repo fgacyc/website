@@ -17,7 +17,7 @@ export default function MobileAppDownload() {
             <div>Church</div>
             <div>in the palm</div>
             <div>of your hands.</div>
-            <div className="mt-1 text-[12px] font-normal sm:mt-3 sm:text-[18px] sm:text-xs md:mt-4 lg:mt-[2vw]">
+            <div className="mt-1 text-[14px] font-normal sm:mt-3 sm:text-[18px]  md:mt-4 lg:mt-[2vw]">
               {/* <div className="mt-1 text-[10px] font-normal sm:text-xs lg:mt-[35px] lg:text-xl"> */}
               Get the FGA App now.
             </div>
@@ -31,14 +31,14 @@ export default function MobileAppDownload() {
                   height={490 * 2}
               ></Image>
             </div>
-            <div className="flex mt-4 justify-around ">
+            <div className="sm:hidden flex mt-4 justify-around ">
               <div className="sm:ms-[54.44vw] sm:mt-[3.2639vw] sm:w-[14.1vw] w-[150px]">
                 {/* <div className="ms-[54.44vw] mt-[5px] w-[14.1vw] sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px]"> */}
                 <Image
                     alt=""
                     src={"/images/mobile-app-download/app-store.png"}
-                    width={203 * 3}
-                    height={68 * 3}
+                    width={550 * 2}
+                    height={490 * 2}
                 ></Image>
               </div>
 
@@ -50,7 +50,18 @@ export default function MobileAppDownload() {
                     height={103 * 2}
                 ></Image>
               </div>
-
+            </div>
+            <div className="sm:flex hidden ms-[54.44vw] mt-6">
+              <img
+                  alt=""
+                  src={"/images/mobile-app-download/app-store.png"}
+                  className={"w-[150px]"}
+              ></img>
+              <img
+                  alt=""
+                  src={"/images/mobile-app-download/google-play.png"}
+                  className={"w-[150px] ml-2"}
+              ></img>
             </div>
           </div>
         </div>
