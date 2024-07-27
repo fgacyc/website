@@ -12,13 +12,13 @@ export default function MdViewer({content}: MdViewerProps) {
         <div className="bg-white min-h-screen text-black">
             <ReactMarkdown
                 components={{
-                    h1: ({node, ...props}) => <h1 className="text-2xl font-bold" {...props} />,
+                    h1: ({node, ...props}) => <h1 className="text-2xl font-bold my-4" {...props} />,
                     h2: ({node, ...props}) => <h2 className="text-xl font-bold" {...props} />,
                     h3: ({node, ...props}) => <h3 className="text-lg font-bold" {...props} />,
                     h4: ({node, ...props}) => <h4 className="text-base font-bold" {...props} />,
                     h5: ({node, ...props}) => <h5 className="text-sm font-bold" {...props} />,
                     h6: ({node, ...props}) => <h6 className="text-xs font-bold" {...props} />,
-                    p: ({node, ...props}) => <p className="text-base my-4 inline-block" {...props} />,
+                    p: ({node, ...props}) => <p className="text-base my-4 block" {...props} />,
                     ol: ({node, ...props}) => <ol className="list-decimal list-inside" {...props} />,
                     ul: ({node, ...props}) => <ul className="list-disc list-inside" {...props} />,
                     blockquote: ({ node, ...props }) => (
