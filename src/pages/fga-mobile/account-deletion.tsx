@@ -1,8 +1,21 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import Link from "next/link";
+import { useUser } from '@auth0/nextjs-auth0/client';
+
 
 interface Section1Props {
     setStep: (step: number) => void
+}
 
+interface User{
+    email: string,
+    name: string
+
+}
+
+interface AuthUser {
+    user: User,
+    isLoading: boolean
 }
 
 function Section1({setStep}: Section1Props) {
@@ -44,8 +57,9 @@ function Section1({setStep}: Section1Props) {
                 irreversible.</p>
 
             <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
-                    onClick={() => setStep(2)}
-            >Login
+                // onClick={() => setStep(2)}
+            >
+                <Link href="/api/auth/login">Login</Link>
             </button>
 
 
@@ -55,6 +69,16 @@ function Section1({setStep}: Section1Props) {
 
 function Section2() {
     const [checked, setChecked] = useState(false)
+    const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
+    const { user, isLoading } = useUser();
+    useEffect(() => {
+        const user1 = user as User
+        if(!isLoading && user){
+            setEmail(user1.email)
+            setName(user1.name)
+        }
+    }, [isLoading, user]);
 
     function onSubmit() {
         if (!checked) {
@@ -77,11 +101,15 @@ function Section2() {
             <div className={"mb-10"}>
                 <div className={"mb-2"}>
                     <div>Email Address</div>
-                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}/>
+                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}
+                            value={email}
+                    />
                 </div>
                 <div className={"mb-2"}>
                     <div>Username</div>
-                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}/>
+                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}
+                            value={name}
+                    />
                 </div>
 
                 <div className={"mb-2"}>
@@ -115,6 +143,13 @@ function Section2() {
 
 export default function AccDeletion() {
     const [step, setStep] = useState(1)
+    const { user, isLoading } = useUser();
+    useEffect(() => {
+        if(!isLoading && user){
+            console.log(user)
+            setStep(2)
+        }
+    }, [isLoading, user]);
 
     return (
         <div>
