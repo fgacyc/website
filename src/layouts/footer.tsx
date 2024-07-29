@@ -330,7 +330,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className={"text-center mt-10 relative text-white"}>
+          <div className={"text-center mt-10 relative text-white sm:text-base text-sm"}>
             <div>© {new Date().getFullYear()} <span>
               <a href="https://fga.my/" className={"text-blue-500"}>FGA</a>
               <span className={"mx-2"}>&</span>
