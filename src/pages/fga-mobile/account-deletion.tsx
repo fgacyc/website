@@ -81,6 +81,11 @@ function Section2() {
                     <textarea placeholder={"Explain why you are deleting your account"} rows={4} className={"w-full border-2 rounded  p-2"}/>
                 </div>
 
+                <div>
+                    <input type="checkbox" id="confirm" name="confirm" value="confirm"/>
+                    <label htmlFor="confirm" className={"ml-2"}>I understand that by requesting deletion, all of my account data  will be permanently deleted, except for required to comply with legal, tax, or accounting obligations which may be retained for 1 month.</label>
+                </div>
+
                 <div className={"rounded flex border-[#191D1A] border-2 h-12 bg-[#191D1A] text-white my-10"}>
                     <button className={"w-full "}
                             onClick={onSubmit}
