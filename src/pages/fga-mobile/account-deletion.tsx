@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
 import {AiOutlineQuestionCircle} from "react-icons/ai";
+const HOST = process.env.NEXT_PUBLIC_MOBILE_API_URL
 
 
 interface Section1Props {
@@ -13,7 +14,8 @@ interface Section1Props {
 
 interface User {
     email: string,
-    name: string
+    name: string,
+    sub: string
 
 }
 
@@ -64,7 +66,7 @@ function Section1({setStep}: Section1Props) {
             <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
                     onClick={
                         async () => {
-                            await router.push("/api/auth/login")
+                            void await router.push("/api/auth/login")
                         } // Redirect to login page
                     }
             >
@@ -80,6 +82,7 @@ function Section2() {
     const [checked, setChecked] = useState(false)
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
+    const [uid , setUid] = useState("")
     const {user, isLoading} = useUser();
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const router = useRouter()
@@ -89,16 +92,35 @@ function Section2() {
         if (!isLoading && user) {
             setEmail(user1.email)
             setName(user1.name)
+            setUid(user1.name)
         }
     }, [isLoading, user]);
 
-    function onSubmit() {
+    async function onSubmit() {
         if (!checked) {
             alert("Please confirm that you understand the terms")
             return
         }
 
-        alert("Submitted")
+        const url = `${HOST}/api/cms/user/${uid}`
+        try{
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            if (response.ok) {
+                alert("Your account has been deleted")
+            } else {
+                alert("Deletion failed. Please try again later.")
+            }
+        }
+        catch (e) {
+            console.error(e)
+            alert("Deletion failed. Please try again later.")
+        }
+
     }
 
     return (
