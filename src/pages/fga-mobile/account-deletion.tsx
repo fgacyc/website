@@ -53,7 +53,14 @@ function Section1({setStep}: Section1Props) {
 }
 
 function Section2() {
+    const [checked, setChecked] = useState(false)
+
     function onSubmit() {
+        if (!checked) {
+            alert("Please confirm that you understand the terms")
+            return
+        }
+
         alert("Submitted")
     }
 
@@ -82,7 +89,10 @@ function Section2() {
                 </div>
 
                 <div>
-                    <input type="checkbox" id="confirm" name="confirm" value="confirm"/>
+                    <input type="checkbox" id="confirm" name="confirm" value="confirm"
+                            checked={checked}
+                            onChange={() => setChecked(!checked)}
+                    />
                     <label htmlFor="confirm" className={"ml-2"}>I understand that by requesting deletion, all of my account data  will be permanently deleted, except for required to comply with legal, tax, or accounting obligations which may be retained for 1 month.</label>
                 </div>
 
@@ -104,7 +114,7 @@ export default function AccDeletion() {
     return (
         <div>
             <div className={"h-[70px] sf-pro-display"}></div>
-            <div className={"max-w-[600px] m-auto"}>
+            <div className={"max-w-[600px] m-auto p-4"}>
                 <div className={"flex items-center m-auto mb-4"}>
                     <img src="/FGA_Logo.png" alt="FGA Logo" className={"h-10 w-10"}/>
                     <div className={"text-2xl font-bold ml-4"}>FGA mobile</div>
