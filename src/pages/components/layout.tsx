@@ -1,8 +1,10 @@
 import Header from "~/layouts/header";
 import Footer from "~/layouts/footer";
 import Head from "next/head";
+import {type ReactNode} from "react";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-w-screen relative">
         {/* eslint-disable-next-line react/jsx-no-undef */}

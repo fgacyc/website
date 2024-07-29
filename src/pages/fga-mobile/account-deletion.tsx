@@ -1,13 +1,17 @@
 import {useEffect, useState} from "react";
 import Link from "next/link";
-import { useUser } from '@auth0/nextjs-auth0/client';
+import {useUser} from '@auth0/nextjs-auth0/client';
+import {useRouter} from "next/router";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+
+import {AiOutlineQuestionCircle} from "react-icons/ai";
 
 
 interface Section1Props {
     setStep: (step: number) => void
 }
 
-interface User{
+interface User {
     email: string,
     name: string
 
@@ -19,6 +23,7 @@ interface AuthUser {
 }
 
 function Section1({setStep}: Section1Props) {
+    const router = useRouter()
     return (
         <>
 
@@ -57,9 +62,13 @@ function Section1({setStep}: Section1Props) {
                 irreversible.</p>
 
             <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
-                // onClick={() => setStep(2)}
+                    onClick={
+                        async () => {
+                            await router.push("/api/auth/login")
+                        } // Redirect to login page
+                    }
             >
-                <Link href="/api/auth/login">Login</Link>
+                Login
             </button>
 
 
@@ -71,10 +80,13 @@ function Section2() {
     const [checked, setChecked] = useState(false)
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
-    const { user, isLoading } = useUser();
+    const {user, isLoading} = useUser();
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const router = useRouter()
+
     useEffect(() => {
         const user1 = user as User
-        if(!isLoading && user){
+        if (!isLoading && user) {
             setEmail(user1.email)
             setName(user1.name)
         }
@@ -97,18 +109,23 @@ function Section2() {
                 deletion of your account and data, except for any information we are required to retain for legal or
                 regulatory purposes.
             </div>
-
+            {/* */}
             <div className={"mb-10"}>
                 <div className={"mb-2"}>
-                    <div>Email Address</div>
+                    <div className={"flex justify-between"}>
+                        <div>Email Address</div>
+                        <AiOutlineQuestionCircle className={"h-5 w-5 cursor-pointer"} onClick={onOpen} />
+                    </div>
                     <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}
-                            value={email}
+                           value={email}
                     />
+
+
                 </div>
                 <div className={"mb-2"}>
                     <div>Username</div>
                     <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}
-                            value={name}
+                           value={name}
                     />
                 </div>
 
@@ -135,17 +152,62 @@ function Section2() {
                     </button>
                 </div>
             </div>
-            <div>
-            </div>
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement={"center"}>
+                <ModalContent className={"m-2"}>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">
+                                <div className={"text-lg"}>Email Address</div>
+
+                            </ModalHeader>
+                            <ModalBody>
+                                <div className={"text-sm"}>Please note that the email address displayed is the one you
+                                    used
+                                    to log in to your account. If this is not your email address, please logout and
+                                    login with the correct email address.
+                                </div>
+                            </ModalBody>
+                            <ModalFooter>
+                                {/*<Button color="danger" variant="light" onPress={onClose}>*/}
+                                {/*    Logout*/}
+                                {/*</Button>*/}
+                                {/*<Button color="default" onPress={onClose}>*/}
+                                {/*Cancel*/}
+                                {/*</Button>*/}
+
+                            {/*    logout button red bg and white text */}
+                                <button className={"w-[120px] h-10 bg-red-500 text-white my-3 rounded"}
+                                        onClick={
+                                            async () => {
+                                                await router.push("/api/auth/logout")
+                                            } // Redirect to login page
+                                        }
+                                >
+                                    Logout
+                                </button>
+
+                            {/*    cancel  button gray bg and white text */}
+                                <button className={" w-[120px] h-10 bg-[#191D1A] text-white my-3 rounded"}
+                                        onClick={onClose}
+                                >
+                                    Cancel
+                                </button>
+
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
+
         </>
     )
 }
 
 export default function AccDeletion() {
     const [step, setStep] = useState(1)
-    const { user, isLoading } = useUser();
+    const {user, isLoading} = useUser();
     useEffect(() => {
-        if(!isLoading && user){
+        if (!isLoading && user) {
             console.log(user)
             setStep(2)
         }
@@ -159,7 +221,7 @@ export default function AccDeletion() {
                     <img src="/FGA_Logo.png" alt="FGA Logo" className={"h-10 w-10"}/>
                     <div className={"text-2xl font-bold ml-4"}>FGA mobile</div>
                 </div>
-                <div className={"text-2xl font-bold"}>Request Account Deletion</div>
+                <div className={"text-2xl font-bold mb-2"}>Request Account Deletion</div>
                 {
                     step === 1 ? <Section1 setStep={setStep}/> : <Section2/>
                 }
