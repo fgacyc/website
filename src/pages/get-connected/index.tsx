@@ -92,7 +92,7 @@ export default function GetConnected() {
       // },
       body: JSON.stringify(data),
     })
-      .then((r) => {
+      .then(() => {
         setIsButtonClicked(false);
         setIsSubmitted(true);
         setTimeout(() => {
@@ -121,7 +121,7 @@ export default function GetConnected() {
       },
       body: JSON.stringify(newData),
     })
-      .then((r) => {
+      .then(() => {
         console.log("success");
       })
       .catch((err) => {

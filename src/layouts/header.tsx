@@ -86,9 +86,9 @@ export default function Header() {
     };
     const {logo, text_color} = getHeaderMainMenuCSS();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // const toggleMenu = () => {
+    //     setIsMenuOpen(!isMenuOpen);
+    // };
     const [menuWidth, setMenuWidth] = useState(300);
     useEffect(() => {
     //     get screen width

@@ -1,15 +1,11 @@
 import {useEffect, useState} from "react";
 import {useUser} from '@auth0/nextjs-auth0/client';
 import {useRouter} from "next/router";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
 
 import {AiOutlineQuestionCircle} from "react-icons/ai";
 const HOST = process.env.NEXT_PUBLIC_MOBILE_API_URL
 
-
-interface Section1Props {
-    setStep: (step: number) => void
-}
 
 interface User {
     email: string,
@@ -18,12 +14,7 @@ interface User {
 
 }
 
-interface AuthUser {
-    user: User,
-    isLoading: boolean
-}
-
-function Section1({setStep}: Section1Props) {
+function Section1 () {
     const router = useRouter()
     async function login() {
         void await router.push("/api/auth/login")
@@ -201,7 +192,7 @@ function Section2() {
 
                             {/*    logout button red bg and white text */}
                                 <button className={"w-[120px] h-10 bg-red-500 text-white my-3 rounded"}
-                                        onClick={logout}
+                                        onClick={void logout}
                                 >
                                     Logout
                                 </button>
@@ -243,7 +234,7 @@ export default function AccDeletion() {
                 </div>
                 <div className={"text-2xl font-bold mb-2"}>Request Account Deletion</div>
                 {
-                    step === 1 ? <Section1 setStep={setStep}/> : <Section2/>
+                    step === 1 ? <Section1 /> : <Section2/>
                 }
 
             </div>
