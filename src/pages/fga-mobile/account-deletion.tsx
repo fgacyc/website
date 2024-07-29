@@ -43,9 +43,10 @@ function Section1({setStep}: Section1Props) {
                 confirm that you want to delete your account and all associated data. This action is
                 irreversible.</p>
 
-                <button className={"w-full h-12 bg-[#191D1A] text-white my-10"}
-                        onClick={() => setStep(2)}
-                >Login</button>
+            <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
+                    onClick={() => setStep(2)}
+            >Login
+            </button>
 
 
         </>
@@ -76,7 +77,7 @@ function Section2() {
             <div className={"mb-10"}>
                 <div className={"mb-2"}>
                     <div>Email Address</div>
-                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true} />
+                    <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}/>
                 </div>
                 <div className={"mb-2"}>
                     <div>Username</div>
@@ -85,21 +86,25 @@ function Section2() {
 
                 <div className={"mb-2"}>
                     <div>Reason for Deletion(optional)</div>
-                    <textarea placeholder={"Explain why you are deleting your account"} rows={4} className={"w-full border-2 rounded  p-2"}/>
+                    <textarea placeholder={"Explain why you are deleting your account"} rows={4}
+                              className={"w-full border-2 rounded  p-2"}/>
                 </div>
 
                 <div>
                     <input type="checkbox" id="confirm" name="confirm" value="confirm"
-                            checked={checked}
-                            onChange={() => setChecked(!checked)}
+                           checked={checked}
+                           onChange={() => setChecked(!checked)}
                     />
-                    <label htmlFor="confirm" className={"ml-2"}>I understand that by requesting deletion, all of my account data  will be permanently deleted, except for required to comply with legal, tax, or accounting obligations which may be retained for 1 month.</label>
+                    <label htmlFor="confirm" className={"ml-2"}>I understand that by requesting deletion, all of my
+                        account data will be permanently deleted, except for required to comply with legal, tax, or
+                        accounting obligations which may be retained for 1 month.</label>
                 </div>
 
                 <div className={"rounded flex border-[#191D1A] border-2 h-12 bg-[#191D1A] text-white my-10"}>
                     <button className={"w-full "}
                             onClick={onSubmit}
-                    >Submit</button>
+                    >Submit
+                    </button>
                 </div>
             </div>
             <div>
@@ -121,7 +126,7 @@ export default function AccDeletion() {
                 </div>
                 <div className={"text-2xl font-bold"}>Request Account Deletion</div>
                 {
-                    step === 1 ? <Section1 setStep={setStep} /> : <Section2/>
+                    step === 1 ? <Section1 setStep={setStep}/> : <Section2/>
                 }
 
             </div>
