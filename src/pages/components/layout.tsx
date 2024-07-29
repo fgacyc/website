@@ -8,10 +8,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* eslint-disable-next-line react/jsx-no-undef */}
         <Head>
             <link rel="icon" href="/CYC_Logo.jpg"/>
-            <meta property="og:title" content="FGA Technology"/>
+            <meta property="og:title" content="FGA CYC"/>
             <meta property="og:description"
                   content="100 Strong Churches, 100,000 Disciples."/>
-            <meta property="og:image" content="https://www.fgacyc.tech/CYC_Logo.jpg"/>
+            <meta property="og:image" content="https://www.fgacyc.com/CYC_Logo.jpg"/>
             <meta property="og:url" content="https://www.fgacyc.com"/>
             <meta property="og:type" content="website"/>
         </Head>
