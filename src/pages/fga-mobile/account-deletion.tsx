@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import Link from "next/link";
 import {useUser} from '@auth0/nextjs-auth0/client';
 import {useRouter} from "next/router";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
@@ -26,6 +25,10 @@ interface AuthUser {
 
 function Section1({setStep}: Section1Props) {
     const router = useRouter()
+    async function login() {
+        void await router.push("/api/auth/login")
+    }
+
     return (
         <>
 
@@ -64,12 +67,7 @@ function Section1({setStep}: Section1Props) {
                 irreversible.</p>
 
             <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
-                    onClick={
-                        async () => {
-                            void await router.push("/api/auth/login")
-                        } // Redirect to login page
-                    }
-            >
+                    onClick={void login}>
                 Login
             </button>
 
@@ -95,6 +93,10 @@ function Section2() {
             setUid(user1.name)
         }
     }, [isLoading, user]);
+
+    async function logout() {
+        await router.push("/api/auth/logout")
+    }
 
     async function onSubmit() {
         if (!checked) {
@@ -169,7 +171,7 @@ function Section2() {
 
                 <div className={"rounded flex border-[#191D1A] border-2 h-12 bg-[#191D1A] text-white my-10"}>
                     <button className={"w-full "}
-                            onClick={onSubmit}
+                            onClick={void onSubmit}
                     >Submit
                     </button>
                 </div>
@@ -199,11 +201,7 @@ function Section2() {
 
                             {/*    logout button red bg and white text */}
                                 <button className={"w-[120px] h-10 bg-red-500 text-white my-3 rounded"}
-                                        onClick={
-                                            async () => {
-                                                await router.push("/api/auth/logout")
-                                            } // Redirect to login page
-                                        }
+                                        onClick={logout}
                                 >
                                     Logout
                                 </button>
