@@ -5,14 +5,18 @@ import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure}
 
 import {AiOutlineQuestionCircle} from "react-icons/ai";
 
-const HOST = process.env.NEXT_PUBLIC_MOBILE_API_URL
+const HOST = process.env.NEXT_PUBLIC_API_URL
 
 
 interface User {
     email: string,
     name: string,
     sub: string
+}
 
+interface DeletionResponse {
+    status: boolean,
+    message: string
 }
 
 function Section1 () {
@@ -84,7 +88,7 @@ function Section2() {
         if (!isLoading && user) {
             setEmail(user1.email)
             setName(user1.name)
-            setUid(user1.name)
+            setUid(user1.sub)
         }
     }, [isLoading, user]);
 
@@ -98,7 +102,7 @@ function Section2() {
             return
         }
 
-        const url = `${HOST}/api/cms/user/${uid}`
+        const url = `${HOST}/users/${uid}`
         try{
             const response = await fetch(url, {
                 method: 'DELETE',
@@ -106,7 +110,8 @@ function Section2() {
                     'Content-Type': 'application/json',
                 },
             })
-            if (response.ok) {
+            const data = await response.json() as DeletionResponse
+            if (data.status) {
                 alert("Your account has been deleted")
             } else {
                 alert("Deletion failed. Please try again later.")
