@@ -7,20 +7,15 @@ import auth0 from "~/lib/auth0";
 const audience = process.env.AUTH0_AUDIENCE;
 // const scope = process.env.AUTH0_SCOPE;
 
+console.log("auth0 secret", process.env.AUTH0_SECRET);
+console.log("auth0 context", auth0);
+
 function getUrls(req: NextApiRequest) {
   const host = req.headers.host;
   const protocol = process.env.VERCEL_URL ? "https" : "http";
   const redirectUri = `${protocol}://${host}/api/auth/callback`;
   const returnTo = `${protocol}://${host}/fga-mobile/account-deletion`;
   const logout = `${protocol}://${host}/`;
-
-  console.log("host", host);
-  console.log("protocol", protocol);
-  console.log("redirectUri", redirectUri);
-  console.log("returnTo", returnTo);
-  console.log("logout", logout);
-  console.log("audience", audience);
-  console.log("auth0 context", auth0);
 
   return {
     redirectUri,
