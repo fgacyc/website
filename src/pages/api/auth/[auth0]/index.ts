@@ -13,6 +13,15 @@ function getUrls(req: NextApiRequest) {
   const redirectUri = `${protocol}://${host}/api/auth/callback`;
   const returnTo = `${protocol}://${host}/fga-mobile/account-deletion`;
   const logout = `${protocol}://${host}/`;
+
+  console.log("host", host);
+  console.log("protocol", protocol);
+  console.log("redirectUri", redirectUri);
+  console.log("returnTo", returnTo);
+  console.log("logout", logout);
+  console.log("audience", audience);
+  console.log("auth0 context", auth0);
+
   return {
     redirectUri,
     returnTo,
