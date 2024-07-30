@@ -6,13 +6,13 @@ import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <UserProvider>
-      <NextUIProvider>
+    <NextUIProvider>
+      <UserProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </NextUIProvider>
-    </UserProvider>
+      </UserProvider>
+    </NextUIProvider>
   );
 };
 
