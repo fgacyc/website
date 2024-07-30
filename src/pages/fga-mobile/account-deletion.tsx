@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import {useUser} from '@auth0/nextjs-auth0/client';
 import {useRouter} from "next/router";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
+import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure} from "@nextui-org/react";
 
 import {AiOutlineQuestionCircle} from "react-icons/ai";
+
 const HOST = process.env.NEXT_PUBLIC_MOBILE_API_URL
 
 
@@ -58,7 +59,9 @@ function Section1 () {
                 irreversible.</p>
 
             <button className={"w-full h-12 bg-[#191D1A] text-white my-10 rounded"}
-                    onClick={void login}>
+                    onClick={()=>{
+                        void login()
+                    }}>
                 Login
             </button>
 
@@ -137,18 +140,14 @@ function Section2() {
 
 
                 </div>
-                <div className={"mb-2"}>
+                <div className={"mb-8"}>
                     <div>Username</div>
                     <input placeholder={""} className={"w-full border-2 rounded h-12 p-2"} disabled={true}
                            value={name}
                     />
                 </div>
 
-                <div className={"mb-2"}>
-                    <div>Reason for Deletion(optional)</div>
-                    <textarea placeholder={"Explain why you are deleting your account"} rows={4}
-                              className={"w-full border-2 rounded  p-2"}/>
-                </div>
+
 
                 <div>
                     <input type="checkbox" id="confirm" name="confirm" value="confirm"
@@ -162,7 +161,9 @@ function Section2() {
 
                 <div className={"rounded flex border-[#191D1A] border-2 h-12 bg-[#191D1A] text-white my-10"}>
                     <button className={"w-full "}
-                            onClick={void onSubmit}
+                            onClick={()=>{
+                                void onSubmit()
+                            }}
                     >Submit
                     </button>
                 </div>
@@ -192,7 +193,9 @@ function Section2() {
 
                             {/*    logout button red bg and white text */}
                                 <button className={"w-[120px] h-10 bg-red-500 text-white my-3 rounded"}
-                                        onClick={void logout}
+                                        onClick={() => {
+                                            void logout();
+                                        }}
                                 >
                                     Logout
                                 </button>
