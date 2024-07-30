@@ -295,7 +295,7 @@ export default function Footer() {
                   {/*</li>*/}
                   <li className="mb-4">
                     <Link href="/blog" className="hover:underline">
-                      Blogs
+                      Blog
                     </Link>
                   </li>
                   <li className="mb-4">
