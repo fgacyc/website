@@ -31,7 +31,7 @@ export default function MobileAppDownload() {
                   height={490 * 2}
               ></Image>
             </div>
-            <div className="sm:hidden flex mt-4 justify-around ">
+            <div className="sm:hidden flex mt-4 justify-around ml-4">
               <div className="sm:ms-[54.44vw] sm:mt-[3.2639vw] sm:w-[14.1vw] w-[150px]">
                 {/* <div className="ms-[54.44vw] mt-[5px] w-[14.1vw] sm:mt-2 md:mt-3 xl:mt-4 2xl:mt-[21px]"> */}
                 <Image
@@ -42,7 +42,7 @@ export default function MobileAppDownload() {
                 ></Image>
               </div>
 
-              <div className="sm:mb-[5.139vw] sm:mt-[2.1vw] sm:w-[18.125vw] w-[160px]">
+              <div className="sm:mb-[5.139vw] sm:mt-[2.1vw] sm:w-[18.125vw] w-[165px]">
                 <Image
                     alt=""
                     src={"/images/mobile-app-download/google-play.png"}
