@@ -1,11 +1,14 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import {useState} from "react";
 
 export default function Footer() {
   const router = useRouter();
+  const isWhiteBg = router.pathname === "/wonderkids" || router.pathname === "/get-involved";
+
 
   const getFooterCSS = () => {
-    if (router.pathname === '/wonderkids' || router.pathname === '/get-involved') {
+    if (isWhiteBg) {
       return {
         logo: (
           <svg
@@ -330,7 +333,9 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className={"text-center mt-10 relative text-white sm:text-base text-sm"}>
+          <div className={`text-center mt-10 relative sm:text-base text-sm
+            ${isWhiteBg ? "text-black" : "text-white"}
+          `}>
             <div>© {new Date().getFullYear()} <span>
               <a href="https://fga.my/" className={"text-blue-500"}>FGA</a>
               <span className={"mx-2"}>&</span>
