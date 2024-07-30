@@ -7,9 +7,6 @@ import auth0 from "~/lib/auth0";
 const audience = process.env.AUTH0_AUDIENCE;
 // const scope = process.env.AUTH0_SCOPE;
 
-console.log("auth0 secret", process.env.AUTH0_SECRET);
-console.log("auth0 context", auth0);
-
 function getUrls(req: NextApiRequest) {
   const host = req.headers.host;
   const protocol = process.env.VERCEL_URL ? "https" : "http";
