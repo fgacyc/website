@@ -14,7 +14,7 @@ export default function BaptismAccordion() {
   const closeAccordionClass =
     " p-3 lg:p-6 lg:text-2xl text-xl text-black bg-[#979797] rounded-lg font-bold";
 
-  const accordionTextClass = "py-5 px-10 lg:text-lg text-sm	font-semibold ";
+  const accordionTextClass = "py-5 px-10 lg:text-lg text-sm	font-semibold";
   const openAndCloseIcon1 = (isOpen: boolean | undefined) => {
     if (isOpen) {
       setBgcolor1(openAccordionClass);
