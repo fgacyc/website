@@ -18,7 +18,7 @@ export default function BaptismAccordion() {
   const openAndCloseIcon1 = (isOpen: boolean | undefined) => {
     if (isOpen) {
       setBgcolor1(openAccordionClass);
-      return <ChevronRightIcon className="text-bold  size-6  text-black" />;
+      return <ChevronRightIcon className="text-bold  size-6 text-black" />;
     }
     setBgcolor1(closeAccordionClass);
     return <ChevronDownIcon className="text-bold  size-6  text-black" />;
