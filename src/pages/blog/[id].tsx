@@ -1,10 +1,36 @@
-import { type GetStaticPaths, type GetStaticProps } from "next";
-import { type Blog, getBlog, getBlogs } from "~/helpers";
+/* eslint-disable @next/next/no-img-element */
+// import { type GetStaticPaths, type GetStaticProps } from "next";
+import { type Blog, getBlog } from "~/helpers";
 import MdViewer from "~/components/md-viewer";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { CgSpinner } from "react-icons/cg";
 
-const BlogPage = ({ blogData }: { blogData: Blog }) => {
+const BlogPage = () => {
+  const router = useRouter();
+  const id = router.query.id as string;
+  const [blogData, setBlogData] = useState<Blog>({
+    content: "",
+    id: 0,
+    image_url: "",
+    title: "",
+  });
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    void (async () => {
+      await getBlog(id).then((blog) => {
+        setBlogData(blog);
+        setLoading(false);
+      });
+    })();
+  }, [id]);
+
   const { title, content, image_url } = blogData;
-  return (
+  return loading ? (
+    <div className="flex h-full min-h-screen w-full flex-grow flex-col items-center justify-center">
+      <CgSpinner color="#00EDC2" size={45} className="animate-spin" />
+    </div>
+  ) : (
     <div>
       <div className={"h-16"}></div>
       <img src={image_url} alt={title} className={"w-full"} />
@@ -22,26 +48,3 @@ const BlogPage = ({ blogData }: { blogData: Blog }) => {
   );
 };
 export default BlogPage;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  // 这里你需要返回所有的博客 id
-  const blogs = await getBlogs(); // 假设你有一个方法来获取所有博客
-  const paths = blogs.map((blog) => ({
-    params: { id: blog.id.toString() },
-  }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { id } = params!;
-  if (typeof id !== "string") {
-    throw new Error("Invalid id");
-  }
-  const blogData: Blog = await getBlog(id);
-  return {
-    props: {
-      blogData,
-    },
-    revalidate: 60,
-  };
-};
