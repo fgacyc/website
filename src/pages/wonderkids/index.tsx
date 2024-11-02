@@ -68,7 +68,7 @@ export default function Wonderkids() {
       css: `bg-[#E0AF32] text-white`,
     },
     {
-      name: "Wow Life",
+      name: "Warrior",
       ages: "10 - 12",
       saturday: "5PM - 6.45PM",
       sunday: "2.30PM - 4.30PM",
