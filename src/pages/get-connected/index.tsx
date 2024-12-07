@@ -19,7 +19,6 @@ export default function GetConnected() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isChristian, setIsChristian] = useState("Yes");
-  const [maritalStatus, setMaritalStatus] = useState("Single");
 
   const [location, setLocation] = useState(cgLocations[0]!.value);
   const [age, setAge] = useState("");
@@ -43,6 +42,11 @@ export default function GetConnected() {
 
   const yesNoOptions = ["Yes", "No"];
   const maritalStatusOption = ["Single", "In a Relationship", "Married", "Divorced", "Widowed"];
+  const occupationOption = ["Student", "Working Adult / Self-Employed", "Unemployed / Retired", "Others"];
+  const [occupation, setOccupation] = useState(occupationOption[0]);
+  const [occupationOthers, setOccupationOthers] = useState("");
+
+  const [maritalStatus, setMaritalStatus] = useState(maritalStatusOption[0]);
 
   const handleValidation = (): boolean => {
     if (name.trim() === "" || nameError) {
@@ -367,6 +371,43 @@ export default function GetConnected() {
                   </RadioGroup>
 
                 </div>
+
+
+                <div
+                  className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
+                >
+                  <RadioGroup
+                    value={occupation}
+                    onValueChange={setOccupation}
+                  >
+                  <span className="text-xl"> Occupation </span>
+
+                  {
+                    occupationOption.map((option,index) => (
+                        <Radio key={index} value={option}>{option}</Radio>
+                    ))
+                  }
+                  
+                  </RadioGroup>
+
+
+                </div>
+                  {occupation == "Others"  ? (
+                      <FormInput
+                        className="w-4/5"
+                        label=""
+                        type="text"
+                        name="occupation"
+                        id="occupation"  
+                        placeholder=""
+                        value={occupationOthers}
+                        onInputChange={(value) => setOccupationOthers(value)}
+                        error={ageError}
+                        setError={setAgeError}
+                      />
+                    ) : null
+                  }
+
 
                   <ArrowButton
                     text="Submit your request"
