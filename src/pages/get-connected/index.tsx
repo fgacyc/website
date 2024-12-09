@@ -9,6 +9,7 @@ import FormCheckList from "~/components/Form/FormCheckList";
 import FormCombobox from "~/components/Form/FormCombobox";
 import FormInput from "~/components/Form/FormInput";
 import { cgLocations } from "~/data/locations";
+import {RadioGroup, Radio} from "@nextui-org/react";
 
 export default function GetConnected() {
   const [isNeedHelp, setIsNeedHelp] = useState(false);
@@ -17,6 +18,8 @@ export default function GetConnected() {
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isChristian, setIsChristian] = useState("Yes");
+
   const [location, setLocation] = useState(cgLocations[0]!.value);
   const [age, setAge] = useState("");
   const [category, setCategory] = useState("");
@@ -35,6 +38,26 @@ export default function GetConnected() {
     { value: "family", label: "Family" },
     { value: "entrepreneur", label: "Entrepreneur" },
   ];
+
+
+  const yesNoOptions = ["Yes", "No"];
+  const maritalStatusOption = ["Single", "In a Relationship", "Married", "Divorced", "Widowed"];
+  const occupationOption = ["Student", "Working Adult / Self-Employed", "Unemployed / Retired", "Others"];
+
+  const knowAboutUsOption = [
+    { value: "Friends / Family / Colleagues", label: "Friends / Family / Colleagues" },
+    { value: "Social Media Ads - Facebook / Instagram / Xiaohongshu", label: "Social Media Ads - Facebook / Instagram / Xiaohongshu" },
+    { value: "Others", label: "Others" },
+  
+  ]
+  const [occupation, setOccupation] = useState(occupationOption[0]);
+  const [occupationOthers, setOccupationOthers] = useState("");
+  const [remark, setRemark] = useState("");
+  const [remarkError, setRemarkError] = useState(false);
+
+  const [howToKnow, setHowToKnow] = useState(knowAboutUsOption[0]!.value);
+
+  const [maritalStatus, setMaritalStatus] = useState(maritalStatusOption[0]);
 
   const handleValidation = (): boolean => {
     if (name.trim() === "" || nameError) {
@@ -249,7 +272,7 @@ export default function GetConnected() {
                   <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
                   <FormInput
                     className="w-4/5"
-                    label="Your name"
+                    label="Name"
                     type="text"
                     name="name"
                     id="name"
@@ -265,7 +288,7 @@ export default function GetConnected() {
 
                   <FormInput
                     className="w-4/5"
-                    label="Phone Number"
+                    label="Contact Number"
                     type="tel"
                     name="phone_number"
                     id="phone_number"
@@ -296,7 +319,7 @@ export default function GetConnected() {
                   /> */}
 
                   <FormCombobox
-                    label="Service Location"
+                    label="Preferred Location"
                     name="service_location"
                     id="service_location"
                     options={cgLocations}
@@ -318,23 +341,113 @@ export default function GetConnected() {
                     setError={setAgeError}
                   />
 
-                  <div className="w-4/5">
-                    <fieldset>
-                      <legend className="sf-pro-display text-xl font-semibold leading-6 text-gray-900">
-                        Categories
-                      </legend>
-                      {categories_list.map((elem, index) => (
-                        <FormCheckList
-                          key={index}
-                          id={elem.value}
-                          label={elem.label}
-                          name={elem.value}
-                          value={category}
-                          onInputSelect={(value) => setCategory(value)}
-                        />
-                      ))}
-                    </fieldset>
-                  </div>
+                <div
+                  className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
+                >
+                  <RadioGroup
+                    name = "isChristian"
+                    id="isChristian"
+                    value={isChristian}
+                    onValueChange={setIsChristian}
+                  >
+                  <span className="text-xl"> Are you a Christian? </span>
+
+                  {
+                    yesNoOptions.map((option,index) => (
+                      <Radio key={index} value={option}>{option}</Radio>
+
+                    ))
+                  }
+                  {/* <Radio value="Yes">Yes</Radio>
+                  <Radio value="No">No</Radio> */}
+                  
+                  </RadioGroup>
+
+                </div>
+
+
+                <div
+                  className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
+                >
+                  <RadioGroup
+                    name="maritalStatus"
+                    id="maritalStatus"
+                    value={maritalStatus}
+                    onValueChange={setMaritalStatus}
+                  >
+                  <span className="text-xl"> Marital Status </span>
+
+                  {
+                    maritalStatusOption.map((option,index) => (
+                        <Radio key={index} value={option}>{option}</Radio>
+                    ))
+                  }
+                  
+                  </RadioGroup>
+
+                </div>
+
+
+                <div
+                  className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
+                >
+                  <RadioGroup
+                    name="occupation"
+                    id="occupation"
+                    value={occupation}
+                    onValueChange={setOccupation}
+                  >
+                  <span className="text-xl"> Occupation </span>
+
+                  {
+                    occupationOption.map((option,index) => (
+                        <Radio key={index} value={option}>{option}</Radio>
+                    ))
+                  }
+                  
+                  </RadioGroup>
+
+
+                </div>
+                  {occupation == "Others"  ? (
+                      <FormInput
+                        className="w-4/5"
+                        label=""
+                        type="text"
+                        name="occupation"
+                        id="occupation"  
+                        placeholder=""
+                        value={occupationOthers}
+                        onInputChange={(value) => setOccupationOthers(value)}
+                        error={ageError}
+                        setError={setAgeError}
+                      />
+                    ) : null
+                  }
+
+                  <FormCombobox
+                    label="How do you know about us"
+                    name="howToKnow"
+                    id="howToKnow"
+                    options={knowAboutUsOption}
+                    className="w-4/5"
+                    selectedValue={howToKnow}
+                    onValueChange={(value) => setHowToKnow(value)}
+                  />
+
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Remarks"
+                    type="text"
+                    name="remark"
+                    id="remark"
+                    placeholder="Remarks"
+                    value={remark}
+                    onInputChange={(value) => setRemark(value)}
+                    error={remarkError}
+                    setError={setRemarkError}
+                  />
 
                   <ArrowButton
                     text="Submit your request"
