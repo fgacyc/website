@@ -43,8 +43,19 @@ export default function GetConnected() {
   const yesNoOptions = ["Yes", "No"];
   const maritalStatusOption = ["Single", "In a Relationship", "Married", "Divorced", "Widowed"];
   const occupationOption = ["Student", "Working Adult / Self-Employed", "Unemployed / Retired", "Others"];
+
+  const knowAboutUsOption = [
+    { value: "Friends / Family / Colleagues", label: "Friends / Family / Colleagues" },
+    { value: "Social Media Ads - Facebook / Instagram / Xiaohongshu", label: "Social Media Ads - Facebook / Instagram / Xiaohongshu" },
+    { value: "Others", label: "Others" },
+  
+  ]
   const [occupation, setOccupation] = useState(occupationOption[0]);
   const [occupationOthers, setOccupationOthers] = useState("");
+  const [remark, setRemark] = useState("");
+  const [remarkError, setRemarkError] = useState(false);
+
+  const [howToKnow, setHowToKnow] = useState(knowAboutUsOption[0]!.value);
 
   const [maritalStatus, setMaritalStatus] = useState(maritalStatusOption[0]);
 
@@ -334,6 +345,8 @@ export default function GetConnected() {
                   className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
                 >
                   <RadioGroup
+                    name = "isChristian"
+                    id="isChristian"
                     value={isChristian}
                     onValueChange={setIsChristian}
                   >
@@ -357,6 +370,8 @@ export default function GetConnected() {
                   className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
                 >
                   <RadioGroup
+                    name="maritalStatus"
+                    id="maritalStatus"
                     value={maritalStatus}
                     onValueChange={setMaritalStatus}
                   >
@@ -377,6 +392,8 @@ export default function GetConnected() {
                   className="sf-pro-display mx-auto mb-5 flex w-4/5 mb-[13px] font-semibold"
                 >
                   <RadioGroup
+                    name="occupation"
+                    id="occupation"
                     value={occupation}
                     onValueChange={setOccupation}
                   >
@@ -408,6 +425,29 @@ export default function GetConnected() {
                     ) : null
                   }
 
+                  <FormCombobox
+                    label="How do you know about us"
+                    name="howToKnow"
+                    id="howToKnow"
+                    options={knowAboutUsOption}
+                    className="w-4/5"
+                    selectedValue={howToKnow}
+                    onValueChange={(value) => setHowToKnow(value)}
+                  />
+
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Remarks"
+                    type="text"
+                    name="remark"
+                    id="remark"
+                    placeholder="Remarks"
+                    value={remark}
+                    onInputChange={(value) => setRemark(value)}
+                    error={remarkError}
+                    setError={setRemarkError}
+                  />
 
                   <ArrowButton
                     text="Submit your request"
