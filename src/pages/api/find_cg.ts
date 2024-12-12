@@ -4,15 +4,18 @@ import type { NextApiHandler } from "next";
 interface FindCGData {
   name: string;
   phone_number: string;
-  location: string;
+  service_location: string;
   age: number;
-  categories: string[];
-  kids: boolean;
+  maritalStatus:string;
+  isChristian:boolean;
+  occupation:string;
+  howToKnow:string;
+  remark:string;
 }
 
 const handler: NextApiHandler = async (req, res) => {
   if ((req.method = "POST")) {
-    const { name, phone_number, location, age, categories, kids } = JSON.parse(
+    const { name, phone_number, service_location, age, isChristian, maritalStatus, occupation, howToKnow,remark} = JSON.parse(
       req.body as string
     ) as FindCGData;
     try {
@@ -42,10 +45,13 @@ const handler: NextApiHandler = async (req, res) => {
               `=EPOCHTODATE(${now}, 2)`,
               name,
               phone_number,
-              location,
+              service_location,
               age,
-              categories.join(", "),
-              kids ? "Yes" : "No",
+              isChristian,
+              maritalStatus,
+              occupation.split("Others")[1],
+              howToKnow,
+              remark
             ],
           ],
         },

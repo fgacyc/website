@@ -9,6 +9,7 @@ import FormCheckList from "~/components/Form/FormCheckList";
 import FormCombobox from "~/components/Form/FormCombobox";
 import FormInput from "~/components/Form/FormInput";
 import { cgLocations } from "~/data/locations";
+import { RadioGroup, Radio } from "@nextui-org/react";
 
 export default function GetConnected() {
   const [isNeedHelp, setIsNeedHelp] = useState(false);
@@ -17,6 +18,8 @@ export default function GetConnected() {
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isChristian, setIsChristian] = useState("Yes");
+
   const [location, setLocation] = useState(cgLocations[0]!.value);
   const [age, setAge] = useState("");
   const [category, setCategory] = useState("");
@@ -35,6 +38,41 @@ export default function GetConnected() {
     { value: "family", label: "Family" },
     { value: "entrepreneur", label: "Entrepreneur" },
   ];
+
+  const yesNoOptions = ["Yes", "No"];
+  const maritalStatusOption = [
+    "Single",
+    "In a Relationship",
+    "Married",
+    "Divorced",
+    "Widowed",
+  ];
+  const occupationOption = [
+    "Student",
+    "Working Adult / Self-Employed",
+    "Unemployed / Retired",
+    "Others",
+  ];
+
+  const knowAboutUsOption = [
+    {
+      value: "Friends / Family / Colleagues",
+      label: "Friends / Family / Colleagues",
+    },
+    {
+      value: "Social Media Ads - Facebook / Instagram / Xiaohongshu",
+      label: "Social Media Ads - Facebook / Instagram / Xiaohongshu",
+    },
+    { value: "Others", label: "Others" },
+  ];
+  const [occupation, setOccupation] = useState(occupationOption[0]);
+  const [occupationOthers, setOccupationOthers] = useState("");
+  const [remark, setRemark] = useState("");
+  const [remarkError, setRemarkError] = useState(false);
+
+  const [howToKnow, setHowToKnow] = useState(knowAboutUsOption[0]!.value);
+
+  const [maritalStatus, setMaritalStatus] = useState(maritalStatusOption[0]);
 
   const handleValidation = (): boolean => {
     if (name.trim() === "" || nameError) {
@@ -78,13 +116,13 @@ export default function GetConnected() {
     const data = {
       name,
       phone_number: phoneNumber.startsWith("0")
-          ? "+60" + phoneNumber.substring(1)
-          : phoneNumber,
+        ? "+60" + phoneNumber.substring(1)
+        : phoneNumber,
       location,
       age: parseInt(age),
       kids: false,
       categories: [category],
-    }
+    };
     await fetch("/api/" + api, {
       method: "POST",
       // headers: {
@@ -107,12 +145,12 @@ export default function GetConnected() {
         setIsButtonClicked(false);
       });
 
-    const newData  = {
+    const newData = {
       ...data,
       category: data.categories[0],
-      type : "fgacyc_web"
-    }
-    const url = "https://uni.api.fgacyc.com/welcome_miniapp/find_cell_group"
+      type: "fgacyc_web",
+    };
+    const url = "https://uni.api.fgacyc.com/welcome_miniapp/find_cell_group";
     // const url = "http://127.0.0.1:5000/welcome_miniapp/find_cell_group"
     await fetch(url, {
       method: "POST",
@@ -149,11 +187,11 @@ export default function GetConnected() {
               className="w-[90%] rounded-lg md:w-[80%]"
               // className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
             ></Image>
-            <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[6.5vw] sm:block flex items-center ">
+            <div className="absolute inset-0 ms-[15vw] mt-[3vw] flex h-fit items-center sm:mt-[6.5vw] sm:block ">
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
                 Get Connected
               </h3>
-              <div className="w-[35vw] text-[12px] sm:text-[14px] md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg sm:leading-5 xl:text-xl">
+              <div className="w-[35vw] text-[12px] sm:text-[14px] sm:leading-5 md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg xl:text-xl">
                 We believe life transformation happens through real and
                 authentic relationships, and no one should be alone in their
                 journey pursuing God.
@@ -161,13 +199,13 @@ export default function GetConnected() {
             </div>
           </div>
           <div className="mb-[16.45vw] mt-[13vw]">
-            <div className={"sm:m-auto m-4"}>
+            <div className={"m-4 sm:m-auto"}>
               <div className="sm:ms-[20vw] ">
                 {/* <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7"> */}
-                <h3 className="sm:w-[55vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl ">
+                <h3 className="w-full text-3xl font-bold sm:w-[55vw] sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl ">
                   How to Get Connect?
                 </h3>
-                <h6 className="mt-[2vw] sm:w-[52vw]  w-full text-[12px] leading-tight sm:text-[112px] lg:text-xl">
+                <h6 className="mt-[2vw] w-full  text-[12px] leading-tight sm:w-[52vw] sm:text-[112px] lg:text-xl">
                   Connect Groups are where we pray for each other, learn about
                   the Word, and put our faith into practice. These gatherings
                   happen once a week, and no matter what stage of life you are
@@ -175,15 +213,15 @@ export default function GetConnected() {
                 </h6>
               </div>
               <div className="flex w-full flex-col items-center">
-                <Divider className="mb-[6vw] mt-[5vw] sm:w-3/5 w-full bg-white"></Divider>
+                <Divider className="mb-[6vw] mt-[5vw] w-full bg-white sm:w-3/5"></Divider>
               </div>
               <div className="sm:ms-[20vw] sm:flex">
-                <h3 className="sm:w-[34vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl mb-3 ">
+                <h3 className="mb-3 w-full text-3xl font-bold sm:w-[34vw] sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl ">
                   What is Connect Group?
                 </h3>
-                <div className="sm:ms-[3.6vw] flex items-end">
+                <div className="flex items-end sm:ms-[3.6vw]">
                   <div>
-                    <h6 className="mb-[3.33vw] sm:w-[22vw] w-full text-[12px] leading-tight sm:text-[10px] lg:mb-[2vw] lg:text-lg">
+                    <h6 className="mb-[3.33vw] w-full text-[12px] leading-tight sm:w-[22vw] sm:text-[10px] lg:mb-[2vw] lg:text-lg">
                       Connect Groups is a Godly community where you will find
                       your second (spiritual) family where everyone aims to be
                       more like Jesus.
@@ -198,7 +236,7 @@ export default function GetConnected() {
                           });
                         }, 100);
                       }}
-                      className="flex sm:w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[12px] font-bold text-black sm:mt-5  sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
+                      className="flex items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[12px] font-bold text-black sm:mt-5 sm:w-[30vw]  sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
                     >
                       Find a ConnectGroup{" "}
                       <Image
@@ -249,7 +287,7 @@ export default function GetConnected() {
                   <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
                   <FormInput
                     className="w-4/5"
-                    label="Your name"
+                    label="Name"
                     type="text"
                     name="name"
                     id="name"
@@ -265,7 +303,7 @@ export default function GetConnected() {
 
                   <FormInput
                     className="w-4/5"
-                    label="Phone Number"
+                    label="Contact Number"
                     type="tel"
                     name="phone_number"
                     id="phone_number"
@@ -296,7 +334,7 @@ export default function GetConnected() {
                   /> */}
 
                   <FormCombobox
-                    label="Service Location"
+                    label="Preferred Location"
                     name="service_location"
                     id="service_location"
                     options={cgLocations}
@@ -318,23 +356,95 @@ export default function GetConnected() {
                     setError={setAgeError}
                   />
 
-                  <div className="w-4/5">
-                    <fieldset>
-                      <legend className="sf-pro-display text-xl font-semibold leading-6 text-gray-900">
-                        Categories
-                      </legend>
-                      {categories_list.map((elem, index) => (
-                        <FormCheckList
-                          key={index}
-                          id={elem.value}
-                          label={elem.label}
-                          name={elem.value}
-                          value={category}
-                          onInputSelect={(value) => setCategory(value)}
-                        />
+                  <div className="sf-pro-display mx-auto mb-5 mb-[13px] flex w-4/5 font-semibold">
+                    <RadioGroup
+                      name="isChristian"
+                      id="isChristian"
+                      value={isChristian}
+                      onValueChange={setIsChristian}
+                    >
+                      <span className="text-xl"> Are you a Christian? </span>
+
+                      {yesNoOptions.map((option, index) => (
+                        <Radio key={index} value={option}>
+                          {option}
+                        </Radio>
                       ))}
-                    </fieldset>
+                      {/* <Radio value="Yes">Yes</Radio>
+                  <Radio value="No">No</Radio> */}
+                    </RadioGroup>
                   </div>
+
+                  <div className="sf-pro-display mx-auto mb-5 mb-[13px] flex w-4/5 font-semibold">
+                    <RadioGroup
+                      name="maritalStatus"
+                      id="maritalStatus"
+                      value={maritalStatus}
+                      onValueChange={setMaritalStatus}
+                    >
+                      <span className="text-xl"> Marital Status </span>
+
+                      {maritalStatusOption.map((option, index) => (
+                        <Radio key={index} value={option}>
+                          {option}
+                        </Radio>
+                      ))}
+                    </RadioGroup>
+                  </div>
+
+                  <div className="sf-pro-display mx-auto mb-5 mb-[13px] flex w-4/5 font-semibold">
+                    <RadioGroup
+                      name="occupation"
+                      id="occupation"
+                      value={occupation}
+                      onValueChange={setOccupation}
+                    >
+                      <span className="text-xl"> Occupation </span>
+
+                      {occupationOption.map((option, index) => (
+                        <Radio key={index} value={option}>
+                          {option}
+                        </Radio>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                  {occupation == "Others" ? (
+                    <FormInput
+                      className="w-4/5"
+                      label=""
+                      type="text"
+                      name="occupation"
+                      id="occupation"
+                      placeholder=""
+                      value={occupationOthers}
+                      onInputChange={(value) => setOccupationOthers(value)}
+                      error={ageError}
+                      setError={setAgeError}
+                    />
+                  ) : null}
+
+                  <FormCombobox
+                    label="How do you know about us"
+                    name="howToKnow"
+                    id="howToKnow"
+                    options={knowAboutUsOption}
+                    className="w-4/5"
+                    selectedValue={howToKnow}
+                    onValueChange={(value) => setHowToKnow(value)}
+                  />
+
+                  <FormInput
+                    className="w-4/5"
+                    label="Remarks"
+                    type="text"
+                    name="remark"
+                    id="remark"
+                    placeholder="Remarks"
+                    value={remark}
+                    onInputChange={(value) => setRemark(value)}
+                    error={remarkError}
+                    setError={setRemarkError}
+                  />
 
                   <ArrowButton
                     text="Submit your request"
