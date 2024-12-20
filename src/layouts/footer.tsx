@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {useState} from "react";
+import { useState } from "react";
 
 export default function Footer() {
   const router = useRouter();
-  const isWhiteBg = router.pathname === "/wonderkids" || router.pathname === "/get-involved";
-
+  const isWhiteBg =
+    router.pathname === "/wonderkids" || router.pathname === "/get-involved";
 
   const getFooterCSS = () => {
     if (isWhiteBg) {
@@ -229,17 +229,19 @@ export default function Footer() {
               </Link>
               <p className={`mb-6 ${text_color}`}>
                 Wisma FGA, Taman Goodwood,
-                <br/>
+                <br />
                 58200 Kuala Lumpur, Wilayah Persekutuan
-                <br/>
+                <br />
                 Kuala Lumpur.
               </p>
-              <p className={`${text_color}`}><Link href="tel:+600379814755">03-7981 4755</Link></p>
+              <p className={`${text_color}`}>
+                <Link href="tel:+600379814755">03-7981 4755</Link>
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div className="md:ml-6">
                 <h2
-                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Explore
                 </h2>
@@ -283,7 +285,7 @@ export default function Footer() {
               </div>
               <div className="">
                 <h2
-                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Resources
                 </h2>
@@ -299,7 +301,10 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="mb-4">
-                    <Link href="/mobile-app-download" className="hover:underline">
+                    <Link
+                      href="/mobile-app-download"
+                      className="hover:underline"
+                    >
                       Mobile App
                     </Link>
                   </li>
@@ -307,7 +312,7 @@ export default function Footer() {
               </div>
               <div className="w-fit">
                 <h2
-                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Follow us
                 </h2>
@@ -316,16 +321,16 @@ export default function Footer() {
                     {fb_icon}
                   </Link>
                   <Link
-                      href="https://instagram.com/fgacyc"
-                      target="_blank"
-                      className="ms-5"
+                    href="https://instagram.com/fgacyc"
+                    target="_blank"
+                    className="ms-5"
                   >
                     {ig_icon}
                   </Link>
                   <Link
-                      href="https://www.youtube.com/user/fgacyc"
-                      target="_blank"
-                      className="ms-5"
+                    href="https://www.youtube.com/user/fgacyc"
+                    target="_blank"
+                    className="ms-5"
                   >
                     {youtube_icon}
                   </Link>
@@ -333,14 +338,23 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className={`text-center mt-10 relative sm:text-base text-sm
+          <div
+            className={`relative mt-10 text-center text-sm sm:text-base
             ${isWhiteBg ? "text-black" : "text-white"}
-          `}>
-            <div>© {new Date().getFullYear()} <span>
-              <a href="https://fga.my/" className={"text-blue-500"}>FGA</a>
-              <span className={"mx-2"}>&</span>
-                    <a href="https://www.fgacyc.tech/" className={"text-blue-500"}>FGA TECH</a>
-                </span> All Rights Reserved.
+          `}
+          >
+            <div>
+              © {new Date().getFullYear()}{" "}
+              <span>
+                <a href="https://fga.my/" className={"text-blue-500"}>
+                  FGA
+                </a>
+                <span className={"mx-2"}>&</span>
+                <a href="https://www.fgacyc.tech/" className={"text-blue-500"}>
+                  FGA TECH
+                </a>
+              </span>{" "}
+              All Rights Reserved.
             </div>
           </div>
         </div>

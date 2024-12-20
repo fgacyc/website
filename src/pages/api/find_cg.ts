@@ -6,18 +6,26 @@ interface FindCGData {
   phone_number: string;
   service_location: string;
   age: number;
-  maritalStatus:string;
-  isChristian:boolean;
-  occupation:string;
-  howToKnow:string;
-  remark:string;
+  maritalStatus: string;
+  isChristian: boolean;
+  occupation: string;
+  howToKnow: string;
+  remark: string;
 }
 
 const handler: NextApiHandler = async (req, res) => {
   if ((req.method = "POST")) {
-    const { name, phone_number, service_location, age, isChristian, maritalStatus, occupation, howToKnow,remark} = JSON.parse(
-      req.body as string
-    ) as FindCGData;
+    const {
+      name,
+      phone_number,
+      service_location,
+      age,
+      isChristian,
+      maritalStatus,
+      occupation,
+      howToKnow,
+      remark,
+    } = JSON.parse(req.body as string) as FindCGData;
     try {
       const auth = new google.auth.GoogleAuth({
         credentials: {
@@ -51,7 +59,7 @@ const handler: NextApiHandler = async (req, res) => {
               maritalStatus,
               occupation.split("Others")[1],
               howToKnow,
-              remark
+              remark,
             ],
           ],
         },
