@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { IoMdRefresh } from "react-icons/io";
 
 interface CompletedFormProps {
   bg_color: string; // bg-black || bg-[#000000]
@@ -10,6 +11,7 @@ interface CompletedFormProps {
   text: string;
   desc: string;
   onClick?: () => void;
+  onReset: () => void;
 }
 
 const CompletedForm = ({
@@ -21,6 +23,7 @@ const CompletedForm = ({
   text,
   desc,
   onClick,
+  onReset,
 }: CompletedFormProps) => {
   return (
     <div
@@ -46,13 +49,18 @@ const CompletedForm = ({
       <div className="sf-pro-display mx-5 mb-14 max-w-[293px] text-xl text-[#747474]">
         {desc}
       </div>
-      <Link
-        href={"/"}
-        onClick={onClick}
-        className={`sf-pro-display-black rounded-[35px] ${button_color} px-20 py-6 text-[25px] text-white`}
-      >
-        {button_text}
-      </Link>
+      <div className="flex w-full flex-row items-center justify-center gap-3">
+        <Link
+          href={"/"}
+          onClick={onClick}
+          className={`sf-pro-display-black rounded-[35px] ${button_color} px-20 py-6 text-[25px] text-white`}
+        >
+          {button_text}
+        </Link>
+        <button onClick={onReset} className="rounded-full bg-black p-3">
+          <IoMdRefresh size={50} className="text-white" />
+        </button>
+      </div>
     </div>
   );
 };

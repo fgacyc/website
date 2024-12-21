@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 import type { NextApiHandler } from "next";
 
-interface FindCGData {
+export interface FindCGData {
   name: string;
   phone_number: string;
   service_location: string;
@@ -11,6 +11,8 @@ interface FindCGData {
   occupation: string;
   howToKnow: string;
   remark: string;
+  otherOccupation: string;
+  otherHowToKnow: string;
 }
 
 const handler: NextApiHandler = async (req, res) => {
@@ -23,7 +25,9 @@ const handler: NextApiHandler = async (req, res) => {
       isChristian,
       maritalStatus,
       occupation,
+      otherOccupation,
       howToKnow,
+      otherHowToKnow,
       remark,
     } = JSON.parse(req.body as string) as FindCGData;
     try {
@@ -52,13 +56,13 @@ const handler: NextApiHandler = async (req, res) => {
             [
               `=EPOCHTODATE(${now}, 2)`,
               name,
-              phone_number,
+              `'${phone_number}`,
               service_location,
               age,
               isChristian,
               maritalStatus,
-              occupation.split("Others")[1],
-              howToKnow,
+              occupation === "Others" ? otherOccupation : occupation,
+              howToKnow === "Others" ? otherHowToKnow : howToKnow,
               remark,
             ],
           ],
