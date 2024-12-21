@@ -1,10 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 const TheBlessingPage = () => {
-    useEffect(()=> {
-        window.open("https://theblessing.fgacyc.com/","_self")
-    },[])
-    return <></>
-}
+  useEffect(() => {
+    window.open("https://theblessing.fgacyc.com/", "_self");
+  }, []);
+  return <></>;
+};
 
-export default TheBlessingPage
+export default TheBlessingPage;

@@ -68,12 +68,13 @@ export default function BaptismAccordion() {
             }
           >
             <p className={accordionTextClass}>
-              Water baptism doesn&apos;t save you or forgive your sins, but it shows
-              that you&apos;ve already turned back to God. It&apos;s a public way for
-              believers to show their faith. Baptism symbolizes being united
-              with Christ: going under the water represents dying with Him,
-              staying under the water represents being buried with Him, and
-              coming out of the water represents living a new life with Him.
+              Water baptism doesn&apos;t save you or forgive your sins, but it
+              shows that you&apos;ve already turned back to God. It&apos;s a
+              public way for believers to show their faith. Baptism symbolizes
+              being united with Christ: going under the water represents dying
+              with Him, staying under the water represents being buried with
+              Him, and coming out of the water represents living a new life with
+              Him.
             </p>{" "}
           </AccordionItem>
 
@@ -114,8 +115,8 @@ export default function BaptismAccordion() {
             }
           >
             <p className={accordionTextClass}>
-              After you get baptized, it symbolizes a new life in Christ. Here&apos;s
-              what happens:
+              After you get baptized, it symbolizes a new life in Christ.
+              Here&apos;s what happens:
               <br />
               <br />
               <b> 1. Died with Christ (going into the water):</b> This
@@ -127,15 +128,16 @@ export default function BaptismAccordion() {
               <br />
               <b>3. Raised with Christ (coming out of the water): </b> This
               means you start a new life, just like Jesus was raised from the
-              dead. You&apos;re now a new person with new behaviors that honor God.
+              dead. You&apos;re now a new person with new behaviors that honor
+              God.
               <br />
               <br />
               Additionally, turning back to God involves:
               <br />
               <br />
               <b>-Confessing your sins:</b>
-              Admit the wrong things you&apos;ve done, like lying or jealousy (1 John
-              1:9).
+              Admit the wrong things you&apos;ve done, like lying or jealousy (1
+              John 1:9).
               <br />
               <b>-Breaking ties with idols:</b> Stop worshiping anything or
               anyone other than God.
@@ -145,8 +147,8 @@ export default function BaptismAccordion() {
               from church leaders to grow in your faith.
               <br />
               <br />
-              By doing these things, you&apos;ll live a life that reflects your new
-              faith in Christ.
+              By doing these things, you&apos;ll live a life that reflects your
+              new faith in Christ.
             </p>
           </AccordionItem>
         </Accordion>

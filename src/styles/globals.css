@@ -186,8 +186,6 @@
   display: none !important;
 }
 
-
-
 /* burger menu */
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -260,4 +258,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
-
+#custom-radio > div > label > span {
+  /* background-color: black; */
+  /* outline: 2px solid transparent;
+  outline-offset: 2px; */
+  border: 2px solid black;
+}

@@ -11,7 +11,7 @@ interface MobileForm {
 
 const handler: NextApiHandler = async (req, res) => {
   if ((req.method = "POST")) {
-    const { name, phone_number, location, comment,type } = JSON.parse(
+    const { name, phone_number, location, comment, type } = JSON.parse(
       req.body as string
     ) as MobileForm;
     try {
@@ -42,8 +42,8 @@ const handler: NextApiHandler = async (req, res) => {
               name,
               phone_number,
               location,
-                comment,
-                type,
+              comment,
+              type,
             ],
           ],
         },

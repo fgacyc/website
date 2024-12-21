@@ -27,31 +27,33 @@ const FormCombobox = ({
       <label htmlFor={name} className="mb-[13px] font-semibold">
         {label}
       </label>
-      <select
-        name={name}
-        id={id}
-        value={selectedValue}
-        onChange={(e) => onValueChange(e.target.value)}
-        className="w-full appearance-none  rounded-[5px] border
+      <div className="flex w-full flex-row items-center">
+        <select
+          name={name}
+          id={id}
+          value={selectedValue}
+          onChange={(e) => onValueChange(e.target.value)}
+          className="w-full appearance-none  rounded-[5px] border
          bg-white px-[18px] py-[13px] text-xl focus:outline-none"
-      >
-        {options.map((option, index) => (
-          <option
-            key={index}
-            value={option.value}
-            className="bg-[#9E9E9E] text-white"
-          >
-            {option.label}
-          </option>
-        ))}
-      </select>
-      <Image
-        src={"/icons/arrow_down.svg"}
-        alt="Arrow Down Icon"
-        width={13}
-        height={7}
-        className="absolute bottom-[20px] right-[18px]"
-      />
+        >
+          {options.map((option, index) => (
+            <option
+              key={index}
+              value={option.value}
+              className="bg-[#9E9E9E] text-white"
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <Image
+          src={"/icons/arrow_down.svg"}
+          alt="Arrow Down Icon"
+          width={20}
+          height={20}
+          className="absolute right-[20px]"
+        />
+      </div>
     </div>
   );
 };

@@ -41,7 +41,9 @@ export const locations = [
   // },
 ];
 
-export const cgLocations = [
+export type ValueLabelPair<T> = { value: T; label: string };
+
+export const cgLocations: ValueLabelPair<string>[] = [
   { value: "kuchai", label: "Kuchai" },
   { value: "serdang", label: "Serdang" },
   { value: "kepong", label: "Kepong" },

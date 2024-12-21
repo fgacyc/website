@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React, { type ChangeEvent } from "react";
 
 interface FormTextAreaProps {
   label: string;
@@ -26,8 +26,10 @@ const FormTextArea = ({
   setError,
   error,
   desc,
-}: FormTextAreaProps ) => {
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+}: FormTextAreaProps) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const inputValue = e.target.value;
     onInputChange(inputValue);
     if (setError && validate) {
@@ -49,7 +51,6 @@ const FormTextArea = ({
         id={id}
         placeholder={placeholder}
         value={value}
-
         onChange={handleInputChange} // Use the custom event handler
         className={`w-full rounded-[5px] border text-xl ${
           error ? "border-red-500" : "border-[#B2B2B2]"

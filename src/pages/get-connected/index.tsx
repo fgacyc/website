@@ -2,138 +2,62 @@ import { Divider } from "@nextui-org/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import ArrowButton from "~/components/ArrowButton";
+import { type FunctionComponent, useState } from "react";
 import CompletedForm from "~/components/Form/CompletedForm";
-import FormCheckList from "~/components/Form/FormCheckList";
-import FormCombobox from "~/components/Form/FormCombobox";
-import FormInput from "~/components/Form/FormInput";
-import { cgLocations } from "~/data/locations";
+import { cgLocations, type ValueLabelPair } from "~/data/locations";
+import { RadioGroup, Radio } from "@nextui-org/react";
+import { Formik, Form as FormikForm, useFormikContext } from "formik";
+import * as Yup from "yup";
+import { type FindCGData } from "../api/find_cg";
+
+type FormikFormType = FindCGData & {
+  otherOccupation: string;
+  otherHowToKnow: string;
+};
 
 export default function GetConnected() {
   const [isNeedHelp, setIsNeedHelp] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
-
-  const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [location, setLocation] = useState(cgLocations[0]!.value);
-  const [age, setAge] = useState("");
-  const [category, setCategory] = useState("");
-  const [nameError, setNameError] = useState(false);
-  const [phoneNumberError, setPhoneNumberError] = useState(false);
-  // const [locationError, setLocationError] = useState(false);
-  const [ageError, setAgeError] = useState(false);
 
   const router = useRouter();
 
-  const categories_list = [
-    { value: "secondary", label: "Secondary Students" },
-    { value: "tertiary", label: "College / University" },
-    { value: "young_adult", label: "Young Adults" },
-    { value: "married", label: "Married" },
-    { value: "family", label: "Family" },
-    { value: "entrepreneur", label: "Entrepreneur" },
+  const yesNoOptions: ValueLabelPair<boolean>[] = [
+    { label: "Yes", value: true },
+    { label: "No", value: false },
+  ];
+  const maritalStatusOption = [
+    { label: "Single", value: "Single" },
+    { label: "In a Relationship", value: "In a Relationship" },
+    { label: "Married", value: "Married" },
+    { label: "Divorced", value: "Divorced" },
+    { label: "Widowed", value: "Widowed" },
+  ];
+  const occupationOption = [
+    { label: "Student", value: "Student" },
+    {
+      label: "Working Adult / Self-Employed",
+      value: "Working Adult / Self-Employed",
+    },
+    { label: "Unemployed / Retired", value: "Single" },
+    { label: "Others", value: "Others" },
   ];
 
-  const handleValidation = (): boolean => {
-    if (name.trim() === "" || nameError) {
-      alert("Full Name cannot be empty");
-      return false;
-    }
-
-    if (phoneNumber.trim() === "" || phoneNumberError) {
-      alert("Phone number cannot be empty");
-      return false;
-    }
-
-    if (age.trim() === "" || ageError) {
-      alert("Age cannot be empty");
-      return false;
-    }
-
-    if (parseInt(age) < 0) {
-      alert("Age cannot be smaller than zero");
-      return false;
-    }
-
-    if (category.trim() === "") {
-      alert("Please select a category");
-      return false;
-    }
-
-    return true;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsButtonClicked(true);
-
-    if (!handleValidation()) {
-      setIsButtonClicked(false);
-      return;
-    }
-
-    const api = "find_cg";
-    const data = {
-      name,
-      phone_number: phoneNumber.startsWith("0")
-          ? "+60" + phoneNumber.substring(1)
-          : phoneNumber,
-      location,
-      age: parseInt(age),
-      kids: false,
-      categories: [category],
-    }
-    await fetch("/api/" + api, {
-      method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      body: JSON.stringify(data),
-    })
-      .then(() => {
-        setIsButtonClicked(false);
-        setIsSubmitted(true);
-        setTimeout(() => {
-          document.getElementById("completedRef")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }, 100);
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsButtonClicked(false);
-      });
-
-    const newData  = {
-      ...data,
-      category: data.categories[0],
-      type : "fgacyc_web"
-    }
-    const url = "https://uni.api.fgacyc.com/welcome_miniapp/find_cell_group"
-    // const url = "http://127.0.0.1:5000/welcome_miniapp/find_cell_group"
-    await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newData),
-    })
-      .then(() => {
-        console.log("success");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const knowAboutUsOption = [
+    {
+      value: "Friends / Family / Colleagues",
+      label: "Friends / Family / Colleagues",
+    },
+    {
+      value: "Social Media Ads - Facebook / Instagram / Xiaohongshu",
+      label: "Social Media Ads - Facebook / Instagram / Xiaohongshu",
+    },
+    { value: "Others", label: "Others" },
+  ];
 
   return (
     <>
       <Head>
         <title>Get Connected | FGA CYC</title>
-        <meta name="description" content="Generated by create-t3-app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="overflow-x-hidden bg-[#1d2129]">
@@ -149,11 +73,11 @@ export default function GetConnected() {
               className="w-[90%] rounded-lg md:w-[80%]"
               // className="w-[90%] rounded-lg transition delay-150 duration-300 hover:-translate-y-7 md:w-[80%]"
             ></Image>
-            <div className="absolute inset-0 ms-[15vw] mt-[3vw] h-fit sm:mt-[6.5vw] sm:block flex items-center ">
+            <div className="absolute inset-0 ms-[15vw] mt-[3vw] flex h-fit items-center sm:mt-[6.5vw] sm:block ">
               <h3 className="w-[44vw] text-3xl font-bold sm:text-5xl md:w-[340px] md:text-6xl lg:w-[44vw] lg:text-8xl xl:text-9xl">
                 Get Connected
               </h3>
-              <div className="w-[35vw] text-[12px] sm:text-[14px] md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg sm:leading-5 xl:text-xl">
+              <div className="w-[35vw] text-[12px] sm:text-[14px] sm:leading-5 md:mt-1 md:w-[192px] lg:w-[25vw] lg:text-lg xl:text-xl">
                 We believe life transformation happens through real and
                 authentic relationships, and no one should be alone in their
                 journey pursuing God.
@@ -161,13 +85,13 @@ export default function GetConnected() {
             </div>
           </div>
           <div className="mb-[16.45vw] mt-[13vw]">
-            <div className={"sm:m-auto m-4"}>
+            <div className={"m-4 sm:m-auto"}>
               <div className="sm:ms-[20vw] ">
                 {/* <div className="ms-[20vw] transition delay-150 duration-300 hover:-translate-y-7"> */}
-                <h3 className="sm:w-[55vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl ">
+                <h3 className="w-full text-3xl font-bold sm:w-[55vw] sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl ">
                   How to Get Connect?
                 </h3>
-                <h6 className="mt-[2vw] sm:w-[52vw]  w-full text-[12px] leading-tight sm:text-[112px] lg:text-xl">
+                <h6 className="mt-[2vw] w-full  text-[12px] leading-tight sm:w-[52vw] sm:text-[112px] lg:text-xl">
                   Connect Groups are where we pray for each other, learn about
                   the Word, and put our faith into practice. These gatherings
                   happen once a week, and no matter what stage of life you are
@@ -175,15 +99,15 @@ export default function GetConnected() {
                 </h6>
               </div>
               <div className="flex w-full flex-col items-center">
-                <Divider className="mb-[6vw] mt-[5vw] sm:w-3/5 w-full bg-white"></Divider>
+                <Divider className="mb-[6vw] mt-[5vw] w-full bg-white sm:w-3/5"></Divider>
               </div>
               <div className="sm:ms-[20vw] sm:flex">
-                <h3 className="sm:w-[34vw] w-full text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl mb-3 ">
+                <h3 className="mb-3 w-full text-3xl font-bold sm:w-[34vw] sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-9xl ">
                   What is Connect Group?
                 </h3>
-                <div className="sm:ms-[3.6vw] flex items-end">
+                <div className="flex items-end sm:ms-[3.6vw]">
                   <div>
-                    <h6 className="mb-[3.33vw] sm:w-[22vw] w-full text-[12px] leading-tight sm:text-[10px] lg:mb-[2vw] lg:text-lg">
+                    <h6 className="mb-[3.33vw] w-full text-[12px] leading-tight sm:w-[22vw] sm:text-[10px] lg:mb-[2vw] lg:text-lg">
                       Connect Groups is a Godly community where you will find
                       your second (spiritual) family where everyone aims to be
                       more like Jesus.
@@ -192,13 +116,13 @@ export default function GetConnected() {
                       onClick={() => {
                         setIsNeedHelp(true);
                         setTimeout(() => {
-                          document.getElementById("formRef")?.scrollIntoView({
+                          document.getElementById("formChunk")?.scrollIntoView({
                             behavior: "smooth",
                             block: "start",
                           });
                         }, 100);
                       }}
-                      className="flex sm:w-[30vw] items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[12px] font-bold text-black sm:mt-5  sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
+                      className="flex items-center justify-between rounded-[35px] bg-[#00EDC2] px-2 py-1 text-[12px] font-bold text-black sm:mt-5 sm:w-[30vw]  sm:text-[10px] md:mt-0 lg:px-4 lg:py-2 lg:text-xl xl:px-10 xl:py-3.5"
                     >
                       Find a ConnectGroup{" "}
                       <Image
@@ -215,7 +139,10 @@ export default function GetConnected() {
             </div>
           </div>
           {isNeedHelp ? (
-            <div className="bg-white bg-[url('/images/get-connected/get-connected-bg.png')] bg-cover pb-[5.83vw] pt-[5.83vw]">
+            <div
+              id="formChunk"
+              className="bg-white bg-[url('/images/get-connected/get-connected-bg.png')] bg-cover pb-[5.83vw] pt-[5.83vw]"
+            >
               {isSubmitted ? (
                 <div
                   className="flex h-screen flex-col items-center justify-center"
@@ -229,122 +156,195 @@ export default function GetConnected() {
                     button_text="Keep Exploring"
                     text="COMPLETED!"
                     desc="We have received your request."
-                    // onClick={() => setIsSubmitted(false)}
+                    onReset={() => setIsSubmitted(false)}
                     onClick={() => {
                       void router.push("");
                     }}
                   />
                 </div>
               ) : (
-                <form
-                  onSubmit={(e) => void handleSubmit(e)}
-                  className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-                >
-                  <div
-                    id="formRef"
-                    className="sf-pro-display-black mb-[76px] w-4/5 text-left text-[33px]"
+                <>
+                  <Formik<FormikFormType>
+                    initialValues={{
+                      age: 0,
+                      howToKnow: knowAboutUsOption[0]?.value ?? "",
+                      isChristian: false,
+                      maritalStatus: maritalStatusOption[0]?.value ?? "",
+                      name: "",
+                      occupation: occupationOption[0]?.value ?? "",
+                      otherOccupation: "",
+                      phone_number: "",
+                      remark: "",
+                      service_location: cgLocations[0]?.value ?? "",
+                      otherHowToKnow: "",
+                    }}
+                    onSubmit={async (values, action) => {
+                      action.setSubmitting(true);
+                      console.log(values);
+                      try {
+                        const upload = await fetch("api/find_cg", {
+                          method: "POST",
+                          body: JSON.stringify(values),
+                        });
+
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                        const res = await upload.json();
+
+                        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                        if (res.message === "success") {
+                          action.resetForm();
+                          setIsSubmitted(true);
+                          setTimeout(() => {
+                            document
+                              .getElementById("completedRef")
+                              ?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                              });
+                          }, 100);
+                        }
+                      } catch (e) {
+                        console.error(e);
+                      } finally {
+                        action.setSubmitting(false);
+                      }
+                    }}
+                    validationSchema={Yup.object().shape({
+                      name: Yup.string().trim().required("Required."),
+                      phone_number: Yup.string()
+                        .trim()
+                        .required("Required.")
+                        .min(10, "Minimum 10 characters.")
+                        .max(12, "Maximum 12 characters including +60.")
+                        .matches(
+                          /^(\+?6?01)[0|1|2|3|4|6|7|8|9]-*[0-9]{7,8}$/,
+                          "Invalid Format."
+                        ),
+                      age: Yup.number()
+                        .required("Required.")
+                        .min(1, "Age must not be smaller than 1.")
+                        .max(99, "Age must not be larger than 99."),
+                      otherOccupation: Yup.string().when("occupation", {
+                        is: "Others",
+                        then: (schema) => schema.required("Required."),
+                      }),
+                      otherHowToKnow: Yup.string().when("howToKnow", {
+                        is: "Others",
+                        then: (schema) => schema.required("Required."),
+                      }),
+                    })}
                   >
-                    Find a Connect Group
-                  </div>
-                  <div className="sf-pro-display mx-auto flex w-4/5 flex-col text-xl"></div>
-                  <FormInput
-                    className="w-4/5"
-                    label="Your name"
-                    type="text"
-                    name="name"
-                    id="name"
-                    validate={(inputValue: string) =>
-                      /^[A-Za-z\s]+$/.test(inputValue)
-                    }
-                    placeholder="Full name"
-                    value={name}
-                    onInputChange={(value) => setName(value)}
-                    error={nameError}
-                    setError={setNameError}
-                  />
-
-                  <FormInput
-                    className="w-4/5"
-                    label="Phone Number"
-                    type="tel"
-                    name="phone_number"
-                    id="phone_number"
-                    validate={(inputValue: string) =>
-                      /^\+?[0-9]{1,3}-?[0-9]{3,4}-?[0-9]{4,}$/i.test(inputValue)
-                    }
-                    placeholder="+60xx-xxx-xxxx"
-                    value={phoneNumber}
-                    onInputChange={(value) => setPhoneNumber(value)}
-                    error={phoneNumberError}
-                    setError={setPhoneNumberError}
-                  />
-
-                  {/* <FormInput
-                    className="w-4/5"
-                    label="Locations"
-                    type="text"
-                    name="location"
-                    id="location"
-                    validate={(inputValue: string) =>
-                      /^[A-Za-z\s]+$/.test(inputValue)
-                    }
-                    placeholder="Your location"
-                    value={location}
-                    onInputChange={(value) => setLocation(value)}
-                    error={locationError}
-                    setError={setLocationError}
-                  /> */}
-
-                  <FormCombobox
-                    label="Service Location"
-                    name="service_location"
-                    id="service_location"
-                    options={cgLocations}
-                    className="w-4/5"
-                    selectedValue={location}
-                    onValueChange={(value) => setLocation(value)}
-                  />
-
-                  <FormInput
-                    className="w-4/5"
-                    label="Age"
-                    type="number"
-                    name="age"
-                    id="age"
-                    placeholder="Your age"
-                    value={age}
-                    onInputChange={(value) => setAge(value)}
-                    error={ageError}
-                    setError={setAgeError}
-                  />
-
-                  <div className="w-4/5">
-                    <fieldset>
-                      <legend className="sf-pro-display text-xl font-semibold leading-6 text-gray-900">
-                        Categories
-                      </legend>
-                      {categories_list.map((elem, index) => (
-                        <FormCheckList
-                          key={index}
-                          id={elem.value}
-                          label={elem.label}
-                          name={elem.value}
-                          value={category}
-                          onInputSelect={(value) => setCategory(value)}
-                        />
-                      ))}
-                    </fieldset>
-                  </div>
-
-                  <ArrowButton
-                    text="Submit your request"
-                    text_color="text-white"
-                    arrow_color="white"
-                    bg_color="bg-black"
-                    isSubmitted={isButtonClicked}
-                    className="mt-[111px] w-4/5 sm:w-auto"
-                  />
-                </form>
+                    {({ values, isSubmitting }) => (
+                      <FormikForm className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px] bg-[#00edc2] py-[63px] text-black drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
+                        <div className="sf-pro-display-black mb-[30px] w-4/5 text-left text-[33px]">
+                          Find a Connect Group
+                        </div>
+                        <div className="flex w-full flex-col gap-2">
+                          <FormikInput
+                            formKey="name"
+                            label="Name"
+                            required
+                            placeholder="Full Name"
+                          />
+                          <FormikInput
+                            formKey="phone_number"
+                            label="Contact Number"
+                            required
+                            placeholder="+60xx-xxx-xxxx"
+                          />
+                          <FormikSelect
+                            options={cgLocations}
+                            label="Preferred Location"
+                            formKey="service_location"
+                            required
+                          />
+                          <FormikInput
+                            type="number"
+                            label="Age"
+                            formKey="age"
+                            placeholder="Your Age"
+                          />
+                          <FormikRadio
+                            formKey="isChristian"
+                            label="Are you a christian?"
+                            options={yesNoOptions}
+                          />
+                          <FormikRadio
+                            formKey="maritalStatus"
+                            label="Marital Status"
+                            options={maritalStatusOption}
+                          />
+                          <FormikRadio
+                            formKey="occupation"
+                            label="Occupation"
+                            options={occupationOption}
+                          />
+                          {values.occupation === "Others" ? (
+                            <FormikInput
+                              formKey="otherOccupation"
+                              label="Please specify."
+                            />
+                          ) : null}
+                          <FormikRadio
+                            label="How do you know about us?"
+                            formKey="howToKnow"
+                            options={knowAboutUsOption}
+                          />
+                          {values.howToKnow === "Others" ? (
+                            <FormikInput
+                              formKey="otherHowToKnow"
+                              label="Please specify."
+                            />
+                          ) : null}
+                          <FormikInput
+                            label="Remarks"
+                            formKey="remark"
+                            placeholder="Remarks"
+                          />
+                          <div className="mx-auto max-w-[450px] px-7">
+                            <button
+                              disabled={isSubmitting}
+                              type="submit"
+                              className="flex w-full items-center justify-between rounded-full bg-black px-12 py-5 text-lg font-bold text-white sm:text-2xl"
+                            >
+                              Submit your request{" "}
+                              {isSubmitting ? (
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  height="24"
+                                  fill="#fff"
+                                  viewBox="0 0 24 24"
+                                  className="ml-3 animate-spin"
+                                >
+                                  <path
+                                    d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+                                    opacity=".25"
+                                  />
+                                  <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z" />
+                                </svg>
+                              ) : (
+                                <svg
+                                  width="44"
+                                  height="24"
+                                  viewBox="0 0 44 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="ml-3 h-8 w-8"
+                                >
+                                  <path
+                                    d="M43.0607 13.0607C43.6464 12.4749 43.6464 11.5251 43.0607 10.9393L33.5147 1.3934C32.9289 0.807611 31.9792 0.807611 31.3934 1.3934C30.8076 1.97919 30.8076 2.92893 31.3934 3.51472L39.8787 12L31.3934 20.4853C30.8076 21.0711 30.8076 22.0208 31.3934 22.6066C31.9792 23.1924 32.9289 23.1924 33.5147 22.6066L43.0607 13.0607ZM0 13.5H42V10.5H0V13.5Z"
+                                    fill="white"
+                                  />
+                                </svg>
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                      </FormikForm>
+                    )}
+                  </Formik>
+                </>
               )}
             </div>
           ) : (
@@ -383,3 +383,132 @@ export default function GetConnected() {
     </>
   );
 }
+
+interface FormikInputProps {
+  formKey: keyof FormikFormType;
+  label: string;
+  required?: boolean;
+  placeholder?: string;
+  type?: HTMLInputElement["type"];
+}
+
+const FormikInput: FunctionComponent<FormikInputProps> = ({
+  formKey,
+  label,
+  required,
+  placeholder,
+  type,
+}) => {
+  const ctx = useFormikContext<FormikFormType>();
+  return (
+    <div className={`sf-pro-display mx-auto mb-5 flex w-4/5 flex-col text-xl`}>
+      <div className="flex w-full flex-col gap-1">
+        <label htmlFor={formKey} className="mb-[13px] font-bold">
+          {label}
+          {required && <span className="ml-1 text-[#FF0000]">*</span>}
+        </label>
+        <input
+          min={type === "number" ? 1 : undefined}
+          max={type === "number" ? 99 : undefined}
+          type={type}
+          placeholder={placeholder}
+          className={`w-full rounded-[5px] border-2 text-xl ${
+            ctx.errors[formKey] ? "border-red-500" : "border-[#b2b2b2"
+          } bg-white px-[18px] py-[13px] placeholder-[#B2B2B2] focus:outline-none`}
+          name={formKey}
+          value={String(ctx.values[formKey])}
+          onChange={(e) => {
+            void ctx.setFieldValue(formKey, e.target.value);
+          }}
+        />
+      </div>
+      {ctx.errors[formKey] ? (
+        <span className="w-full pr-1 text-end text-sm italic text-red-500">
+          {ctx.errors[formKey]}
+        </span>
+      ) : (
+        <div className="h-[20px]" />
+      )}
+    </div>
+  );
+};
+
+const FormikSelect: FunctionComponent<
+  Omit<FormikInputProps, "placeholder" | "type"> & {
+    options: ValueLabelPair<string>[];
+  }
+> = ({ formKey, label, required, options }) => {
+  const ctx = useFormikContext<FormikFormType>();
+  return (
+    <div className={`sf-pro-display mx-auto mb-5 flex w-4/5 flex-col text-xl`}>
+      <div className="flex w-full flex-col gap-1">
+        <label htmlFor={formKey} className="mb-[13px] font-semibold">
+          {label}
+          {required && <span className="ml-1 text-[#FF0000]">*</span>}
+        </label>
+        <div className="relative flex w-full flex-row items-center">
+          <select
+            className={`w-full appearance-none rounded-[5px] border-2 text-xl ${
+              ctx.errors[formKey] ? "border-red-500" : "border-[#b2b2b2"
+            } bg-white px-[18px] py-[13px] placeholder-[#B2B2B2] focus:outline-none`}
+            name={formKey}
+            value={String(ctx.values[formKey])}
+            onChange={(e) => {
+              void ctx.setFieldValue(formKey, e.target.value);
+            }}
+          >
+            {options.map((opt) => (
+              <option key={opt.label} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+          <Image
+            src={"/icons/arrow_down.svg"}
+            alt="Arrow Down Icon"
+            width={20}
+            height={20}
+            className="absolute right-[20px]"
+          />
+        </div>
+      </div>
+      {ctx.errors[formKey] ? (
+        <span className="w-full pr-1 text-end text-sm italic text-red-500">
+          {ctx.errors[formKey]}
+        </span>
+      ) : (
+        <div className="h-[20px]" />
+      )}
+    </div>
+  );
+};
+
+const FormikRadio: FunctionComponent<
+  FormikInputProps & { options: ValueLabelPair<boolean | string>[] }
+> = ({ formKey, label, required, options }) => {
+  const ctx = useFormikContext<FormikFormType>();
+  return (
+    <div className={`sf-pro-display mx-auto mb-5 flex w-4/5 flex-col text-xl`}>
+      <div className="flex w-full flex-col gap-1">
+        <label htmlFor={formKey} className="mb-[13px] font-semibold">
+          {label}
+          {required && <span className="ml-1 text-[#FF0000]">*</span>}
+        </label>
+        <RadioGroup
+          id="custom-radio"
+          color="secondary"
+          value={String(ctx.values[formKey])}
+          onChange={(e) =>
+            void ctx.setFieldValue(formKey, e.currentTarget.value)
+          }
+        >
+          {options.map((opt) => (
+            <Radio key={opt.label} value={String(opt.value)}>
+              {opt.label}
+            </Radio>
+          ))}
+        </RadioGroup>
+      </div>
+    </div>
+  );
+};
