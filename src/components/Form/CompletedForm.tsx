@@ -11,7 +11,7 @@ interface CompletedFormProps {
   text: string;
   desc: string;
   onClick?: () => void;
-  onReset: () => void;
+  onReset?: () => void;
 }
 
 const CompletedForm = ({
@@ -57,9 +57,11 @@ const CompletedForm = ({
         >
           {button_text}
         </Link>
-        <button onClick={onReset} className="rounded-full bg-black p-3">
-          <IoMdRefresh size={50} className="text-white" />
-        </button>
+        {onReset ? (
+          <button onClick={onReset} className="rounded-full bg-black p-3">
+            <IoMdRefresh size={50} className="text-white" />
+          </button>
+        ) : null}
       </div>
     </div>
   );
