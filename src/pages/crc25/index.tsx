@@ -4,7 +4,7 @@ import Loading from "~/pages/components/loading";
 export default function CRC25() {
   // redirect to crc25.fgacyc.com
     useEffect(() => {
-        window.location.href = "https://crc25.fgacyc.com";
+        window.location.href = "https://crc.fgacyc.com";
     }, []);
     return <Loading page_title={"CRC25"} />;
 }
