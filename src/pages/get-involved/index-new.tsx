@@ -39,7 +39,7 @@ const TeamDescCard = ({
 			<h6 className="microsoft-yahei mt-7">{desc1} </h6>
 			<h6 className="microsoft-yahei mt-10">{desc2}</h6>
 			<div className="mt-5 items-center justify-between md:flex">
-				<Link href={`#ministry_${index}`} onClick={onLearnMoreClick}>
+				<Link href={`#ministry_${index}`} >
 					<div className="flex w-[140px] items-center justify-between border-b-[3px] border-black pb-1.5 font-semibold">
 						Learn More{" "}
 						<Image
