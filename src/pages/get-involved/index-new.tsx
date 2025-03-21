@@ -30,7 +30,6 @@ const TeamDescCard = ({
 	desc1,
 	desc2,
 	// setIsFormVisible,
-	onLearnMoreClick,
 }: TeamDescCardProps) => {
 	return (
 		<div className="sf-pro-display mb-32 lg:w-1/2">
