@@ -1,3 +1,5 @@
+import {divider} from "@nextui-org/theme";
+
 export interface Ministry {
     img: string;
     cnMinistryTitle: string;
@@ -507,3 +509,19 @@ export const ministriesData: Team[] = [
         }
     }
 ]
+
+export default function MinistriesData() {
+    return (
+        <div className={"flex flex-col items-center justify-center"}>
+            <h1 className={"text-3xl font-bold text-white"}>Ministries Data</h1>
+            <div className={"flex flex-col items-center justify-center"}>
+                {ministriesData.map((team) => (
+                    <div key={team.team_name_en} className={"flex flex-col items-center justify-center"}>
+                        <h2 className={"text-2xl font-bold text-white"}>{team.team_name_en}</h2>
+                        <p className={"text-lg font-bold text-white"}>{team.description_short}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}
