@@ -108,10 +108,10 @@ const RecruitForm = ({isFormVisible, setIsFormVisible}: FormProps) => {
             ) : (
                 <form
                     onSubmit={(e) => void handleSubmit(e)}
-                    className="mx-auto my-[82px] flex w-4/5 flex-col items-center justify-center rounded-[20px]
-          bg-[#F5F5F8] py-[63px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                    className="mx-auto my-[82px] flex md:w-4/5 w-full md:rounded-0 rounded-3xl flex-col items-center justify-center
+          bg-[#F5F5F8] py-[42px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 >
-                    <h6 className="sf-pro-display-black mb-[76px] w-4/5">Get involved</h6>
+                    <h6 className="sf-pro-display-black mb-[42px] w-4/5 text-center text-2xl">Get involved</h6>
                     <h6 className="sf-pro-display mx-auto flex w-4/5 flex-col"></h6>
                     <FormInput
                         className="w-4/5"
