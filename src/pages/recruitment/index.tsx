@@ -42,7 +42,7 @@ const Recruitment = () => {
                 ministriesData.map((team, index) => {
                     return (
                         <div key={index}
-                             className="flex md:flex-row flex-col items-start justify-start mb-16  md:px-16 md:pt-8 md:rounded-0 rounded-3xl bg-gradient-to-b from-black to-[#666666] relative">
+                             className="flex md:flex-row flex-col items-start justify-start mb:mb-16 mb-8  md:px-16 md:pt-8 md:rounded-0 rounded-3xl bg-gradient-to-b from-black to-[#666666] relative">
 
                             <div
                                 className={`md:block hidden absolute w-[500px] h-[500px] left-[-80px] top-[40px] z-0 blur-2xl pointer-events-none
