@@ -101,7 +101,8 @@ const RecruitForm = ({isFormVisible, setIsFormVisible}: FormProps) => {
                         button_text="Yay!"
                         desc="We have received your submission, and we will be in touch soon!"
                         onClick={() => {
-                            setIsSubmitted(false), setIsFormVisible(false);
+                            setIsSubmitted(false)
+                            setIsFormVisible(false);
                         }}
                     />
                 </div>
