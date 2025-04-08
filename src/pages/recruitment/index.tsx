@@ -45,7 +45,7 @@ const Recruitment = () => {
                              className="flex md:flex-row flex-col items-start justify-start mb-16  md:px-16 md:pt-8 md:rounded-0 rounded-3xl bg-gradient-to-b from-black to-[#666666] relative">
 
                             <div
-                                className={`absolute w-[500px] h-[500px] left-[-80px] top-[40px] z-0 blur-2xl pointer-events-none
+                                className={`md:block hidden absolute w-[500px] h-[500px] left-[-80px] top-[40px] z-0 blur-2xl pointer-events-none
                                 ${index === 0 && "bg-[radial-gradient(circle,_#FF981A66_10%,_#FF981A00_100%)]"}
                                 ${index === 1 && "bg-[radial-gradient(circle,_#1F75FF66_10%,_#1F75FF00_100%)]"}
                                 ${index === 2 && "bg-[radial-gradient(circle,_#FF1FA966_10%,_#FF1FA900_100%)]"}
@@ -82,7 +82,7 @@ const Recruitment = () => {
                                 <DirectGradientLine/>
                             </div>
 
-                            <div className={"flex flex-col pl-4 md:border-l-2 border-[#6A7079]"}>
+                            <div className={"flex flex-col md:pl-4 p-2 md:border-l-2 border-[#6A7079]"}>
                                 {
                                     team?.department?.individual.map((department, index) => {
                                         return (
