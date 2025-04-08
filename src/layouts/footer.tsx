@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Footer() {
   const router = useRouter();

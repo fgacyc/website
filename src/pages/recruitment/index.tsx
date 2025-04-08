@@ -52,10 +52,10 @@ const Recruitment = () => {
                                 ${index === 3 && "bg-[radial-gradient(circle,_#FFC71F66_10%,_#FFC71F00_100%)]"}
                                 `}/>
 
-                            <TeamCardWide team={team} index={index}/>
+                            <TeamCardWide team={team}/>
 
                             {/*team card mobile */}
-                            <img src={team.img} alt="team image"
+                            <img src={team?.img} alt="team image"
                                  className={"md:hidden block md:rounded-xl rounded-t-3xl md:aspect-[7/8] aspect-[16/9] w-full object-cover z-30"}/>
 
                             {/* sticky box */}
@@ -71,9 +71,9 @@ const Recruitment = () => {
                                         ${index === 3 && "bg-[radial-gradient(circle,_#FFC71F66_10%,_#FFC71F00_100%)]"}
                                         `}/>
                                     <div className={"relative z-40"}>
-                                        <div className={"text-2xl font-semibold md:mt-4 "}>{team.team_name_en}</div>
-                                        <div className={"mt-3 text-sm "}>{team.department.combination}</div>
-                                        <div className={"mt-3 text-gray-300 "}>{team.description_short}</div>
+                                        <div className={"text-2xl font-semibold md:mt-4 "}>{team?.team_name_en}</div>
+                                        <div className={"mt-3 text-sm "}>{team?.department.combination}</div>
+                                        <div className={"mt-3 text-gray-300 "}>{team?.description_short}</div>
                                         <ArrowLinkButton text={"Get involved now"} className={"mt-4 relative top-2"}/>
                                     </div>
 
@@ -84,17 +84,17 @@ const Recruitment = () => {
 
                             <div className={"flex flex-col pl-4 md:border-l-2 border-[#6A7079]"}>
                                 {
-                                    team.department.individual.map((department, index) => {
+                                    team?.department?.individual.map((department, index) => {
                                         return (
                                             <div key={index}
                                                  className="flex flex-col w-full mb-16 ">
                                                 <div
-                                                    className={"text-white mb-4 font-semibold text-xl z-10"}>{department.depTitle}</div>
+                                                    className={"text-white mb-4 font-semibold text-xl z-10"}>{department?.depTitle}</div>
                                                 <div
                                                     className={"grid gap-4 grid-cols-2 xl:grid-cols-3 "}>
                                                     {
                                                         // ministry
-                                                        department.ministry.map((ministry, index) => {
+                                                        department?.ministry.map((ministry, index) => {
                                                             return (
                                                                 <MinistryCard key={index} ministry={ministry}/>
                                                             )
