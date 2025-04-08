@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {getAllDisplayMinistries, ministriesData, type Ministry, type Team} from "~/pages/recruitment/ministries_data";
-import {ministry_data} from "~/data/ministry";
+// import {ministry_data} from "~/data/ministry";
 import {satellite_pastoralTeam} from "~/data/pastoral";
 import CompletedForm from "~/components/Form/CompletedForm";
 import FormInput from "~/components/Form/FormInput";
