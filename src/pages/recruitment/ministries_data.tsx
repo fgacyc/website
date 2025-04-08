@@ -234,7 +234,7 @@ export const ministriesData: Team[] = [
                                 3,
                                 2
                             ],
-                            "display": false
+                            "display": true
                         }
                     ]
                 },
@@ -421,7 +421,7 @@ export const ministriesData: Team[] = [
                                 3,
                                 2
                             ],
-                            "display": false
+                            "display": true
                         },
                         {
                             "img": "/images/get-involved/images/decoration.jpg",
