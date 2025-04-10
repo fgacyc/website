@@ -61,7 +61,7 @@ export const ministriesData: Team[] = [
         "img": "/images/get-involved/images/people_main.png",
         "bg" :"bg-[radial-gradient(circle,_#FF981A66_10%,_#FF981A00_100%)]",
         "department": {
-            "combination": "People | General Affair | Tech",
+            "combination": "People | Operations | Tech",
             "individual": [
                 {
                     "cnDepTitle": "人流部",

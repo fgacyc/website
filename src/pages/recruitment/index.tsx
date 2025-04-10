@@ -72,9 +72,9 @@ const Recruitment = () => {
                                         `}/>
                                     <div className={"relative z-40"}>
                                         <div className={"text-2xl font-semibold md:mt-4 "}>{team?.team_name_en}</div>
-                                        <div className={"mt-3 text-sm "}>{team?.department.combination}</div>
-                                        <div className={"mt-3 text-gray-300 "}>{team?.description_short}</div>
-                                        <ArrowLinkButton text={"Get involved now"} className={"mt-4 relative top-2"}/>
+                                        <div className={"mt-2 text-sm "}>{team?.department.combination}</div>
+                                        <div className={"mt-2 text-white opacity-60 "}>{team?.description_short}</div>
+                                        <ArrowLinkButton text={"Get involved now"} className={"mt-2 relative top-2"}/>
                                     </div>
 
                                 </div>
@@ -87,7 +87,7 @@ const Recruitment = () => {
                                     team?.department?.individual.map((department, index) => {
                                         return (
                                             <div key={index}
-                                                 className="flex flex-col w-full mb-16 ">
+                                                 className="flex flex-col w-full mb-0 ">
                                                 <div
                                                     className={"text-white mb-4 font-semibold text-xl z-10"}>{department?.depTitle}</div>
                                                 <div
