@@ -1,4 +1,4 @@
-import {getAllDisplayMinistries} from "~/pages/recruitment/ministries_data";
+import {getAllDisplayMinistries} from "~/pages/get-involved/ministries_data";
 import React, {useState} from "react";
 import {satellite_pastoralTeam} from "~/data/pastoral";
 import CompletedForm from "~/components/Form/CompletedForm";

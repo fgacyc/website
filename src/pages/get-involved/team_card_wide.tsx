@@ -1,6 +1,6 @@
-import type {Team} from "~/pages/recruitment/ministries_data";
+import type {Team} from "~/pages/get-involved/ministries_data";
 import React from "react";
-import ArrowLinkButton from "~/pages/recruitment/arrow_link_button";
+import ArrowLinkButton from "~/pages/get-involved/arrow_link_button";
 
 const TeamCardWide = (props: { team: Team }) => {
     const {team} = props;

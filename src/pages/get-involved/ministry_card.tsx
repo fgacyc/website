@@ -1,4 +1,4 @@
-import type {Ministry} from "~/pages/recruitment/ministries_data";
+import type {Ministry} from "~/pages/get-involved/ministries_data";
 import React from "react";
 
 
