@@ -328,7 +328,7 @@ export const ministriesData: Team[] = [
                         {
                             "img": "/images/get-involved/images/multimedia.jpg",
                             "cnMinistryTitle": "多媒体",
-                            "ministry": "Multimedia",
+                            "ministry": "Multimedia (Broadcast & Film)",
                             "desc": [
                                 "多媒体影像画面不但能带来霞撼的视觉效果，同时传递了圣灵的工作，也让网络上的体验到现场的震撼，让聚会更完全地被呈献。也同时透过故事、镜头、光影、音效、特效，来呈现美好的故事，用心的制作来传达内容。"
                             ],
