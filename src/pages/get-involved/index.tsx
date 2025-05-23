@@ -13,7 +13,7 @@ const Recruitment = () => {
 
     return (
         <div className={"pt-16"}>
-            <div className={"relative mb-16"}>
+            <div className={"relative mb-10"}>
                 {/* hero image */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div>
                 <div
@@ -62,7 +62,7 @@ const Recruitment = () => {
                             <div
                                 className={"w-full md:hidden block sticky top-0 z-20 md:bg-transparent text-white"}>
                                 {/* content box */}
-                                <div className={"bg-black md:p-0 p-4 relative"}>
+                                <div className={"bg-black md:p-0 p-4 pt-3 relative"}>
                                     <div
                                         className={`absolute w-[300px] h-[300px] left-[-90px] top-[-100px]  blur-2xl pointer-events-none
                                         ${index === 0 && "bg-[radial-gradient(circle,_#FF981A66_10%,_#FF981A00_100%)]"}

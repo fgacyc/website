@@ -6,7 +6,7 @@ const MinistryCard = (props: { ministry: Ministry }) => {
     const {ministry} = props;
     return (
         <div
-            className="flex flex-col items-center justify-between mb-16 bg-gradient-to-b from-black to-[#666666] md:rounded-lg rounded-t-2xl rounded-b-lg max-w-[300px] z-10">
+            className="flex flex-col items-center justify-between mb-10 bg-gradient-to-b from-black to-[#666666] md:rounded-lg rounded-t-2xl rounded-b-lg max-w-[300px] z-10">
             {/* 从fff 从上到下渐变到fff 20% */}
             <div
                 className="text-white flex flex-col justify-start items-start  bg-gradient-to-b from-[#ffffff] to-[#fffff20]  rounded-lg ">
