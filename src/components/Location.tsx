@@ -57,7 +57,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
               </>
             );
           })}
-          <div className="text-[#00edc2]">Get Directions {">"}</div>
+          {/* <div className="text-[#00edc2]">Get Directions {">"}</div> */}
         </th>
       </tr>
     </>

@@ -7,32 +7,32 @@ export const locations = [
   {
     name: "Setapak",
     addr: "2nd Floor, Lot 9163, Prima Setapak, Batu 4, Jalan Genting Kelang, 53300 Kuala Lumpur",
-    services: ["SATURDAY 5PM", "SUNDAY 10.30AM"],
+    services: ["SATURDAY 5PM (Youth)", "SUNDAY 10.30AM (GS)"],
   },
   {
     name: "Kepong",
-    addr: "1-19 & 1-20, Plaza Menjalara, No.1, Jalan Menjalara Idaman, Bandar Menjalara, Kepong, 52200 Kuala Lumpur",
-    services: ["SATURDAY 4PM", "SUNDAY 10.30AM"],
+    addr: "Full Gospel Assembly Bhd Sg Mas Plaza. Lot 10B, Jalan Ipoh, Batu 5, 51200 Kuala Lumpur, WP Kuala Lumpur",
+    services: ["SATURDAY 7.30PM (GS)", "SUNDAY 10.30AM (GS)"],
   },
   {
     name: "Sg. Long",
     addr: "Mahkota Point, Level 1, Lot 35052, Persiaran Mahkota Cheras 1, Jalan Penggwa, Bandar Mahkota Cheras, 43200 Cheras, Selangor",
-    services: ["SUNDAY 10.30AM • 1.30PM"],
+    services: ["SATURDAY 7:30PM (Chinese)","SUNDAY 10:30am (English & WK)", "SUNDAY 1:30pm (Bilingual & WK)"],
   },
   {
     name: "Seremban",
-    addr: "SCS Prima Sdn Bhd, 287-1, Jalan S2 B, Up Town Avenue, 70300 Seremban",
-    services: ["SATURDAY 5PM"],
+    addr: "Blok A14-2 & A15-2, Block A, Jalan Haruan 5/9, Pusat Komersial Oakland 2, 70300 Seremban, Negeri Sembilan",
+    services: ["SUNDAY 10.30AM (GS & WK)"],
   },
   {
     name: "USJ",
-    addr: "12 & 14, Jalan Indusri USJ 1/6, Taman Perindustrian USJ 1, 47600 Subang Jaya, Selangor",
-    services: ["SATURDAY 4.30PM", "SUNDAY 10.30AM"],
+    addr: "12 & 14, Jalan Indusri USJ 1/6, Taman Perindustrian USJ 1,47600 Subang Jaya, Selangor Darul Ehsan, Malaysia",
+    services: ["SATURDAY 4.30PM (Young Warrior)", "SUNDAY 10.30AM (General Service & Wonderkids)"],
   },
   {
     name: "Serdang",
     addr: "24 & 26, Jalan PSK 4, Pusat Perdagangan Seri Kembangan, 43300 Seri Kembangan, Selangor",
-    services: ["SUNDAY 10.30AM • 1.30PM"],
+    services: ["SUNDAY 10.30AM (GS & WK)", "SUNDAY 1.30PM (GS)"],
   },
   // {
   //   name: "The Blessing (Puchong)",
