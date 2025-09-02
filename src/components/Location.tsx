@@ -15,7 +15,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
   const rowOneStyle =
     "md:pt-2 xl:pb-4 xl:pt-12 border-b-2 border-solid border-black xl:border-b-4";
 
-  const rowTwoStyle = "pb-2 pt-2 sm:pb-3 sm:pt-3 xl:pt-8";
+  const rowTwoStyle = "pb-2 pt-2 sm:pb-3 sm:pt-3 xl:pt-8 align-top";
   return (
     <>
       <tr onClick={click}>
@@ -53,7 +53,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
           {services.map((s) => {
             return (
               <>
-                <div className="font-bold">{s}</div>
+                <div className="font-semibold text-gray-800">{s}</div>
               </>
             );
           })}
