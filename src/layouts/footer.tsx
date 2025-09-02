@@ -302,17 +302,26 @@ export default function Footer() {
                   </li>
                   <li className="mb-4">
                     <Link
-                      href="/mobile-app-download"
-                      className="hover:underline"
+                        href="/mobile-app-download"
+                        className="hover:underline"
                     >
                       Mobile App
+                    </Link>
+                  </li>
+                  <li className="mb-4">
+                    <Link
+                        href="https://www.theblessing.asia/"
+                        className="hover:underline"
+                        target="_blank"
+                    >
+                      The Blessing
                     </Link>
                   </li>
                 </ul>
               </div>
               <div className="w-fit">
                 <h2
-                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Follow us
                 </h2>
