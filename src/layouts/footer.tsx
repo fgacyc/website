@@ -235,7 +235,18 @@ export default function Footer() {
                 Kuala Lumpur.
               </p>
               <p className={`${text_color}`}>
-                <Link href="tel:+600379814755">03-7981 4755</Link>
+                <Link href="tel:+600379814755" className="hover:underline">
+                  FGA General Line: 03-7981 4755
+                </Link>
+              </p>
+              <p className={`${text_color}`}>
+                <Link
+                  href="https://api.whatsapp.com/send?phone=601127009925"
+                  className="hover:underline"
+                  target="_blank"
+                >
+                  FGA Whatsapp: 011-2700 9925
+                </Link>
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
@@ -302,17 +313,26 @@ export default function Footer() {
                   </li>
                   <li className="mb-4">
                     <Link
-                        href="/mobile-app-download"
-                        className="hover:underline"
+                      href="https://www.youtube.com/@fgacyc"
+                      className="hover:underline"
+                      target="_blank"
+                    >
+                      Video
+                    </Link>
+                  </li>
+                  <li className="mb-4">
+                    <Link
+                      href="/mobile-app-download"
+                      className="hover:underline"
                     >
                       Mobile App
                     </Link>
                   </li>
                   <li className="mb-4">
                     <Link
-                        href="https://www.theblessing.asia/"
-                        className="hover:underline"
-                        target="_blank"
+                      href="https://www.theblessing.asia/"
+                      className="hover:underline"
+                      target="_blank"
                     >
                       The Blessing
                     </Link>
@@ -321,7 +341,7 @@ export default function Footer() {
               </div>
               <div className="w-fit">
                 <h2
-                    className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
+                  className={`mb-6 text-[1.675rem] font-bold sm:text-3xl lg:text-4xl ${text_color}`}
                 >
                   Follow us
                 </h2>
