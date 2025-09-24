@@ -34,11 +34,21 @@ export const locations = [
     addr: "24 & 26, Jalan PSK 4, Pusat Perdagangan Seri Kembangan, 43300 Seri Kembangan, Selangor",
     services: ["SUNDAY 10:30AM (General Service & Wonderkids)", "SUNDAY 1:30PM (General Service)"],
   },
-  // {
-  //   name: "The Blessing (Puchong)",
-  //   addr: "Puchong IOI Boulevard",
-  //   services: [],
-  // },
+  {
+    name: "Setia Alam",
+    addr: "Camellia Hall, 5C, Jalan Setia Nusantara U13/17 Seksyen U13, Setia Eco Park, 40170 Shah Alam, Selangor",
+    services: ["SUNDAY 10:30AM (General Service & Wonderkids)"],
+  },
+  {
+    name: "Johor",
+    addr: "Infinity 8 @Mount Austin, 121, Jalan Mutiara Emas 2A, Taman Mount Austin, 81100 Johor Bahru, Johor",
+    services: ["SATURDAY 7:30PM (General Service)"],
+  },
+  {
+    name: "Penang",
+    addr: "The Granite Luxury Hotel (Level 21), 191A, Jalan Magazine, 10300 George Town, Pulau Pinang",
+    services: ["SATURDAY 7:30PM (General Service)"],
+  }
 ];
 
 export type ValueLabelPair<T> = { value: T; label: string };
