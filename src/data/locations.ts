@@ -2,17 +2,17 @@ export const locations = [
   {
     name: "Kuchai Lama",
     addr: "Lot 689, Jalan Kuchai Lama, Taman Goodwood, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
-    services: ["SATURDAY 3PM (Young Warrior)","SATURDAY 5:30PM (Genrral Service)", "SUNDAY 1:30PM (Genrral Service)"],
+    services: ["SATURDAY 3PM (Young Warrior)","SATURDAY 5:30PM (General Service)", "SUNDAY 1:30PM (General Service)"],
   },
   {
     name: "Setapak",
     addr: "2nd Floor, Lot 9163, Prima Setapak, Batu 4, Jalan Genting Kelang, 53300 Kuala Lumpur",
-    services: ["SATURDAY 5PM (Youth)", "SUNDAY 10:30AM (Genrral Service)"],
+    services: ["SATURDAY 5PM (Youth)", "SUNDAY 10:30AM (General Service)"],
   },
   {
     name: "Kepong",
     addr: "Full Gospel Assembly Bhd Sg Mas Plaza. Lot 10B, Jalan Ipoh, Batu 5, 51200 Kuala Lumpur, WP Kuala Lumpur",
-    services: ["SATURDAY 7:30PM (Genrral Service)", "SUNDAY 10:30AM (Genrral Service)"],
+    services: ["SATURDAY 7:30PM (General Service)", "SUNDAY 10:30AM (General Service)"],
   },
   {
     name: "Sg. Long",
@@ -22,7 +22,7 @@ export const locations = [
   {
     name: "Seremban",
     addr: "Blok A14-2 & A15-2, Block A, Jalan Haruan 5/9, Pusat Komersial Oakland 2, 70300 Seremban, Negeri Sembilan",
-    services: ["SUNDAY 10:30AM (Genrral Service & Wonderkids)"],
+    services: ["SUNDAY 10:30AM (General Service & Wonderkids)"],
   },
   {
     name: "USJ",

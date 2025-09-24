@@ -21,7 +21,7 @@ const Location = ({ name, addr, services }: LocationProps) => {
       <tr onClick={click}>
         <th className={rowOneStyle}>
           <div className="flex items-start text-xs font-bold sm:text-sm md:text-[18px] lg:text-xl xl:text-[33px]">
-            {"FGA CYC " + name}
+            {"FGA " + name}
           </div>
         </th>
         <th className={rowOneStyle}>
