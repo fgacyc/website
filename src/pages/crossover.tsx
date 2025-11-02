@@ -7,7 +7,7 @@ const CrossoverEvent: FC = () => {
             "https://vbgif.my.canva.site/crossover-2025-landing-page";
     }, []);
 
-    return <Loading page_title={"Itunes"} />;
+    return <Loading page_title={"Crossover"} />;
 };
 
 export default CrossoverEvent;
