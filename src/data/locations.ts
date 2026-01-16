@@ -61,6 +61,7 @@ export const cgLocations: ValueLabelPair<string>[] = [
   { value: "setapak", label: "Setapak" },
   { value: "sg_long", label: "Sungai Long" },
   { value: "seremban", label: "Seremban" },
+  { value: "setia_alam", label: "Setia Alam" },
   { value: "penang", label: "Penang" },
   { value: "johor", label: "Johor" },
 ];
