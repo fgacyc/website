@@ -12,6 +12,7 @@ export const satellite_pastoralTeam = {
   Setapak: ["Young Warrior", "Young Professional", "Adult"],
   "SG Long": ["Young Warrior", "Young Professional", "Young Family"],
   Seremban: ["Young Warrior"],
+  "Setia Alam": ["Young Family", "Young Warrior", "Wonder Kids"],
   Penang: [],
   Johor: [],
 };

@@ -65,6 +65,7 @@ export default function Form() {
     { value: "Setapak", label: "Setapak" },
     { value: "sgLong", label: "SG Long" },
     { value: "Seremban", label: "Seremban" },
+    { value: "SetiaAlam", label: "Setia Alam" },
     { value: "Penang", label: "Penang" },
     { value: "Johor", label: "Johor" },
 
