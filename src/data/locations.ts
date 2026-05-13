@@ -41,7 +41,7 @@ export const locations = [
   },
   {
     name: "Johor",
-    addr: "Infinity 8 @Mount Austin, 121, Jalan Mutiara Emas 2A, Taman Mount Austin, 81100 Johor Bahru, Johor",
+    addr: "Fives Hotel Johor Bahru City Centre 45 Jalan Wong Ah Fook, 80000 Johor Bahru, Johor",
     services: ["SATURDAY 7:30PM (General Service)"],
   },
   {
