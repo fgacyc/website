@@ -177,12 +177,6 @@ export default function Header() {
         {/*    Stream*/}
         {/*</Link>*/}
         <Link
-          href="/blog"
-          className="block px-4 py-2 pr-6 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
-        >
-          Blog
-        </Link>
-        <Link
           href="/mobile-app-download"
           className="block px-4 py-2 pr-6 text-right text-3xl text-black hover:bg-[#00EDC2] lg:text-4xl xl:text-5xl"
         >

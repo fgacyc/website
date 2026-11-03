@@ -307,11 +307,6 @@ export default function Footer() {
                   {/*  </Link>*/}
                   {/*</li>*/}
                   <li className="mb-4">
-                    <Link href="/blog" className="hover:underline">
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="mb-4">
                     <Link
                       href="https://www.youtube.com/@fgacyc"
                       className="hover:underline"

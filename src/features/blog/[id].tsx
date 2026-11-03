@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+// Temporarily kept outside src/pages while the blog API is unavailable.
 // import { type GetStaticPaths, type GetStaticProps } from "next";
 import { type Blog, getBlog } from "~/helpers";
 import MdViewer from "~/components/md-viewer";

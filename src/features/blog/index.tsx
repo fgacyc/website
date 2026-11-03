@@ -1,3 +1,4 @@
+// Temporarily kept outside src/pages while the blog API is unavailable.
 import { type Blog, getBlogs } from "~/helpers";
 import { useRouter } from "next/router";
 
