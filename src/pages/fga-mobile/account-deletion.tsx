@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { useRouter } from "next/router";
 import {
   Modal,
   ModalBody,
@@ -26,9 +25,8 @@ interface DeletionResponse {
 }
 
 function Section1() {
-  const router = useRouter();
   function login() {
-    void router.push("/api/auth/login");
+    window.location.assign("/api/auth/login");
   }
 
   return (
@@ -99,7 +97,6 @@ function Section2() {
   const [uid, setUid] = useState("");
   const { user, isLoading } = useUser();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const router = useRouter();
 
   useEffect(() => {
     const user1 = user as User;
@@ -111,7 +108,7 @@ function Section2() {
   }, [isLoading, user]);
 
   async function logout() {
-    await router.push("/api/auth/logout");
+    window.location.assign("/api/auth/logout");
   }
 
   async function onSubmit() {

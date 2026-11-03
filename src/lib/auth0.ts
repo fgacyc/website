@@ -1,9 +1,19 @@
-import { initAuth0 } from "@auth0/nextjs-auth0";
+import { Auth0Client } from "@auth0/nextjs-auth0/server";
 
-export default initAuth0({
-  secret: process.env.AUTH0_SECRET,
-  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
-  baseURL: process.env.AUTH0_BASE_URL,
-  clientID: process.env.AUTH0_CLIENT_ID,
-  clientSecret: process.env.AUTH0_CLIENT_SECRET,
+// Keep the existing deployment's environment variables and callback URL working.
+const domain = process.env.AUTH0_DOMAIN ?? process.env.AUTH0_ISSUER_BASE_URL;
+
+export default new Auth0Client({
+  domain: domain?.replace(/^https?:\/\//, "").replace(/\/$/, ""),
+  appBaseUrl: process.env.APP_BASE_URL ?? process.env.AUTH0_BASE_URL,
+  authorizationParameters: {
+    audience: process.env.AUTH0_AUDIENCE,
+  },
+  signInReturnToPath: "/fga-mobile/account-deletion",
+  routes: {
+    login: "/api/auth/login",
+    logout: "/api/auth/logout",
+    callback: "/api/auth/callback",
+  },
+  noContentProfileResponseWhenUnauthenticated: true,
 });

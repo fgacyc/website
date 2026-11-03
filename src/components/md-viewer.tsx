@@ -9,7 +9,7 @@ export default function MdViewer({ content }: MdViewerProps) {
   // console.log(content)
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="mb-8 min-h-screen bg-white text-black">
       <ReactMarkdown
         components={{
           h1: ({ ...props }) => (
@@ -48,7 +48,6 @@ export default function MdViewer({ content }: MdViewerProps) {
           ),
         }}
         remarkPlugins={[remarkGfm]}
-        className="mb-8"
       >
         {content}
       </ReactMarkdown>
