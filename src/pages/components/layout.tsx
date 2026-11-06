@@ -2,7 +2,7 @@ import Header from "~/layouts/header";
 import Footer from "~/layouts/footer";
 import Head from "next/head";
 import { type ReactNode } from "react";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { env } from "~/env.mjs";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -24,6 +24,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </Head>
       {/* Must render in the page tree. next/head never mounts children, so GTM would not load. */}
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
+      <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />
       <noscript>
         <iframe
           title="GTM noiframe"
