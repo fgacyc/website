@@ -2,6 +2,8 @@ import Header from "~/layouts/header";
 import Footer from "~/layouts/footer";
 import Head from "next/head";
 import { type ReactNode } from "react";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { env } from "~/env.mjs";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
         <meta property="og:url" content="https://www.fgacyc.com" />
         <meta property="og:type" content="website" />
+        <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       </Head>
       <Header />
       <main>{children}</main>
