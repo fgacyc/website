@@ -10,6 +10,15 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div className="min-w-screen relative">
       {/* Must render in the page tree. next/head never mounts children, so GTM would not load. */}
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
+      <noscript>
+        <iframe
+          title="GTM noiframe"
+          src={`https://www.googletagmanager.com/ns.html?id=${env.NEXT_PUBLIC_GTM_ID}`}
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        />
+      </noscript>
       <Head>
         <link rel="icon" href="/CYC_Logo.jpg" />
         <meta property="og:title" content="FGA CYC" />
