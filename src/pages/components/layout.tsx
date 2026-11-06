@@ -8,7 +8,8 @@ import { env } from "~/env.mjs";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-w-screen relative">
-      {/* eslint-disable-next-line react/jsx-no-undef */}
+      {/* Must render in the page tree. next/head never mounts children, so GTM would not load. */}
+      <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       <Head>
         <link rel="icon" href="/CYC_Logo.jpg" />
         <meta property="og:title" content="FGA CYC" />
@@ -22,7 +23,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
         <meta property="og:url" content="https://www.fgacyc.com" />
         <meta property="og:type" content="website" />
-        <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       </Head>
       <Header />
       <main>{children}</main>
